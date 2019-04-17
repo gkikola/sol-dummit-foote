@@ -1,6 +1,9 @@
 Selected Solutions to Dummit and Foote's Abstract Algebra Third Edition
 =======================================================================
 
+Description
+-----------
+
 This is an unofficial solution guide to the book Abstract Algebra,
 third edition, by Dummit and Foote. It is not meant to be complete,
 but I may add more over time.
