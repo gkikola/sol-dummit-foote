@@ -1,0 +1,243 @@
+\chapter{Preliminaries}
+
+\section{Basics}
+
+Let $\mathcal{A}$ be the set of $2\times2$ matrices over $\R$, let
+\begin{equation*}
+  M = \begin{pmatrix}
+    1 & 1 \\
+    0 & 1
+  \end{pmatrix},
+\end{equation*}
+and let
+\begin{equation*}
+  \mathcal{B} = \{X\in\mathcal{A}\mid MX = XM\}.
+\end{equation*}
+
+\Exercise{1}
+
+Determine which of the following elements of $\mathcal{A}$ lie in
+$\mathcal{B}$:
+
+\begin{equation*}
+  \begin{pmatrix}
+    1 & 1\\
+    0 & 1
+  \end{pmatrix},
+  \begin{pmatrix}
+    1 & 1\\
+    1 & 1
+  \end{pmatrix},
+  \begin{pmatrix}
+    0 & 0\\
+    0 & 0
+  \end{pmatrix},
+  \begin{pmatrix}
+    1 & 1\\
+    1 & 0
+  \end{pmatrix},
+  \begin{pmatrix}
+    1 & 0\\
+    0 & 1
+  \end{pmatrix},
+  \begin{pmatrix}
+    0 & 1\\
+    1 & 0
+  \end{pmatrix}.
+\end{equation*}
+\begin{proof}[Solution]
+  It is easy to verify that
+  \begin{equation*}
+    \begin{pmatrix}
+      1 & 1\\
+      0 & 1
+    \end{pmatrix},\quad
+    \begin{pmatrix}
+      0 & 0\\
+      0 & 0
+    \end{pmatrix},\quad\text{and}\quad
+    \begin{pmatrix}
+      1 & 0\\
+      0 & 1
+    \end{pmatrix}
+  \end{equation*}
+  all commute with $M$: the first matrix is $M$ itself, and the latter
+  two are the zero matrix and the identity matrix, all of which will
+  commute. So each of these matrices is in $\mathcal{B}$.
+
+  We can check the remaining matrices individually: Let
+  \begin{equation*}
+    P = \begin{pmatrix}
+      1 & 1\\
+      1 & 1
+    \end{pmatrix},\quad
+    Q = \begin{pmatrix}
+      1 & 1\\
+      1 & 0
+    \end{pmatrix},\quad\text{and}\quad
+    R = \begin{pmatrix}
+      0 & 1\\
+      1 & 0
+    \end{pmatrix}.
+  \end{equation*}
+  Direct computation shows that
+  \begin{equation*}
+    MP = \begin{pmatrix}
+      2 & 2 \\
+      1 & 1
+    \end{pmatrix}
+    \neq
+    \begin{pmatrix}
+      1 & 2 \\
+      1 & 2
+    \end{pmatrix}
+    = PM,
+  \end{equation*}
+  \begin{equation*}
+    MQ = \begin{pmatrix}
+      2 & 1 \\
+      1 & 0
+    \end{pmatrix}
+    \neq
+    \begin{pmatrix}
+      1 & 2 \\
+      1 & 1
+    \end{pmatrix}
+    = QM,
+  \end{equation*}
+  and
+  \begin{equation*}
+    MR = \begin{pmatrix}
+      1 & 1 \\
+      1 & 0
+    \end{pmatrix}
+    \neq
+    \begin{pmatrix}
+      0 & 1 \\
+      1 & 1
+    \end{pmatrix}
+    = RM.
+  \end{equation*}
+  So $P, Q, R\not\in\mathcal{B}$.
+\end{proof}
+
+\Exercise{2}
+Prove that if $P, Q \in\mathcal{B}$, then $P + Q\in\mathcal{B}$.
+\begin{proof}
+  Let
+  \begin{equation*}
+    P = \begin{pmatrix}
+      a & b \\ c & d
+    \end{pmatrix}
+    \quad\text{and}\quad
+    Q = \begin{pmatrix}
+      e & f \\ g & h
+    \end{pmatrix}
+  \end{equation*}
+  be matrices in the set $\mathcal{B}$, so that $MP = PM$ and
+  $MQ = QM$. Then we have
+  \begin{align*}
+    M(P + Q) &= \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}
+                \begin{pmatrix} a + e & b + f \\ c + g & d + h \end{pmatrix} \\
+             &= \begin{pmatrix}
+               a + e + c + g & b + f + d + h \\
+               c + g & d + h
+             \end{pmatrix} \\
+             &= \begin{pmatrix}
+               a + c & b + d \\
+               c & d
+             \end{pmatrix}
+                   + \begin{pmatrix}
+                     e + g & f + h \\
+                     g & h
+                   \end{pmatrix} \\
+             &= MP + MQ \\
+             &= PM + QM \\
+             &= \begin{pmatrix}
+               a & a + b \\
+               c & c + d
+             \end{pmatrix}
+                   + \begin{pmatrix}
+                     e & e + f \\
+                     g & g + h
+                   \end{pmatrix} \\
+             &= \begin{pmatrix}
+               a + e & a + b + e + f \\
+               c + g & c + d + g + h
+             \end{pmatrix} \\
+             &= \begin{pmatrix}
+               a + e & b + f \\
+               c + g & d + h
+             \end{pmatrix}
+               \begin{pmatrix}
+                 1 & 1 \\ 0 & 1
+               \end{pmatrix} \\
+             &= (P + Q)M.
+  \end{align*}
+  Therefore $P + Q\in\mathcal{B}$.
+\end{proof}
+
+\Exercise{3}
+Prove that if $P, Q\in\mathcal{B}$, then $PQ\in\mathcal{B}$.
+\begin{proof}
+  A similar argument to the one in Exercise 2 above will show that
+  $PQ\in\mathcal{B}$ as desired.
+\end{proof}
+
+\Exercise{4}
+Find conditions on $p, q, r, s$ which determine precisely when
+$\begin{pmatrix} p & q \\ r & s \end{pmatrix} \in \mathcal{B}$.
+\begin{proof}[Solution]
+  Let
+  \begin{equation*}
+    P = \begin{pmatrix} p & q \\ r & s \end{pmatrix}.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    MP = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}
+    \begin{pmatrix} p & q \\ r & s \end{pmatrix}
+    = \begin{pmatrix} p + r & q + s \\ r & s \end{pmatrix}
+  \end{equation*}
+  while
+  \begin{equation*}
+    PM = \begin{pmatrix} p & q \\ r & s \end{pmatrix}
+    \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}
+    = \begin{pmatrix} p & p + q \\ r & r + s \end{pmatrix}.
+  \end{equation*}
+  Therefore, $MP = PM$ if and only if $r = 0$ and $p = s$. Hence
+  \begin{equation*}
+    \mathcal{B} = \left\{ \begin{pmatrix} p & p + q \\ 0 & p \end{pmatrix}
+      \;\middle|\; p, q\in\R \right\}. \qedhere
+  \end{equation*}
+\end{proof}
+
+\Exercise{5}
+Determine whether the following functions $f$ are well defined:
+\begin{enumerate}
+\item
+  $f\colon\Q\to\Z$ defined by $f(a/b) = a$.
+
+\item
+  $f\colon\Q\to\Q$ defined by $f(a/b) = a^2/b^2$.
+\end{enumerate}
+\begin{proof}[Solution]
+  \begin{enumerate}
+  \item
+    $f$ is not well defined since, for example,
+    \begin{equation*}
+      f(1/2) = 1, \quad f(2/4) = 2, \quad\text{but}\quad\frac12 = \frac24.
+    \end{equation*}
+
+  \item
+    Suppose $a,b,c,d\in\Z$ with $b, d\neq 0$ are such that
+    \begin{equation*}
+      \frac{a}{b} = \frac{c}{d}.
+    \end{equation*}
+    Then
+    \begin{equation*}
+      f(a/b) = \frac{a^2}{b^2} = \left(\frac ab\right)^2
+      = \left(\frac cd\right)^2 = \frac{c^2}{d^2} = f(c/d).
+    \end{equation*}
+    Therefore $f$ is well defined.
+  \end{enumerate}
+\end{proof}
