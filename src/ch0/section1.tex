@@ -14,11 +14,8 @@ and let
   \mathcal{B} = \{X\in\mathcal{A}\mid MX = XM\}.
 \end{equation*}
 
-\Exercise{1}
-
-Determine which of the following elements of $\mathcal{A}$ lie in
-$\mathcal{B}$:
-
+\Exercise{1} Determine which of the following elements of
+$\mathcal{A}$ lie in $\mathcal{B}$:
 \begin{equation*}
   \begin{pmatrix}
     1 & 1\\
@@ -121,8 +118,8 @@ $\mathcal{B}$:
   So $P, Q, R\not\in\mathcal{B}$.
 \end{proof}
 
-\Exercise{2}
-Prove that if $P, Q \in\mathcal{B}$, then $P + Q\in\mathcal{B}$.
+\Exercise{2} Prove that if $P, Q \in\mathcal{B}$, then
+$P + Q\in\mathcal{B}$.
 \begin{proof}
   Let
   \begin{equation*}
@@ -184,9 +181,8 @@ Prove that if $P, Q\in\mathcal{B}$, then $PQ\in\mathcal{B}$.
   $PQ\in\mathcal{B}$ as desired.
 \end{proof}
 
-\Exercise{4}
-Find conditions on $p, q, r, s$ which determine precisely when
-$\begin{pmatrix} p & q \\ r & s \end{pmatrix} \in \mathcal{B}$.
+\Exercise{4} Find conditions on $p, q, r, s$ which determine precisely
+when $\begin{pmatrix} p & q \\ r & s \end{pmatrix} \in \mathcal{B}$.
 \begin{proof}[Solution]
   Let
   \begin{equation*}
@@ -211,8 +207,8 @@ $\begin{pmatrix} p & q \\ r & s \end{pmatrix} \in \mathcal{B}$.
   \end{equation*}
 \end{proof}
 
-\Exercise{5}
-Determine whether the following functions $f$ are well defined:
+\Exercise{5} Determine whether the following functions $f$ are well
+defined:
 \begin{enumerate}
 \item
   $f\colon\Q\to\Z$ defined by $f(a/b) = a$.
@@ -240,4 +236,38 @@ Determine whether the following functions $f$ are well defined:
     \end{equation*}
     Therefore $f$ is well defined.
   \end{enumerate}
+\end{proof}
+
+\Exercise{6} Determine whether the function $f\colon\R^+\to\Z$ defined
+by mapping a real number $r$ to the first digit to the right of the
+decimal point in a decimal expansion of $r$ is well defined.
+\begin{proof}[Solution]
+  $f$ is not well defined since decimal expansions are not unique. For
+  example, $1 = 1.0 = 0.999\ldots$ but $f(1.0) = 0$ and
+  $f(0.999\ldots) = 9$.
+\end{proof}
+
+\Exercise{7} Let $f\colon A\to B$ be a surjective map of sets. Prove
+that the relation
+\begin{equation*}
+  a\sim b \;\text{if and only if}\; f(a) = f(b)
+\end{equation*}
+is an equivalence relation whose equivalence classes are the fibers of
+$f$.
+\begin{proof}
+  That $\sim$ is an equivalence relation on $A$ follows directly from
+  the fact that $=$ is an equivalence relation on the set $B$.
+
+  Now let $b\in B$ be arbitrary. Since $f$ is surjective, there is an
+  $a$ in $A$ such that $f(a) = b$. Then the equivalence class of $a$
+  is the set
+  \begin{equation*}
+    \{ x\in A \mid x\sim a \}.
+  \end{equation*}
+  But by definition of $\sim$, this set is equal to
+  \begin{equation*}
+    \{ x\in A \mid f(x) = f(a) = b \}.
+  \end{equation*}
+  Therefore the equivalence class of $a$ is precisely the fiber of $f$
+  over $b$.
 \end{proof}
