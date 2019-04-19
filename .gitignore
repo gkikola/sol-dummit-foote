@@ -6,3 +6,4 @@ build/
 *.aux
 *.fdb_latexmk
 *.fls
+*.out
