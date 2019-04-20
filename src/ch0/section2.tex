@@ -1,0 +1,238 @@
+\section{Properties of the Integers}
+
+\Exercise{1} For each of the following pairs of integers $a$ and $b$, determine their greatest common divisor, their least common multiple, and write their greatest common divisor in the form $ax + by$ for some integers $x$ and $y$.
+\begin{enumerate}
+
+\item
+  $a = 20, b = 13$.
+  \begin{solution}
+    Applying the division algorithm repeatedly, we get
+    \begin{align*}
+      20 &= 1(13) + 7 \\
+      13 &= 1(7) + 6 \\
+      7 &= 1(6) + 1 \\
+      6 &= 6(1) + 0.
+    \end{align*}
+    The first nonzero remainder is $1$, so $(20,13) = 1$. That is, the
+    two numbers are relatively prime.
+
+    The least common multiple, $[20, 13]$, is given by
+    \begin{equation*}
+      \frac{20\cdot13}{(20, 13)} = 260.
+    \end{equation*}
+
+    To write $1$ as a linear combination of $20$ and $13$, we work
+    backwards and substitute:
+    \begin{align*}
+      1 &= 7 - 1(6) \\
+        &= 7 - 1(13 - 1(7)) && \text{(Substituting $6 = 13 - 7$)} \\
+        &= 2(7) - 1(13) \\
+        &= 2(20 - 1(13)) - 1(13) && \text{(Substituting $7 = 20 - 13$)} \\
+        &= 2(20) - 3(13). && \qedhere
+    \end{align*}
+  \end{solution}
+
+\item
+  $a = 69, b = 372$.
+  \begin{solution}
+    As above, we have
+    \begin{align*}
+      372 &= 5(69) + 27 \\
+      69 &= 2(27) + 15 \\
+      27 &= 1(15) + 12 \\
+      15 &= 1(12) + 3 \\
+      12 &= 4(3) + 0,
+    \end{align*}
+    so $(69, 372) = 3$, which gives $[69, 372] = 8556$. And again, as
+    before, we write
+    \begin{align*}
+      3 &= 15 - 1(12) \\
+        &= 15 - 1(27 - 1(15)) && \text{(Substituting $12 = 27 - 15$)} \\
+        &= 2(15) - 1(27) \\
+        &= 2(69 - 2(27)) - 1(27) && \text{(Substituting $15 = 69 - 2(27)$)} \\
+        &= 2(69) - 5(27) \\
+        &= 2(69) - 5(372 - 5(69)) && \text{(Substituting $27 = 372 - 5(69)$)} \\
+        &= 27(69) - 5(372). && \qedhere
+    \end{align*}
+  \end{solution}
+
+\item
+  $a = 792, b = 275$.
+  \begin{solution}
+    \begin{align*}
+      792 &= 2(275) + 242 \\
+      275 &= 1(242) + 33 \\
+      242 &= 7(33) + 11 \\
+      33 &= 3(11) + 0.
+    \end{align*}
+    Hence $(792, 275) = 11$. Calculating the least common multiple
+    gives $[792, 275] = 19\,800$. Then
+    \begin{align*}
+      11 &= 242 - 7(33) \\
+         &= 242 - 7(275 - 242) \\
+         &= 8(242) - 7(275) \\
+         &= 8(792 - 2(275)) - 7(275) \\
+         &= 8(792) - 23(275). \qedhere
+    \end{align*}
+  \end{solution}
+
+\item
+  $a = 11\,391, b = 5673$.
+  \begin{solution}
+    Using the methods above, we get $(11\,391, 5673) = 3$,
+    $[11\,391, 5673] = 21\,540\,381$, and
+    $3 = -126(11\,391) + 253(5673)$.
+  \end{solution}
+
+\item
+  $a = 1761, b = 1567$.
+  \begin{solution}
+    $(1761, 1567) = 1$, $[1761, 1567] = 2\,759\,487$, and
+    $1 = -105(1761) + 118(1567)$.
+  \end{solution}
+
+\item
+  $a = 507885, b = 60808$.
+  \begin{solution}
+    $(507885, 60808) = 691$, $[507885, 60808] = 44\,693\,880$, and
+    $691 = -17(507885) + 142(60808)$.
+  \end{solution}
+
+\end{enumerate}
+
+\Exercise{2} Prove that if the integer $k$ divides the integers $a$
+and $b$ then $k$ divides $as + bt$ for every pair of integers $s$ and
+$t$.
+\begin{proof}
+  Suppose $a$ and $b$ are such that $k\mid a$ and $k\mid b$. By
+  definition, this means that there exists integers $m$ and $n$ such
+  that $a = mk$ and $b = nk$. Therefore, for any integers $s$ and $t$,
+  \begin{align*}
+    as + bt &= (mk)s + (nk)t \\
+            &= (ms + nt)k.
+  \end{align*}
+  Since $ms + nt$ must be an integer (due to closure of integer
+  addition and multiplication), this shows that $k\mid(as + bt)$.
+\end{proof}
+
+\Exercise{3} Prove that if $n$ is composite then there are integers
+$a$ and $b$ such that $n$ divides $ab$ but $n$ does not divide either
+$a$ or $b$.
+\begin{proof}
+  The Fundamental Theorem of Arithmetic guarantees that $n$ is the
+  product of two or more (possibly equal) prime factors. Let $a$ be
+  one of the prime factors, and let $b$ be $n / a$. Note that $b$ must
+  be an integer since $a\mid n$.
+
+  Now $n = ab$, so clearly $n \mid ab$. However, $n \nmid a$ since $a$
+  is prime and $n$ is composite.
+
+  Finally, suppose for contradiction that $n\mid b$. Then there is an
+  integer $k > 1$ such that $b = kn$. Multiplying by $a$ on both sides
+  gives $ab = akn$ or $n = akn$. Dividing by $n$ then gives $ak =
+  1$. But this is absurd since $a$ and $k$ are both integers greater
+  than $1$. This contradiction shows that $n\nmid b$, so the proof is
+  complete.
+\end{proof}
+
+\Exercise{4} Let $a$, $b$, and $N$ be fixed integers with $a$ and $b$
+nonzero and let $d = (a, b)$ be the greatest common divisor of $a$ and
+$b$. Suppose $x_0$ and $y_0$ are particular solutions to $ax + by = N$
+(i.e., $ax_0 + by_0 = N$). Prove for any integer $t$ that the integers
+\begin{equation}
+  \label{eq:gen-sol}
+  x = x_0 + \frac{b}{d}t \quad\text{and}\quad y = y_0 - \frac{a}{d}t
+\end{equation}
+are also solutions to $ax + by = N$.
+\begin{proof}
+  Substituting for $x$ and $y$ in $ax + by$ gives
+  \begin{align*}
+    a\left(x_0 + \frac{b}{d}t\right)x + b\left(y_0 - \frac{a}{d}t\right)
+    &= (ax_0 + by_0) + \frac{ab}{d}t - \frac{ab}dt \\
+    &= ax_0 + by_0 \\
+    &= N.
+  \end{align*}
+  This holds regardless of the value of $t$, so \eqref{eq:gen-sol} is
+  always a valid solution.
+\end{proof}
+
+\Exercise{5} Determine the value $\varphi(n)$ for each integer
+$n\leq30$ where $\varphi$ denotes the Euler $\varphi$-function.
+\begin{solution}
+  For each $n$, the value of $\varphi(n)$ can be determined by first
+  finding the prime factorization of $n$,
+  \begin{equation*}
+    n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k},
+    \quad\text{where each $p_i$ is prime},
+  \end{equation*}
+  and then by applying the formula given in the text:
+  \begin{equation*}
+    \varphi(n) = p_1^{\alpha_1 - 1}(p_1 - 1)p_2^{\alpha_2 - 1}(p_2 - 1)
+    \cdots p_k^{\alpha_k - 1}(p_k - 1).
+  \end{equation*}
+
+  For example, to find $\varphi(18)$, we factor $18 =
+  2\cdot3^2$. Applying the formula then gives
+  \begin{align*}
+    \varphi(18) &= 2^{1 - 1}(2 - 1)\cdot3^{2 - 1}(3 - 1) \\
+                &= 1\cdot1\cdot3\cdot2 \\
+                &= 6.
+  \end{align*}
+  Applying this process to each $n\leq30$ produces the following
+  table:
+
+  \medskip
+
+  \begin{center}
+    \begin{tabular}{r|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+      $n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15
+      \\\hline
+      $\varphi(n)$ & 1 & 1 & 2 & 2 & 4 & 2 & 6 & 4 & 6 & 4 & 10 & 4 & 12 & 6 & 8
+    \end{tabular}
+
+    \medskip
+    \begin{tabular}{r|c|c|c|c|c|c|c|c|c|c|c|c|c}
+      $n$ & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28
+      \\\hline
+      $\varphi(n)$
+          & 8 & 16 & 6 & 18 & 8 & 12 & 10 & 22 & 8 & 20 & 12 & 18 & 12
+    \end{tabular}
+
+    \medskip
+    \begin{tabular}{r|c|c}
+      $n$ & 29 & 30 \\\hline
+      $\varphi(n)$ & 28 & 8
+    \end{tabular}
+  \end{center}
+
+  \medskip
+
+  This process can be used to easily find $\varphi(n)$ for any $n$
+  whose prime factorization is known.
+\end{solution}
+
+\Exercise{6} Prove the Well Ordering Property of $\Z$ by induction and
+prove the minimal element is unique:
+\begin{thm}
+  If $A$ is any nonempty subset of $\Z^+$, there is some element
+  $m\in A$ such that $m\leq a$, for all $a\in A$.
+\end{thm}
+\begin{proof}
+  Suppose for contradiction that $A$ has no minimal element. We will
+  prove by (strong) induction on $n$ that for each $n\in\Z^+$,
+  $n\not\in A$. This will show that $A$ is the empty set, which would
+  contradict the requirement that $A$ be nonempty.
+
+  Clearly $1\not\in A$, for otherwise $1$ would be a least element
+  (since $1\leq a$ for all $a\in\Z^+$). Now suppose that
+  $1, 2, \ldots, k\not\in A$ for some positive integer $k$. Then
+  $k + 1$ cannot be a member of $A$ since otherwise $k + 1$ would be
+  the minimal element. This completes the inductive step, which shows
+  that $A$ is the empty set, giving the needed contradiction to show
+  that $A$ has a minimal element.
+
+  Finally, to show that the minimal element is unique, suppose $A$ has
+  two minimal elements, $a$ and $b$. Since $a$ is minimal, $a\leq
+  b$. But $b$ is minimal, so $b\leq a$. So $a\leq b$ and $a\geq b$ and
+  therefore $a = b$.
+\end{proof}
