@@ -1,6 +1,9 @@
 \section{Properties of the Integers}
 
-\Exercise{1} For each of the following pairs of integers $a$ and $b$, determine their greatest common divisor, their least common multiple, and write their greatest common divisor in the form $ax + by$ for some integers $x$ and $y$.
+\Exercise{1} For each of the following pairs of integers $a$ and $b$,
+determine their greatest common divisor, their least common multiple,
+and write their greatest common divisor in the form $ax + by$ for some
+integers $x$ and $y$.
 \begin{enumerate}
 
 \item
@@ -236,3 +239,58 @@ prove the minimal element is unique:
   b$. But $b$ is minimal, so $b\leq a$. So $a\leq b$ and $a\geq b$ and
   therefore $a = b$.
 \end{proof}
+
+\Exercise{7} If $p$ is a prime prove that there do not exist nonzero
+integers $a$ and $b$ such that $a^2 = pb^2$ (i.e., $\sqrt p$ is not a
+rational number).
+\begin{proof}
+  Suppose for contradiction that $a$ and $b$ are nonzero integers with
+  \begin{equation*}
+    a^2 = pb^2.
+  \end{equation*}
+  Without loss of generality we may also assume that $a$ and $b$ have
+  no factors in common (if they do have factors in common, just divide
+  the factors from both sides of the equation).
+
+  Now $p \mid a^2$. And since $p$ is prime, we must also have $p\mid
+  a$ (this is the ``important property'' mentioned in item {\bf(8)} on
+  page 6 of the text). Then there is an integer $m$ such that $a = pm$
+  and hence $(pm)^2 = pb^2$, or $p^2m^2 = pb^2$. This implies that
+  $pm^2 = b^2$ so that $p \mid b^2$, which implies $p\mid b$. But $a$
+  and $b$ were chosen to have no factors in common, yet $p$ is a
+  common factor. This gives the needed contradiction.
+\end{proof}
+
+\Exercise{8} Let $p$ be a prime, $n\in\Z^+$. Find a formula for the
+largest power of $p$ which divides $n! = n(n-1)(n-2)\cdots2\cdot1$.
+\begin{solution}
+  The only integers less than $n$ that are divisible by $p$ are the
+  multiples of $p$, of which there are
+  \begin{equation*}
+    \Floor{\frac{n}{p}}
+  \end{equation*}
+  of them, where $\floor{x}$ denotes the floor of $x$ (i.e., the
+  greatest integer less than or equal to $x$).
+
+  However, multiples of $p^2$ each contribute a second factor of
+  $p$. Multiples of $p^3$ contribute a third additional factor of $p$,
+  and so on. Therefore the highest power of $p$ that divides $n!$ is
+  given by
+  \begin{equation*}
+    \Floor{\frac{n}{p}} + \Floor{\frac{n}{p^2}} + \Floor{\frac{n}{p^3}}
+    + \cdots
+    = \sum_{k=1}^{\floor{\log_pn}}\Floor{\frac{n}{p^k}}.\qedhere
+  \end{equation*}
+\end{solution}
+
+\Exercise{9} Write a computer program to determine the greatest common
+divisor $(a, b)$ of two integers $a$ and $b$ and to express $(a, b)$
+in the form $ax+by$ for some integers $x$ and $y$.
+
+\Exercise{10} Prove for any given positive integer $N$ there exist
+only finitely many integers $n$ with $\varphi(n) = N$ where $\varphi$
+denotes Euler's $\varphi$-function. Conclude in particular that
+$\varphi(n)$ tends to infinity as $n$ tends to infinity.
+
+\Exercise{11} Prove that if $d$ divides $n$ then $\varphi(d)$ divides
+$\varphi(n)$ where $\varphi$ denotes Euler's $\varphi$-function.
