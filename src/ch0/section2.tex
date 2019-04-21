@@ -283,14 +283,51 @@ largest power of $p$ which divides $n! = n(n-1)(n-2)\cdots2\cdot1$.
   \end{equation*}
 \end{solution}
 
-\Exercise{9} Write a computer program to determine the greatest common
-divisor $(a, b)$ of two integers $a$ and $b$ and to express $(a, b)$
-in the form $ax+by$ for some integers $x$ and $y$.
-
 \Exercise{10} Prove for any given positive integer $N$ there exist
 only finitely many integers $n$ with $\varphi(n) = N$ where $\varphi$
 denotes Euler's $\varphi$-function. Conclude in particular that
 $\varphi(n)$ tends to infinity as $n$ tends to infinity.
+\begin{solution}
+  Fix a value of $N>0$, and let $A$ be the set of all solutions $n$ to
+  the equation $\varphi(n) = N$. We must show that $A$ is a finite
+  set.
+
+  First we will show that for any $n\in A$, there cannot be a prime
+  factor of $n$ larger than $N + 1$. For if there are prime factors
+  larger than $N + 1$, then we may choose the smallest such prime
+  $p$. Then if $q$ is any prime factor of $n$ with $q\geq p$, we may
+  write $n = q^kr$, where $r$ is some positive integer relatively
+  prime to $q$. Therefore we have
+  \begin{align*}
+    \varphi(n) &= \varphi(q^k)\varphi(r) \\
+               &= q^{k-1}(q - 1)\varphi(r) \\
+               &\geq q - 1 > N.
+  \end{align*}
+  But $\varphi(n) = N$, so this is a contradiction. This shows that
+  all prime factors of $n$ must be at most $N + 1$.
+
+  Now let $p_1, p_2, \ldots, p_m$ be all the prime factors less than
+  or equal to $N + 1$ (note that this set of primes is finite). Then
+  every $n\in A$ can be written in the form
+  \begin{equation*}
+    n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_m^{\alpha_m},
+  \end{equation*}
+  where each $\alpha_i\geq 0$ and $\alpha_j > 0$ for at least one
+  index $j$. Now observe that each $\alpha_i$ can be one of only
+  finitely many possible values, since
+  $\varphi(p_i^s) = p_i^s(p_i - 1) > N$ for sufficiently large values
+  of $s$, and $N$ is the product of each $\varphi(p_i^{\alpha_i})$. So
+  the distinct values of $n$ in $A$ must be finite in number, because
+  there are only finitely many possible primes in their prime
+  factorizations and their exponents can take only finitely many
+  possible values.
+
+  Finally, let $M$ be any positive integer. Since there are only
+  finitely many values of $n$ such that $\varphi(n) \leq M$, we may
+  choose the largest such $n$. Then $\varphi(m) > M$ for all $m>n$,
+  which shows that $\varphi(n)$ tends to infinity as $n$ tends to
+  infinity.
+\end{solution}
 
 \Exercise{11} Prove that if $d$ divides $n$ then $\varphi(d)$ divides
 $\varphi(n)$ where $\varphi$ denotes Euler's $\varphi$-function.
