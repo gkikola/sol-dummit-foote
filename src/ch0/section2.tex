@@ -125,7 +125,7 @@ $a$ or $b$.
   The Fundamental Theorem of Arithmetic guarantees that $n$ is the
   product of two or more (possibly equal) prime factors. Let $a$ be
   one of the prime factors, and let $b$ be $n / a$. Note that $b$ must
-  be an integer since $a\mid n$.
+  be an integer since $a\mid n$. Note also that $a,b > 1$.
 
   Now $n = ab$, so clearly $n \mid ab$. However, $n \nmid a$ since $a$
   is prime and $n$ is composite.
@@ -133,7 +133,7 @@ $a$ or $b$.
   Finally, suppose for contradiction that $n\mid b$. Then there is an
   integer $k > 1$ such that $b = kn$. Multiplying by $a$ on both sides
   gives $ab = akn$ or $n = akn$. Dividing by $n$ then gives $ak =
-  1$. But this is absurd since $a$ and $k$ are both integers greater
+  1$. But this is absurd because $a$ and $k$ are both integers greater
   than $1$. This contradiction shows that $n\nmid b$, so the proof is
   complete.
 \end{proof}
@@ -252,13 +252,13 @@ rational number).
   no factors in common (if they do have factors in common, just divide
   the factors from both sides of the equation).
 
-  Now $p \mid a^2$. And since $p$ is prime, we must also have $p\mid
-  a$ (this is the ``important property'' mentioned in item {\bf(8)} on
-  page 6 of the text). Then there is an integer $m$ such that $a = pm$
-  and hence $(pm)^2 = pb^2$, or $p^2m^2 = pb^2$. This implies that
-  $pm^2 = b^2$ so that $p \mid b^2$, which implies $p\mid b$. But $a$
-  and $b$ were chosen to have no factors in common, yet $p$ is a
-  common factor. This gives the needed contradiction.
+  Now $p \mid a^2$. And since $p$ is prime, we must also have
+  $p\mid a$ (this uses the ``important property'' mentioned in item
+  {\bf(8)} on page 6 of the text). Then there is an integer $m$ such
+  that $a = pm$ and hence $(pm)^2 = pb^2$, or $p^2m^2 = pb^2$. This
+  implies that $pm^2 = b^2$ so that $p \mid b^2$, which implies
+  $p\mid b$. But $a$ and $b$ were chosen to have no factors in common,
+  yet $p$ is a common factor. This gives the needed contradiction.
 \end{proof}
 
 \Exercise{8} Let $p$ be a prime, $n\in\Z^+$. Find a formula for the
@@ -331,3 +331,55 @@ $\varphi(n)$ tends to infinity as $n$ tends to infinity.
 
 \Exercise{11} Prove that if $d$ divides $n$ then $\varphi(d)$ divides
 $\varphi(n)$ where $\varphi$ denotes Euler's $\varphi$-function.
+\begin{solution}
+  First consider the case where $n = p^k$ for some prime number
+  $p$. Then if $d\mid n$ we must have $d = p^\ell$ for some integer
+  $\ell$ with $0\leq\ell\leq k$. So
+  \begin{equation*}
+    \varphi(n) = \varphi(p^k) = p^{k-1}(p - 1)
+    \quad\text{and}\quad
+    \varphi(d) = \varphi(p^\ell) = p^{\ell-1}(p - 1).
+  \end{equation*}
+  Now let $a = p^{k - \ell}$. Then $a\varphi(d) = \varphi(n)$, so
+  $\varphi(d)\mid\varphi(n)$.
+
+  The more general case will follow from the fact that $\varphi$ is a
+  multiplicative function: Let $n$ be a positive integer having prime
+  factorization
+  \begin{equation*}
+    n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k},
+  \end{equation*}
+  and suppose $d$ is an integer that divides $n$. Then $d$ can be
+  written as a product of these same prime factors $p_1,\ldots,p_k$,
+  provided that we allow some of the exponents to be zero. That is, we
+  may write
+  \begin{equation*}
+    d = p_1^{\beta_1}p_2^{\beta_2}\cdots p_k^{\beta_k}
+    \quad\text{with $0\leq\beta_i\leq\alpha_i$ for each $i$.}
+  \end{equation*}
+  Then
+  \begin{equation}
+    \label{eq:phi_n}
+    \varphi(n) = \varphi(p_1^{\alpha_1})\varphi(p_2^{\alpha_2})\cdots
+    \varphi(p_k^{\alpha_k})
+  \end{equation}
+  and
+  \begin{equation}
+    \label{eq:phi_d}
+    \varphi(d) = \varphi(p_1^{\beta_1})\varphi(p_2^{\beta_2})\cdots
+    \varphi(p_k^{\beta_k}).
+  \end{equation}
+  Now each $p_i^{\beta_i}$ divides $p_i^{\alpha_i}$, so from the
+  argument in the first paragraph, we know that
+  $\varphi(p_i^{\beta_i}) \mid \varphi(p_i^{\alpha_i})$ for each
+  $i$. Therefore we may find an integer $a_i$ such that
+  $\varphi(p_i^{\alpha_i}) = a_i\varphi(p_i^{\beta_i})$. Therefore,
+  equations \eqref{eq:phi_n} and \eqref{eq:phi_d} imply that
+  \begin{align*}
+    \varphi(n) &= a_1\varphi(p_1^{\beta_1})
+                 \cdot a_2\varphi(p_2^{\beta_2})
+                 \cdots a_k\varphi(p_k^{\beta_k}) \\
+               &= (a_1a_2\cdots a_k)\varphi(d),
+  \end{align*}
+  so $\varphi(d) \mid \varphi(n)$.
+\end{solution}
