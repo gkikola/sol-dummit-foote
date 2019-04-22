@@ -236,3 +236,22 @@ $\bar{a}\cdot\bar{b}\in(\Z/n\Z)^\times$.
   multiplicative inverse of $\bar{a}\bar{b}$, so that
   $\bar{a}\bar{b}\in(\Z/n\Z)^\times$.
 \end{proof}
+
+\Exercise{12}   Let   $n\in\Z$,   $n>1$,   and   let   $a\in\Z$   with
+$1\leq a\leq n$. Prove if $a$  and $n$ are not relatively prime, there
+exists an integer  $b$ with $1\leq b<n$  such that $ab\equiv0\pmod{n}$
+and  deduce   that  there   cannot  be  an   integer  $c$   such  that
+$ac\equiv1\pmod{n}$.
+\begin{proof}
+  Let $d = (a, n)$ and let $b = n/d$. Then $b$ is an integer with
+  $1\leq b<n$ (since $d > 1$). Similarly, $a/d$ is also an integer. So
+  we have
+  \begin{equation*}
+    ab = a\left(\frac{n}{d}\right) = n\left(\frac{a}{d}\right) \equiv0\pmod{n}.
+  \end{equation*}
+
+  Now suppose $c$ is such that $ac\equiv1\pmod{n}$. Then
+  $abc\equiv b\pmod{n}$. But this is clearly impossible, since
+  $abc\equiv0\pmod{n}$ and $b\not\equiv0\pmod{n}$. Therefore such a
+  $c$ cannot exist.
+\end{proof}
