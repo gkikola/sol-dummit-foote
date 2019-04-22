@@ -1,0 +1,238 @@
+\section{$\Z/n\Z$: The Integers Modulo $n$}
+
+\Exercise1 Write down explicitly all the elements in the residue
+classes of $\Z/18\Z$.
+\begin{solution}
+  The residue classes are
+  \begin{align*}
+    \bar{0} &= \{0, 18, -18, 36, -36, \ldots\}, \\
+    \bar{1} &= \{1, 19, -17, 37, -35, \ldots\}, \\
+    \bar{2} &= \{2, 20, -16, 38, -34, \ldots\}, \\
+    \bar{3} &= \{3, 21, -15, 39, -33, \ldots\}, \\
+    \bar{4} &= \{4, 22, -14, 40, -32, \ldots\}, \\
+    \bar{5} &= \{5, 23, -13, 41, -31, \ldots\}, \\
+    \bar{6} &= \{6, 24, -12, 42, -30, \ldots\}, \\
+    \bar{7} &= \{7, 25, -11, 43, -29, \ldots\}, \\
+    \bar{8} &= \{8, 26, -10, 44, -28, \ldots\}, \\
+    \bar{9} &= \{9, 27, -9, 45, -27, \ldots\}, \\
+    \overline{10} &= \{10, 28, -8, 46, -26, \ldots\}, \\
+    \overline{11} &= \{11, 29, -7, 47, -25, \ldots\}, \\
+    \overline{12} &= \{12, 30, -6, 48, -24, \ldots\}, \\
+    \overline{13} &= \{13, 31, -5, 49, -23, \ldots\}, \\
+    \overline{14} &= \{14, 32, -4, 50, -22, \ldots\}, \\
+    \overline{15} &= \{15, 33, -3, 51, -21, \ldots\}, \\
+    \overline{16} &= \{16, 34, -2, 52, -20, \ldots\}, \\
+    \intertext{and}
+    \overline{17} &= \{17, 35, -1, 53, -19, \ldots\}. \qedhere
+  \end{align*}
+\end{solution}
+
+\Exercise2 Prove that the distinct equivalence classes in $\Z/n\Z$ are
+precisely $\bar{0}, \bar{1}, \bar{2}, \ldots, \overline{n - 1}$ (use
+the Division Algorithm).
+\begin{proof}
+  Consider the equivalence class $\bar k$. Using the Division
+  Algorithm, we may find an integer $q$ and an integer $r$ such that
+  \begin{equation*}
+    k = qn + r,\quad\text{with $0\leq r<n$.}
+  \end{equation*}
+  Now $k\equiv r\pmod n$ and $r$ is an integer between $0$ and
+  $n - 1$, so this shows that $\bar k = \bar r$. Thus the equivalence
+  classes in $\Z/n\Z$ are a subset of
+  $\{\bar{0}, \bar{1}, \ldots, \bar{n-1}\}$.
+
+  Finally, we note that the equivalence classes
+  $\bar0, \ldots, \overline{n-1}$ are actually distinct from each
+  other. For, if not, suppose $\bar a = \bar b$ where
+  $0\leq b\leq a\leq n-1$. Then $n\mid(a - b)$, and since
+  $0\leq a-b\leq n-1$, we must have $a-b = 0$ so that $a =
+  b$. Therefore the distinct equivalence classes are precisely
+  $\bar0,\ldots,\overline{n-1}$.
+\end{proof}
+
+\Exercise3 Prove that if
+$a = a_n10^n + a_{n-1}10^{n-1} + \cdots + a_110 + a_0$ is any positive
+integer then $a\equiv a_n + a_{n-1} + \cdots + a_1 + a_0\pmod9$ (note
+that this is the usual arithmetic rule that the remainder after
+division by 9 is the same as the sum of the decimal digits mod 9 -- in
+particular an integer is divisible by 9 if and only if the sum of its
+digits is divisible by 9).
+\begin{solution}
+  Let $a$ be as stated. Since $10\equiv1\pmod9$ we may apply Theorem 3
+  to write
+  \begin{align*}
+    a &\equiv a_n1^n + a_{n-1}1^{n-1} + \cdots + a_1 + a_0\pmod9 \\
+      &\equiv a_n + a_{n-1} + \cdots + a_1 + a_0\pmod9. \qedhere
+  \end{align*}
+\end{solution}
+
+\Exercise4 Compute the remainder when $37^{100}$ is divided by $29$.
+\begin{solution}
+  $37^2 = 1369\equiv6\pmod{29}$. Successive squaring then yields
+  \begin{align*}
+    37^4 &\equiv 6^2 = 36 \equiv 7\pmod{29} \\
+    37^8 &\equiv 7^2 = 49 \equiv 20\pmod{29} \\
+    37^{16} &\equiv 20^2 = 400 \equiv 23\pmod{29} \\
+    37^{32} &\equiv 23^2 = 529 \equiv 7\pmod{29} \\
+    37^{64} &\equiv 7^2 = 49 \equiv 20\pmod{29}.
+  \end{align*}
+  So
+  \begin{equation*}
+    37^{100} = 37^{64}37^{32}37^4 \equiv 20\cdot7\cdot7 \equiv 23\pmod{29}.
+  \end{equation*}
+  Therefore $37^{100}$ has a
+  remainder of $23$ when divided by $29$.
+\end{solution}
+
+\Exercise5 Compute the last two digits of $9^{1500}$.
+\begin{solution}
+  $9^{1500} = 3^{3000} = 27^{1000}$. Now
+  $27^2 = 729\equiv29\pmod{100}$, and successive squaring then gives
+  \begin{align*}
+    27^4 &\equiv 29^2 = 841 \equiv 41\pmod{100}, \\
+    27^8 &\equiv 41^2 = 1681 \equiv 81\pmod{100}, \\
+    27^{16} &\equiv 81^2 = 6561 \equiv 61\pmod{100}, \\
+    27^{32} &\equiv 61^2 = 3721 \equiv 21\pmod{100}, \\
+    27^{64} &\equiv 21^2 = 441 \equiv 41\pmod{100}.
+  \end{align*}
+  At this point the numbers start to repeat, so that
+  $27^{128} \equiv 81\pmod{100}$, $27^{256} \equiv 61\pmod{100}$, and
+  $27^{512}\equiv 21\pmod{100}$. Therefore
+  \begin{align*}
+    9^{1500} &= 27^{1000} = 27^{512}27^{256}27^{128}27^{64}27^{32}27^8 \\
+             &\equiv 21\cdot61\cdot81\cdot41\cdot21\cdot81
+               = (1281)(3321)(1701) \\
+             &\equiv 81\cdot21\cdot1 \equiv 1 \pmod{100}.
+  \end{align*}
+  Therefore, the last two digits of $9^{1500}$ are $01$.
+\end{solution}
+
+\Exercise6 Prove that the squares of the elements in $\Z/4\Z$ are just
+$\bar0$ and $\bar1$.
+\begin{proof}
+  \begin{align*}
+    0^2 &= 0 \equiv 0 \pmod4, \\
+    1^2 &= 1 \equiv 1 \pmod4, \\
+    2^2 &= 4 \equiv 0 \pmod4, \\
+    3^2 &= 9 \equiv 1 \pmod4. \qedhere
+  \end{align*}
+\end{proof}
+
+\Exercise7 Prove for any integers $a$ and $b$ that $a^2 + b^2$ never
+leaves a remainder of $3$ when divided by $4$ (use the previous
+exercise).
+\begin{proof}
+  $a^2$ and $b^2$ are each either congruent to $0$ or to $1$, modulo
+  $4$. Adding $a^2 + b^2$ then gives four cases:
+  \begin{align*}
+    0 + 0 \equiv 0 \pmod4, \\
+    0 + 1 \equiv 1 \pmod4, \\
+    1 + 0 \equiv 1 \pmod4, \\
+    1 + 1 \equiv 2 \pmod4.
+  \end{align*}
+  In every case, $a^2+b^2$ never has a remainder of $3$ when divided
+  by $4$.
+\end{proof}
+
+\Exercise8 Prove that the equation
+\begin{equation}
+  \label{eq:abc-squares}
+  a^2 + b^2 = 3c^2
+\end{equation}
+has no solutions in nonzero integers $a$, $b$, and $c$.
+\begin{proof}
+  Consider the equation modulo $4$. From the previous exercise, the
+  left-hand side cannot be congruent to $3$. However, the right-hand
+  side is congruent to either $0$ or $3$, so therefore both sides must
+  be congruent to $0$. That is,
+  \begin{equation*}
+    a^2 + b^2\equiv c^2\equiv0\pmod4.
+  \end{equation*}
+
+  This immediately implies that $c$ is even. Now, if $a$ is even, then
+  $b$ must be even, since $b^2 = c^2-a^2$ is even. On the other hand,
+  if $a$ is odd, then $b$ must be odd for the same reason. But if $a$
+  and $b$ are both odd, then we may find integers $m$ and $n$ such
+  that
+  \begin{align*}
+    a^2 + b^2 &= (2m+1)^2 + (2n+1)^2 \\
+              &= 4m^2 + 4m + 1 + 4n^2 + 4n + 1 \\
+              &\equiv 2\pmod4.
+  \end{align*}
+  This is impossible, so $a$, $b$, and $c$ must all be even.
+
+  Now, if possible, suppose that $a$, $b$, and $c$ are three positive
+  integers which satisfy the equation \eqref{eq:abc-squares}. Since
+  all three integers must be even, their squares each contain a factor
+  of $4$. Divide both sides by $4$ to get a new equation,
+  \begin{equation*}
+    \alpha^2 + \beta^2 = \gamma^2,
+  \end{equation*}
+  where $\alpha<a$, $\beta<b$, and $\gamma<c$.
+
+  But by the same argument as before, $\alpha$, $\beta$, and $\gamma$
+  must be even, so their squares are divisible by $4$ and we can again
+  find an even smaller set of solutions. This process could be
+  repeated indefinitely, to get smaller and smaller positive integer
+  solutions. Clearly this is not possible, so there are no solutions
+  in the nonzero integers.
+\end{proof}
+
+\Exercise9 Prove that the square of any odd integer always leaves a
+remainder of $1$ when divided by $8$.
+\begin{proof}
+  If $a$ is an odd integer, then $a$ can be written as $2k + 1$ for
+  some integer $k$, and
+  \begin{equation*}
+    a^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 4k(k + 1) + 1.
+  \end{equation*}
+  Now $k(k+1)$ must be even, since it is the product of consecutive
+  integers. Therefore $4k(k+1)$ is divisible by $8$. Therefore
+  $a^2\equiv1\pmod8$.
+\end{proof}
+
+\Exercise{10} Prove that the number of elements of $(\Z/n\Z)^\times$
+is $\varphi(n)$ where $\varphi$ denotes the Euler $\varphi$-function.
+\begin{proof}
+  We will show that the elements in $(\Z/n\Z)^\times$ are precisely
+  those residue classes whose representatives are relatively prime to
+  $n$.
+
+  First suppose that $a\in(\Z/n\Z)^\times$ and let $b$ be the
+  multiplicative inverse of $a$ modulo $n$, so that
+  $ab\equiv1\pmod{n}$. Then $n\mid(ab - 1)$ so we may find an integer
+  $m$ such that $mn = ab - 1$. Rearranging, we get $ab - mn = 1$. But
+  this shows that the greatest common divisor of $a$ and $n$ is $1$
+  (if not, we could factor the left-hand side to get a product of two
+  integers, not both $1$, that equals $1$, which is
+  impossible). Therefore any number in $(\Z/n\Z)^\times$ must be
+  relatively prime to $n$.
+
+  Now, for the other direction, suppose that $a$ is any integer
+  relatively prime to $n$. Then we can use the Euclidean algorithm to
+  write the common divisor $1$ as a linear combination of $a$ and $n$,
+  that is,
+  \begin{equation*}
+    ax + ny = 1, \quad x,y\in\Z.
+  \end{equation*}
+  But then $ax\equiv1\pmod{n}$, so $x$ is the multiplicative inverse
+  of $a$ modulo $n$, i.e., $a\in(\Z/n\Z)^\times$.
+
+  Since there are exactly $\varphi(n)$ least residues which are
+  coprime to $n$, the set $(\Z/n\Z)^\times$ has exactly $\varphi(n)$
+  elements.
+\end{proof}
+
+\Exercise{11} Prove that if $\bar{a},\bar{b}\in(\Z/n\Z)^\times$, then
+$\bar{a}\cdot\bar{b}\in(\Z/n\Z)^\times$.
+\begin{proof}
+  Let $\bar{a}$ and $\bar{b}$ be in $(\Z/n\Z)^\times$ as stated. Then
+  $\bar{a}$ has a multiplicative inverse $\bar{x}$ and $\bar{b}$ has
+  an inverse $\bar{y}$. Then
+  \begin{equation*}
+    (\bar{a}\bar{x})(\bar{b}\bar{y}) \equiv 1\cdot1 \equiv 1\pmod{n}.
+  \end{equation*}
+  Rearranging the left-hand side, we see that $\bar{x}\bar{y}$ is the
+  multiplicative inverse of $\bar{a}\bar{b}$, so that
+  $\bar{a}\bar{b}\in(\Z/n\Z)^\times$.
+\end{proof}

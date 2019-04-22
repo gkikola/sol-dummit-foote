@@ -1,4 +1,5 @@
 build/
+auto
 *.pdf
 *.dvi
 *.toc
