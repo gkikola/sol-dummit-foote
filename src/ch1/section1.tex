@@ -1,0 +1,53 @@
+\chapter{Introduction to Groups}
+
+\section{Basic Axioms and Examples}
+
+Let $G$ be a group.
+
+\Exercise1 Determine which of the following binary operations are
+associative:
+\begin{enumerate}
+\item the operation $\star$ on $\Z$ defined by $a\star b = a - b$
+  \begin{solution}
+    $(1\star2)\star3 = -4$ while $1\star(2\star3) = 2$, so $\star$ is
+    not associative.
+  \end{solution}
+\item the operation $\star$ on $\R$ defined by $a\star b = a + b + ab$
+  \begin{solution}
+    $\star$ is associative: let $a,b,c$ be real numbers. Then
+    \begin{align*}
+      (a\star b)\star c &= (a + b + ab)\star c \\
+                        &= (a + b + ab) + c + (a + b + ab)c \\
+                        &= a + b + c + ab + ac + bc + abc \\
+                        &= a + (b + c + bc) + a(b + c + bc) \\
+                        &= a\star(b + c + bc) \\
+                        &= a\star(b\star c). \qedhere
+    \end{align*}
+  \end{solution}
+\item the operation $\star$ on $\Q$ defined by $a\star b = (a + b)/5$
+  \begin{solution}
+    $(5\star20)\star15 = 4$ while $5\star(20\star15) =
+    12/5$. Therefore $\star$ is not associative.
+  \end{solution}
+\item the operation $\star$ on $\Z\times\Z$ defined by
+  $(a,b)\star(c,d) = (ad + bc, bd)$
+  \begin{solution}
+    $\star$ is associative: let $(a,b), (c,d), (e,f)$ be members of
+    $\Z\times\Z$. Then
+    \begin{align*}
+      \big((a,b)\star(c,d)\big)\star(e,f)
+      &= (ad + bc, bd)\star(e,f) \\
+      &= \big((ad+bc)f+bde, bdf\big) \\
+      &= (adf+bcf+bde, bdf) \\
+      &= \big(adf+b(cf+de), bdf\big) \\
+      &= (a,b)\star(cf+de,df) \\
+      &= (a,b)\star\big((c,d)\star(e,f)\big). \qedhere
+    \end{align*}
+  \end{solution}
+\item the operation $\star$ on $\Q - \{0\}$ defined by
+  $a\star b = a/b$
+  \begin{solution}
+    $(125\star25)\star5 = 1$ while $125\star(25\star5) = 25$, so
+    $\star$ is not associative.
+  \end{solution}
+\end{enumerate}
