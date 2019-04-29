@@ -191,7 +191,9 @@ remainder of $1$ when divided by $8$.
   $a^2\equiv1\pmod8$.
 \end{proof}
 
-\Exercise{10} Prove that the number of elements of $(\Z/n\Z)^\times$
+\Exercise{10}
+\label{z-mod-nz-times}
+Prove that the number of elements of $(\Z/n\Z)^\times$
 is $\varphi(n)$ where $\varphi$ denotes the Euler $\varphi$-function.
 \begin{proof}
   We will show that the elements in $(\Z/n\Z)^\times$ are precisely
@@ -255,3 +257,91 @@ $ac\equiv1\pmod{n}$.
   $abc\equiv0\pmod{n}$ and $b\not\equiv0\pmod{n}$. Therefore such a
   $c$ cannot exist.
 \end{proof}
+
+\Exercise{13} Let $n\in\Z, n > 1$, and let $a\in\Z$ with
+$1\leq a\leq n$. Prove that if $a$ and $n$ are relatively prime then
+there is an integer $c$ such that $ac\equiv1\pmod{n}$.
+\begin{proof}
+  Since $(a, n) = 1$, we may find integers $c$ and $d$ such that
+  $ac + nd = 1$. This implies that $ac\equiv1\pmod{n}$.
+\end{proof}
+
+\Exercise{14} Conclude from the previous two exercises that
+$(\Z/n\Z)^\times$ is the set of elements $\bar{a}$ of $\Z/n\Z$ with
+$(a, n) = 1$ and hence prove Proposition~4. Verify this directly in
+the case $n = 12$.
+\begin{solution}
+  From the previous two exercises we know that $a$ and $n$ are
+  relatively prime if and only if there is an integer $c$ such that
+  $ac\equiv1\pmod{n}$, i.e., if and only if $a$ has a multiplicative
+  inverse modulo $n$.
+
+  For $n = 12$, we have the following multiplication table:
+
+  \medskip
+  \begin{tabular}{r|cccccccccccc}
+    & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\\hline
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    1 & 0 & \boxed{1} & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+    2 & 0 & 2 & 4 & 6 & 8 & 10 & 0 & 2 & 4 & 6 & 8 & 10 \\
+    3 & 0 & 3 & 6 & 9 & 0 & 3 & 6 & 9 & 0 & 3 & 6 & 9 \\
+    4 & 0 & 4 & 8 & 0 & 4 & 8 & 0 & 4 & 8 & 0 & 4 & 8 \\
+    5 & 0 & 5 & 10 & 3 & 8 & \boxed{1} & 6 & 11 & 4 & 9 & 2 & 7 \\
+    6 & 0 & 6 & 0 & 6 & 0 & 6 & 0 & 6 & 0 & 6 & 0 & 6 \\
+    7 & 0 & 7 & 2 & 9 & 4 & 11 & 6 & \boxed{1} & 8 & 3 & 10 & 5 \\
+    8 & 0 & 8 & 4 & 0 & 8 & 4 & 0 & 8 & 4 & 0 & 8 & 4 \\
+    9 & 0 & 9 & 6 & 3 & 0 & 6 & 9 & 3 & 0 & 6 & 9 & 3 \\
+    10 & 0 & 10 & 8 & 6 & 4 & 2 & 0 & 10 & 8 & 6 & 4 & 2 \\
+    11 & 0 & 11 & 10 & 9 & 8 & 7 & 6 & 5 & 4 & 3 & 2 & \boxed{1}
+  \end{tabular}
+  \medskip
+
+  The only values which have a multiplicative inverse are $1, 5, 7,$
+  and $11$, which are precisely those values which are coprime to
+  $12$.
+\end{solution}
+
+\Exercise{15} For each of the following pairs of integers $a$ and $n$,
+show that $a$ is relatively prime to $n$ and determine the
+multiplicative inverse of $\bar{a}$ in $\Z/n\Z$.
+\begin{enumerate}
+\item
+  $a = 13, n = 20$
+  \begin{solution}
+    Applying the Euclidean algorithm gives
+    \begin{align*}
+      20 &= 1(13) + 7 \\
+      13 &= 1(7) + 6 \\
+      7 &= 1(6) + 1,
+    \end{align*}
+    so $(20, 13) = 1$. And we can write
+    \begin{align*}
+      1 &= 7 - 6 \\
+        &= 7 - (13 - 7) \\
+        &= 2(7) - 13 \\
+        &= 2(20 - 13) - 13 \\
+        &= 2(20) - 3(13).
+    \end{align*}
+    So $\overline{(-3)} = \overline{17}$ is the multiplicative inverse
+    of $\overline{13}$ in $\Z/20\Z$.
+  \end{solution}
+
+\item
+  $a = 69, n = 89$
+  \begin{solution}
+    The same procedure will show that $(69,89) = 1$ and that $\bar{a}$
+    has an inverse of $\overline{40}$.
+  \end{solution}
+
+\item
+  $a = 1891, n = 3797$
+  \begin{solution}
+    $\bar{a}$ has an inverse of $\overline{253}$.
+  \end{solution}
+
+\item
+  $a = 6\,003\,722\,857, n = 77\,695\,236\,973$
+  \begin{solution}
+    $\bar{a}$ has an inverse of $\overline{77\,695\,236\,753}$.
+  \end{solution}
+\end{enumerate}
