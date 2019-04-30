@@ -113,3 +113,16 @@ associative (you may assume it is well defined).
   As in the previous exercise, this follows from Theorem~3 in
   Section~0.3 together with the associativity of $\cdot$ in $\Z$.
 \end{proof}
+
+\Exercise5 Prove for all $n>1$ that $\Z/n\Z$ is not a group under
+multiplication of residue classes.
+\begin{proof}
+  Let $n>1$. Then there is a residue class in $\Z/n\Z$ which does not
+  contain $0$. Call this nonzero residue class $\bar{a}$. Then $\bar0$
+  cannot be the identity element in $\Z/n\Z$ since
+  $\bar{a}\cdot\bar0 = \bar0 \neq \bar{a}$. So suppose the identity
+  element is $\bar{e}$. Then, $\bar0$ also has no inverse in $\Z/n\Z$,
+  since $\bar{b}\cdot\bar0 = \bar0 \neq \bar{e}$ for any $\bar{b}$ in
+  $\Z/n\Z$. Since the element $\bar0$ does not have an inverse,
+  $\Z/n\Z$ is not a group under multiplication.
+\end{proof}
