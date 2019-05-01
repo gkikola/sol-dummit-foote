@@ -271,3 +271,78 @@ operation on $G$ and that $G$ is an abelian group under $\star$
   \end{equation*}
   Therefore $G$ is a group under $\star$.
 \end{proof}
+
+\Exercise8 Let $G = \{z\in\C \mid \text{$z^n = 1$ for some
+  $n\in\Z^+$}\}$.
+\begin{enumerate}
+\item Prove that $G$ is a group under multiplication (called the group
+  of {\em roots of unity} in $\C$).
+  \begin{proof}
+    Let $z,w\in G$ so that $z^n = 1$ and $w^m = 1$.
+
+    Note that $1\in G$ since $1^1 = 1$, so $G$ has an identity. And
+    every element of $G$ is nonzero, so for each $z\in G$ we may let
+    $z^{-1} = 1/z$ so that every element in $G$ has an inverse (since
+    $(1/z)^n = 1/z^n = 1$ so $1/z\in G$).
+
+    By the commutativity of multiplication in $\C$, we have
+    \begin{equation*}
+      (zw)^{nm} = z^{nm}w^{mn} = (z^n)^m(w^m)^n = 1^m1^n = 1
+    \end{equation*}
+    for each $m,n\in\Z^+$. Therefore, $G$ is closed under
+    multiplication. And associativity follows from associativity of
+    multiplication in $\C$.
+
+    Therefore $G$ is a group.
+  \end{proof}
+\item Prove that $G$ is not a group under addition.
+  \begin{proof}
+    $G$ is a not a group under addition since it is not closed:
+    $1\in G$ but $1+1=2\not\in G$ since there is no $n\in\Z^+$ with
+    $2^n = 1$.
+  \end{proof}
+\end{enumerate}
+
+\Exercise9 Let $G = \{a + b\sqrt2\in\R \mid a,b\in\Q\}$.
+\begin{enumerate}
+\item Prove that $G$ is a group under addition.
+  \begin{proof}
+    Associativity of $+$ in $G$ follows from associativity of $+$ in
+    $\R$. $G$ has an identity $0 = 0 + 0\sqrt2$ and for every $p$ in
+    $G$ we may take $q = -p$ as its additive inverse. So we need only
+    show that $G$ is closed under addition.
+
+    Let $p = a + b\sqrt2$ and $q = c + d\sqrt2$ with
+    $a,b,c,d\in\Q$. Then
+    \begin{equation*}
+      p+q = a + c + (b + d)\sqrt2,
+      \quad\text{where $a+c\in\Q$ and $b+d\in\Q$},
+    \end{equation*}
+    so $p+q\in G$ and $G$ is a group.
+  \end{proof}
+\item Prove that the nonzero elements of $G$ are a group under
+  multiplication.
+  \begin{proof}
+    Again, associativity follows from associativity in $\R$. This time
+    the identity is $1 = 1 + 0\sqrt2$. And for any rational numbers
+    $a$ and $b$ not both $0$, $a+b\sqrt2\in G-\{0\}$ and
+    \begin{align*}
+      \frac1{a + b\sqrt2}
+      &= \frac{a - b\sqrt2}{(a + b\sqrt2)(a - b\sqrt2)} \\
+      &= \frac{a - b\sqrt2}{a^2 - 2b^2} \\
+      &= \frac{a}{a^2 - 2b^2} - \left(\frac{b}{a^2 - 2b^2}\right)\!\sqrt2
+        \in G-\{0\},
+    \end{align*}
+    so every element in $G-\{0\}$ has an inverse (note that the
+    denominator $a^2 - 2b^2$ is nonzero since $a,b\in\Q$ and there is
+    no rational square root of $2$).
+
+    The set is also closed under multiplication since for any
+    $a,b,c,d\in\Q$ with $a,b$ not both $0$ and $c,d$ not both $0$,
+    \begin{equation*}
+      \left(a + b\sqrt2\right)\left(c + d\sqrt2\right)
+      = ac + 2bd + (ad + bc)\sqrt2 \in G-\{0\}.
+    \end{equation*}
+    This shows that $G-\{0\}$ is a group under multiplication.
+  \end{proof}
+\end{enumerate}
