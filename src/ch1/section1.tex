@@ -2,8 +2,6 @@
 
 \section{Basic Axioms and Examples}
 
-Let $G$ be a group.
-
 \Exercise1 Determine which of the following binary operations are
 associative:
 \begin{enumerate}
@@ -125,4 +123,151 @@ multiplication of residue classes.
   since $\bar{b}\cdot\bar0 = \bar0 \neq \bar{e}$ for any $\bar{b}$ in
   $\Z/n\Z$. Since the element $\bar0$ does not have an inverse,
   $\Z/n\Z$ is not a group under multiplication.
+\end{proof}
+
+\Exercise6 Determine which of the following sets are groups under
+addition:
+\begin{enumerate}
+\item the set of rational numbers (including $0 = 0/1$) in lowest
+  terms whose denominators are odd
+  \begin{solution}
+    Let the set be denoted $A$. Then $A$ is a group having identity
+    $0$ and, for each $a\in A$, an inverse $-a$. To prove this, we
+    need only show that $A$ is closed under addition.
+
+    Suppose $a$ and $b$ are any elements in $A$. Then we can find
+    integers $p,q,r,s$ with
+    \begin{equation*}
+      a = \frac{p}{q}\quad\text{and}\quad
+      b = \frac{r}{s}
+    \end{equation*}
+    in lowest terms with $q,s$ odd. Then we have
+    \begin{align*}
+      a + b = \frac{ps+rq}{qs} = \frac{u}{v},
+    \end{align*}
+    where $u$ and $v$ are integers with $u/v$ in lowest terms. Now,
+    since $u/v$ was obtained by eliminating common factors, we have
+    $u\mid(ps+rq)$ and $v\mid qs$. But if $2\mid v$, then necessarily
+    $2\mid qs$. But this cannot be, since $qs$ is odd, being the
+    product of odd integers. Hence $A$ is closed under addition and is
+    therefore a group.
+  \end{solution}
+\item the set of rational numbers in lowest terms whose denominators
+  are even, together with $0$
+  \begin{solution}
+    Let $A$ denote the set. Then $A$ is not a group since $3/2\in A$
+    but
+    \begin{equation*}
+      \frac32 + \frac32 = \frac62 = \frac31\not\in A. \qedhere
+    \end{equation*}
+  \end{solution}
+\item the set of rational numbers of absolute value $<1$
+  \begin{solution}
+    Again, this set is not closed under addition since, for example,
+    \begin{equation*}
+      \frac34 + \frac34 > 1.
+    \end{equation*}
+    Therefore it is not a group.
+  \end{solution}
+\item the set of rational numbers of absolute value $\geq1$ together
+  with $0$
+  \begin{solution}
+    This set is not closed under addition since, for example,
+    \begin{equation*}
+      \frac{12}5 - \frac85 = \frac45 \not\geq1.
+    \end{equation*}
+    Therefore it is not a group.
+  \end{solution}
+\item the set of rational numbers with denominators equal to $1$ or
+  $2$
+  \begin{solution}
+    Denote the set by $A$. Let $a$ and $b$ be arbitrary integers. Then
+    $a,b,a/2,b/2\in A$. There are several cases. First,
+    \begin{equation*}
+      \frac{a}1 + \frac{b}1 = \frac{a + b}1 \in A.
+    \end{equation*}
+    Now consider
+    \begin{equation*}
+      \frac{a}2 + \frac{b}2 = \frac{a + b}2.
+    \end{equation*}
+    If this fraction is in lowest terms, then it is in $A$. If not,
+    then there must be a common factor of $2$ and the fraction can be
+    written with a denominator of $1$ and thus is in $A$.
+
+    Finally, consider
+    \begin{equation*}
+      \frac{a}1 + \frac{b}2 = \frac{b}2 + \frac{a}1 = \frac{2a + b}2.
+    \end{equation*}
+    As before, this is either in lowest terms, or can be reduced to
+    lowest terms by dividing the numerator and denominator by $2$. In
+    either case, this number is in $A$.
+
+    Since $A$ is closed under addition, it is easily seen to be a
+    group: the identity is $1 = 1/1$ and the inverse of $a/b\in A$ is
+    $-a/b$.
+  \end{solution}
+\item the set of rational numbers with denominators equal to $1$, $2$,
+  or $3$
+  \begin{solution}
+    This set is not closed under addition, since
+    \begin{equation*}
+      \frac12 + \frac13 = \frac56.
+    \end{equation*}
+    Hence this is not a group.
+  \end{solution}
+\end{enumerate}
+
+\Exercise7 Let $G = \{x\in\R\mid 0\leq x<1\}$ and for $x,y\in G$ let
+$x\star y$ be the fractional part of $x + y$ (i.e.,
+$x\star y = x + y - [x + y]$ where $[a]$ is the greatest integer less
+than or equal to $a$). Prove that $\star$ is a well defined binary
+operation on $G$ and that $G$ is an abelian group under $\star$
+(called the {\em real numbers mod $1$}).
+\begin{proof}
+  Let $x,y\in G$ be arbitrary. Then $0\leq x + y<2$. There are two
+  cases: if $x + y < 1$ then $[x + y] = 0$ and $x\star y\in G$. On the
+  other hand, if $1\leq x + y < 2$ then $[x + y] = 1$ and
+  $x\star y = x + y - 1\in G$. Therefore $\star$ is a well defined
+  binary operation on $G$.
+
+  Let $x,y,z\in G$. If $x + y < 1$ and $y + z < 1$, then
+  \begin{align*}
+    (x\star y)\star z
+    &= (x + y - 0)\star z \\
+    &= x + y + z - [x + y + z] \\
+    &= x\star(y + z - 0) \\
+    &= x\star(y\star z).
+  \end{align*}
+  On the other hand, if $1\leq x + y < 2$ and $1\leq y + z < 2$, then
+  \begin{align*}
+    (x\star y)\star z
+    &= (x + y - 1)\star z \\
+    &= x + y + z - 1 - [x + y + z - 1] \\
+    &= x\star(y + z - 1) \\
+    &= x\star(y\star z).
+  \end{align*}
+  Finally, if $1\leq x + y < 2$ and $0\leq y + z < 1$, then
+  $[x + y] = 1$, $[y + z] = 0$, and
+  $[x + y + z - 1] = [x + y + z] - 1$, so
+  \begin{align*}
+    (x\star y)\star z
+    &= (x + y - 1)\star z \\
+    &= x + y + z - 1 - [x + y + z - 1] \\
+    &= x + y + z - 1 - [x + y + z] + 1 \\
+    &= x + y + z - [x + y + z] \\
+    &= x\star(y + z - 0) \\
+    &= x\star(y\star z).
+  \end{align*}
+  And the case where $x+y < 1$ and $y + z\geq1$ is similar. Therefore,
+  $\star$ is associative.
+
+  Since $0\in G$, $G$ has an identity ($x\star 0 = 0\star x = x$ for
+  each $x$ in $G$). And every element has an inverse: the inverse of
+  $0$ is $0$, and for nonzero $x\in G$, $1 - x\in G$ is an inverse
+  since
+  \begin{equation*}
+    x\star(1-x) = x + (1 - x) - [x + (1 - x)]
+    = 1 - 1 = 0.
+  \end{equation*}
+  Therefore $G$ is a group under $\star$.
 \end{proof}
