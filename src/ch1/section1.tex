@@ -346,3 +346,44 @@ operation on $G$ and that $G$ is an abelian group under $\star$
     This shows that $G-\{0\}$ is a group under multiplication.
   \end{proof}
 \end{enumerate}
+
+\Exercise{10} Prove that a finite group is abelian if and only if its
+group table is a symmetric matrix.
+\begin{proof}
+  List the elements of the group in a fixed order along the top row
+  and first column of the group table. Then the group is abelian if
+  and only if the $i,j$th entry in its group table is equal to the
+  $j,i$th entry, which is true if and only if the table forms a
+  symmetric matrix.
+\end{proof}
+
+\Exercise{11} Find the orders of each element of the additive group
+$\Z/12\Z$.
+\begin{solution}
+  $\bar0$ has order $1$. $\bar1$ has order 12 since $1\cdot\bar1$,
+  $2\cdot\bar1$, $\ldots$, $11\cdot\bar1$ are nonzero while
+  $12\cdot\bar1 = \bar0$. Similarly, we find the following orders for
+  the elements:
+
+  \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c}
+      $x$ & $\bar0$ & $\bar1$ & $\bar2$ & $\bar3$ & $\bar4$ & $\bar5$ & $\bar6$
+      & $\bar7$ & $\bar8$ & $\bar9$ & $\overline{10}$ & $\overline{11}$ \\\hline
+      $\abs{x}$ & 1 & 12 & 6 & 4 & 3 & 12 & 2 & 12 & 3 & 4 & 6 & 12
+    \end{tabular}
+  \end{center}
+\end{solution}
+
+\Exercise{12} Find the orders of the following elements of the
+multiplicative group $(\Z/12\Z)^\times$:
+$\bar1, \overline{-1}, \bar5, \bar7, \overline{-7}, \overline{13}$.
+\begin{solution}
+  We get the following table:
+  \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c}
+      $x$ & $\bar1$ & $\overline{-1}$ & $\bar5$ & $\bar7$ & $\overline{-7}$
+      & $\overline{13}$ \\\hline
+      $\abs{x}$ & 1 & 2 & 2 & 2 & 2 & 1
+    \end{tabular}
+  \end{center}
+\end{solution}
