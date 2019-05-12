@@ -419,3 +419,39 @@ $\bar1, \overline{-1}, \bar5, \overline{13}, \overline{-13},
     \end{tabular}
   \end{center}
 \end{solution}
+
+\Exercise{15} Let $G$ be a group. Prove that
+$(a_1a_2\dots a_n)^{-1} = a_n^{-1}a_{n-1}^{-1}\dots a_1^{-1}$ for all
+$a_1,a_2,\dots,a_n\in G$.
+\begin{proof}
+  We use induction on $n$. If $n = 1$, the result is obvious. Suppose
+  it holds for $n = k$, where $k\geq1$. Then for any
+  $a_1,\dots,a_{k+1}$ in $G$, we have
+  \begin{align*}
+    (a_1\dots a_ka_{k+1})(a_{k+1}^{-1}a_k^{-1}\dots a_1^{-1})
+    &= (a_1\dots a_k)(a_{k+1}a_{k+1}^{-1})(a_k^{-1}\dots a_1^{-1}) \\
+    &= (a_1\dots a_k)(a_k^{-1}\dots a_1^{-1}),
+  \end{align*}
+  and this is equal to $1$ by the induction hypothesis. Therefore
+  $(a_1\dots a_{k+1})^{-1} = a_{k+1}^{-1}\dots a_1^{-1}$ and the
+  statement holds for all positive integers $n$.
+\end{proof}
+
+\Exercise{16} Let $x$ be an element of a group $G$. Prove that
+$x^2 = 1$ if and only if $\abs{x}$ is either $1$ or $2$.
+\begin{proof}
+  First, if $\abs{x} = 1$ then $x = 1$ so $x^2 = 1^2 = 1$. If
+  $\abs{x} = 2$, then $x^2 = 1$ by definition.
+
+  For the other direction, suppose $x^2 = 1$. Then $\abs{x}\leq2$. But
+  the order of an element must be at least $1$, so $\abs{x} = 1$ or
+  $\abs{x} = 2$.
+\end{proof}
+
+\Exercise{17} Let $x$ be an element of a group $G$. Prove that if
+$\abs{x} = n$ for some positive integer $n$ then $x^{-1} = x^{n-1}$.
+\begin{proof}
+  Since $\abs{x} = n$, we have $x^n = 1$. But
+  $x^n = x^{n-1}x = xx^{n-1}$, so $x^{n-1}x = 1$ which shows that
+  $x^{-1} = x^{n-1}$.
+\end{proof}
