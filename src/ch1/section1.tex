@@ -455,3 +455,15 @@ $\abs{x} = n$ for some positive integer $n$ then $x^{-1} = x^{n-1}$.
   $x^n = x^{n-1}x = xx^{n-1}$, so $x^{n-1}x = 1$ which shows that
   $x^{-1} = x^{n-1}$.
 \end{proof}
+
+\Exercise{18} Let $x$ and $y$ be elements of a group $G$. Prove that
+$xy = yx$ if and only if $y^{-1}xy = x$ if and only if
+$x^{-1}y^{-1}xy = 1$.
+\begin{proof}
+  If $xy = yx$, then $y^{-1}xy = y^{-1}yx = 1x = x$. Multiplying by
+  $x^{-1}$ then gives $x^{-1}y^{-1}xy = 1$.
+
+  On the other hand, if $x^{-1}y^{-1}xy = 1$, then we may multiply on
+  the left by $x$ to get $y^{-1}xy = x$. Then multiplying on the left
+  by $y$ gives $xy = yx$ as desired.
+\end{proof}
