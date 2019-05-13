@@ -564,3 +564,31 @@ some integer $k\geq1$.
     x = x^{2k-1+1} = x^{2k} = (x^2)^k. \qedhere
   \end{equation*}
 \end{proof}
+
+\Exercise{22} If $x$ and $g$ are elements of the group $G$, prove that
+$\abs{x} = \abs{g^{-1}xg}$. Deduce that $\abs{ab} = \abs{ba}$ for all
+$a,b\in G$.
+\begin{proof}
+  A simple induction argument will show that
+  $(g^{-1}xg)^k = g^{-1}x^kg$ for any $k\in\Z^+$. So if $\abs{x} = n$,
+  then $x^n = 1$ and we have
+  \begin{equation*}
+    (g^{-1}xg)^n = g^{-1}x^ng = g^{-1}1g = 1,
+  \end{equation*}
+  which shows that $g^{-1}xg$ is of finite order and
+  $\abs{g^{-1}xg} \leq \abs{x}$. However, if $\abs{g^{-1}xg} = k$,
+  then $(g^{-1}xg)^k = 1$ so
+  \begin{equation*}
+    x^k = gg^{-1}x^kgg^{-1} = g(g^{-1}xg)^kg^{-1} = g1g^{-1} = 1,
+  \end{equation*}
+  which shows that $x$ is of finite order and
+  $\abs{x} \leq \abs{g^{-1}xg}$. Therefore $\abs{x} = \abs{g^{-1}xg}$.
+
+  This also shows that if $x$ is of infinite order, then $g^{-1}xg$ is
+  of infinite order and vice versa.
+
+  Finally, for any $a,b\in G$,
+  \begin{equation*}
+    \abs{ab} = \abs{b(ab)b^{-1}} = \abs{ba}. \qedhere
+  \end{equation*}
+\end{proof}
