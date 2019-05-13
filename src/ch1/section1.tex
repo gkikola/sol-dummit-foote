@@ -467,3 +467,62 @@ $x^{-1}y^{-1}xy = 1$.
   the left by $x$ to get $y^{-1}xy = x$. Then multiplying on the left
   by $y$ gives $xy = yx$ as desired.
 \end{proof}
+
+\Exercise{19} Let $x\in G$ for $G$ a group and let $a,b\in\Z^+$.
+\begin{enumerate}
+\item Prove that $x^{a+b} = x^ax^b$ and $(x^a)^b = x^{ab}$.
+  \label{exponent-rule}
+  \begin{proof}
+    $x^ax^b$ consists of a $a$ factors of $x$, multiplied by $b$
+    factors of $x$, for a total of $a+b$ factors of $x$. Therefore
+    $x^{a+b} = x^ax^b$ by definition. Similarly, $(x^a)^b = x^{ab}$ by
+    the same reasoning.
+  \end{proof}
+\item Prove that $(x^a)^{-1} = x^{-a}$.
+  \begin{proof}
+    Since $x^{-a} = (x^{-1})^a$, we need to show that
+    $(x^a)^{-1} = (x^{-1})^a$. We use induction on $a$. For $a = 1$,
+    the result is trivial. Suppose it holds for $a = k$,
+    $k\geq0$. Then
+    \begin{equation*}
+      (x^{k+1})(x^{-1})^{k+1}
+      = x^k(xx^{-1})(x^{-1})^k
+      = x^k(x^{-1})^k,
+    \end{equation*}
+    which by the induction hypothesis must be $1$. Therefore the
+    result holds for all positive integers $a$.
+  \end{proof}
+\item Establish part \ref{exponent-rule} for arbitrary integers $a$
+  and $b$ (positive, negative, or zero).
+  \begin{proof}
+    For any integer $a$, $x^ax^0 = x^a = x^{a+0}$ and similarly
+    $x^0x^a = x^{0+a}$.
+
+    Now suppose $a>0,b<0$. If $a + b > 0$, then
+    $x^{a+b}x^{-b} = x^{(a+b)+(-b)} = x^a$ by part
+    \ref{exponent-rule}. Multiplying both sides of this equation on
+    the right by $x^b$ gives $x^{a+b} = x^ax^b$ as desired. On the
+    other hand, if $a + b < 0$, then
+    $x^{-(a+b)}x^a = x^{-(a+b)+a} = x^{-b}$. Multiplying both sides of
+    this equation on the right by $x^{-a}$ gives
+    $x^{-(a+b)} = x^{-b}x^{-a}$, so
+    \begin{equation*}
+      (x^{a+b})^{-1}
+      = x^{-(a+b)} = x^{-b}x^{-a} = (x^b)^{-1}(x^a)^{-1}
+      = (x^ax^b)^{-1}.
+    \end{equation*}
+    The last equality follows from part (4) of Proposition~1 in the
+    text. Since inverses are unique (by the same proposition) we have
+    $x^{a+b} = x^ax^b$.
+
+    The case where $a < 0, b > 0$ is entirely similar to the argument
+    above. Finally, if $a$ and $b$ are both negative, then
+    \begin{equation*}
+      x^{a+b} = (x^{-a-b})^{-1}
+      = (x^{-b-a})^{-1}
+      = (x^{-b}x^{-a})^{-1}
+      = x^ax^b.
+    \end{equation*}
+    This completes the proof.
+  \end{proof}
+\end{enumerate}
