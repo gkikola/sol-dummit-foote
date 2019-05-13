@@ -526,3 +526,22 @@ $x^{-1}y^{-1}xy = 1$.
     This completes the proof.
   \end{proof}
 \end{enumerate}
+
+\Exercise{20} For $x$ an element in $G$ a group show that $x$ and
+$x^{-1}$ have the same order.
+\begin{proof}
+  Suppose $\abs{x} = n$ for finite $n$. Then $x^n = 1$ so
+  \begin{equation*}
+    (x^{-1})^n = x^{-n} = (x^n)^{-1} = 1^{-1} = 1,
+  \end{equation*}
+  which shows $x^{-1}$ has finite order and
+  $\abs{x^{-1}} \leq \abs{x}$. On the other hand, if
+  $\abs{x^{-1}} = k$ then
+  \begin{equation*}
+    x^k = (x^{-1})^{-k} = \left((x^{-1})^k\right)^{-1} = 1^{-1} = 1,
+  \end{equation*}
+  so $x$ has finite order and $\abs{x} \leq \abs{x^{-1}}$. This shows
+  that $\abs{x} = \abs{x^{-1}}$ when either $x$ or $x^{-1}$ is of
+  finite order. The only alternative is that $x$ and $x^{-1}$ are both
+  of infinite order.
+\end{proof}
