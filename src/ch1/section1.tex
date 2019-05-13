@@ -545,3 +545,22 @@ $x^{-1}$ have the same order.
   finite order. The only alternative is that $x$ and $x^{-1}$ are both
   of infinite order.
 \end{proof}
+
+\Exercise{21} Let $G$ be a finite group and let $x$ be an element of
+$G$ of order $n$. Prove that if $n$ is odd, then $x = (x^2)^k$ for
+some integer $k\geq1$.
+\begin{proof}
+  If $n$ is odd, then we may write $n = 2k-1$ for some
+  $k\in\Z^+$. Then we have
+  \begin{equation*}
+    x^n = x^{2k-1} = 1.
+  \end{equation*}
+  Multiplying both sides by $x$ then gives
+  \begin{equation*}
+    x^{2k-1}x = x,
+  \end{equation*}
+  so
+  \begin{equation*}
+    x = x^{2k-1+1} = x^{2k} = (x^2)^k. \qedhere
+  \end{equation*}
+\end{proof}
