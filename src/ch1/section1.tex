@@ -469,6 +469,7 @@ $x^{-1}y^{-1}xy = 1$.
 \end{proof}
 
 \Exercise{19} Let $x\in G$ for $G$ a group and let $a,b\in\Z^+$.
+\label{exercise-exponent-rules}
 \begin{enumerate}
 \item Prove that $x^{a+b} = x^ax^b$ and $(x^a)^b = x^{ab}$.
   \label{exponent-rule}
@@ -591,4 +592,57 @@ $a,b\in G$.
   \begin{equation*}
     \abs{ab} = \abs{b(ab)b^{-1}} = \abs{ba}. \qedhere
   \end{equation*}
+\end{proof}
+
+\Exercise{23} Suppose $x\in G$ for $G$ a group and
+$\abs{x} = n < \infty$. If $n = st$ for some positive integers $s$ and
+$t$, prove that $\abs{x^s} = t$.
+\begin{proof}
+  Let $\abs{x} = n$ where $n = st$. Then
+  \begin{equation*}
+    1 = x^n = x^{st} = (x^s)^t,
+  \end{equation*}
+  so $\abs{x^s}\leq t$. Now suppose $\abs{x^s} = r$. Then
+  $(x^s)^r = x^{sr} = 1$. But $\abs{x} = st$, so we have $sr\geq st$
+  or $r\geq t$, which gives $\abs{x^s}\geq t$. Therefore
+  $\abs{x^s} = t$.
+\end{proof}
+
+\Exercise{24} If $a$ and $b$ are {\em commuting} elements of the group
+$G$, prove that $(ab)^n = a^nb^n$ for all $n\in\Z$.
+\begin{lem}
+  If $a$ and $b$ are commuting elements of a group $G$, then
+  $a^nb = ba^n$ for all positive integers $n$.
+\end{lem}
+\begin{proof}
+  We use induction on $n$. The base case is trivial, so suppose
+  $a^nb = ba^n$ for some positive integer $n$. Then
+  \begin{equation*}
+    a^{n+1}b = aa^nb = aba^n = baa^n = ba^{n+1},
+  \end{equation*}
+  which completes the inductive step. Hence $a^nb = ba^n$ for all
+  positive $n$.
+\end{proof}
+\begin{proof}[Proof of main result]
+  First we will use induction on $n$ to show that $(ab)^n = a^nb^n$ in
+  the case where $n$ is positive. For $n = 1$, the result is
+  obvious. Suppose the result is true for $n = k$, for some positive
+  integer $k$. Then
+  \begin{equation*}
+    (ab)^{k+1} = (ab)(ab)^k = aba^kb^k
+    = aa^kbb^k = a^{k+1}b^{k+1},
+  \end{equation*}
+  where the second-to-last equality makes use of the above lemma. This
+  shows that the result holds for all positive integers $n$.
+
+  Next, in the case where $n = 0$, we get $(ab)^0 = 1 = a^0b^0$.
+
+  Finally, using the result from Exercise
+  \ref{exercise-exponent-rules}, we have for any $n<0$,
+  \begin{equation*}
+    (ab)^n = (ba)^n = \left((ba)^{-n}\right)^{-1}
+    = \left(b^{-n}a^{-n}\right)^{-1}
+    = a^nb^n.
+  \end{equation*}
+  Therefore the result holds for all integers $n$.
 \end{proof}
