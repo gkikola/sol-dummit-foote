@@ -646,3 +646,15 @@ $G$, prove that $(ab)^n = a^nb^n$ for all $n\in\Z$.
   \end{equation*}
   Therefore the result holds for all integers $n$.
 \end{proof}
+
+\Exercise{25} Let $G$ be a group. Prove that if $x^2 = 1$ for all
+$x\in G$ then $G$ is abelian.
+\begin{proof}
+  For any $x\in G$, we have $x = x^{-1}$. Let $a,b\in G$ be
+  arbitrary. Then we have
+  \begin{equation*}
+    ab = (ab)^{-1} = b^{-1}a^{-1} = ba.
+  \end{equation*}
+  Here we have made use of property (4) from Proposition~1. This shows
+  that $G$ is abelian.
+\end{proof}
