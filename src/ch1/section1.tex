@@ -658,3 +658,73 @@ $x\in G$ then $G$ is abelian.
   Here we have made use of property (4) from Proposition~1. This shows
   that $G$ is abelian.
 \end{proof}
+
+\Exercise{26} Assume $H$ is a nonempty subset of the group $(G,\star)$
+which is closed under the binary operation on $G$ and is closed under
+inverses, i.e., for all $h$ and $k\in H$, $hk$ and $h^{-1}\in
+H$. Prove that $H$ is a group under the operation $\star$ restricted
+to $H$.
+\begin{proof}
+  \begin{enumerate}
+  \item Associativity of $\star$ in $H$ follows from associativity of
+    $\star$ in $G$.
+
+  \item Since $H$ is nonempty, it must have an element $a$. Then by
+    hypothesis $a^{-1}\in H$ and therefore $aa^{-1} = e \in H$, where
+    $e$ denotes the identity of $G$. Therefore $H$ has an identity.
+
+  \item For each $a\in H$, $a^{-1}\in H$ by hypothesis so every
+    element of $H$ has an inverse in $H$.
+  \end{enumerate}
+
+  This shows that $(H,\star)$ is a group.
+\end{proof}
+
+\Exercise{27} Prove that if $x$ is an element of the group $G$ then
+$\{x^n \mid n\in\Z\}$ is a subgroup of $G$.
+\begin{proof}
+  Let $H$ be the subset stated above. We know $H$ is nonempty since
+  $x^0 = e$ is a member of $H$. If $a = x^m$ and $b = x^n$ are any two
+  elements in $H$, then $ab = x^mx^n = x^{m+n}$ by
+  Exercise~\ref{exercise-exponent-rules}. So $ab\in H$ which shows
+  that $H$ is closed under the binary operation of $G$. $H$ is also
+  closed under inverses, since $a^{-1} = (x^m)^{-1} = x^{-m}\in
+  H$. Therefore, by the previous exercise, $H$ is a subgroup of $G$.
+\end{proof}
+
+\Exercise{28} Let $(A,\star)$ and $(B,\diamond)$ be groups and let
+$A\times B$ be their direct product. Verify all the group axioms for
+$A\times B$:
+\begin{enumerate}
+\item prove that the associative law holds
+\item prove that $(1,1)$ is the identity of $A\times B$, and
+\item prove that the inverse of $(a,b)$ is $(a^{-1}, b^{-1})$.
+\end{enumerate}
+\begin{proof}
+  \begin{enumerate}
+  \item
+    For all $(a_i, b_i)\in A\times B$ with $i = 1,2,3$ we have
+    \begin{align*}
+      (a_1,b_1)[(a_2,b_2)(a_3,b_3)]
+      &= (a_1,b_1)(a_2a_3,b_2b_3) \\
+      &= \big(a_1(a_2a_3), b_1(b_2b_3)\big) \\
+      &= \big((a_1a_2)a_3, (b_1b_2)b_3\big) \\
+      &= (a_1a_2,b_1b_2)(a_3,b_3) \\
+      &= [(a_1,b_1)(a_2b_2)](a_3,b_3).
+    \end{align*}
+    This shows associativity.
+
+  \item For any $(a,b)\in A\times B$ we have
+    \begin{equation*}
+      (a,b)(1,1) = (a\star1,b\diamond1) = (a,b).
+    \end{equation*}
+    Therefore $(1,1)$ is the identity of $A\times B$.
+
+  \item For any $(a,b)\in A\times B$,
+    \begin{equation*}
+      (a,b)(a^{-1},b^{-1}) = (a\star a^{-1},b\diamond b^{-1})
+      = (1,1),
+    \end{equation*}
+    so $(a,b)^{-1} = (a^{-1},b^{-1})$. \qedhere
+  \end{enumerate}
+\end{proof}
