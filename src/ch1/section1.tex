@@ -803,3 +803,13 @@ an element of order $2$.
   $a\neq e$. Thus $a$ is an element of order $2$, completing the
   proof.
 \end{proof}
+
+\Exercise{32} If $x$ is an element of finite order $n$ in a group $G$,
+prove that the elements $1, x, x^2, \dots, x^{n-1}$ are all
+distinct. Deduce that $\abs{x}\leq\abs{G}$.
+\begin{proof}
+  Suppose the contrary, so that $x^s = x^t$ for $1\leq s < t<n$. Then
+  $x^tx^{-s} = x^{t-s} = 1$. But $1\leq t-s < n$, so $\abs{x} < n$, a
+  contradiction. This shows that each of $1, x,\dots,x^{n-1}$ are
+  distinct so that $\abs{G}\geq\abs{x}$.
+\end{proof}
