@@ -838,11 +838,27 @@ $G$.
   \end{proof}
 \end{enumerate}
 
-\Exercise{34} If $x$ is an element of infinite order in $G$, prove
-that the elements $x^n$, $n\in\Z$ are all distinct.
+\Exercise{34} If $x$ is an element of infinite order in the group $G$,
+prove that the elements $x^n$, $n\in\Z$ are all distinct.
 \begin{proof}
   Let $x$ have infinite order and suppose $x^m = x^n$ with $n\leq
   m$. Then $x^{m-n} = 1$. If $m-n > 0$ then $x$ has finite order,
   which is a contradiction. Therefore $m = n$. This shows that each
   $x^m$ is distinct.
+\end{proof}
+
+\Exercise{35} If $x$ is an element of finite order $n$ in a group $G$,
+use the Division Algorithm to show that {\em any} integral power of
+$x$ equals one of the elements in the set $\{1,x,x^2,\dots,x^{n-1}\}$.
+\begin{proof}
+  Let $x$ have order $n$ and suppose $k$ is any integer.
+
+  Since $n$ must be greater than $0$, we may use the Division
+  Algorithm to find integers $q$ and $r$ such that $k = qn + r$, where
+  $0\leq r<n$. Then
+  \begin{equation*}
+    x^k = x^{qn+r} = (x^n)^qx^r = 1x^r = x^r,
+    \quad \text{where $0\leq r<n$,}
+  \end{equation*}
+  which completes the proof.
 \end{proof}
