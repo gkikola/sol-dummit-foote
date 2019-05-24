@@ -787,3 +787,19 @@ common multiple of $\abs{a}$ and $\abs{b}$.
   $\abs{b}$. Therefore $\ell\leq k$. This shows that $\ell = k$, which
   completes the proof.
 \end{proof}
+
+\Exercise{31} Prove that any finite group $G$ of even order contains
+an element of order $2$.
+\begin{proof}
+  Define $t(G)$ to be the set $\{ g \in G \mid g \neq g^{-1} \}$. Then
+  $t(G)$ must have an even number of elements because $g\in t(G)$ if
+  and only if $g^{-1}\in t(G)$ and any such $g, g^{-1}$ must be
+  distinct. Since $G$ also has an even number of elements, the set
+  $G-t(G)$ has an even number of elements.
+
+  Now $G-t(G)$ is nonempty since the identity $e\not\in
+  t(G)$. Therefore there is a nonidentity element $a\in G - t(G)$. But
+  since $a\not\in t(G)$, we have $a = a^{-1}$ so that $a^2 = e$ but
+  $a\neq e$. Thus $a$ is an element of order $2$, completing the
+  proof.
+\end{proof}
