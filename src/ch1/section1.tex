@@ -728,3 +728,24 @@ $A\times B$:
     so $(a,b)^{-1} = (a^{-1},b^{-1})$. \qedhere
   \end{enumerate}
 \end{proof}
+
+\Exercise{29} Prove that $A\times B$ is an abelian group if and only
+if both $A$ and $B$ are abelian.
+\begin{proof}
+  First, if $A$ and $B$ are abelian and if $(a,b)$ and $(c,d)$ are any
+  members of $A\times B$, then
+  \begin{equation*}
+    (a,b)(c,d) = (ac,bd) = (ca,db) = (c,d)(a,b),
+  \end{equation*}
+  so $A\times B$ is abelian.
+
+  For the other direction, suppose $A\times B$ is abelian. Let
+  $a_1,a_2\in A$ and $b_1,b_2\in B$. Then since $A\times B$ is
+  abelian, we have
+  \begin{equation*}
+    (a_1a_2, b_1b_2) = (a_1,b_1)(a_2,b_2)
+    = (a_2, b_2)(a_1,b_1) = (a_2a_1, b_2b_1).
+  \end{equation*}
+  Equating components shows that $a_1a_2 = a_2a_1$ and
+  $b_1b_2 = b_2b_1$. Therefore $A$ and $B$ are both abelian.
+\end{proof}
