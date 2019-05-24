@@ -813,3 +813,27 @@ distinct. Deduce that $\abs{x}\leq\abs{G}$.
   contradiction. This shows that each of $1, x,\dots,x^{n-1}$ are
   distinct so that $\abs{G}\geq\abs{x}$.
 \end{proof}
+
+\Exercise{33} Let $x$ be an element of finite order $n$ in the group
+$G$.
+\begin{enumerate}
+\item Prove that if $n$ is odd then $x^i\neq x^{-i}$ for all
+  $i = 1, 2, \dots, n-1$.
+  \begin{proof}
+    Fix a positive integer $i < n$. Then $x^ix^{n-i} = 1$ so
+    $x^{-i} = x^{n-i}$. By the previous exercise, if $i\neq n-i$, then
+    $x^i\neq x^{n-i}$. Since inverses are unique, we have in this case
+    that $x^i\neq x^{-i}$.
+
+    Now, if $n$ is odd, then necessarily $i\neq n-i$, so
+    $x^i\neq x^{-i}$.
+  \end{proof}
+\item Prove that if $n = 2k$ and $1\leq i < n$ then $x^i = x^{-i}$ if
+  and only if $i = k$.
+  \begin{proof}
+    For any $1\leq i<n$ such that $i\neq k$, we have $i\neq n-i$ so
+    $x^i\neq x^{-i}$ by the argument in the first part of the
+    problem. And if $i = k$, then $x^ix^i = x^{2k} = x^n = 1$, so
+    $x^i = x^{-i}$ in this case (and only this case).
+  \end{proof}
+\end{enumerate}
