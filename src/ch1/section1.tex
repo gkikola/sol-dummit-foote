@@ -749,3 +749,41 @@ if both $A$ and $B$ are abelian.
   Equating components shows that $a_1a_2 = a_2a_1$ and
   $b_1b_2 = b_2b_1$. Therefore $A$ and $B$ are both abelian.
 \end{proof}
+
+\Exercise{30} Prove that the elements $(a,1)$ and $(1,b)$ of
+$A\times B$ commute and deduce that the order of $(a,b)$ is the least
+common multiple of $\abs{a}$ and $\abs{b}$.
+\begin{proof}
+  If $a\in A$ and $b\in B$, then $(a,1),(1,b)\in A\times B$ and
+  \begin{equation*}
+    (a,1)(1,b) = (a1,1b) = (a,b) = (1a,b1) = (1,b)(a,1).
+  \end{equation*}
+
+  Now, we will show by induction on $n$ that $(a,b)^n = (a^n,b^n)$ for
+  any positive integer $n$. The base case is obvious. Suppose
+  $(a,b)^k = (a^k,b^k)$ for some $k>0$. Then
+  \begin{equation*}
+    (a,b)^{k+1} = (a,b)^k(a,b)
+    = (a^k,b^k)(a,b) = (a^{k+1},b^{k+1})
+  \end{equation*}
+  so the statement holds for all $n\in\Z^+$. This implies that
+  $\abs{(a,1)} = \abs{a}$ and $\abs{(1,b)} = \abs{b}$.
+
+  Let the least common multiple of $\abs{a}$ and $\abs{b}$ be $\ell$
+  and suppose $\abs{(a,b)} = k$. Then $m\abs{a} = n\abs{b} = \ell$ for
+  some integers $m$ and $n$. Since $(a,1)$ and $(1,b)$ commute, we
+  have
+  \begin{align*}
+    (a,b)^\ell
+    &= ((a,1)(1,b))^\ell \\
+    &= (a,1)^\ell(1,b)^\ell \\
+    &= (a,1)^{m\abs{a}}(1,b)^{n\abs{b}} \\
+    &= (1,1)(1,1) \\
+    &= (1,1).
+  \end{align*}
+  So $k\leq\ell$. Now since $(a,b)^k = (1,1)$, we have $a^k = 1$ and
+  $b^k = 1$. This implies $\abs{a}$ divides $k$ and $\abs{b}$ divides
+  $k$. So $k$ is a common multiple of $\abs{a}$ and
+  $\abs{b}$. Therefore $\ell\leq k$. This shows that $\ell = k$, which
+  completes the proof.
+\end{proof}
