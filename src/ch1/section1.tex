@@ -790,6 +790,7 @@ common multiple of $\abs{a}$ and $\abs{b}$.
 
 \Exercise{31} Prove that any finite group $G$ of even order contains
 an element of order $2$.
+\label{exercise-even-order-has-element-order-2}
 \begin{proof}
   Define $t(G)$ to be the set $\{ g \in G \mid g \neq g^{-1} \}$. Then
   $t(G)$ must have an even number of elements because $g\in t(G)$ if
@@ -861,4 +862,48 @@ $x$ equals one of the elements in the set $\{1,x,x^2,\dots,x^{n-1}\}$.
     \quad \text{where $0\leq r<n$,}
   \end{equation*}
   which completes the proof.
+\end{proof}
+
+\Exercise{36} Assume $G = \{1, a, b, c\}$ is a group of order $4$ with
+identity $1$. Assume also that $G$ has no elements of order $4$. Use
+the cancellation laws to show that there is a unique group table for
+$G$. Deduce that $G$ is abelian.
+\begin{proof}
+  From the previous exercises, we know that each element in $G$
+  besides $1$ either has order equal to $2$ or $3$. By
+  Exercise~\ref{exercise-even-order-has-element-order-2} there is an
+  element in $G$ with order $2$. Without loss of generality, we may
+  suppose that this element is $a$.
+
+  Then $a^2 = 1$. Now $ab\neq1$ since that would imply
+  $b = a^{-1} = a$. Next, $ab\neq a$ since otherwise the cancellation
+  law would give $b = 1$. Similarly, $ab\neq b$ since otherwise
+  $a = 1$. So we must have $ab = c$. Using the same reasoning, we must
+  have $ba = c$ and $ac = ca = b$. Using this information, we have
+  $b^2 = (ca)(ac) = c(a^2)c = c^2$.
+
+  Now, if $b^2\neq1$ then we must have $\abs{b} = 3$ so that
+  $b^3 = 1$. Then
+  \begin{equation*}
+    a = ab^3 = (ab)b^2 = c^3.
+  \end{equation*}
+  But since $c^3 = a\neq1$, we have $\abs{c} = 2$ so $1 = c^2 = b^2$
+  and $\abs{b} = 2$, a contradiction. This shows that $b^2 = c^2 =
+  1$. Finally,
+  \begin{equation*}
+    bc = (ac)c = ac^2 = a,
+  \end{equation*}
+  and similarly $cb = a$.
+
+  Combining all of this information gives the following group table:
+  \begin{center}
+    \begin{tabular}{r|cccc}
+      & $1$ & $a$ & $b$ & $c$ \\\hline
+      $1$ & $1$ & $a$ & $b$ & $c$ \\
+      $a$ & $a$ & $1$ & $c$ & $b$ \\
+      $b$ & $b$ & $c$ & $1$ & $a$ \\
+      $c$ & $c$ & $b$ & $a$ & $1$
+    \end{tabular}
+  \end{center}
+  And we can readily see that $G$ is abelian.
 \end{proof}
