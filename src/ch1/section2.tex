@@ -1,0 +1,34 @@
+\section{Dihedral Groups}
+
+In these exercises, $D_{2n}$ has the usual presentation
+\begin{equation*}
+  D_{2n} = \langle r,s\mid r^n = s^2 = 1, rs = sr^{-1}\rangle.
+\end{equation*}
+
+\Exercise1 Compute the order of each of the elements in the following
+groups:
+\begin{enumerate}
+\item $D_6$
+  \begin{solution}
+    The elements of $D_6$ are $1$, $r$, $r^2$, $s$, $sr$, and
+    $sr^2$. We have $\abs{1} = 1$, $\abs{r} = 3$, $\abs{r^2} = 3$, and
+    $\abs{s} = 2$. Since $(sr)^2 = srsr = s^2r^{-1}r = 1$ and
+    $(sr^2)^2 = sr^2sr^2 = s^2r^{-2}r^2 = 1$, we have
+    $\abs{sr} = \abs{sr^2} = 2$.
+  \end{solution}
+\item $D_8$
+  \begin{solution}
+    Again we have $\abs{1} = 1$, $\abs{r} = 4$, $\abs{r^2} = 2$, and
+    $\abs{r^3} = 4$. For $k$ with $0\leq k\leq3$, we have
+    $(sr^k)^2 = sr^ksr^k = s^2r^{-k}r^k = 1$ so $\abs{sr^k} = 2$.
+  \end{solution}
+\item $D_{10}$
+  \begin{solution}
+    Since $5$ is prime, we have for each $k$ with $0\leq k\leq4$,
+    \begin{equation*}
+      \abs{r^k} = 5
+      \quad\text{and}\quad
+      \abs{sr^k} = 2. \qedhere
+    \end{equation*}
+  \end{solution}
+\end{enumerate}
