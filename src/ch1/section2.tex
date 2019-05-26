@@ -61,3 +61,39 @@ which have order $2$.
   each $sr^k$ can be written as $s(s(sr))^k$, so $D_{2n}$ is generated
   by $\{ s, sr \}$, each element of which has order $2$.
 \end{proof}
+
+\Exercise4 If $n = 2k$ is even and $n\geq4$, show that $z = r^k$ is an
+element of order $2$ which commutes with all elements of
+$D_{2n}$. Show also that $z$ is the only nonidentity element of
+$D_{2n}$ which commutes with all elements of $D_{2n}$.
+\begin{proof}
+  $r$ has order $n$, so by Exercise~\ref{exercise-power-own-inverse},
+  we know that $z = z^{-1}$, that is, $r^k = r^{-k}$. Let
+  $x\in D_{2n}$ be arbitrary. Then $x$ can be written either $r^\ell$
+  or $sr^\ell$ for some integer $\ell$. In the first case,
+  \begin{equation*}
+    zx = r^kr^\ell = r^{k+\ell} = r^\ell r^k = xz,
+  \end{equation*}
+  and in the second case,
+  \begin{equation*}
+    zx = r^ksr^\ell = sr^{-k}r^\ell = sr^kr^\ell = sr^\ell r^k = xz.
+  \end{equation*}
+  This shows that $z$ commutes with each element of $D_{2n}$.
+
+  Now suppose $z'$ is any nonidentity element in $D_{2n}$ which
+  commutes with every element in $D_{2n}$. Then in particular $z'$
+  commutes with $s$. So if $z' = r^t$ for some integer $t$, then
+  $z's = sz'$, and
+  \begin{equation*}
+    z's = r^ts = sr^{-t}.
+  \end{equation*}
+  Therefore $r^t = r^{-t}$. By
+  Exercise~\ref{exercise-power-own-inverse}, we must have $t = k$. On
+  the other hand, if $z' = sr^t$, then
+  \begin{equation*}
+    z's = sr^ts = s^2r^{-t} = r^{-t}.
+  \end{equation*}
+  So $sr^t = r^{-t}$, but this is impossible, since a reflection
+  cannot also be a rotation. Therefore $z' = z$ and $z$ is the only
+  nonidentity element which commutes with all elements in the group.
+\end{proof}
