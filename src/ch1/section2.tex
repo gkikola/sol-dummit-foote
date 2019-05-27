@@ -210,3 +210,19 @@ icosahedron. Show that $\abs{G} = 60$.
   addition of $\bar1$. $\bar1$ satisfies the relation
   $n\bar1 = \bar0$.
 \end{proof}
+
+\Exercise{16} Show that the group
+$\langle x_1,y_1\mid x_1^2 = y_1^2 = (x_1y_1)^2 = 1\rangle$ is the
+dihedral group $D_4$ (where $x_1$ may be replaced by the letter $r$
+and $y_1$ by $s$).
+\begin{proof}
+  $D_4$ has the usual presentation
+  $\langle r,s\mid r^2 = s^2 = 1, rs = sr^{-1}\rangle$. Since
+  $r = r^{-1}$, that last relation become $rs = sr$. Let $x_1 = r$ and
+  $y_1 = s$. Then $rs = sr$ implies
+  $(x_1y_1)^2 = (rs)^2 = rsrs = r^2s^2 = 1$. On the other hand, if
+  $(rs)^2 = 1$, then $rsrs = 1$ and, multiplying on the left by $r$
+  and on the right by $s$, this becomes $sr = rs$. So the relations
+  $rs = sr$ and $(x_1y_1)^2 = 1$ are equivalent. Therefore the above
+  group is $D^4$.
+\end{proof}
