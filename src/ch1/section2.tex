@@ -278,3 +278,53 @@ and $y_1$ by $s$).
     $y^2 = 1$, so $\abs{X_{2n}} = 2$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{18} Let $Y$ be the group with presentation
+\begin{equation*}
+  Y = \langle u,v\mid u^4 = v^3 = 1,\, uv = v^2u^2\rangle.
+\end{equation*}
+\begin{enumerate}
+\item Show that $v^2 = v^{-1}$.
+  \begin{proof}
+    $v(v^2) = v^3 = 1$ which implies $v^2 = v^{-1}$.
+  \end{proof}
+\item Show that $v$ commutes with $u^3$.
+  \begin{proof}
+    Since
+    \begin{equation*}
+      v^2u^3v = (v^2u^2)(uv) = (uv)(v^2u^2) = uv^3u^2 = u^3,
+    \end{equation*}
+    we have
+    \begin{equation*}
+      vu^3 = v(v^2u^3v) = v^3u^3v = u^3v,
+    \end{equation*}
+    so $v$ commutes with $u^3$.
+  \end{proof}
+\item Show that $v$ commutes with $u$.
+  \begin{proof}
+    Since $u^4 = 1$, we have $u^9 = u^4u^4u = u$. And since $v$
+    commutes with $u^3$ we have
+    \begin{equation*}
+      uv = u^9v = u^6vu^3 = u^3vu^6 = vu^9 = vu.
+    \end{equation*}
+    Therefore $v$ commutes with $u$.
+  \end{proof}
+\item Show that $uv = 1$.
+  \begin{proof}
+    Since $u$ and $v$ commute, we get
+    \begin{equation*}
+      uv = (uv)(u^4v^3) = u^5v^4 = (v^2u^2)(u^3v^2)
+      = (uv)(u^3v^2) = u^4v^3 = 1.\qedhere
+    \end{equation*}
+  \end{proof}
+\item Show that $u = 1$, deduce that $v = 1$, and conclude that
+  $Y = 1$.
+  \begin{proof}
+    Since $u^4v^3 = 1$ we have
+    \begin{equation*}
+      1 = u^4v^3 = u^3(uv)v^2 = u^3v^2 = u^2(uv)v = u^2v = u(uv) = u.
+    \end{equation*}
+    Then $v = uv = 1$ so that $1$ is the only element of $Y$. $Y$ is
+    therefore the trivial group of order $1$.
+  \end{proof}
+\end{enumerate}
