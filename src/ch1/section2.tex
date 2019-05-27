@@ -105,3 +105,14 @@ only element of $D_{2n}$ which commutes with all elements of $D_{2n}$.
   except the odd case from Exercise~\ref{exercise-power-own-inverse}
   is used instead of the even one.
 \end{proof}
+
+\Exercise6 Let $x$ and $y$ be elements of order $2$ in any group
+$G$. Prove that if $t = xy$ then $tx = xt^{-1}$ (so that if
+$n = \abs{xy} < \infty$ then $x, t$ satisfy the same relations in $G$
+as $s,r$ do in $D_{2n}$).
+\begin{proof}
+  Note that $x = x^{-1}$ and $y = y^{-1}$. If $t = xy$ then
+  \begin{equation*}
+    tx = xyx = xy^{-1}x^{-1} = x(xy)^{-1} = xt^{-1}. \qedhere
+  \end{equation*}
+\end{proof}
