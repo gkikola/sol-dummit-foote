@@ -226,3 +226,55 @@ and $y_1$ by $s$).
   $rs = sr$ and $(x_1y_1)^2 = 1$ are equivalent. Therefore the above
   group is $D^4$.
 \end{proof}
+
+\Exercise{17} Let $X_{2n}$ be the group with presentation
+\begin{equation*}
+  X_{2n} = \langle x, y \mid x^n = y^2 = 1,\,xy = yx^2\rangle.
+\end{equation*}
+\begin{enumerate}
+\item Show that if $n = 3k$ then $X_{2n}$ has order $6$, and it has
+  the same generators and relations as $D_6$ when $x$ is replaced by
+  $r$ and $y$ by $s$.
+  \begin{proof}
+    Let $n = 3k$. Suppose $x^n = y^2 = 1$ and that $xy =
+    yx^2$. Note that, as shown in the text,
+    \begin{equation*}
+      x = xy^2 = yx^2y = yxyx^2 = y^2x^4 = x^4
+    \end{equation*}
+    and the cancellation law implies $x^3 = 1$. Letting $x = r$ and
+    $y = s$, we then have $r^3 = s^2 = 1$ and
+    \begin{equation*}
+      rs = xy = yx^2 = sr^2 = sr^{-1}.
+    \end{equation*}
+
+    Now suppose that $r^3 = s^2 = 1$ and $rs = sr^{-1}$. Then
+    \begin{equation*}
+      x^n = x^{3k} = (r^3)^k = 1^k = 1,
+    \end{equation*}
+    $y^2 = s^2 = 1$, and
+    \begin{equation*}
+      xy = rs = sr^{-1} = sr^2 = yx^2.
+    \end{equation*}
+
+    Since the generators and relations are the same, $X_{2n}$ is $D_6$
+    and has order $6$.
+  \end{proof}
+\item Show that if $(3,n) = 1$, then $x$ satisfies the additional
+  relation: $x = 1$. In this case deduce that $X_{2n}$ has order $2$.
+  \begin{proof}
+    Using the same argument as in the previous part, we must have
+    $x^3 = 1$. If $(3,n) = 1$ then either $n = 3k + 1$ or $n = 3k + 2$
+    for some integer $k$. If $n = 3k + 1$ then
+    \begin{equation*}
+      x = 1^kx = (x^3)^kx = x^{3k}x = x^{3k+1} = x^n = 1,
+    \end{equation*}
+    and if $n = 3k + 2$ then
+    \begin{equation*}
+      x^{-1} = 1^{k+1}x^{-1} = (x^3)^{k+1}x^{-1} = x^{3k+3}x^{-1}
+      = x^{3k+2} = x^n = 1.
+    \end{equation*}
+    But if $x^{-1} = 1$ then $x = 1$. In either case, the relation
+    $x = 1$ holds so $X_{2n}$ is the set $\{1, y\}$ with the relation
+    $y^2 = 1$, so $\abs{X_{2n}} = 2$.
+  \end{proof}
+\end{enumerate}
