@@ -84,3 +84,84 @@ were computed in the preceding two exercises compute its order.
     \ord{\tau^2\sigma} &= 13. \qedhere
   \end{align*}
 \end{solution}
+
+\Exercise4 Compute the order of each of the elements in the following
+groups:
+\label{exercise-order-s3-and-s4-elements}
+\begin{enumerate}
+\item $S_3$
+  \begin{solution}
+    All elements in $S_3$ can be written as a single $t$-cycle, with
+    $t$ being the order of the element:
+    \begin{center}
+      \begin{tabular}{r|l}
+        Permutation & Order in $S_3$ \\\hline
+        1 & 1 \\
+        (1\,2) & 2 \\
+        (1\,3) & 2 \\
+        (2\,3) & 2 \\
+        (1\,2\,3) & 3 \\
+        (1\,3\,2) & 3
+      \end{tabular}
+    \end{center}
+  \end{solution}
+\item $S_4$
+  \begin{solution}
+    The order of each element in $S_4$ is simply the least common
+    multiple of the lengths of each cycle in its cycle decomposition:
+    \begin{center}
+      \begin{tabular}{r|l}
+        Permutation & Order \\\hline
+        1 & 1 \\
+        (1\,2) & 2 \\
+        (1\,3) & 2 \\
+        (1\,4) & 2 \\
+        (2\,3) & 2 \\
+        (2\,4) & 2 \\
+        (3\,4) & 2 \\
+        (1\,2\,3) & 3
+      \end{tabular}
+      \begin{tabular}{r|l}
+        Permutation & Order \\\hline
+        (1\,2\,4) & 3 \\
+        (1\,3\,4) & 3 \\
+        (2\,3\,4) & 3 \\
+        (1\,3\,2) & 3 \\
+        (1\,4\,2) & 3 \\
+        (1\,4\,3) & 3 \\
+        (2\,4\,3) & 3 \\
+        (1\,2)(3\,4) & 2
+      \end{tabular}
+      \begin{tabular}{r|l}
+        Permutation & Order \\\hline
+        (1\,3)(2\,4) & 2 \\
+        (1\,4)(2\,3) & 2 \\
+        (1\,2\,3\,4) & 4 \\
+        (1\,2\,4\,3) & 4 \\
+        (1\,3\,2\,4) & 4 \\
+        (1\,3\,4\,2) & 4 \\
+        (1\,4\,2\,3) & 4 \\
+        (1\,4\,3\,2) & 4
+      \end{tabular}
+    \end{center}
+  \end{solution}
+\end{enumerate}
+
+\Exercise5 Find the order of
+$(1\;12\;8\;10\;4)(2\;13)(5\;11\;7)(6\;9)$.
+\begin{solution}
+  Since the cycles are disjoint, the order of this element in $S_{13}$
+  is the least common multiple of the cycle lengths: $[2,3,5] = 30$.
+\end{solution}
+
+\Exercise6 Write out the cycle decomposition of each element of order
+$4$ in $S_4$.
+\begin{solution}
+  See Exercise~\ref{exercise-order-s3-and-s4-elements}.
+\end{solution}
+
+\Exercise7 Write out the cycle decomposition of each element of order
+$2$ in $S_4$.
+\begin{solution}
+  See Exercise~\ref{exercise-order-s3-and-s4-elements}.
+\end{solution}
