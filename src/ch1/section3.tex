@@ -165,3 +165,19 @@ $2$ in $S_4$.
 \begin{solution}
   See Exercise~\ref{exercise-order-s3-and-s4-elements}.
 \end{solution}
+
+\Exercise8 Prove that if $\Omega = \{1,2,3,\dots\}$ then $S_\Omega$ is
+an infinite group.
+\begin{proof}
+  Let $n$ be any positive integer and consider the permutation
+  $\sigma_n$ which sends $2n-1$ to $2n$ and sends $2n$ to $2n-1$,
+  while fixing all other elements in $\Omega$. Clearly
+  $\sigma_n\in S_\Omega$.
+
+  Now, if $i$ and $j$ are distinct positive integers, then the numbers
+  $2i-1$, $2i$, $2j-1$, $2j$ are distinct from one another, so that
+  $\sigma_i$ and $\sigma_j$ have cycle decompositions that are
+  disjoint. Thus $\sigma_1, \sigma_2, \dots, \sigma_n, \dots$ are
+  distinct elements in $S_\Omega$, and therefore $S_\Omega$ is
+  infinite.
+\end{proof}
