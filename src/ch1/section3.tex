@@ -54,5 +54,33 @@ $\tau$, $\sigma^2$, $\sigma\tau$, $\tau\sigma$, and $\tau^2\sigma$.
     \tau\sigma &= (1\;4)(2\;9)(3\;13\;12\;15\;11\;5)(8\;10\;14) \\
     \intertext{and}
     \tau^2\sigma &= (1\;2\;15\;8\;3\;4\;14\;11\;12\;13\;7\;5\;10).
+                   \qedhere
+  \end{align*}
+\end{solution}
+
+\Exercise3 For each of the permutations whose cycle decompositions
+were computed in the preceding two exercises compute its order.
+\begin{solution}
+  For the first exercise, $\sigma = (1\,3\,5)(2\,4)$,
+  $\sigma^2 = (1\,5\,3)$, $\sigma^3 = (2\,4)$, $\sigma^4 = (1\,3\,5)$,
+  $\sigma^5 = (1\,5\,3)(2\,4)$ and $\sigma^6 = 1$. Therefore
+  $\abs{\sigma} = 6$. Similarly, $\tau = (1\,5)(2\,3)$ and
+  $\tau^2 = 1$, so $\abs{\tau} = 2$. $\sigma^2$ is a 3-cycle and so
+  has order $3$, and $\sigma\tau$ and $\tau\sigma$ are both 4-cycles
+  and so have order $4$. Lastly, $\tau^2\sigma = \sigma$ so
+  $\abs{\tau^2\sigma} = 6$.
+
+  For the second exercise, we could proceed in the same way. Or we
+  could observe that, since a $t$-cycle has order $t$, the order of a
+  product of disjoint cycles will be the least common multiple of the
+  lengths of each cycle. This gives
+  \begin{align*}
+    \abs{\sigma} &= [3,4,6] = 12, \\
+    \abs{\tau} &= [2,3,5] = 30, \\
+    \abs{\sigma^2} &= [2,3] = 6, \\
+    \abs{\sigma\tau} &= [2,3,6] = 6, \\
+    \abs{\tau\sigma} &= [2,3,6] = 6, \\
+    \intertext{and}
+    \abs{\tau^2\sigma} &= 13. \qedhere
   \end{align*}
 \end{solution}
