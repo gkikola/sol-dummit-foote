@@ -369,7 +369,7 @@ $\Z/12\Z$.
     \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c}
       $x$ & $\bar0$ & $\bar1$ & $\bar2$ & $\bar3$ & $\bar4$ & $\bar5$ & $\bar6$
       & $\bar7$ & $\bar8$ & $\bar9$ & $\overline{10}$ & $\overline{11}$ \\\hline
-      $\abs{x}$ & 1 & 12 & 6 & 4 & 3 & 12 & 2 & 12 & 3 & 4 & 6 & 12
+      $\ord{x}$ & 1 & 12 & 6 & 4 & 3 & 12 & 2 & 12 & 3 & 4 & 6 & 12
     \end{tabular}
   \end{center}
 \end{solution}
@@ -383,7 +383,7 @@ $\bar1, \overline{-1}, \bar5, \bar7, \overline{-7}, \overline{13}$.
     \begin{tabular}{c|c|c|c|c|c|c}
       $x$ & $\bar1$ & $\overline{-1}$ & $\bar5$ & $\bar7$ & $\overline{-7}$
       & $\overline{13}$ \\\hline
-      $\abs{x}$ & 1 & 2 & 2 & 2 & 2 & 1
+      $\ord{x}$ & 1 & 2 & 2 & 2 & 2 & 1
     \end{tabular}
   \end{center}
 \end{solution}
@@ -400,7 +400,7 @@ $\bar1, \bar2, \bar6, \bar9, \overline{10}, \overline{12},
       $x$ & $\bar1$ & $\bar2$ & $\bar6$ & $\bar9$ & $\overline{10}$
       & $\overline{12}$ & $\overline{-1}$ & $\overline{-10}$
       & $\overline{-18}$ \\\hline
-      $\abs{x}$ & 36 & 18 & 6 & 4 & 18 & 3 & 36 & 18 & 2
+      $\ord{x}$ & 36 & 18 & 6 & 4 & 18 & 3 & 36 & 18 & 2
     \end{tabular}
   \end{center}
 \end{solution}
@@ -415,7 +415,7 @@ $\bar1, \overline{-1}, \bar5, \overline{13}, \overline{-13},
     \begin{tabular}{c|c|c|c|c|c|c}
       $x$ & $\bar1$ & $\overline{-1}$ & $\bar5$ & $\overline{13}$
       & $\overline{-13}$ & $\overline{17}$ \\\hline
-      $\abs{x}$ & 1 & 2 & 6 & 3 & 6 & 2
+      $\ord{x}$ & 1 & 2 & 6 & 3 & 6 & 2
     \end{tabular}
   \end{center}
 \end{solution}
@@ -438,20 +438,20 @@ $a_1,a_2,\dots,a_n\in G$.
 \end{proof}
 
 \Exercise{16} Let $x$ be an element of a group $G$. Prove that
-$x^2 = 1$ if and only if $\abs{x}$ is either $1$ or $2$.
+$x^2 = 1$ if and only if $\ord{x}$ is either $1$ or $2$.
 \begin{proof}
-  First, if $\abs{x} = 1$ then $x = 1$ so $x^2 = 1^2 = 1$. If
-  $\abs{x} = 2$, then $x^2 = 1$ by definition.
+  First, if $\ord{x} = 1$ then $x = 1$ so $x^2 = 1^2 = 1$. If
+  $\ord{x} = 2$, then $x^2 = 1$ by definition.
 
-  For the other direction, suppose $x^2 = 1$. Then $\abs{x}\leq2$. But
-  the order of an element must be at least $1$, so $\abs{x} = 1$ or
-  $\abs{x} = 2$.
+  For the other direction, suppose $x^2 = 1$. Then $\ord{x}\leq2$. But
+  the order of an element must be at least $1$, so $\ord{x} = 1$ or
+  $\ord{x} = 2$.
 \end{proof}
 
 \Exercise{17} Let $x$ be an element of a group $G$. Prove that if
-$\abs{x} = n$ for some positive integer $n$ then $x^{-1} = x^{n-1}$.
+$\ord{x} = n$ for some positive integer $n$ then $x^{-1} = x^{n-1}$.
 \begin{proof}
-  Since $\abs{x} = n$, we have $x^n = 1$. But
+  Since $\ord{x} = n$, we have $x^n = 1$. But
   $x^n = x^{n-1}x = xx^{n-1}$, so $x^{n-1}x = 1$ which shows that
   $x^{-1} = x^{n-1}$.
 \end{proof}
@@ -531,18 +531,18 @@ $x^{-1}y^{-1}xy = 1$.
 \Exercise{20} For $x$ an element in $G$ a group show that $x$ and
 $x^{-1}$ have the same order.
 \begin{proof}
-  Suppose $\abs{x} = n$ for finite $n$. Then $x^n = 1$ so
+  Suppose $\ord{x} = n$ for finite $n$. Then $x^n = 1$ so
   \begin{equation*}
     (x^{-1})^n = x^{-n} = (x^n)^{-1} = 1^{-1} = 1,
   \end{equation*}
   which shows $x^{-1}$ has finite order and
-  $\abs{x^{-1}} \leq \abs{x}$. On the other hand, if
-  $\abs{x^{-1}} = k$ then
+  $\ord{x^{-1}} \leq \ord{x}$. On the other hand, if
+  $\ord{x^{-1}} = k$ then
   \begin{equation*}
     x^k = (x^{-1})^{-k} = \left((x^{-1})^k\right)^{-1} = 1^{-1} = 1,
   \end{equation*}
-  so $x$ has finite order and $\abs{x} \leq \abs{x^{-1}}$. This shows
-  that $\abs{x} = \abs{x^{-1}}$ when either $x$ or $x^{-1}$ is of
+  so $x$ has finite order and $\ord{x} \leq \ord{x^{-1}}$. This shows
+  that $\ord{x} = \ord{x^{-1}}$ when either $x$ or $x^{-1}$ is of
   finite order. The only alternative is that $x$ and $x^{-1}$ are both
   of infinite order.
 \end{proof}
@@ -567,45 +567,45 @@ some integer $k\geq1$.
 \end{proof}
 
 \Exercise{22} If $x$ and $g$ are elements of the group $G$, prove that
-$\abs{x} = \abs{g^{-1}xg}$. Deduce that $\abs{ab} = \abs{ba}$ for all
+$\ord{x} = \ord{g^{-1}xg}$. Deduce that $\ord{ab} = \ord{ba}$ for all
 $a,b\in G$.
 \begin{proof}
   A simple induction argument will show that
-  $(g^{-1}xg)^k = g^{-1}x^kg$ for any $k\in\Z^+$. So if $\abs{x} = n$,
+  $(g^{-1}xg)^k = g^{-1}x^kg$ for any $k\in\Z^+$. So if $\ord{x} = n$,
   then $x^n = 1$ and we have
   \begin{equation*}
     (g^{-1}xg)^n = g^{-1}x^ng = g^{-1}1g = 1,
   \end{equation*}
   which shows that $g^{-1}xg$ is of finite order and
-  $\abs{g^{-1}xg} \leq \abs{x}$. However, if $\abs{g^{-1}xg} = k$,
+  $\ord{g^{-1}xg} \leq \ord{x}$. However, if $\ord{g^{-1}xg} = k$,
   then $(g^{-1}xg)^k = 1$ so
   \begin{equation*}
     x^k = gg^{-1}x^kgg^{-1} = g(g^{-1}xg)^kg^{-1} = g1g^{-1} = 1,
   \end{equation*}
   which shows that $x$ is of finite order and
-  $\abs{x} \leq \abs{g^{-1}xg}$. Therefore $\abs{x} = \abs{g^{-1}xg}$.
+  $\ord{x} \leq \ord{g^{-1}xg}$. Therefore $\ord{x} = \ord{g^{-1}xg}$.
 
   This also shows that if $x$ is of infinite order, then $g^{-1}xg$ is
   of infinite order and vice versa.
 
   Finally, for any $a,b\in G$,
   \begin{equation*}
-    \abs{ab} = \abs{b(ab)b^{-1}} = \abs{ba}. \qedhere
+    \ord{ab} = \ord{b(ab)b^{-1}} = \ord{ba}. \qedhere
   \end{equation*}
 \end{proof}
 
 \Exercise{23} Suppose $x\in G$ for $G$ a group and
-$\abs{x} = n < \infty$. If $n = st$ for some positive integers $s$ and
-$t$, prove that $\abs{x^s} = t$.
+$\ord{x} = n < \infty$. If $n = st$ for some positive integers $s$ and
+$t$, prove that $\ord{x^s} = t$.
 \begin{proof}
-  Let $\abs{x} = n$ where $n = st$. Then
+  Let $\ord{x} = n$ where $n = st$. Then
   \begin{equation*}
     1 = x^n = x^{st} = (x^s)^t,
   \end{equation*}
-  so $\abs{x^s}\leq t$. Now suppose $\abs{x^s} = r$. Then
-  $(x^s)^r = x^{sr} = 1$. But $\abs{x} = st$, so we have $sr\geq st$
-  or $r\geq t$, which gives $\abs{x^s}\geq t$. Therefore
-  $\abs{x^s} = t$.
+  so $\ord{x^s}\leq t$. Now suppose $\ord{x^s} = r$. Then
+  $(x^s)^r = x^{sr} = 1$. But $\ord{x} = st$, so we have $sr\geq st$
+  or $r\geq t$, which gives $\ord{x^s}\geq t$. Therefore
+  $\ord{x^s} = t$.
 \end{proof}
 
 \Exercise{24} If $a$ and $b$ are {\em commuting} elements of the group
@@ -752,7 +752,7 @@ if both $A$ and $B$ are abelian.
 
 \Exercise{30} Prove that the elements $(a,1)$ and $(1,b)$ of
 $A\times B$ commute and deduce that the order of $(a,b)$ is the least
-common multiple of $\abs{a}$ and $\abs{b}$.
+common multiple of $\ord{a}$ and $\ord{b}$.
 \begin{proof}
   If $a\in A$ and $b\in B$, then $(a,1),(1,b)\in A\times B$ and
   \begin{equation*}
@@ -767,24 +767,24 @@ common multiple of $\abs{a}$ and $\abs{b}$.
     = (a^k,b^k)(a,b) = (a^{k+1},b^{k+1})
   \end{equation*}
   so the statement holds for all $n\in\Z^+$. This implies that
-  $\abs{(a,1)} = \abs{a}$ and $\abs{(1,b)} = \abs{b}$.
+  $\ord{(a,1)} = \ord{a}$ and $\ord{(1,b)} = \ord{b}$.
 
-  Let the least common multiple of $\abs{a}$ and $\abs{b}$ be $\ell$
-  and suppose $\abs{(a,b)} = k$. Then $m\abs{a} = n\abs{b} = \ell$ for
+  Let the least common multiple of $\ord{a}$ and $\ord{b}$ be $\ell$
+  and suppose $\ord{(a,b)} = k$. Then $m\ord{a} = n\ord{b} = \ell$ for
   some integers $m$ and $n$. Since $(a,1)$ and $(1,b)$ commute, we
   have
   \begin{align*}
     (a,b)^\ell
     &= ((a,1)(1,b))^\ell \\
     &= (a,1)^\ell(1,b)^\ell \\
-    &= (a,1)^{m\abs{a}}(1,b)^{n\abs{b}} \\
+    &= (a,1)^{m\ord{a}}(1,b)^{n\ord{b}} \\
     &= (1,1)(1,1) \\
     &= (1,1).
   \end{align*}
   So $k\leq\ell$. Now since $(a,b)^k = (1,1)$, we have $a^k = 1$ and
-  $b^k = 1$. This implies $\abs{a}$ divides $k$ and $\abs{b}$ divides
-  $k$. So $k$ is a common multiple of $\abs{a}$ and
-  $\abs{b}$. Therefore $\ell\leq k$. This shows that $\ell = k$, which
+  $b^k = 1$. This implies $\ord{a}$ divides $k$ and $\ord{b}$ divides
+  $k$. So $k$ is a common multiple of $\ord{a}$ and
+  $\ord{b}$. Therefore $\ell\leq k$. This shows that $\ell = k$, which
   completes the proof.
 \end{proof}
 
@@ -807,12 +807,12 @@ an element of order $2$.
 
 \Exercise{32} If $x$ is an element of finite order $n$ in a group $G$,
 prove that the elements $1, x, x^2, \dots, x^{n-1}$ are all
-distinct. Deduce that $\abs{x}\leq\abs{G}$.
+distinct. Deduce that $\ord{x}\leq\ord{G}$.
 \begin{proof}
   Suppose the contrary, so that $x^s = x^t$ for $1\leq s < t<n$. Then
-  $x^tx^{-s} = x^{t-s} = 1$. But $1\leq t-s < n$, so $\abs{x} < n$, a
+  $x^tx^{-s} = x^{t-s} = 1$. But $1\leq t-s < n$, so $\ord{x} < n$, a
   contradiction. This shows that each of $1, x,\dots,x^{n-1}$ are
-  distinct so that $\abs{G}\geq\abs{x}$.
+  distinct so that $\ord{G}\geq\ord{x}$.
 \end{proof}
 
 \Exercise{33} Let $x$ be an element of finite order $n$ in the group
@@ -883,13 +883,13 @@ $G$. Deduce that $G$ is abelian.
   have $ba = c$ and $ac = ca = b$. Using this information, we have
   $b^2 = (ca)(ac) = c(a^2)c = c^2$.
 
-  Now, if $b^2\neq1$ then we must have $\abs{b} = 3$ so that
+  Now, if $b^2\neq1$ then we must have $\ord{b} = 3$ so that
   $b^3 = 1$. Then
   \begin{equation*}
     a = ab^3 = (ab)b^2 = c^3.
   \end{equation*}
-  But since $c^3 = a\neq1$, we have $\abs{c} = 2$ so $1 = c^2 = b^2$
-  and $\abs{b} = 2$, a contradiction. This shows that $b^2 = c^2 =
+  But since $c^3 = a\neq1$, we have $\ord{c} = 2$ so $1 = c^2 = b^2$
+  and $\ord{b} = 2$, a contradiction. This shows that $b^2 = c^2 =
   1$. Finally,
   \begin{equation*}
     bc = (ac)c = ac^2 = a,

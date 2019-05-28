@@ -11,24 +11,24 @@ groups:
 \item $D_6$
   \begin{solution}
     The elements of $D_6$ are $1$, $r$, $r^2$, $s$, $sr$, and
-    $sr^2$. We have $\abs{1} = 1$, $\abs{r} = 3$, $\abs{r^2} = 3$, and
-    $\abs{s} = 2$. Since $(sr)^2 = srsr = s^2r^{-1}r = 1$ and
+    $sr^2$. We have $\ord{1} = 1$, $\ord{r} = 3$, $\ord{r^2} = 3$, and
+    $\ord{s} = 2$. Since $(sr)^2 = srsr = s^2r^{-1}r = 1$ and
     $(sr^2)^2 = sr^2sr^2 = s^2r^{-2}r^2 = 1$, we have
-    $\abs{sr} = \abs{sr^2} = 2$.
+    $\ord{sr} = \ord{sr^2} = 2$.
   \end{solution}
 \item $D_8$
   \begin{solution}
-    Again we have $\abs{1} = 1$, $\abs{r} = 4$, $\abs{r^2} = 2$, and
-    $\abs{r^3} = 4$. For $k$ with $0\leq k\leq3$, we have
-    $(sr^k)^2 = sr^ksr^k = s^2r^{-k}r^k = 1$ so $\abs{sr^k} = 2$.
+    Again we have $\ord{1} = 1$, $\ord{r} = 4$, $\ord{r^2} = 2$, and
+    $\ord{r^3} = 4$. For $k$ with $0\leq k\leq3$, we have
+    $(sr^k)^2 = sr^ksr^k = s^2r^{-k}r^k = 1$ so $\ord{sr^k} = 2$.
   \end{solution}
 \item $D_{10}$
   \begin{solution}
     Since $5$ is prime, we have for each $k$ with $0\leq k\leq4$,
     \begin{equation*}
-      \abs{r^k} = 5
+      \ord{r^k} = 5
       \quad\text{and}\quad
-      \abs{sr^k} = 2. \qedhere
+      \ord{sr^k} = 2. \qedhere
     \end{equation*}
   \end{solution}
 \end{enumerate}
@@ -55,7 +55,7 @@ which have order $2$.
   \begin{equation*}
     (sr^k)^2 = sr^ksr^k = s^2r^{-k}r^k = 1,
   \end{equation*}
-  so $\abs{sr^k} = 2$.
+  so $\ord{sr^k} = 2$.
 
   Now, the elements of $D_{2n}$ are $1, r, r^2, \dots, r^n$, and
   $s, sr, \dots, sr^n$. Each $r^k$ can be written as $(s(sr))^k$, and
@@ -109,7 +109,7 @@ only element of $D_{2n}$ which commutes with all elements of $D_{2n}$.
 
 \Exercise6 Let $x$ and $y$ be elements of order $2$ in any group
 $G$. Prove that if $t = xy$ then $tx = xt^{-1}$ (so that if
-$n = \abs{xy} < \infty$ then $x, t$ satisfy the same relations in $G$
+$n = \ord{xy} < \infty$ then $x, t$ satisfy the same relations in $G$
 as $s,r$ do in $D_{2n}$).
 \begin{proof}
   Note that $x = x^{-1}$ and $y = y^{-1}$. If $t = xy$ then
@@ -144,18 +144,18 @@ by $r$.
   $r$. Then each element of $G$ can be written $r^k$ for some integer
   $k$. If $k>0$ then $r^k$ is a clockwise rotation about the origin by
   $2k\pi/n$ radians. If $k<0$, then $r^k$ is a rotation
-  counterclockwise by $-2k\pi/n$ radians. If $\abs{k}\geq n$, then the
+  counterclockwise by $-2k\pi/n$ radians. If $\ord{k}\geq n$, then the
   rotation is equivalent to a rotation $r^\ell$ where
   $0\leq\ell<n$. And $1, r, r^2, \dots, r^{n-1}$ are distinct, so $G$
   is given by
   \begin{equation*}
     G = \{ 1, r, r^2, \dots, r^{n-1} \},
   \end{equation*}
-  and we have $\abs{G} = n$.
+  and we have $\ord{G} = n$.
 \end{solution}
 
 \Exercise9 Let $G$ be the group of rigid motions in $\R^3$ of a
-tetrahedron. Show that $\abs{G} = 12$.
+tetrahedron. Show that $\ord{G} = 12$.
 \begin{proof}
   A tetrahedron has $4$ vertices. Label them from $1$ to $4$. Then a
   rigid motion in $G$ can send vertex $1$ to $4$ possible places. Once
@@ -163,38 +163,38 @@ tetrahedron. Show that $\abs{G} = 12$.
   adjacent vertices at which to place vertex $2$. The positions of the
   remaining two vertices will then be completely determined by the
   positions of the first two. Therefore there are $4(3) = 12$ possible
-  symmetries, so $\abs{G} = 12$.
+  symmetries, so $\ord{G} = 12$.
 \end{proof}
 
 \Exercise{10} Let $G$ be the group of rigid motions in $\R^3$ of a
-cube. Show that $\abs{G} = 24$.
+cube. Show that $\ord{G} = 24$.
 \begin{proof}
   A cube has $8$ vertices, and each vertex has $3$ adjacent
   vertices. So there are $8$ possibilities for the position of the
   first vertex, followed by $3$ possibilities for the position of the
-  second, resulting in $8(3) = 24$ symmetries. So $\abs{G} = 24$.
+  second, resulting in $8(3) = 24$ symmetries. So $\ord{G} = 24$.
 \end{proof}
 
 \Exercise{11} Let $G$ be the group of rigid motions in $\R^3$ of an
-octahedron. Show that $\abs{G} = 24$.
+octahedron. Show that $\ord{G} = 24$.
 \begin{proof}
   An octahedron has $6$ vertices and each vertex has $4$ adjacent
   vertices. So, using the same reasoning as in the previous two
-  exercises, we get $\abs{G} = 6(4) = 24$.
+  exercises, we get $\ord{G} = 6(4) = 24$.
 \end{proof}
 
 \Exercise{12} Let $G$ be the group of rigid motions in $\R^3$ of a
-dodecahedron. Show that $\abs{G} = 60$.
+dodecahedron. Show that $\ord{G} = 60$.
 \begin{proof}
   We have $20$ vertices, and each vertex has $3$ neighboring
-  vertices. So $\abs{G} = 20(3) = 60$.
+  vertices. So $\ord{G} = 20(3) = 60$.
 \end{proof}
 
 \Exercise{13} Let $G$ be the group of rigid motions in $\R^3$ of an
-icosahedron. Show that $\abs{G} = 60$.
+icosahedron. Show that $\ord{G} = 60$.
 \begin{proof}
   We have $12$ vertices, with each vertex adjacent to $5$ vertices,
-  giving $\abs{G} = 12(5) = 60$.
+  giving $\ord{G} = 12(5) = 60$.
 \end{proof}
 
 \Exercise{14} Find a set of generators for $\Z$.
@@ -275,7 +275,7 @@ and $y_1$ by $s$).
     \end{equation*}
     But if $x^{-1} = 1$ then $x = 1$. In either case, the relation
     $x = 1$ holds so $X_{2n}$ is the set $\{1, y\}$ with the relation
-    $y^2 = 1$, so $\abs{X_{2n}} = 2$.
+    $y^2 = 1$, so $\ord{X_{2n}} = 2$.
   \end{proof}
 \end{enumerate}
 
