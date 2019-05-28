@@ -228,3 +228,31 @@ an infinite group.
     congruent values modulo $14$.
   \end{solution}
 \end{enumerate}
+
+\Exercise{10} Prove that if $\sigma$ is the $m$-cycle
+$(a_1\,a_2\,\dots\,a_m)$, then for all $i\in\{1,2,\dots,m\}$,
+$\sigma^i(a_k) = a_{k+i}$, where $k+i$ is replaced by its least
+positive residue mod $m$. Deduce that $\ord{\sigma} = m$.
+\begin{proof}
+  Fix a positive integer $m$. We will use induction on $i$ to show
+  that $\sigma^i(a_k) = a_{k+i}$ for each positive integer $i$. Since
+  $\sigma$ cyclically permutes $a_1,\dots,a_m$, we have
+  $\sigma(a_k) = a_{k+1}$ for each $k$ (taking $a_{m+1} = a_1$), so
+  the base case is satisfied.
+
+  Now suppose $\sigma^i(a_k) = a_{k+i}$ for some positive integer
+  $i$. Then
+  \begin{align*}
+    \sigma^{i+1}(a_k) &= \sigma(\sigma^i(a_k)) \\
+                      &= \sigma(a_{k+i}) \\
+                      &= a_{k+i+1},
+  \end{align*}
+  again replacing $k+i$ and $k+i+1$ with their least positive residues
+  mod $m$. This completes the inductive step, so
+  $\sigma^i(a_k) = a_{k+i}$ for each integer $i > 0$.
+
+  Finally, if $1\leq i<m$ then $\sigma^i$ sends $a_1$ to
+  $a_{1+i}\neq a_1$ so that $\sigma^i$ is not the identity. But
+  $\sigma^m$ sends $a_k$ to $a_{k+m} = a_k$ for each $k$. Therefore
+  $\sigma^m = 1$, which shows that $\ord{\sigma} = m$.
+\end{proof}
