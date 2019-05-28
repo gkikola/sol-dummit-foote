@@ -1,0 +1,25 @@
+\section{Symmetric Groups}
+
+\Exercise1 Let $\sigma$ be the permutation
+\begin{equation*}
+  1\mapsto3 \quad 2\mapsto4 \quad 3\mapsto5 \quad 4\mapsto2 \quad 5\mapsto1
+\end{equation*}
+and let $\tau$ be the permutation
+\begin{equation*}
+  1\mapsto5 \quad 2\mapsto3 \quad 3\mapsto2 \quad 4\mapsto4 \quad 5\mapsto1.
+\end{equation*}
+Find the cycle decompositions of each of the following permutations:
+$\sigma$, $\tau$, $\sigma^2$, $\sigma\tau$, $\tau\sigma$, and
+$\tau^2\sigma$.
+\begin{solution}
+  Applying the permutations from right to left, we get
+  \begin{align*}
+    \sigma &= (1\,3\,5)(2\,4) \\
+    \tau &= (1\,5)(2\,3) \\
+    \sigma^2 &= (1\,5\,3) \\
+    \sigma\tau &= (2\,5\,3\,4) \\
+    \tau\sigma &= (1\,2\,4\,3) \\
+    \intertext{and}
+    \tau^2\sigma &= (1\,3\,5)(2\,4). \qedhere
+  \end{align*}
+\end{solution}
