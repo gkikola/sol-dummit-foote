@@ -181,3 +181,50 @@ an infinite group.
   distinct elements in $S_\Omega$, and therefore $S_\Omega$ is
   infinite.
 \end{proof}
+
+\Exercise9
+\begin{enumerate}
+\item Let $\sigma$ be the $12$-cycle
+  $(1\;2\;3\;4\;5\;6\;7\;8\;9\;10\;11\;12)$. For which positive
+  integers $i$ is $\sigma^i$ also a $12$-cycle?
+  \begin{solution}
+    By applying $\sigma$ twice we can determine that
+    \begin{equation*}
+      \sigma^2 = (1\;3\;5\;7\;9\;11)(2\;4\;6\;8\;10\;12).
+    \end{equation*}
+    So $\sigma^2$ is not a $12$-cycle. In this way we can also
+    determine that $\sigma^3$ and $\sigma^4$ are also not
+    $12$-cycles. However,
+    \begin{equation*}
+      \sigma^5 = (1\;6\;11\;4\;9\;2\;7\;12\;5\;10\;3\;8)
+    \end{equation*}
+    so $\sigma^5$ is a $12$-cycle.
+
+    Continuing in this way, we can see that $\sigma^6$ consists of a
+    product of $2$-cycles, $\sigma^7$ is a $12$-cycle, $\sigma^8$ is a
+    product of $3$-cycles, $\sigma^9$ is a product of $4$-cycles,
+    $\sigma^{10}$ is a product of $6$-cycles, and $\sigma^{11}$ is a
+    $12$-cycle. And higher powers will simply repeat the pattern.
+
+    Therefore, $\sigma^i$ is a $12$-cycle for $i = 1,5,7,11$ as well
+    as any integers which have a remainder of $1,5,7$, or $11$ when
+    divided by $12$. We can also characterize these values as being
+    precisely those values of $i$ for which $(12,i) = 1$.
+  \end{solution}
+\item Let $\tau$ be the $8$-cycle $(1\,2\,3\,4\,5\,6\,7\,8)$. For
+  which positive integers $i$ is $\tau^i$ also an $8$-cycle?
+  \begin{solution}
+    As in the previous part, $8$-cycles will be formed from any
+    exponent $i$ which is coprime to $8$, that is, any $i$ such that
+    $(8,i) = 1$. This means that $i = 1,3,5,7$ or any congruent values
+    modulo $8$.
+  \end{solution}
+\item Let $\omega$ be the $14$-cycle
+  $(1\;2\;3\;4\;5\;6\;7\;8\;9\;10\;11\;12\;13\;14)$. For which
+  positive integers $i$ is $\omega^i$ also a $14$-cycle.
+  \begin{solution}
+    Again, it is easy to verify that values of $i$ for which
+    $(14,i) = 1$ will produce $14$-cycles. So $i = 1,3,5,9,11,13$ or
+    congruent values modulo $14$.
+  \end{solution}
+\end{enumerate}
