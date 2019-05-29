@@ -320,3 +320,27 @@ prime to $m$.
     contradiction, so our assumption that $\sigma$ exists was invalid.
   \end{solution}
 \end{enumerate}
+
+\Exercise{13} Show that an element has order $2$ in $S_n$ if and only
+if its cycle decomposition is a product of commuting $2$-cycles.
+\begin{proof}
+  Let $n$ be a positive integer and suppose $\sigma\in S_n$ has order
+  $2$. Let $i,j$ be distinct integers in $\{1, 2, \dots, n\}$ such
+  that $\sigma(i) = j$. Then since $\sigma^2 = 1$, we must have
+  $\sigma(j) = i$. Thus $(i\;j)$ is a cycle in the cycle decomposition
+  of $\sigma$. And this is true for any such integers, so that no
+  cycle in the decomposition of $\sigma$ has length more than
+  $2$. Thus we can write $\sigma$ as a product of disjoint (and hence
+  commuting) $2$-cycles.
+
+  Now suppose that $\sigma$ is a member of $S_n$ such that its cycle
+  decomposition is a product of commuting $2$-cycles, so that
+  \begin{equation*}
+    \sigma = (a_1\;b_1)(a_2\;b_2)(a_3\;b_3)\cdots(a_k\;b_k).
+  \end{equation*}
+  Since each cycle commutes, we have
+  \begin{equation*}
+    \sigma^2 = (a_1\;b_1)^2(a_2\;b_2)^2\cdots(a_k\;b_k)^2 = 1^k = 1.
+  \end{equation*}
+  Since $\sigma$ is not the identity, $\ord{\sigma} = 2$.
+\end{proof}
