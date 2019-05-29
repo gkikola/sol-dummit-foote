@@ -256,3 +256,35 @@ positive residue mod $m$. Deduce that $\ord{\sigma} = m$.
   $\sigma^m$ sends $a_k$ to $a_{k+m} = a_k$ for each $k$. Therefore
   $\sigma^m = 1$, which shows that $\ord{\sigma} = m$.
 \end{proof}
+
+\Exercise{11} Let $\sigma$ be the $m$-cycle $(1\,2\,\dots\,m)$. Show
+that $\sigma^i$ is also an $m$-cycle if and only if $i$ is relatively
+prime to $m$.
+\begin{proof}
+  Fix a value for $i$. For the remainder of the proof, let $k^*$
+  denote the least positive residue of $k$ modulo $m$. That is, let
+  $k^*$ be the smallest positive integer such that
+  $k^*\equiv k\pmod m$.
+
+  Now, if $(i,m) = 1$, then the residues $i^*$, $(2i)^*$, \dots,
+  $((m-1)i)^*$ must be distinct. To see this, note that $i$ has a
+  multiplicative inverse (by Proposition~4 of Section~0.3), so if $s$
+  and $t$ are integers with $si\equiv ti\pmod m$, it follows that
+  $s\equiv t\pmod m$. Now, observe that $\sigma^i(m) = i^*$,
+  $\sigma^i(i^*) = (2i)^*$, and in general,
+  $\sigma^i((ki)^*) = ((k+1)i)^*$. So $\sigma^i$ is the $m$-cycle
+  \begin{equation*}
+    \sigma^i = (m\;i^*\;(2i)^*\;(3i)^*\;\dots\;((m-1)i)^*).
+  \end{equation*}
+
+  To prove the other direction, suppose $\sigma^i$ is an $m$-cycle and
+  let $d = (i, m)$. Then there are integers $x$ and $y$ such that
+  $dx = i$ and $dy = m$. Then
+  \begin{equation*}
+    (\sigma^i)^y = (\sigma^{dx})^y
+    = (\sigma^{dy})^x = (\sigma^m)^x = 1^x = 1.
+  \end{equation*}
+  Therefore $\ord{\sigma^i} \leq y$. But $\sigma^i$ is an $m$-cycle,
+  so its order is $m$. Therefore $y = m$ and $d = 1$. Hence $i$ is
+  relatively prime to $m$.
+\end{proof}
