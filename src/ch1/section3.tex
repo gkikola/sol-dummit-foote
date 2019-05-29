@@ -288,3 +288,35 @@ prime to $m$.
   so its order is $m$. Therefore $y = m$ and $d = 1$. Hence $i$ is
   relatively prime to $m$.
 \end{proof}
+
+\Exercise{12}
+\begin{enumerate}
+\item If $\tau = (1\;2)(3\;4)(5\;6)(7\;8)(9\;10)$ determine whether
+  there is an $n$-cycle $\sigma$ ($n\geq10$) with $\tau = \sigma^k$
+  for some integer $k$.
+  \begin{solution}
+    Consider the $n$-cycle
+    \begin{equation*}
+      \sigma = (1\;3\;5\;7\;9\;2\;4\;6\;8\;10).
+    \end{equation*}
+    Then $\sigma^5 = \tau$.
+  \end{solution}
+\item If $\tau = (1\;2)(3\;4\;5)$ determine whether there is an
+  $n$-cycle ($n\geq5$) with $\tau = \sigma^k$ for some integer $k$.
+  \begin{solution}
+    Suppose that it is possible, and let $\sigma$ be an $n$-cycle such
+    that $\sigma^k = \tau$.
+
+    If $n>5$ then $\sigma^k$ must fix $6, 7, \dots$. But if $\sigma$
+    is an $n$-cycle, then the only way $\sigma^k$ can fix any of these
+    values is if it fixes every value, that is, if
+    $\sigma^k = 1 \neq \tau$. Therefore we can suppose that $n = 5$.
+
+    Now since $\sigma^k$ is not an $n$-cycle, we know by the previous
+    exercise that $k$ is not relatively prime to $m$. But $n = 5$ is
+    prime, so $5\mid k$ and there is an integer $\ell$ such that
+    $k = 5\ell$. Then
+    $\sigma^k = (\sigma^5)^\ell = 1^\ell = 1\neq\tau$. This is a
+    contradiction, so our assumption that $\sigma$ exists was invalid.
+  \end{solution}
+\end{enumerate}
