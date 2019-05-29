@@ -391,3 +391,28 @@ be the case if $p$ is not prime.
   $n = 6$. Then $\sigma = (1\,2)(3\,4\,5)$ has order $6$ but it cannot
   be written as a product of commuting $6$-cycles.
 \end{proof}
+
+\Exercise{15} Prove that the order of an element in $S_n$ equals the
+least common multiple of the lengths of the cycles in its cycle
+decomposition.
+\begin{proof}
+  Let $\sigma\in S_n$ have the cycle decomposition
+  \begin{equation*}
+    \sigma = \tau_1\tau_2\tau_3\cdots\tau_k,
+  \end{equation*}
+  where each $\tau_i$ is a cycle and the cycles are pairwise disjoint
+  (and therefore commute). Suppose $\ord{\sigma} = n$. Then
+  \begin{equation*}
+    1 = \sigma^n = \tau_1^n\tau_2^n\cdots\tau_k^n,
+  \end{equation*}
+  which implies that $\tau_i^n = 1$ for each $i$ (the $\tau_i$'s are
+  disjoint, so if any $\tau_i^n\neq1$ then $\sigma^n\neq1$). So if
+  $\tau_i$ is a $t$-cycle, it follows that $t\mid n$. Therefore $n$ is
+  a common multiple of the lengths of each cycle in the cycle
+  decomposition of $\sigma$.
+
+  On the other hand, if $m$ is any common multiple of these lengths,
+  then $\sigma^m = \tau_1^m\cdots\tau_k^m = 1$, so we must have
+  $n \leq m$ which shows that $n$ is the {\em least} common multiple
+  of the cycle lengths.
+\end{proof}
