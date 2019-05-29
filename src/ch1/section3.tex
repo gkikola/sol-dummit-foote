@@ -260,6 +260,7 @@ positive residue mod $m$. Deduce that $\ord{\sigma} = m$.
 \Exercise{11} Let $\sigma$ be the $m$-cycle $(1\,2\,\dots\,m)$. Show
 that $\sigma^i$ is also an $m$-cycle if and only if $i$ is relatively
 prime to $m$.
+\label{exercise-m-cycle-power}
 \begin{proof}
   Fix a value for $i$. For the remainder of the proof, let $k^*$
   denote the least positive residue of $k$ modulo $m$. That is, let
@@ -343,4 +344,50 @@ if its cycle decomposition is a product of commuting $2$-cycles.
     \sigma^2 = (a_1\;b_1)^2(a_2\;b_2)^2\cdots(a_k\;b_k)^2 = 1^k = 1.
   \end{equation*}
   Since $\sigma$ is not the identity, $\ord{\sigma} = 2$.
+\end{proof}
+
+\Exercise{14} Let $p$ be a prime. Show that an element has order $p$
+in $S_n$ if and only if its cycle decomposition is a product of
+commuting $p$-cycles. Show by an explicit example that this need not
+be the case if $p$ is not prime.
+\begin{proof}
+  This is a generalization of the previous exercise, and the proof
+  will be similar. Fix a positive integer $n$.
+
+  Suppose that $\sigma\in S_n$ has order $p$. Write down the cycle
+  decomposition of $\sigma$,
+  \begin{equation*}
+    \sigma = \tau_1\tau_2\cdots\tau_k,
+  \end{equation*}
+  where each $\tau_i$ is a cycle and $\tau_i$ is disjoint from
+  $\tau_j$ when $i\neq j$. Since these cycles are disjoint, they
+  commute with each other and we can write
+  \begin{equation*}
+    1 = \sigma^p = \tau_1^p\tau_2^p\cdots\tau_k^p.
+  \end{equation*}
+  Since the original cycles were disjoint, it follows that $\tau_i^p$
+  and $\tau_j^p$ are disjoint for $i\neq j$, and we must have
+  $\tau_i^p = 1$ for each $i$. This implies that the length of the
+  cycle $\tau_i$ divides $p$. But $p$ is prime, so $\tau_i$ is either
+  a $p$-cycle or the identity. Therefore $\sigma$ is the product of
+  commuting $p$-cycles.
+
+  To prove the other direction, suppose that $\sigma\in S_n$ can be
+  written as a product of commuting $p$-cycles for $p$ a prime, so
+  that
+  \begin{equation*}
+    \sigma = \tau_1\tau_2\cdots\tau_k
+  \end{equation*}
+  with each $\tau_i$ a $p$-cycle. Since the cycles commute, we have
+  \begin{equation*}
+    \sigma^p = \tau_1^p\tau_2^p\cdots\tau_k^p = 1^k = 1.
+  \end{equation*}
+  So $\ord{\sigma} \leq p$. On the other hand, since $\tau$ is a
+  $p$-cycle, $\tau^t\neq 1$ for any positive integer $t$ less than
+  $p$. So $\sigma^t$ cannot be the identity permutation. Therefore
+  $\ord{\sigma} = p$.
+
+  Lastly, suppose $p$ is not prime. For example, take $p = 6$ and
+  $n = 6$. Then $\sigma = (1\,2)(3\,4\,5)$ has order $6$ but it cannot
+  be written as a product of commuting $6$-cycles.
 \end{proof}
