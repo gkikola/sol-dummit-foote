@@ -442,3 +442,46 @@ $n(n-1)(n-2)(n-3)/8$.
   order of the two $2$-cycles doesn't matter, so we divide the product
   by $2$ to get $n(n-1)(n-2)(n-3)/8$ possibilities.
 \end{proof}
+
+\Exercise{18} Find all numbers $n$ such that $S_5$ contains an element
+of order $n$.
+\begin{solution}
+  For each $n$ with $1\leq n\leq5$, we can find an $n$-cycle in
+  $S_5$. $n=6$ is also possible, for example, with
+  $(1\,2)(3\,4\,5)$. But a combination of longer cycles of different
+  lengths is not possible since the underlying set $\{1,2,3,4,5\}$
+  only has five elements. Therefore the only possibilities for $n$ are
+  $1,2,3,4,5$, and $6$.
+\end{solution}
+
+\Exercise{19} Find all numbers $n$ such that $S_7$ contains an element
+of order $n$.
+\begin{solution}
+  Clearly $n = 1, 2, \dots, 7$ are all valid. If $\sigma\in S_7$
+  contains a $2$-cycle, then the only other cycles of different
+  lengths that can be in the cycle decomposition of $\sigma$ is a
+  $3$-cycle, a $4$-cycle, or a $5$-cycle. The $2,3$ combination would
+  have an order of $6$, the $2,4$ combination would have an order of
+  $4$, and the $2,5$ combination would have an order of $10$. We could
+  also have a $3$-cycle together with a $4$-cycle, resulting in a
+  permutation with order $12$. So the only possible orders are
+  $n = 1,2,3,4,5,6,7,10$, and $12$.
+\end{solution}
+
+\Exercise{20} Find a set of generators and relations for $S_3$.
+\begin{solution}
+  The set $S_3$ contains the six permutations $1$, $(1\,2)$, $(1\,3)$,
+  $(2\,3)$, $(1\,2\,3)$, and $(1\,3\,2)$. By taking powers of each
+  element we can see that $S_3$ is not cyclic, so we need at least two
+  generators. Let $\alpha = (1\,2)$ and $\beta = (1\,2\,3)$. Then
+  $(1\,3) = \beta\alpha$, $(2\,3) = \alpha\beta$, and
+  $(1\,3\,2) = \beta^2$. We have the relation
+  $\alpha^2 = \beta^3 = 1$. But this is not enough information to
+  deduce that $\alpha\beta$ has order $2$, for example. So we may
+  include $(\alpha\beta)^2 = 1$, which is enough to determine the
+  orders of the remaining elements. So
+  \begin{equation*}
+    S_3 = \gen{\alpha,\beta
+      \mid \alpha^2 = \beta^3 = (\alpha\beta)^2 = 1}. \qedhere
+  \end{equation*}
+\end{solution}
