@@ -416,3 +416,29 @@ decomposition.
   $n \leq m$ which shows that $n$ is the {\em least} common multiple
   of the cycle lengths.
 \end{proof}
+
+\Exercise{16} Show that if $n\geq m$ then the number of $m$-cycles in
+$S_n$ is given by
+\begin{equation} \label{eq:m-cycle-count}
+  \frac{n(n - 1)(n - 2)\cdots(n - m + 1)}m.
+\end{equation}
+\begin{proof}
+  We count the number of ways to form an $m$-cycle. There are $n$
+  choices for the value in the first position, $n-1$ choices for the
+  value in the second position, \dots, and $(n - m + 1)$ choices for
+  the $m$th position. However, each cycle can be represented in $m$
+  different ways, depending on the choice of starting value. So the
+  actual number of distinct $m$-cycles is given by the expression
+  \eqref{eq:m-cycle-count}.
+\end{proof}
+
+\Exercise{17} Show that if $n\geq4$ then the number of permutations in
+$S_n$ which are the product of two disjoint $2$-cycles is
+$n(n-1)(n-2)(n-3)/8$.
+\begin{proof}
+  Using the same reasoning as in the previous exercise, there are
+  $n(n-1)/2$ ways to choose the first $2$-cycle, and there are
+  $(n-2)(n-3)/2$ ways to choose the second $2$-cycle. However, the
+  order of the two $2$-cycles doesn't matter, so we divide the product
+  by $2$ to get $n(n-1)(n-2)(n-3)/8$ possibilities.
+\end{proof}
