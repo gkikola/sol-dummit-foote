@@ -1,0 +1,115 @@
+\section{Matrix Groups}
+
+Let $F$ be a field and let $n\in\Z^+$.
+
+\Exercise1 Prove that $\ord{GL_2(\F_2)} = 6$.
+\begin{proof}
+  Consider the matrix
+  \begin{equation*}
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix},
+    \quad a,b,c,d\in\F_2.
+  \end{equation*}
+  The determinant of this matrix is $ad-bc$. To be nonzero, either $a$
+  and $b$ are nonzero, or $b$ and $c$ are nonzero, but not both. So
+  the members of $GL_2(\F_2)$ are
+  \begin{equation*}
+    \begin{pmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{pmatrix},
+    \begin{pmatrix}
+      1 & 1 \\
+      0 & 1
+    \end{pmatrix},
+    \begin{pmatrix}
+      1 & 0 \\
+      1 & 1
+    \end{pmatrix},
+    \begin{pmatrix}
+      0 & 1 \\
+      1 & 0
+    \end{pmatrix},
+    \begin{pmatrix}
+      1 & 1 \\
+      1 & 0
+    \end{pmatrix},
+    \;\;\text{and}\;\;
+    \begin{pmatrix}
+      0 & 1 \\
+      1 & 1
+    \end{pmatrix}. \qedhere
+  \end{equation*}
+\end{proof}
+
+\Exercise2 Write out all the elements of $GL_2(\F_2)$ and compute the
+order of each element.
+\begin{solution}
+  Direct computation produces the following orders:
+  \begin{center}
+    \begin{tabular}{r|c|c|c|c|c|c}
+      $A$
+      &
+      $\begin{pmatrix}
+        1 & 0 \\ 0 & 1
+      \end{pmatrix}$
+      &
+      $\begin{pmatrix}
+        1 & 1 \\ 0 & 1
+      \end{pmatrix}$
+      &
+      $\begin{pmatrix}
+        1 & 0 \\ 1 & 1
+      \end{pmatrix}$
+      &
+      $\begin{pmatrix}
+        0 & 1 \\ 1 & 0
+      \end{pmatrix}$
+      &
+      $\begin{pmatrix}
+        1 & 1 \\ 1 & 0
+      \end{pmatrix}$
+      &
+      $\begin{pmatrix}
+        0 & 1 \\ 1 & 1
+      \end{pmatrix}$
+      \\ \hline
+      $\ord{A}$ & 1 & 2 & 2 & 2 & 3 & 3
+    \end{tabular}.
+  \end{center}
+\end{solution}
+
+\Exercise3 Show that $GL_2(\F_2)$ is non-abelian.
+\begin{proof}
+  We have
+  \begin{equation*}
+    \begin{pmatrix}
+      1 & 1 \\ 1 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 1 \\ 0 & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1 & 0 \\
+      1 & 1
+    \end{pmatrix}
+  \end{equation*}
+  but
+  \begin{equation*}
+    \begin{pmatrix}
+      1 & 1 \\ 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 1 \\ 1 & 0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0 & 1 \\
+      1 & 0
+    \end{pmatrix}.
+  \end{equation*}
+  Therefore $GL_2(\F_2)$ is non-abelian.
+\end{proof}
