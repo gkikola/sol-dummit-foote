@@ -113,3 +113,22 @@ order of each element.
   \end{equation*}
   Therefore $GL_2(\F_2)$ is non-abelian.
 \end{proof}
+
+\Exercise4 Show that if $n$ is not prime then $\Z/n\Z$ is not a field.
+\begin{proof}
+  Let $n$ be a composite number, so that $n = ab$ with $a,b > 1$. Then
+  $(a,n) = a>1$, so by Proposition~4 of Section~0.3, $a$ does not have
+  a multiplicative inverse. And $a$ is nonzero, so $\Z/n\Z$ is not a
+  field.
+\end{proof}
+
+\Exercise5 Show that $GL_n(F)$ is a finite group if and only if $F$
+has a finite number of elements.
+\begin{proof}
+  First, if $F$ is finite, then $GL_n(F)$ must be finite since there
+  are only finitely many $n\times n$ matrices with entries from $F$.
+
+  On the other hand, suppose $F$ is not finite. Then for every
+  $\alpha\in F$ with $\alpha\neq0$, the matrix $\alpha I$ has nonzero
+  determinant. Therefore $GL_n(F)$ is infinite.
+\end{proof}
