@@ -132,3 +132,51 @@ has a finite number of elements.
   $\alpha\in F$ with $\alpha\neq0$, the matrix $\alpha I$ has nonzero
   determinant. Therefore $GL_n(F)$ is infinite.
 \end{proof}
+
+\Exercise6 If $\ord{F} = q$ is finite, prove that
+$\ord{GL_n(F)} < q^{n^2}$.
+\begin{proof}
+  Since $F$ has $q$ elements, there are only $q^{n^2}$ possible
+  $n\times n$ matrices over $F$ that can be formed. Since at least one
+  of these matrices has zero determinant (take for example the zero
+  matrix), it follows that $\ord{GL_n(F)} < q^{n^2}$.
+\end{proof}
+
+\Exercise7 Let $p$ be a prime. Prove that the order of $GL_2(\F_p)$ is
+$p^4 - p^3 - p^2 + p$.
+\begin{proof}
+  Let $A$ be a $2\times2$ matrix over $\F_p$ that is {\em not} in
+  $GL_2(\F_p)$. Write
+  \begin{equation*}
+    A =
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix},
+  \end{equation*}
+  and note that $ad - bc = 0$. We have two cases: $a = 0$ or
+  $a\neq0$.
+
+  First, if $a = 0$ then $d$ can take any of $p$ possible values,
+  while $bc = 0$. Again there are two cases: if $b = 0$ then there are
+  $p$ possible values that $c$ can take. If $b \neq 0$ (this can
+  happen in $p-1$ ways), then $c = b^{-1}$. So there are $p$
+  possibilities for $d$, multiplied by $p + (p - 1) = 2p - 1$
+  possibilities for $b$ and $c$, which gives a total of $2p^2 - p$
+  choices for the case where $a = 0$.
+
+  Next, if $a \neq 0$, this can happen in $p - 1$ ways. Then
+  $d = bca^{-1}$. Now $b$ and $c$ can take any value and then $d$ is
+  determined by the other variables, so there are
+  $p^2(p-1) = p^3 - p^2$ possibilities for this case.
+
+  Totaling the two cases, we find that there are
+  \begin{equation*}
+    (p^3 - p^2) + (2p^2 - p) = p^3 + p^2 - p
+  \end{equation*}
+  possible matrices that $A$ can be. Since there are $p^4$ total
+  $2\times2$ matrices over $\F_p$, it follows that
+  \begin{equation*}
+    \ord{GL_2(\F_p)} = p^4 - p^3 - p^2 + p. \qedhere
+  \end{equation*}
+\end{proof}
