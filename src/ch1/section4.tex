@@ -225,3 +225,72 @@ $F$.
   \end{equation*}
   Therefore $GL_n(F)$ is non-abelian, and this completes the proof.
 \end{proof}
+
+\Exercise9 Prove that the binary operation of matrix multiplication of
+$2\times2$ matrices with real number entries is associative.
+\begin{proof}
+  Direct computation gives
+  \begin{multline*}
+    \left[
+      \begin{pmatrix}
+        a & b \\
+        c & d
+      \end{pmatrix}
+      \begin{pmatrix}
+        e & f \\
+        g & h
+      \end{pmatrix}
+    \right]
+    \begin{pmatrix}
+      i & j \\
+      k & l
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      ae+bg & af+bh \\
+      ce+dg & cf+dh
+    \end{pmatrix}
+    \begin{pmatrix}
+      i & j \\
+      k & l
+    \end{pmatrix} \\
+    =
+    \begin{pmatrix}
+      (ae+bg)i + (af+bh)k & (ae+bg)j + (af+bh)l \\
+      (ce+dg)i + (cf+dh)k & (ce+dg)j + (cf+dh)l
+    \end{pmatrix},
+  \end{multline*}
+  while
+  \begin{multline*}
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix}
+    \left[
+      \begin{pmatrix}
+        e & f \\
+        g & h
+      \end{pmatrix}
+      \begin{pmatrix}
+        i & j \\
+        k & l
+      \end{pmatrix}
+    \right]
+    =
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix}
+    \begin{pmatrix}
+      ei + fk & ej + fl \\
+      gi + hk & gj + hl
+    \end{pmatrix} \\
+    =
+    \begin{pmatrix}
+      a(ei+fk) + b(gi+hk) & a(ej+fl) + b(gj+hl) \\
+      c(ei+fk) + d(gi+hk) & c(ej+fl) + d(gj+hl)
+    \end{pmatrix}.
+  \end{multline*}
+  Now, by comparing these two matrices using the associative and
+  commutative properties of the real numbers, the result will follow.
+\end{proof}
