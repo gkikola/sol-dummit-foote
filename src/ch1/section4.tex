@@ -294,3 +294,91 @@ $2\times2$ matrices with real number entries is associative.
   Now, by comparing these two matrices using the associative and
   commutative properties of the real numbers, the result will follow.
 \end{proof}
+
+\Exercise{10} Let
+\begin{equation*}
+  G = \left\{
+    \begin{pmatrix}
+      a & b \\
+      0 & c
+    \end{pmatrix}
+    \;\middle|\;
+    a,b,c\in\R, a\neq0, c\neq0\right\}.
+\end{equation*}
+\begin{enumerate}
+\item Compute the product of
+  $\begin{pmatrix} a_1 & b_1 \\ 0 & c_1 \end{pmatrix}$ and
+  $\begin{pmatrix} a_2 & b_2 \\ 0 & c_2 \end{pmatrix}$ to show that
+  $G$ is closed under matrix multiplication.
+  \begin{solution}
+    We have
+    \begin{equation*}
+      \begin{pmatrix} a_1 & b_1 \\ 0 & c_1 \end{pmatrix}
+      \begin{pmatrix} a_2 & b_2 \\ 0 & c_2 \end{pmatrix}
+      =
+      \begin{pmatrix}
+        a_1a_2 & a_1b_2 + b_1c_2 \\
+        0 & c_1c_2
+      \end{pmatrix} \in G,
+    \end{equation*}
+    so $G$ is closed under multiplication.
+  \end{solution}
+\item Find the matrix inverse of
+  $\begin{pmatrix} a & b \\ 0 & c \end{pmatrix}$ and deduce that $G$
+  is closed under inverses.
+  \begin{solution}
+    Since $ac\neq0$ the matrix is invertible and we get
+    \begin{equation*}
+      \begin{pmatrix}
+        a & b \\ 0 & c
+      \end{pmatrix}^{-1}
+      = \frac1{ac}
+      \begin{pmatrix}
+        c & -b \\ 0 & a
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        \frac1a & -\frac{b}{ac} \\[3pt]
+        0 & \frac1c
+      \end{pmatrix} \in G.
+    \end{equation*}
+    So, $G$ is closed under inverses.
+  \end{solution}
+\item Deduce that $G$ is a subgroup of $GL_2(\R)$.
+  \begin{solution}
+    This follows from Exercise~\ref{exercise-subgroup-conditions}.
+  \end{solution}
+\item Prove that the set of elements of $G$ whose two diagonal entries
+  are equal (i.e., $a = c$) is also a subgroup of $GL_2(\R)$.
+  \begin{solution}
+    Call this set $H$. We have
+    \begin{equation*}
+      \begin{pmatrix}
+        a_1 & b_1 \\ 0 & a_1
+      \end{pmatrix}
+      \begin{pmatrix}
+        a_2 & b_2 \\ 0 & a_2
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        a_1a_2 & a_1b_2 + b_1a_2 \\
+        0 & a_1a_2
+      \end{pmatrix}
+      \in H
+    \end{equation*}
+    and
+    \begin{equation*}
+      \begin{pmatrix}
+        a & b \\ 0 & a
+      \end{pmatrix}^{-1}
+      =
+      \begin{pmatrix}
+        \frac1a & -\frac{b}{a^2} \\[3pt]
+        0 & \frac1a
+      \end{pmatrix}
+      \in H.
+    \end{equation*}
+    $H$ is closed under matrix multiplication and inversion, so $H$ is
+    a subgroup of $GL_2(\R)$.
+  \end{solution}
+\end{enumerate}
