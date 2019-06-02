@@ -82,6 +82,7 @@ order of each element.
 \end{solution}
 
 \Exercise3 Show that $GL_2(\F_2)$ is non-abelian.
+\label{exercise-gen-lin-over-f2-non-abelian}
 \begin{proof}
   We have
   \begin{equation*}
@@ -179,4 +180,48 @@ $p^4 - p^3 - p^2 + p$.
   \begin{equation*}
     \ord{GL_2(\F_p)} = p^4 - p^3 - p^2 + p. \qedhere
   \end{equation*}
+\end{proof}
+
+\Exercise8 Show that $GL_n(F)$ is non-abelian for any $n\geq2$ and any
+$F$.
+\begin{proof}
+  Note that every field has an additive identity $0$ and a distinct
+  multiplicative identity $1$, so by restricting our proof to using
+  only these two values from $F$, the result will hold for any $F$.
+
+  We will use induction on $n$. The base case $n = 2$ was proved in
+  Exercise~\ref{exercise-gen-lin-over-f2-non-abelian} (the proof works
+  for any $F$ as noted above). Now assume that $GL_{n-1}(F)$ is
+  non-abelian for some $n\geq3$, and let $A$ and $B$ be non-commuting
+  members of $GL_{n-1}(F)$. Then, using block matrices, we get
+  \begin{equation*}
+    \begin{pmatrix}
+      A & 0 \\
+      0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      B & 0 \\
+      0 & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      AB & 0 \\
+      0 & 1
+    \end{pmatrix}
+    \neq
+    \begin{pmatrix}
+      BA & 0 \\
+      0 & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      B & 0 \\
+      0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      A & 0 \\
+      0 & 1
+    \end{pmatrix}.
+  \end{equation*}
+  Therefore $GL_n(F)$ is non-abelian, and this completes the proof.
 \end{proof}
