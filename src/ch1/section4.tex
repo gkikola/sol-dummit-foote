@@ -382,3 +382,307 @@ $2\times2$ matrices with real number entries is associative.
     a subgroup of $GL_2(\R)$.
   \end{solution}
 \end{enumerate}
+
+\Exercise{11} Let
+\begin{equation*}
+  H(F) = \left\{
+    \begin{pmatrix}
+      1 & a & b \\
+      0 & 1 & c \\
+      0 & 0 & 1
+    \end{pmatrix}
+    \;\middle|\;
+    a,b,c\in F
+  \right\}.
+\end{equation*}
+Let
+\begin{equation*}
+  X =
+  \begin{pmatrix}
+    1 & a & b \\
+    0 & 1 & c \\
+    0 & 0 & 1
+  \end{pmatrix}
+  \quad\text{and}\quad
+  Y =
+  \begin{pmatrix}
+    1 & d & e \\
+    0 & 1 & f \\
+    0 & 0 & 1
+  \end{pmatrix}
+\end{equation*}
+be elements of $H(F)$.
+\begin{enumerate}
+\item Compute the matrix $XY$ and deduce that $H(F)$ is closed under
+  matrix multiplication. Exhibit explicit matrices such that
+  $XY\neq YX$ (so that $H(F)$ is always non-abelian).
+  \begin{solution}
+    We have
+    \begin{equation*}
+      XY =
+      \begin{pmatrix}
+        1 & a & b \\
+        0 & 1 & c \\
+        0 & 0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & d & e \\
+        0 & 1 & f \\
+        0 & 0 & 1
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        1 & a + d & af + b + e \\
+        0 & 1 & c + f \\
+        0 & 0 & 1
+      \end{pmatrix}
+      \in H(F),
+    \end{equation*}
+    so $H(F)$ is closed under multiplication. Moreover,
+    \begin{equation*}
+      \begin{pmatrix}
+        1 & 1 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        1 & 1 & 1 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1
+      \end{pmatrix}
+    \end{equation*}
+    while
+    \begin{equation*}
+      \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & 1 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        1 & 1 & 0 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1
+      \end{pmatrix},
+    \end{equation*}
+    so $H(F)$ is always non-abelian.
+  \end{solution}
+\item Find an explicit formula for the matrix inverse $X^{-1}$ and
+  deduce that $H(F)$ is closed under inverses.
+  \begin{solution}
+    Let
+    \begin{equation*}
+      Z =
+      \begin{pmatrix}
+        1 & -a & ca - b \\
+        0 & 1 & -c \\
+        0 & 0 & 1
+      \end{pmatrix}.
+    \end{equation*}
+    By performing the multiplication, it is easily seen that
+    $XZ = ZX = I$, where $I$ is the $3\times3$ identity matrix. It
+    follows that $Z = X^{-1}$ and since $Z\in H(F)$, we see that
+    $H(F)$ is closed under inverses.
+  \end{solution}
+\item Prove the associative law for $H(F)$ and deduce that $H(F)$ is a
+  group of order $\ord{F}^3$.
+  \begin{solution}
+    We have
+    \begin{multline*}
+      \left[
+        \begin{pmatrix}
+          1 & a & b \\
+          0 & 1 & c \\
+          0 & 0 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+          1 & d & e \\
+          0 & 1 & f \\
+          0 & 0 & 1
+        \end{pmatrix}
+      \right]
+      \begin{pmatrix}
+        1 & g & h \\
+        0 & 1 & i \\
+        0 & 0 & 1
+      \end{pmatrix} \\
+      =
+      \begin{pmatrix}
+        1 & a + d & af + b + e \\
+        0 & 1 & c + f \\
+        0 & 0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & g & h \\
+        0 & 1 & i \\
+        0 & 0 & 1
+      \end{pmatrix} \\
+      =
+      \begin{pmatrix}
+        1 & a + d + g & af + ai + b + di + e + h \\
+        0 & 1 & c + f + i \\
+        0 & 0 & 1
+      \end{pmatrix}
+    \end{multline*}
+    and
+    \begin{multline*}
+      \begin{pmatrix}
+        1 & a & b \\
+        0 & 1 & c \\
+        0 & 0 & 1
+      \end{pmatrix}
+      \left[
+        \begin{pmatrix}
+          1 & d & e \\
+          0 & 1 & f \\
+          0 & 0 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+          1 & g & h \\
+          0 & 1 & i \\
+          0 & 0 & 1
+        \end{pmatrix}
+      \right] \\
+      =
+      \begin{pmatrix}
+        1 & a & b \\
+        0 & 1 & c \\
+        0 & 0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & d + g & di + e + h \\
+        0 & 1 & f + i \\
+        0 & 0 & 1
+      \end{pmatrix} \\
+      =
+      \begin{pmatrix}
+        1 & a + d + g & af + ai + b + di + e + h \\
+        0 & 1 & c + f + i \\
+        0 & 0 & 1
+      \end{pmatrix},
+    \end{multline*}
+    so multiplication in $H(F)$ is associative. This shows that $H(F)$
+    is a subgroup of $GL_3(F)$.
+
+    Now, consider the matrix $X$ above. If $\ord{F} = n < \infty$ then
+    each of $a,b,c$ can take any of $n$ values each. So
+    $\ord{H(F)} = n^3$.
+  \end{solution}
+\item Find the order of each element of the finite group $H(\Z/2\Z)$.
+  \begin{solution}
+    Obviously $\ord{I} = 1$. For the rest, we find
+    \begin{equation*}
+      \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1
+      \end{pmatrix}^2
+      =
+      \begin{pmatrix}
+        1 & 1 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+      \end{pmatrix}^2
+      =
+      \begin{pmatrix}
+        1 & 0 & 1 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+      \end{pmatrix}^2
+      = I,
+    \end{equation*}
+    so these have order $2$,
+    \begin{equation*}
+      \begin{pmatrix}
+        1 & 1 & 1 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+      \end{pmatrix}^2
+      =
+      \begin{pmatrix}
+        1 & 0 & 1 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1
+      \end{pmatrix}^2
+      = I,
+    \end{equation*}
+    so these also have order $2$, and
+    \begin{equation*}
+      \begin{pmatrix}
+        1 & 1 & 0 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1
+      \end{pmatrix}^4
+      =
+      \begin{pmatrix}
+        1 & 1 & 1 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1
+      \end{pmatrix}^4
+      = I,
+    \end{equation*}
+    so these have order $4$. $\ord{H(\Z/2\Z)} = 2^3 = 8$, so these are
+    all the elements in the group.
+  \end{solution}
+\item Prove that every nonidentity element of the group $H(\R)$ has
+  infinite order.
+  \begin{solution}
+    We will show by induction on $n$ that
+    \begin{equation}
+      \label{eq:heisenberg-power}
+      \begin{pmatrix}
+        1 & a & b \\
+        0 & 1 & c \\
+        0 & 0 & 1
+      \end{pmatrix}^n
+      =
+      \begin{pmatrix}
+        1 & na & nb + n(n-1)ac/2 \\
+        0 & 1 & nc \\
+        0 & 0 & 1
+      \end{pmatrix}.
+    \end{equation}
+    Since any nonidentity element has one of $a$, $b$, or $c$ nonzero,
+    this will be enough to show that the element has infinite order.
+
+    The base case $n = 1$ is evident. Suppose
+    \eqref{eq:heisenberg-power} holds for some $n\geq 1$. Then
+    \begin{multline*}
+      \begin{pmatrix}
+        1 & a & b \\
+        0 & 1 & c \\
+        0 & 0 & 1
+      \end{pmatrix}^{n+1}
+      =
+      \begin{pmatrix}
+        1 & a & b \\
+        0 & 1 & c \\
+        0 & 0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & na & nb + n(n-1)ac/2 \\
+        0 & 1 & nc \\
+        0 & 0 & 1
+      \end{pmatrix} \\
+      =
+      \begin{pmatrix}
+        1 & (n+1)a & (n+1)b + n(n+1)ac/2 \\
+        0 & 1 & (n+1)c \\
+        0 & 0 & 1
+      \end{pmatrix},
+    \end{multline*}
+    so $\eqref{eq:heisenberg-power}$ holds for all positive integers
+    $n$ and the result follows.
+  \end{solution}
+\end{enumerate}
