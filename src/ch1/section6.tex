@@ -1,0 +1,45 @@
+\section{Homomorphisms and Isomorphisms}
+
+Let $G$ and $H$ be groups.
+
+\Exercise1 Let $\varphi\colon G\to H$ be a homomorphism.
+\begin{enumerate}
+\item Prove that $\varphi(x^n) = \varphi(x)^n$ for all $n\in\Z^+$.
+  \begin{proof}
+    We use induction on $n$. The case for $n = 1$ is clear. Suppose
+    $\varphi(x^n) = \varphi(x)^n$ for some particular $n\in\Z^+$. Then
+    \begin{equation*}
+      \varphi(x^{n+1})
+      = \varphi(xx^n)
+      = \varphi(x)\varphi(x^n)
+      = \varphi(x)\varphi(x)^n
+      = \varphi(x)^{n+1},
+    \end{equation*}
+    so the result holds for all $n\in\Z^+$.
+  \end{proof}
+\item Do part (a) for $n = -1$ and deduce that
+  $\varphi(x^n) = \varphi(x)^n$ for all $n\in\Z$.
+  \begin{solution}
+    Let $1_G$ and $1_H$ denote the identities of $G$ and $H$,
+    respectively. Then
+    \begin{equation*}
+      \varphi(1_G)\varphi(1_G) = \varphi(1_G) = \varphi(1_G)1_H,
+    \end{equation*}
+    and it follows from the cancellation law that
+    $\varphi(1_G) = 1_H$. Since the identity is preserved, we will
+    simply use $1$ to denote the identity of both groups from this
+    point forward.
+
+    Now, for any $x\in G$,
+    \begin{equation*}
+      \varphi(x)\varphi(x^{-1}) = \varphi(xx^{-1}) = \varphi(1) = 1,
+    \end{equation*}
+    which shows that $\varphi(x^{-1}) = \varphi(x)^{-1}$. Then for
+    $n\in\Z^+$,
+    \begin{equation*}
+      \varphi(x^{-n}) = \varphi((x^n)^{-1}) = \varphi(x^n)^{-1}
+      = \big(\varphi(x)^n\big)^{-1} = \varphi(x)^{-n}.
+    \end{equation*}
+    Therefore $\varphi(x^n) = \varphi(x)^n$ holds for all $n\in\Z$.
+  \end{solution}
+\end{enumerate}
