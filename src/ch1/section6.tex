@@ -113,3 +113,54 @@ sufficient to ensure that if $G$ is abelian, then so is $H$?
   \end{equation*}
   so $H$ is abelian.
 \end{solution}
+
+\Exercise4 Prove that the multiplicative groups $\R-\{0\}$ and
+$\C-\{0\}$ are not isomorphic.
+\begin{proof}
+  Every element in $\R-\{0\}$ has infinite order, aside from $1$ and
+  $-1$ which have orders $1$ and $2$, respectively. However,
+  $\C-\{0\}$ has elements of order $4$, namely $i$ and $-i$. Therefore
+  these groups are not isomorphic.
+\end{proof}
+
+\Exercise5 Prove that the additive groups $\R$ and $\Q$ are not
+isomorphic.
+\begin{proof}
+  There is no bijection between $\R$ and $\Q$, since the former is
+  uncountable and the latter is countable. Therefore the groups
+  $(\R,+)$ and $(\Q,+)$ are not isomorphic.
+\end{proof}
+
+\Exercise6 Prove that the additive groups $\Z$ and $\Q$ are not
+isomorphic.
+\begin{proof}
+  Suppose the contrary, and let $\varphi\colon\Q\to\Z$ be an
+  isomorphism. Let
+  \begin{equation*}
+    a = \varphi(1).
+  \end{equation*}
+  Then
+  \begin{equation*}
+    a = \varphi\left(\frac12 + \frac12\right)
+    = 2\varphi\left(\frac12\right).
+  \end{equation*}
+  Therefore $2$ divides $a$. For the same reason, we also have
+  \begin{equation*}
+    a = 3\varphi\left(\frac13\right).
+  \end{equation*}
+  So $3$ divides $a$. Using the same argument we see that the integer
+  $a$ is actually divisible by every positive integer. The only way
+  this is possible is if $a = 0$. But then, for any $n\in\Z$, we would
+  have $\varphi(n) = n\varphi(1) = na = 0$. So $\varphi$ is clearly
+  not an injection, and this gives the necessary
+  contradiction. Therefore the additive groups $\Z$ and $\Q$ are not
+  isomorphic.
+\end{proof}
+
+\Exercise7 Prove that $D_8$ and $Q_8$ are not isomorphic.
+\begin{proof}
+  We may simply look at the orders of the elements in each group. For
+  example, $D_8$ has $4$ elements with order $2$ (namely, $s$, $sr$,
+  $sr^2$, and $sr^3$), while $Q_8$ only has one element with order $2$
+  (namely $-1$). Therefore $D_8\not\cong Q_8$.
+\end{proof}
