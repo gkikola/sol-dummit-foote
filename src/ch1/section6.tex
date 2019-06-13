@@ -43,3 +43,40 @@ Let $G$ and $H$ be groups.
     Therefore $\varphi(x^n) = \varphi(x)^n$ holds for all $n\in\Z$.
   \end{solution}
 \end{enumerate}
+
+\Exercise2 If $\varphi\colon G\to H$ is an isomorphism, prove that
+$\ord{\varphi(x)} = \ord{x}$ for all $x\in G$. Deduce that any two
+isomorphic groups have the same number of elements of order $n$ for
+each $n\in\Z^+$. Is the result true if $\varphi$ is only assumed to be
+a homomorphism?
+\begin{proof}
+  First suppose $\ord{x} = n<\infty$. By the previous exercise, we have
+  \begin{equation*}
+    \varphi(x)^n = \varphi(x^n) = \varphi(1) = 1.
+  \end{equation*}
+  So $\ord{\varphi(x)}\leq n$. On the other hand, if
+  $\ord{\varphi(x)} = k$, then
+  \begin{equation*}
+    \varphi(x^k) = \varphi(x)^k = 1.
+  \end{equation*}
+  But $1$ is the only element in $G$ which gets sent to $1$ in $H$,
+  since $\varphi$ is a bijection. This shows that $x^k = 1$, so that
+  $k\geq n$. Hence $\ord{\varphi(x)} = n$.
+
+  Now suppose $x$ has infinite order. If
+  $\ord{\varphi(x)} = n < \infty$, then
+  $\varphi(x^n) = \varphi(x)^n = 1$, and since $\varphi$ is a
+  bijection we must have $x^n = 1$, a contradiction. Therefore
+  $\varphi(x)$ must also have infinite order.
+
+  From the above we know that $\ord{x} = \ord{\varphi(x)}$ for each
+  $x$, and since $\varphi$ is a bijection this shows that $G$ and $H$
+  have the same number of elements of each order.
+
+  Finally, this result does not necessarily hold for
+  homomorphisms. For example, let $H$ be the trivial group $\{1\}$ and
+  take the function $\theta\colon G\to H$ defined by $\theta(x) = 1$
+  for all $x\in G$. Then $\theta(x)\theta(y) = \theta(xy)$, so this is
+  a homomorphism, but every element in $H$ has order $1$, which is not
+  true of $G$ (unless $G$ is also trivial).
+\end{proof}
