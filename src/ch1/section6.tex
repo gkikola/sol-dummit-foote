@@ -80,3 +80,36 @@ a homomorphism?
   a homomorphism, but every element in $H$ has order $1$, which is not
   true of $G$ (unless $G$ is also trivial).
 \end{proof}
+
+\Exercise3 If $\varphi\colon G\to H$ is an isomorphism, prove that $G$
+is abelian if and only if $H$ is abelian. If $\varphi\colon G\to H$ is
+a homomorphism, what additional conditions on $\varphi$ (if any) are
+sufficient to ensure that if $G$ is abelian, then so is $H$?
+\begin{solution}
+  Since $\varphi$ must be invertible (it is a bijection) and since
+  $\varphi^{-1}$ must be an isomorphism from $H$ to $G$, the proof
+  only needs to work in one direction. So let $x,y\in H$ be arbitrary,
+  and let $a = \varphi^{-1}(x)$ and $b = \varphi^{-1}(y)$. If $G$ is
+  abelian, then
+  \begin{equation*}
+    xy = \varphi(a)\varphi(b) = \varphi(ab) = \varphi(ba)
+    = \varphi(b)\varphi(a) = yx,
+  \end{equation*}
+  so $H$ is also abelian, and the proof is complete.
+
+  Note that the same result does not hold for homomorphisms. For
+  instance, let $\varphi\colon\Z/2\Z\to D_6$ be given by
+  $\varphi(\bar0) = 1$ and $\varphi(\bar1) = s$. Then $\varphi$ is a
+  homomorphism and $\Z/2\Z$ is abelian, but $D_6$ is not abelian.
+
+  However, if we add the constraint that $\varphi$ is surjective, then
+  the result does hold: Suppose $G$ is abelian, let $x,y\in H$ be
+  arbitrary, and pick $a\in\varphi^{-1}(x)$ and $b\in\varphi^{-1}(y)$
+  (that is, $a$ and $b$ are chosen from the fibers of $\varphi$ over
+  $x$ and $y$). Then, as before,
+  \begin{equation*}
+    xy = \varphi(a)\varphi(b) = \varphi(ab) = \varphi(ba)
+    = \varphi(b)\varphi(a) = yx,
+  \end{equation*}
+  so $H$ is abelian.
+\end{solution}
