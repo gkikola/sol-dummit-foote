@@ -443,3 +443,18 @@ the elements of $\Aut(G)$ are called {\em automorphisms} of $G$).
   $\varphi^{-1}\in\Aut(G)$. So elements in $\Aut(G)$ have
   inverses. Therefore $\Aut(G)$ is a group under function composition.
 \end{proof}
+
+\Exercise{21} Prove that for each fixed nonzero $k\in\Q$ the map from
+$\Q$ to itself defined by $q\mapsto kq$ is an automorphism of $\Q$.
+\begin{proof}
+  Fix a nonzero $k\in\Q$ and let $\varphi\colon\Q\to\Q$ be given by
+  $\varphi(r) = kr$. Then for any $a,b\in\Q$,
+  \begin{equation*}
+    \varphi(a + b) = k(a + b) = ka + kb = \varphi(a) + \varphi(b),
+  \end{equation*}
+  so $\varphi$ is a homomorphism. To show that it is a bijection, note
+  that it must be surjective since for any $a\in\Q$, we may take
+  $b = a/k$ so that $\varphi(b) = a$. And since $\varphi$ maps $\Q$ to
+  itself, surjectivity implies injectivity so that $\varphi$ is a
+  bijection and hence an automorphism of $\Q$.
+\end{proof}
