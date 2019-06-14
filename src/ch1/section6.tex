@@ -352,3 +352,26 @@ of $\pi$.
     \ker\pi = \{ (0, y)\in\R^2 \mid y\in\R \}. \qedhere
   \end{equation*}
 \end{proof}
+
+\Exercise{16} Let $A$ and $B$ be groups and let $G$ be their direct
+product, $A\times B$. Prove that the maps $\pi_1\colon G\to A$ and
+$\pi_2\colon G\to B$ defined by $\pi_1((a,b)) = a$ and
+$\pi_2((a,b)) = b$ are homomorphisms and find their kernels.
+\begin{proof}
+  For any $(a,b)$ and $(c,d)\in A\times B$, we have
+  \begin{equation*}
+    \pi_1((a,b)(c,d)) = \pi_1(ac,bd) = ac = \pi_1(a,b)\pi_1(c,d)
+  \end{equation*}
+  and
+  \begin{equation*}
+    \pi_2((a,b)(c,d)) = \pi_2(ac,bd) = bd = \pi_2(a,b)\pi_2(c,d),
+  \end{equation*}
+  so $\pi_1$ and $\pi_2$ are homomorphisms. Their kernels are
+  \begin{equation*}
+    \ker\pi_1 = \{ (1, b)\in A\times B \mid b\in B \}
+  \end{equation*}
+  and
+  \begin{equation*}
+    \ker\pi_2 = \{ (a, 1)\in A\times B \mid a\in A \}. \qedhere
+  \end{equation*}
+\end{proof}
