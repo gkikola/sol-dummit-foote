@@ -3,6 +3,7 @@
 Let $G$ and $H$ be groups.
 
 \Exercise1 Let $\varphi\colon G\to H$ be a homomorphism.
+\label{exercise-homomorphism-preserves-powers}
 \begin{enumerate}
 \item Prove that $\varphi(x^n) = \varphi(x)^n$ for all $n\in\Z^+$.
   \begin{proof}
@@ -283,4 +284,56 @@ and $H = B\times C$. Prove that $G\times C\cong A\times H$.
   \end{equation*}
   It is very straightforward to verify that $\varphi$ is a bijection
   and a homomorphism, and hence $G\times C\cong A\times H$.
+\end{proof}
+
+\Exercise{13} Let $G$ and $H$ be groups and let $\varphi\colon G\to H$
+be a homomorphism. Prove that the image of $\varphi$, $\varphi(G)$, is
+a subgroup of $H$. Prove that if $\varphi$ is injective then
+$G\cong\varphi(G)$.
+\begin{proof}
+  We know that $\varphi(G)$ is nonempty, since in particular
+  $\varphi(1)$ is mapped to some element in $H$ (we know from earlier
+  exercises that the identity is preserved so $\varphi(1) = 1$, but we
+  do not strictly need that information here). Let $a,b\in\varphi(G)$
+  be arbitrary. Then there exist $\alpha,\beta\in G$ such that
+  $\varphi(\alpha) = a$, and $\varphi(\beta) = b$. Then
+  \begin{equation*}
+    ab = \varphi(\alpha)\varphi(\beta) = \varphi(\alpha\beta),
+  \end{equation*}
+  so $ab\in\varphi(G)$ and $\varphi(G)$ is closed under the binary
+  operation of $H$. Moreover, by
+  Exercise~\ref{exercise-homomorphism-preserves-powers},
+  \begin{equation*}
+    a^{-1} = \varphi(\alpha)^{-1} = \varphi(\alpha^{-1}),
+  \end{equation*}
+  so $\varphi(G)$ is closed under inverses. Hence $\varphi(G)$ is a
+  subgroup of $H$.
+
+  Now, if we define $\varphi^*\colon G\to\varphi(G)$ by
+  $\varphi^*(\gamma) = \varphi(\gamma)$ for each $\gamma\in G$, then
+  $\varphi^*$ is surjective by definition. If, in addition, $\varphi$
+  is injective, then $\varphi^*$ is a bijection and
+  $G\cong\varphi(G)$.
+\end{proof}
+
+\Exercise{14} Let $G$ and $H$ be groups and let $\varphi\colon G\to H$
+be a homomorphism. Define the {\em kernel} of $\varphi$ to be
+$\{g\in G\mid \varphi(g) = 1_H\}$ (so the kernel is the set of
+elements in $G$ which map to the identity of $H$, i.e., is the fiber
+over the identity of $H$). Prove that the kernel of $\varphi$ is a
+subgroup of $G$. Prove that $\varphi$ is injective if and only if the
+kernel of $\varphi$ is the identity subgroup of $G$.
+\begin{proof}
+  From Exercise~\ref{exercise-homomorphism-preserves-powers} we know
+  that $\varphi(1_G) = 1_H$ so the kernel of $\varphi$ is
+  nonempty. Suppose $a,b\in\ker\varphi$. Then
+  \begin{equation*}
+    \varphi(ab) = \varphi(a)\varphi(b) = 1_H1_H = 1_H,
+  \end{equation*}
+  and $ab\in\ker\varphi$. Additionally, if $a\in\ker\varphi$ then
+  \begin{equation*}
+    \varphi(a^{-1}) = \varphi(a)^{-1} = 1_H^{-1} = 1_H
+  \end{equation*}
+  and $a^{-1}\in\ker\varphi$. Therefore $\ker\varphi$ is a subgroup of
+  $G$.
 \end{proof}
