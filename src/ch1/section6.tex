@@ -375,3 +375,39 @@ $\pi_2((a,b)) = b$ are homomorphisms and find their kernels.
     \ker\pi_2 = \{ (a, 1)\in A\times B \mid a\in A \}. \qedhere
   \end{equation*}
 \end{proof}
+
+\Exercise{17} Let $G$ be any group. Prove that the map from $G$ to
+itself defined by $g\mapsto g^{-1}$ is a homomorphism if and only if
+$G$ is abelian.
+\begin{proof}
+  Suppose $G$ is abelian. Then for any $a,b\in G$,
+  \begin{equation*}
+    (ab)^{-1} = b^{-1}a^{-1} = a^{-1}b^{-1},
+  \end{equation*}
+  so $g\mapsto g^{-1}$ is a homomorphism. Conversely, suppose
+  $g\mapsto g^{-1}$ is a homomorphism and let $a,b\in G$ be
+  arbitrary. Then $b^{-1}a^{-1} = (ba)^{-1}$ and we have
+  \begin{equation*}
+    ab = (a^{-1})^{-1}(b^{-1})^{-1} = (b^{-1}a^{-1})^{-1}
+    = [(ba)^{-1}]^{-1} = ba,
+  \end{equation*}
+  so $G$ is abelian.
+\end{proof}
+
+\Exercise{18} Let $G$ be any group. Prove that the map from $G$ to
+itself defined by $g\mapsto g^2$ is a homomorphism if and only if $G$
+is abelian.
+\begin{proof}
+  Suppose $G$ is abelian. Then for any $a,b\in G$,
+  \begin{equation*}
+    (ab)^2 = abab = a^2b^2,
+  \end{equation*}
+  and $g\mapsto g^2$ is a homomorphism. Now suppose $g\mapsto g^2$ is
+  a homomorphism. Then for any $a,b\in G$,
+  \begin{equation*}
+    a^2b^2 = (ab)^2 = abab,
+  \end{equation*}
+  and multiplying both sides of the equation $a^2b^2 = abab$ on the
+  left by $a$ and on the right by $b$ gives $ab = ba$, so that $G$ is
+  abelian.
+\end{proof}
