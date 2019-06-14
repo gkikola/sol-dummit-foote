@@ -251,3 +251,36 @@ and prove the following:
     Therefore $\varphi$ is a homomorphism, and hence an isomorphism.
   \end{proof}
 \end{enumerate}
+
+\Exercise{11} Let $A$ and $B$ be groups. Prove that
+$A\times B\cong B\times A$.
+\begin{proof}
+  Define the function $\varphi\colon A\times B\to B\times A$ by
+  \begin{equation*}
+    \varphi(a,b) = (b,a)
+    \quad\text{for any $(a,b)\in A\times B$.}
+  \end{equation*}
+  This is a homomorphism, since
+  \begin{equation*}
+    \varphi((a,b)(c,d)) = \varphi(ac,bd) = (bd,ac) = (b,a)(d,c)
+    = \varphi(a,b)\varphi(c,d).
+  \end{equation*}
+  It is also a surjection, since for any $(b,a)\in B\times A$ we can
+  take $(a,b)\in A\times B$ so that $\varphi(a,b) = (b,a)$. Finally,
+  if $(a,b),(c,d)\in A\times B$ are such that
+  $\varphi(a,b) = \varphi(c,d)$ then $(b,a) = (d,c)$. Then $b = d$ and
+  $a = c$, so $(a,b) = (c,d)$ and $\varphi$ is an injection. This
+  shows that $\varphi$ is a bijection and hence an isomorphism.
+\end{proof}
+
+\Exercise{12} Let $A$, $B$, and $C$ be groups and let $G = A\times B$
+and $H = B\times C$. Prove that $G\times C\cong A\times H$.
+\begin{proof}
+  Define $\varphi\colon G\times C\to A\times H$ as follows. For any
+  $((a,b),c)\in G\times C$ by
+  \begin{equation*}
+    \varphi((a,b),c) = (a,(b,c)).
+  \end{equation*}
+  It is very straightforward to verify that $\varphi$ is a bijection
+  and a homomorphism, and hence $G\times C\cong A\times H$.
+\end{proof}
