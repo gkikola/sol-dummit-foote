@@ -337,3 +337,18 @@ kernel of $\varphi$ is the identity subgroup of $G$.
   and $a^{-1}\in\ker\varphi$. Therefore $\ker\varphi$ is a subgroup of
   $G$.
 \end{proof}
+
+\Exercise{15} Define a map $\pi\colon\R^2\to\R$ by
+$\pi((x,y))=x$. Prove that $\pi$ is a homomorphism and find the kernel
+of $\pi$.
+\begin{proof}
+  For any $(x_1,y_1),(x_2,y_2)\in\R^2$, we have
+  \begin{equation*}
+    \pi((x_1,y_1) + (x_2,y_2)) = \pi(x_1 + x_2,y_1 + y_2) = x_1 + x_2
+    = \pi(x_1,y_1) + \pi(x_2,y_2),
+  \end{equation*}
+  so $\pi$ is a homomorphism. Also,
+  \begin{equation*}
+    \ker\pi = \{ (0, y)\in\R^2 \mid y\in\R \}. \qedhere
+  \end{equation*}
+\end{proof}
