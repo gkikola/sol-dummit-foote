@@ -458,3 +458,21 @@ $\Q$ to itself defined by $q\mapsto kq$ is an automorphism of $\Q$.
   itself, surjectivity implies injectivity so that $\varphi$ is a
   bijection and hence an automorphism of $\Q$.
 \end{proof}
+
+\Exercise{22} Let $A$ be an abelian group and fix some $k\in\Z$. Prove
+that the map $a\mapsto a^k$ is a homomorphism from $A$ to itself. If
+$k = -1$, prove that this homomorphism is an isomorphism (i.e., is an
+automorphism of $A$).
+\begin{proof}
+  Fix $k\in\Z$ and let $\varphi\colon A\to A$ be the mapping
+  $a\mapsto a^k$. Then for any $a,b\in A$, we have
+  \begin{equation*}
+    \varphi(ab) = (ab)^k = a^kb^k = \varphi(a)\varphi(b),
+  \end{equation*}
+  where the second equality follows from the fact that $A$ is
+  abelian. So $\varphi$ is a homomorphism.
+
+  In the case where $k=-1$, $\varphi$ must be a bijection since it is
+  its own inverse function. Hence $a\mapsto a^{-1}$ is an automorphism
+  of $A$.
+\end{proof}
