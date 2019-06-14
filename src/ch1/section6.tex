@@ -182,3 +182,72 @@ isomorphic.
   $4$-cycle (which has order $4$). Since isomorphisms must preserve
   orders of elements, $D_{24}$ and $S_4$ cannot be isomorphic.
 \end{proof}
+
+\Exercise{10} Fill in the details of the proof that the symmetric
+group $S_\Delta$ and $S_\Omega$ are isomorphic if
+$\ord{\Delta} = \ord{\Omega}$ as follows: let
+$\theta\colon\Delta\to\Omega$ be a bijection. Define
+\begin{equation*}
+  \varphi\colon S_\Delta\to S_\Omega
+  \quad\text{by}\quad
+  \varphi(\sigma) = \theta\circ\sigma\circ\theta^{-1}
+  \quad\text{for all $\sigma\in S_\Delta$}
+\end{equation*}
+and prove the following:
+\begin{enumerate}
+\item $\varphi$ is well defined, that is, if $\sigma$ is a permutation
+  of $\Delta$ then $\theta\circ\sigma\circ\theta^{-1}$ is a
+  permutation of $\Omega$.
+  \begin{proof}
+    For any permutation $\sigma$ of $\Delta$, it is clear that
+    $\varphi(\sigma) = \theta\circ\sigma\circ\theta^{-1}$ is a
+    function from $\Omega$ to itself. We want to show that it is a
+    bijection.
+
+    Suppose $a,b\in\Omega$ are such that
+    $\varphi(\sigma)(a) = \varphi(\sigma)(b)$. Since $\theta$ is an
+    injection, this implies that
+    $\sigma\circ\theta^{-1}(a) = \sigma\circ\theta^{-1}(b)$. But
+    $\sigma$ is also an injection, so
+    $\theta^{-1}(a) = \theta^{-1}(b)$ and so $a = b$. This shows that
+    $\varphi(\sigma)$ is an injection. But an injective mapping from a
+    set to itself must also be surjective. Hence $\varphi(\sigma)$ is
+    a bijection from $\Omega$ to itself, that is, $\varphi(\sigma)$ is
+    a permutation of $\Omega$.
+  \end{proof}
+\item $\varphi$ is a bijection from $S_\Delta$ to $S_\Omega$.
+  \begin{proof}
+    Define $\psi\colon S_\Omega\to S_\Delta$ by
+    \begin{equation*}
+      \psi(\tau) = \theta^{-1}\circ\tau\circ\theta
+      \quad\text{for any $\tau\in S_\Omega$}.
+    \end{equation*}
+    By the same argument as in part (a), $\psi$ is
+    well-defined. Moreover, for any $\sigma\in S_\Delta$,
+    \begin{equation*}
+      (\psi\circ\varphi)(\sigma) = \psi(\theta\circ\sigma\circ\theta^{-1})
+      = \theta^{-1}\circ\theta\circ\sigma\circ\theta^{-1}\circ\theta
+      = \sigma,
+    \end{equation*}
+    and for any $\tau\in S_\Omega$,
+    \begin{equation*}
+      (\varphi\circ\psi)(\tau) = \varphi(\theta^{-1}\circ\tau\circ\theta)
+      = \theta\circ\theta^{-1}\circ\tau\circ\theta\circ\theta^{-1}
+      = \tau.
+    \end{equation*}
+    Therefore $\psi$ is a two-sided inverse of $\varphi$, so that
+    $\varphi$ is a bijection.
+  \end{proof}
+\item $\varphi$ is a homomorphism, that is,
+  $\varphi(\sigma\circ\tau) = \varphi(\sigma)\circ\varphi(\tau)$.
+  \begin{proof}
+    Let $\sigma,\tau\in S_\Delta$. Then
+    \begin{equation*}
+      \varphi(\sigma)\circ\varphi(\tau)
+      = \theta\circ\sigma\circ\theta^{-1}\circ\theta\circ\tau\circ\theta^{-1}
+      = \theta\circ\sigma\circ\tau\circ\theta^{-1}
+      = \varphi(\sigma\circ\tau).
+    \end{equation*}
+    Therefore $\varphi$ is a homomorphism, and hence an isomorphism.
+  \end{proof}
+\end{enumerate}
