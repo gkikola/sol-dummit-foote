@@ -411,3 +411,35 @@ is abelian.
   left by $a$ and on the right by $b$ gives $ab = ba$, so that $G$ is
   abelian.
 \end{proof}
+
+\Exercise{20} Let $G$ be a group and let $\Aut(G)$ be the set of all
+isomorphisms from $G$ onto $G$. Prove that $\Aut(G)$ is a group under
+function composition (called the {\em automorphism group} of $G$ and
+the elements of $\Aut(G)$ are called {\em automorphisms} of $G$).
+\begin{proof}
+  Let $\varphi,\psi\in\Aut(G)$. Then $\varphi\circ\psi$ is a bijection
+  from $G$ to itself. It is also a homomorphism, since for any
+  $a,b\in G$,
+  \begin{equation*}
+    (\varphi\circ\psi)(ab) = \varphi(\psi(a)\psi(b))
+    = (\varphi\circ\psi)(a)(\varphi\circ\psi)(b).
+  \end{equation*}
+  This shows that $\varphi\circ\psi\in\Aut(G)$ so $\Aut(G)$ is closed
+  under composition. And function composition is always associative.
+
+  Clearly the identity map $1\colon G\to G$ is an isomorphism, so
+  $\Aut(G)$ has an identity. And for any $\varphi\in\Aut(G)$,
+  $\varphi^{-1}$ must exist since $\varphi$ is a bijection. Now, for
+  any $a,b\in G$ let $a^* = \varphi^{-1}(a)$ and
+  $b^* = \varphi^{-1}(b)$. Since $\varphi$ is a homomorphism, we have
+  \begin{equation*}
+    \varphi(a^*b^*) = \varphi(a^*)\varphi(b^*) = ab,
+  \end{equation*}
+  which implies that $a^*b^* = \varphi^{-1}(ab)$. Then
+  \begin{equation*}
+    \varphi^{-1}(a)\varphi^{-1}(b) = a^*b^* = \varphi^{-1}(ab),
+  \end{equation*}
+  and we see that $\varphi^{-1}$ is an isomorphism and hence
+  $\varphi^{-1}\in\Aut(G)$. So elements in $\Aut(G)$ have
+  inverses. Therefore $\Aut(G)$ is a group under function composition.
+\end{proof}
