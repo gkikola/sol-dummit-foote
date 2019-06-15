@@ -208,13 +208,20 @@ and prove the following:
     Suppose $a,b\in\Omega$ are such that
     $\varphi(\sigma)(a) = \varphi(\sigma)(b)$. Since $\theta$ is an
     injection, this implies that
-    $\sigma\circ\theta^{-1}(a) = \sigma\circ\theta^{-1}(b)$. But
+    $(\sigma\circ\theta^{-1})(a) = (\sigma\circ\theta^{-1})(b)$. But
     $\sigma$ is also an injection, so
-    $\theta^{-1}(a) = \theta^{-1}(b)$ and so $a = b$. This shows that
-    $\varphi(\sigma)$ is an injection. But an injective mapping from a
-    set to itself must also be surjective. Hence $\varphi(\sigma)$ is
-    a bijection from $\Omega$ to itself, that is, $\varphi(\sigma)$ is
-    a permutation of $\Omega$.
+    $\theta^{-1}(a) = \theta^{-1}(b)$ and, similarly, we have $a =
+    b$. This shows that $\varphi(\sigma)$ is an injection.
+
+    Now let $y\in\Omega$ be arbitrary. Then we may take
+    \begin{equation*}
+      x = \varphi(\sigma^{-1})(y)
+      = (\theta\circ\sigma^{-1}\circ\theta^{-1})(y)
+    \end{equation*}
+    so that $\varphi(\sigma)(x) = y$. This shows that
+    $\varphi(\sigma)$ is a surjection. Hence $\varphi(\sigma)$ is a
+    bijection from $\Omega$ to itself, that is, $\varphi(\sigma)$ is a
+    permutation of $\Omega$.
   \end{proof}
 \item $\varphi$ is a bijection from $S_\Delta$ to $S_\Omega$.
   \begin{proof}
@@ -454,9 +461,10 @@ $\Q$ to itself defined by $q\mapsto kq$ is an automorphism of $\Q$.
   \end{equation*}
   so $\varphi$ is a homomorphism. To show that it is a bijection, note
   that it must be surjective since for any $a\in\Q$, we may take
-  $b = a/k$ so that $\varphi(b) = a$. And since $\varphi$ maps $\Q$ to
-  itself, surjectivity implies injectivity so that $\varphi$ is a
-  bijection and hence an automorphism of $\Q$.
+  $b = a/k$ so that $\varphi(b) = a$. And $\varphi$ must be injective
+  since for any $a,b\in\Q$, $\varphi(a) = \varphi(b)$ implies
+  $ka = kb$ which implies $a = b$ since $k$ is nonzero. Therefore
+  $\varphi$ is a bijection and hence an automorphism of $\Q$.
 \end{proof}
 
 \Exercise{22} Let $A$ be an abelian group and fix some $k\in\Z$. Prove
