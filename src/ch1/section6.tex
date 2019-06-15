@@ -476,3 +476,51 @@ automorphism of $A$).
   its own inverse function. Hence $a\mapsto a^{-1}$ is an automorphism
   of $A$.
 \end{proof}
+
+\Exercise{23} Let $G$ be a finite group which possesses an
+automorphism $\sigma$ such that $\sigma(g) = g$ if and only if
+$g = 1$. If $\sigma^2$ is the identity map from $G\to G$, prove that
+$G$ is abelian (such an automorphism $\sigma$ is called {\em fixed
+  point free} of order $2$).
+\begin{proof}
+  Consider the map $\varphi\colon G\to G$ given by
+  $\varphi(x) = x^{-1}\sigma(x)$. For any $x,y\in G$, if
+  $\varphi(x) = \varphi(y)$ then
+  \begin{equation*}
+    x^{-1}\sigma(x) = y^{-1}\sigma(y)
+  \end{equation*}
+  or, rearranging,
+  \begin{equation*}
+    \sigma(y) = yx^{-1}\sigma(x).
+  \end{equation*}
+  This gives
+  \begin{equation*}
+    y = \sigma(\sigma(y)) = \sigma(yx^{-1}\sigma(x))
+    = \sigma(yx^{-1})x
+  \end{equation*}
+  and multiplying on the right by $x^{-1}$ gives
+  $yx^{-1} = \sigma(yx^{-1})$, which then implies that $yx^{-1} = 1$
+  or $x = y$. This shows that $\varphi$ is an injection, and hence a
+  bijection since it maps the finite set $G$ to itself. Therefore
+  every $x\in G$ can be written in the form $x = y^{-1}\sigma(y)$ for
+  some $y\in G$.
+
+  So let $x\in G$ be arbitrary. Then, for some $y\in G$,
+  \begin{equation*}
+    \sigma(x) = \sigma(y^{-1}\sigma(y)) = \sigma(y)^{-1}y.
+  \end{equation*}
+  However, since $(ab)^{-1} = b^{-1}a^{-1}$ for $a,b$ in any group, we
+  also have
+  \begin{equation*}
+    \sigma(y)^{-1}y = \sigma(y)^{-1}(y^{-1})^{-1}
+    = \big(y^{-1}\sigma(y)\big)^{-1} = x^{-1}.
+  \end{equation*}
+  Hence $\sigma(x) = x^{-1}$ for all $x\in G$.
+
+  Now let $a,b\in G$ be arbitrary. Then
+  \begin{equation*}
+    \sigma(ab) = (ab)^{-1} = b^{-1}a^{-1} = \sigma(b)\sigma(a) = \sigma(ba).
+  \end{equation*}
+  But $\sigma$ is an injection, so $ab = ba$. This shows that $G$ is
+  abelian.
+\end{proof}
