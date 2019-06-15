@@ -507,13 +507,18 @@ $G$ is abelian (such an automorphism $\sigma$ is called {\em fixed
     = \sigma(yx^{-1})x
   \end{equation*}
   and multiplying on the right by $x^{-1}$ gives
-  $yx^{-1} = \sigma(yx^{-1})$, which then implies that $yx^{-1} = 1$
-  or $x = y$. This shows that $\varphi$ is an injection, and hence a
-  bijection since it maps the finite set $G$ to itself. Therefore
-  every $x\in G$ can be written in the form $x = y^{-1}\sigma(y)$ for
-  some $y\in G$.
+  \begin{equation}
+    \label{eq:y-x-inv-equals-sigma-y-x-inv}
+    yx^{-1} = \sigma(yx^{-1}).
+  \end{equation}
+  Since $\sigma$ is fixed point free,
+  \eqref{eq:y-x-inv-equals-sigma-y-x-inv} then implies that
+  $yx^{-1} = 1$ or $x = y$. Therefore $\varphi$ is an injection, and
+  hence a bijection since it maps the finite set $G$ to
+  itself. Therefore every $x\in G$ can be written in the form
+  $x = y^{-1}\sigma(y)$ for some $y\in G$.
 
-  So let $x\in G$ be arbitrary. Then, for some $y\in G$,
+  Now let $x\in G$ be arbitrary. Then, for some $y\in G$,
   \begin{equation*}
     \sigma(x) = \sigma(y^{-1}\sigma(y)) = \sigma(y)^{-1}y.
   \end{equation*}
@@ -525,7 +530,7 @@ $G$ is abelian (such an automorphism $\sigma$ is called {\em fixed
   \end{equation*}
   Hence $\sigma(x) = x^{-1}$ for all $x\in G$.
 
-  Now let $a,b\in G$ be arbitrary. Then
+  Finally, let $a,b\in G$ be arbitrary. Then
   \begin{equation*}
     \sigma(ab) = (ab)^{-1} = b^{-1}a^{-1} = \sigma(b)\sigma(a) = \sigma(ba).
   \end{equation*}
