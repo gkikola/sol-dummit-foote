@@ -537,3 +537,39 @@ $G$ is abelian (such an automorphism $\sigma$ is called {\em fixed
   But $\sigma$ is an injection, so $ab = ba$. This shows that $G$ is
   abelian.
 \end{proof}
+
+\Exercise{24} Let $G$ be a finite group and let $x$ and $y$ be
+distinct elements of order $2$ in $G$ that generate $G$. Prove that
+$G\cong D_{2n}$, where $n = \ord{xy}$.
+\begin{proof}
+  Let $t = xy$. By
+  Exercise~\ref{exercise-x-y-order-2-satisfy-dihedral-relations}, we
+  have $tx = xt^{-1}$. Note also that $x$ and $t$ generate $G$, since
+  $y$ can be written as $y = xt$. So by repeated application of the
+  relation $tx = xt^{-1}$, we may express any member of $G$ uniquely
+  in the form $x^it^j$ for some integers $i,j$ with $0\leq i\leq1$ and
+  $0\leq j<n$ (the representation is unique since $t$ has order $n$,
+  which implies that $t, t^2, \dots, t^{n-1}$ are all
+  distinct). Therefore $\ord{G} = 2n$.
+
+  Now let $\varphi\colon D_{2n}\to G$ be given by
+  \begin{equation*}
+    \varphi(s^ir^j) = x^it^j,
+    \quad\text{for $i,j\in\Z$ with $0\leq i\leq1$ and $0\leq j\leq n-1$}.
+  \end{equation*}
+  Since every element in $D_{2n}$ can be written uniquely as $s^ir^j$
+  with the above restrictions on $i$ and $j$, the function $\varphi$
+  is well defined. And since $x$ and $t$ satisfy the same relations in
+  $G$ that $s$ and $r$ satisfy in $D_{2n}$, $\varphi$ must be a
+  homomorphism.
+
+  We will now show that $\varphi$ is a bijection. For any $b\in G$,
+  write $b = x^it^j$ for $i\in\{0,1\}$ and
+  $j\in\{0,1,\dots,n-1\}$. Then if $a = s^ir^j$, we have
+  $\varphi(a) = b$, which shows that $\varphi$ is surjective. Since
+  $\ord{G} = \ord{D_{2n}}$, this is enough to show that $\varphi$ is a
+  bijection.
+
+  The function $\varphi$ is a bijective homomorphism, hence it is an
+  isomorphism and $D_{2n}\cong G$.
+\end{proof}
