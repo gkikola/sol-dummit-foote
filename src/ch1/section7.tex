@@ -1,0 +1,22 @@
+\section{Group Actions}
+
+\Exercise1 Let $F$ be a field. Show that the multiplicative group of
+nonzero elements of $F$ (denoted by $F^\times$) acts on the set $F$ by
+$g\cdot a = ga$, where $g\in F^\times$, $a\in F$ and $ga$ is the usual
+product in $F$ of the two field elements.
+\begin{proof}
+  Let $g_1,g_2\in F^\times$. Then for any $a\in F$,
+  \begin{equation*}
+    g_1\cdot(g_2\cdot a) = g_1\cdot g_2a = g_1(g_2a) = (g_1g_2)a
+    = (g_1g_2)\cdot a,
+  \end{equation*}
+  where the second-to-last equality follows from the associativity of
+  multiplication in $F$. Also, for any $a\in F^\times$,
+  \begin{equation*}
+    1\cdot a = 1a = a,
+  \end{equation*}
+  since $1$ is the identity of the group $F^\times$. And $1(0) = 0$
+  (which follows from distributivity), so we can say that
+  $1\cdot a = a$ for all $a\in F$. Therefore the mapping
+  $(g, a)\mapsto ga$ of $F^\times\times F\to F$ is a group action.
+\end{proof}
