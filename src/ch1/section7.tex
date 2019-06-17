@@ -154,3 +154,50 @@ faithful.
   $a - b = 0$ or $a = b$. Therefore distinct elements in $F^\times$
   must induce distinct permutations on $V$ and the action is faithful.
 \end{proof}
+
+\Exercise8 Let $A$ be a nonempty set and let $k$ be a positive integer
+with $k\leq\ord{A}$. The symmetric group $S_A$ acts on the set $B$
+consisting of all subsets of $A$ of cardinality $k$ by
+$\sigma\cdot\{a_1,\dots,a_k\} = \{\sigma(a_1),\dots,\sigma(a_k)\}$.
+\begin{enumerate}
+\item Prove that this is a group action.
+  \begin{proof}
+    Suppose $\sigma_1,\sigma_2\in S_A$. Then for any subset
+    $\{a_1,\dots,a_k\}$ of $A$,
+    \begin{align*}
+      \sigma_1\cdot(\sigma_2\cdot\{a_1,\dots,a_k\})
+      &= \sigma_1\cdot\{\sigma_2(a_1),\dots,\sigma_2(a_k)\} \\
+      &= \{\sigma_1(\sigma_2(a_1)),\dots,\sigma_1(\sigma_2(a_k))\} \\
+      &= (\sigma_1\circ\sigma_2)\cdot\{a_1,\dots,a_k\}
+    \end{align*}
+    and
+    \begin{equation*}
+      1\cdot\{a_1,\dots,a_k\}
+      = \{1(a_1),\dots, 1(a_k)\}
+      = \{a_1,\dots,a_k\}.
+    \end{equation*}
+    Therefore the specified mapping is a group action.
+  \end{proof}
+\item Describe explicitly how the elements $(1\,2)$ and $(1\,2\,3)$
+  act on the six $2$-element subsets of $\{1,2,3,4\}$.
+  \begin{solution}
+    We have
+    \begin{align*}
+      (1\,2)\cdot\{1,2\} &= \{2,1\}, \\
+      (1\,2)\cdot\{1,3\} &= \{2,3\}, \\
+      (1\,2)\cdot\{1,4\} &= \{2,4\}, \\
+      (1\,2)\cdot\{2,3\} &= \{1,3\}, \\
+      (1\,2)\cdot\{2,4\} &= \{1,4\}, \\
+      (1\,2)\cdot\{3,4\} &= \{3,4\},
+    \end{align*}
+    and
+    \begin{align*}
+      (1\,2\,3)\cdot\{1,2\} &= \{2,3\}, \\
+      (1\,2\,3)\cdot\{1,3\} &= \{2,1\}, \\
+      (1\,2\,3)\cdot\{1,4\} &= \{2,4\}, \\
+      (1\,2\,3)\cdot\{2,3\} &= \{3,1\}, \\
+      (1\,2\,3)\cdot\{2,4\} &= \{3,4\}, \\
+      (1\,2\,3)\cdot\{3,4\} &= \{1,4\}. \qedhere
+    \end{align*}
+  \end{solution}
+\end{enumerate}
