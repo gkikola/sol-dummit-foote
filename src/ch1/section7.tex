@@ -20,3 +20,36 @@ product in $F$ of the two field elements.
   $1\cdot a = a$ for all $a\in F$. Therefore the mapping
   $(g, a)\mapsto ga$ of $F^\times\times F\to F$ is a group action.
 \end{proof}
+
+\Exercise2 Show that the additive group $\Z$ acts on itself by
+$z\cdot a = z + a$ for all $z,a\in\Z$.
+\begin{proof}
+  For all $z_1,z_2,a\in\Z$, we have
+  \begin{equation*}
+    z_1\cdot(z_2\cdot a) = z_1 + (z_2 + a)
+    = (z_1 + z_2) + a = (z_1 + z_2)\cdot a
+  \end{equation*}
+  and
+  \begin{equation*}
+    0\cdot a = 0 + a = a.
+  \end{equation*}
+  Therefore $\Z$ acts on itself as stated.
+\end{proof}
+
+\Exercise3 Show that the additive group $\R$ acts on the $x,y$ plane
+$\R\times\R$ by $r\cdot(x,y) = (x + ry, y)$.
+\begin{proof}
+  For any $r_1,r_2\in\R$ and any $(x,y)\in\R^2$, we have
+  \begin{align*}
+    r_1\cdot(r_2\cdot(x,y))
+    &= r_1\cdot(x + r_2y, y) \\
+    &= (x + r_2y + r_1y, y) \\
+    &= (x + (r_1 + r_2)y, y) \\
+    &= (r_1 + r_2)\cdot(x,y)
+  \end{align*}
+  and
+  \begin{equation*}
+    0\cdot(x,y) = (x + 0y, y) = (x,y).
+  \end{equation*}
+  Therefore $\R$ acts on $\R^2$ in the manner stated above.
+\end{proof}
