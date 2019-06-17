@@ -133,3 +133,24 @@ identity.
   in $G$ must induce distinct permutations on $A$. This shows that $G$
   acts faithfully on $A$.
 \end{proof}
+
+\Exercise7 Prove that in Example~2 in this section the action is
+faithful.
+\begin{proof}
+  If $V$ is a vector space over a field $F$, then the multiplicative
+  group $F^\times$ acts on the set $V$ via the mapping $a\cdot v = av$
+  for $a\in F^\times$ and $v\in V$. We want to show that this action
+  is faithful.
+
+  Let $a,b\in F^\times$ be such that $a\cdot v = b\cdot v$ for all
+  $v\in V$. Then
+  \begin{align*}
+    0 &= a\cdot v + -(a\cdot v) \\
+      &= a\cdot v + -(b\cdot v) \\
+      &= av - bv \\
+      &= (a - b)v.
+  \end{align*}
+  Since $(a - b)v$ is $0$ even when $v$ is nonzero, this implies that
+  $a - b = 0$ or $a = b$. Therefore distinct elements in $F^\times$
+  must induce distinct permutations on $V$ and the action is faithful.
+\end{proof}
