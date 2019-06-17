@@ -212,3 +212,41 @@ parentheses.
   twice as many different $2$-tuples as there are $2$-element subsets,
   since the ordering of the elements is significant.
 \end{solution}
+
+\Exercise{10} With reference to the preceding two exercises determine:
+\begin{enumerate}
+\item for which values of $k$ the action of $S_n$ on $k$-element
+  subsets is faithful
+  \begin{solution}
+    The action of $S_A$ on $k$-element subsets of a set $A$ is
+    faithful for all integers $k$ with $1\leq k<\ord{A}$, which we
+    will now show. Suppose $\sigma_1$ and $\sigma_2$ are distinct
+    permutations in $S_A$. Label the elements of $A$ as
+    $\{a_1,a_2,\dots,a_n\}$, where $n = \ord{A}$. Without loss of
+    generality, we may suppose that $\sigma_1(a_1)\neq\sigma_2(a_1)$
+    (if not, relabel the elements of $A$ so that this is true).
+
+    Now, take any $k$-element subset $B$ of $A$ which contains $a_1$
+    but which does not contain $(\sigma_1^{-1}\circ\sigma_2)(a_1)$
+    (this is possible since $1\leq k<\ord{A}$). Then $\sigma_1\cdot B$
+    does not contain $\sigma_2(a_1)$, however $\sigma_2\cdot B$
+    does. Therefore distinct permutations in $S_A$ induce distinct
+    permutations on the $k$-element subsets of $A$, so the action is
+    faithful (again, assuming $1\leq k<\ord{A}$).
+  \end{solution}
+
+\item for which values of $k$ the action of $S_n$ on ordered
+  $k$-tuples is faithful
+  \begin{solution}
+    The action of $S_A$ on ordered $k$-tuples of elements of $A$ is
+    faithful for all integers $k$ with $1\leq k\leq\ord{A}$. To see
+    this, suppose that $\sigma_1,\sigma_2$ are distinct permutations
+    in $S_A$. Suppose for example that
+    $\sigma_1(a_1)\neq\sigma_2(a_1)$ and consider the $k$-tuple
+    $B = (a_1, a_2, \dots, a_k)$. Then the first coordinate in
+    $\sigma_1\cdot B$ is distinct from the first coordinate of
+    $\sigma_2\cdot B$. Therefore distinct permutations in $S_A$ induce
+    distinct permutations on the set of $k$-tuples, so the action is
+    faithful.
+  \end{solution}
+\end{enumerate}
