@@ -250,3 +250,24 @@ parentheses.
     faithful.
   \end{solution}
 \end{enumerate}
+
+\Exercise{11} Write out the cycle decomposition of the eight
+permutations in $S_4$ corresponding to the elements in $D_8$ given by
+the action of $D_8$ on the vertices of a square (where the vertices of
+the square are labelled as in Section~2).
+\begin{solution}
+  Let $\varphi\colon D_8\to S_4$ be the permutation representation
+  associated to the action of $D_8$ on the vertices $\{1,2,3,4\}$ of a
+  square. Then
+  \begin{align*}
+    \varphi(1) &= 1, \\
+    \varphi(r) &= (1\,2\,3\,4), \\
+    \varphi(r^2) &= (1\,3)(2\,4), \\
+    \varphi(r^3) &= (1\,4\,3\,2), \\
+    \varphi(s) &= (2\,4), \\
+    \varphi(sr) &= (1\,4)(2\,3), \\
+    \varphi(sr^2) &= (1\,3), \\
+    \intertext{and}
+    \varphi(sr^3) &= (1\,2)(3\,4). \qedhere
+  \end{align*}
+\end{solution}
