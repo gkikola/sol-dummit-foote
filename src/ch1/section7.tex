@@ -91,3 +91,45 @@ $a\in A$. Show that the following sets are subgroups of $G$:
     Therefore the stabilizer is a subgroup of $G$.
   \end{proof}
 \end{enumerate}
+
+\Exercise5 Prove that the kernel of an action of the group $G$ on the
+set $A$ is the same as the kernel of the corresponding permutation
+representation $G\to S_A$.
+\begin{proof}
+  Let $\varphi\colon G\to S_A$ be the permutation representation of
+  the group action on $A$, so that for $g\in G$ and $a\in A$,
+  $\varphi(g)(a) = g\cdot a$.
+
+  If $g\in\ker\varphi$, then $\varphi(g) = 1$, where $1$ is the
+  identity permutation on $A$. Then $g.a = a$ for all $a\in A$, and
+  $g$ is in the kernel of the action. Conversely, if $g$ is in the
+  kernel of the action, then $g.a = a$ for all $a\in A$, so that
+  $\varphi(g) = 1$ and $g\in\ker\varphi$. Therefore the kernel of the
+  group action and the kernel of the corresponding permutation
+  representation are the same.
+\end{proof}
+
+\Exercise6 Prove that a group $G$ acts faithfully on a set $A$ if and
+only if the kernel of the action is the set consisting only of the
+identity.
+\begin{proof}
+  First, suppose that $G$ acts faithfully on $A$ and let $g$ be an
+  element in the kernel of the action. Then $g\cdot a = a$ for all
+  $a\in A$. However, $1\cdot a = a$ for all $a\in A$, so the elements
+  $1$ and $g$ induce the same permutation on $A$. Since $G$ acts
+  faithfully, this must mean that $g = 1$, so that the kernel of the
+  action is the set $\{1\}$.
+
+  For the converse, suppose that the kernel of the action is the set
+  $\{1\}$. Pick two elements $g$ and $h$ in $G$ and suppose that $g$
+  and $h$ induce the same permutation on $A$. Then for any $a\in A$,
+  $g\cdot a = h\cdot a$. But then
+  \begin{equation*}
+    a = (g^{-1}g)\cdot a = g^{-1}\cdot(g\cdot a)
+    = g^{-1}\cdot(h\cdot a) = (g^{-1}h)\cdot a.
+  \end{equation*}
+  Therefore $g^{-1}h$ is in the kernel of the action, so
+  $g^{-1}h = 1$. This implies that $g = h$, so that distinct elements
+  in $G$ must induce distinct permutations on $A$. This shows that $G$
+  acts faithfully on $A$.
+\end{proof}
