@@ -53,3 +53,41 @@ $\R\times\R$ by $r\cdot(x,y) = (x + ry, y)$.
   \end{equation*}
   Therefore $\R$ acts on $\R^2$ in the manner stated above.
 \end{proof}
+
+\Exercise4 Let $G$ be a group acting on a set $A$ and fix some
+$a\in A$. Show that the following sets are subgroups of $G$:
+\begin{enumerate}
+\item the kernel of the action
+  \begin{proof}
+    Suppose $g,h$ are in the kernel of the action. Then for any $b\in A$,
+    \begin{equation*}
+      (gh)\cdot b = g\cdot(h\cdot b) = g\cdot b = b,
+    \end{equation*}
+    so $gh$ is in the kernel, and the kernel is closed under the group
+    operation. Moreover, if $g$ is in the kernel then
+    \begin{equation*}
+      b = 1\cdot b = (g^{-1}g)\cdot b
+      = g^{-1}\cdot(g\cdot b) = g^{-1}\cdot b,
+    \end{equation*}
+    so $g^{-1}$ is in the kernel.
+
+    Therefore the kernel of the group action is a nonempty subset of
+    $G$ which is closed under the binary operation of $G$ and which is
+    closed under inverses, so the kernel is a subgroup of $G$.
+  \end{proof}
+\item $\{g\in G\mid ga = a\}$ (called the {\em stabilizer} of $a$ in $G$)
+  \begin{proof}
+    The stabilizer of $a$ is nonempty since $1$ is a member. Now let
+    $g,h$ be any members of the stabilizer. Then
+    \begin{equation*}
+      (gh)\cdot a = g\cdot(h\cdot a) = g\cdot a = a,
+    \end{equation*}
+    so the stabilizer is closed under the group operation. It is also
+    closed under inverses, since
+    \begin{equation*}
+      a = 1\cdot a = (g^{-1}g)\cdot a
+      = g^{-1}\cdot(g\cdot a) = g^{-1}\cdot a.
+    \end{equation*}
+    Therefore the stabilizer is a subgroup of $G$.
+  \end{proof}
+\end{enumerate}
