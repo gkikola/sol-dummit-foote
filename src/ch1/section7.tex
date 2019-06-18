@@ -309,3 +309,49 @@ usual).
   By uniqueness of the identity, it is clear that this set is simply
   $\{1\}$. Therefore the left regular action is always faithful.
 \end{solution}
+
+\Exercise{14} Let $G$ be a group and let $A = G$. Show that if $G$ is
+non-abelian then the maps defined by $g\cdot a = ag$ for all
+$g,a\in G$ do {\em not} satisfy the axioms of a (left) group action of
+$G$ on itself.
+\begin{proof}
+  Since $G$ is non-abelian, there exist $g_1,g_2\in G$ such that
+  $g_1g_2 \neq g_2g_1$. Then $g_1\cdot(g_2\cdot a) = ag_2g_1$ but
+  $(g_1g_2)\cdot a = ag_1g_2$. If $ag_2g_1 = ag_1g_2$ then the
+  cancellation law gives $g_2g_1 = g_1g_2$, a contradiction. Therefore
+  this map does not define a left group action.
+\end{proof}
+
+\Exercise{15} Let $G$ be any group and let $A = G$. Show that the maps
+defined by $g\cdot a = ag^{-1}$ for all $g,a\in G$ {\em do} satisfy
+the axioms of a (left) group action of $G$ on itself.
+\begin{proof}
+  Let $g_1,g_2,a\in G$ be arbitrary. Then
+  \begin{equation*}
+    g_1\cdot(g_2\cdot a) = g_1\cdot(ag_2^{-1})
+    = ag_2^{-1}g_1^{-1} = a(g_1g_2)^{-1} = (g_1g_2)\cdot a
+  \end{equation*}
+  and
+  \begin{equation*}
+    1\cdot a = a1^{-1} = a1 = a.
+  \end{equation*}
+  Therefore this map does define a group action.
+\end{proof}
+
+\Exercise{16} Let $G$ be any group and let $A = G$. Show that the maps
+defined by $g\cdot a = gag^{-1}$ for all $g,a\in G$ {\em do} satisfy
+the axioms of a (left) group action (this action of $G$ on itself is
+called {\em conjugation}).
+\begin{proof}
+  For any $g_1,g_2,a\in G$ we have
+  \begin{equation*}
+    g_1\cdot(g_2\cdot a) = g_1\cdot(g_2ag_2^{-1})
+    = g_1g_2ag_2^{-1}g_1^{-1} = (g_1g_2)a(g_1g_2)^{-1}
+    = (g_1g_2)\cdot a
+  \end{equation*}
+  and
+  \begin{equation*}
+    1\cdot a = 1a1 = a,
+  \end{equation*}
+  so this mapping does define a group action.
+\end{proof}
