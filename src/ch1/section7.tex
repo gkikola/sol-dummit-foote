@@ -355,3 +355,38 @@ called {\em conjugation}).
   \end{equation*}
   so this mapping does define a group action.
 \end{proof}
+
+\Exercise{17} Let $G$ be a group and let $G$ act on itself by left
+conjugation, so each $g\in G$ maps $G$ to $G$ by
+\begin{equation*}
+  x\mapsto gxg^{-1}.
+\end{equation*}
+For fixed $g\in G$, prove that conjugation by $g$ is an isomorphism
+from $G$ onto itself (i.e., is an automorphism of $G$). Deduce that
+$x$ and $gxg^{-1}$ have the same order for all $x$ in $G$ and that for
+any subset $A$ of $G$, $\ord{A} = \ord{gAg^{-1}}$ (here
+$gAg^{-1} = \{gag^{-1}\mid a\in A\}$).
+\begin{proof}
+  Fix a $g\in G$ and let $\varphi\colon G\to G$ denote the map
+  $x\mapsto gxg^{-1}$. Then for any $x_1,x_2\in G$ we have
+  \begin{equation*}
+    \varphi(x_1x_2) = gx_1x_2g^{-1}
+    = (gx_1g^{-1})(gx_2g^{-1}) = \varphi(x_1)\varphi(x_2)
+  \end{equation*}
+  so $\varphi$ is a homomorphism.
+
+  Next, suppose $\varphi(x_1) = \varphi(x_2)$. Then
+  $gx_1g^{-1} = gx_2g^{-1}$ and multiplying both sides of this
+  equation on the left by $g^{-1}$ and on the right by $g$ gives
+  $x_1 = x_2$, so that $\varphi$ is injective.
+
+  Now let $y\in G$ be arbitrary. Then $x = g^{-1}yg$ is such that
+  $\varphi(x) = y$, so $\varphi$ is surjective. Therefore $\varphi$ is
+  an automorphism.
+
+  Since isomorphisms preserve order, we see that each element $x$ in
+  $G$ has the same order as its conjugate $gxg^{-1}$. Moreover, if
+  $A\subseteq G$ then the restriction of $\varphi$ to $A$,
+  $\varphi|_A\colon A\to gAg^{-1}$, is still a bijection, so
+  $\ord{A} = \ord{gAg^{-1}}$.
+\end{proof}
