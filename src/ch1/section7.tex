@@ -271,3 +271,41 @@ the square are labelled as in Section~2).
     \varphi(sr^3) &= (1\,2)(3\,4). \qedhere
   \end{align*}
 \end{solution}
+
+\Exercise{12} Assume $n$ is an even positive integer and show that
+$D_{2n}$ acts on the set consisting of pairs of opposite vertices of a
+regular $n$-gon. Find the kernel of this action (label vertices as
+usual).
+\begin{solution}
+  Fix an even positive integer $n$. The set of pairs of opposite
+  vertices of a regular $n$-gon, labeled in the usual way, is the set
+  $P = \{P_1,P_2,\dots,P_{n/2}\}$ where
+  \begin{equation*}
+    P_k = \left\{k, \frac{n}2 + k\right\}.
+  \end{equation*}
+  $D_{2n}$ acts on $P$ by $x\cdot P_k = P_\ell$ where $P_\ell$ is the
+  set of images of the vertices in $P_k$ under the symmetry $x$. For
+  example, in $D_8$, $sr\cdot\{2,6\} = \{7,3\}$ because $sr$ maps
+  vertex $2$ to vertex $7$ and vertex $6$ to vertex $3$.
+
+  Let $x,y\in D_{2n}$. It is clear by definition of the action that
+  $x\cdot(y\cdot P_k) = (xy)\cdot P_k$ and that $1\cdot P_k = P_k$. So
+  this is a group action. The only symmetry in $D_{2n}$ which fixes
+  all vertices is the identity $1$. However, since the order of
+  vertices in each pair does not matter, any symmetry which only sends
+  vertices to their opposites will also fix pairs of vertices. The
+  only symmetry which does this is $r^{n/2}$. There is no symmetry
+  which fixes only some vertices and which sends all others to their
+  opposite vertices, so the kernel of the action is just the set
+  $\{1, r^{n/2}\}$.
+\end{solution}
+
+\Exercise{13} Find the kernel of the left regular action.
+\begin{solution}
+  Let $G$ be a group. The kernel of the left regular action is the set
+  \begin{equation*}
+    \{g\in G\mid \text{$gh = h$ for all $h\in G$}\}.
+  \end{equation*}
+  By uniqueness of the identity, it is clear that this set is simply
+  $\{1\}$. Therefore the left regular action is always faithful.
+\end{solution}
