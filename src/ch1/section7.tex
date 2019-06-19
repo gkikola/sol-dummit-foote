@@ -483,3 +483,26 @@ isomorphic to $S_4$.
   that $\ord{G} = 24 = \ord{S_4}$, so $\varphi$ is in fact an
   isomorphism.
 \end{proof}
+
+\Exercise{22} Show that the group of rigid motions of an octahedron is
+isomorphic to $S_4$. Deduce that the groups of rigid motions of a cube
+and an octahedron are isomorphic.
+\begin{proof}
+  Number each pair of opposing faces of the octahedron $1,2,3,4$. Let
+  $G$ be the group of rigid motions of the octahedron and let
+  $A = \{1,2,3,4\}$. Each $\alpha\in G$ sends each pair of opposing
+  faces to a new pair of opposing faces, so $G$ acts on $A$.
+
+  As in the previous exercise, we see that the homomorphism
+  \begin{equation*}
+    \varphi\colon G\to S_4
+    \quad\text{given by}\quad
+    \varphi(\alpha)(i) = \alpha i.
+  \end{equation*}
+  is injective. By
+  Exercise~\ref{exercise-order-of-rigid-motions-of-an-octahedron} we
+  have $\ord{G} = 24 = \ord{S_4}$, so $\varphi$ is an isomorphism.
+
+  From this and the previous exercise, we see that the groups of rigid
+  motions of the cube and the octahedron are isomorphic.
+\end{proof}
