@@ -443,3 +443,43 @@ this and the preceding exercises deduce {\em Lagrange's Theorem}:
   cardinality $\ord{H}$, so $\ord{G} = n\ord{H}$ where $n$ is the
   number of orbits. Hence $\ord{H}$ divides $\ord{G}$.
 \end{proof}
+
+\Exercise{20} Show that the group of rigid motions of a tetrahedron is
+isomorphic to a subgroup of $S_4$.
+\begin{proof}
+  Call the group of rigid motions of the tetrahedron $G$. Number each
+  vertex and let $A$ denote the set $\{1,2,3,4\}$. Then each rigid
+  motion $\alpha\in G$ induces a permutation $\sigma_\alpha\in S_4$ of
+  $A$. $G$ acts on $A$ via the map $\alpha i = \sigma_\alpha(i)$.
+
+  Since each distinct $\alpha\in G$ permutes the vertices in a
+  different way, we get an injective homomorphism
+  \begin{equation*}
+    \varphi\colon G\to S_4
+    \quad\text{given by}\quad
+    \varphi(\alpha) = \sigma_\alpha.
+  \end{equation*}
+  Then $\varphi(G)$ is a subgroup of $S_4$, and by simply restricting
+  the codomain of $\varphi$ we have an isomorphism from $G$ to this
+  subgroup of $S_4$.
+\end{proof}
+
+\Exercise{21} Show that the group of rigid motions of a cube is
+isomorphic to $S_4$.
+\begin{proof}
+  Again let $G$ denote the group of rigid motions and let
+  $A = \{1,2,3,4\}$, where each $i\in A$ corresponds to a pair of
+  opposing vertices on a cube. Each $\alpha\in G$ sends each pair of
+  opposing vertices to a new pair of opposing vertices. Therefore $G$
+  acts on $A$.
+
+  Consider the homomorphism $\varphi\colon G\to S_4$ given by
+  \begin{equation*}
+    \varphi(\alpha)(i) = \alpha i.
+  \end{equation*}
+  Then $\varphi$ is injective since each distinct rigid motion
+  $\alpha\in G$ gives rise to a different permutation of $A$. From
+  Exercise~\ref{exercise-order-of-rigid-motions-of-a-cube} we know
+  that $\ord{G} = 24 = \ord{S_4}$, so $\varphi$ is in fact an
+  isomorphism.
+\end{proof}
