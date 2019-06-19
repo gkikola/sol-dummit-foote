@@ -390,3 +390,56 @@ $gAg^{-1} = \{gag^{-1}\mid a\in A\}$).
   $\varphi|_A\colon A\to gAg^{-1}$, is still a bijection, so
   $\ord{A} = \ord{gAg^{-1}}$.
 \end{proof}
+
+\Exercise{18} Let $H$ be a group acting on a set $A$. Prove that the
+relation $\sim$ on $A$ defined by
+\begin{equation*}
+  a\sim b
+  \quad\text{if and only if}\quad
+  a = hb\;\;\text{for some $h\in H$}
+\end{equation*}
+is an equivalence relation. (For each $x\in A$ the equivalence classes
+of $x$ under $\sim$ is called the {\em orbit} of $x$ under the action
+of $H$. The orbits under the action of $H$ partition the set $A$.)
+\begin{proof}
+  Since $a = 1a$ we have $a\sim a$. And if $a = hb$ for $h\in H$ then
+  \begin{equation*}
+    h^{-1}a = h^{-1}(hb) = (h^{-1}h)b = b,
+  \end{equation*}
+  so $a\sim b$ implies $b\sim a$.
+
+  Lastly, suppose $a\sim b$ and $b\sim c$ and let $h_1,h_2\in H$ be
+  such that $a = h_1b$ and $b = h_2c$. Then
+  $a = h_1(h_2c) = (h_1h_2)c$ and $a\sim c$. Hence $\sim$ is an
+  equivalence relation.
+\end{proof}
+
+\Exercise{19} Let $H$ be a subgroup of the finite group $G$ and let
+$H$ act on $G$ (here $A = G$) by left multiplication. Let $x\in G$ and
+let $\mathcal{O}$ be the orbit of $x$ under the action of $H$. Prove
+that the map
+\begin{equation*}
+  H\to\mathcal{O}
+  \quad\text{defined by}\quad
+  h\mapsto hx
+\end{equation*}
+is a bijection (hence all orbits have cardinality $\ord{H}$). From
+this and the preceding exercises deduce {\em Lagrange's Theorem}:
+\begin{quote}
+  \em if $G$ is a finite group and $H$ is a subgroup of $G$ then
+  $\ord{H}$ divides $\ord{G}$.
+\end{quote}
+\begin{proof}
+  Let $\varphi\colon H\to\mathcal{O}$ denote the map $h\mapsto
+  hx$. Suppose $\varphi(h) = \varphi(k)$ for $h,k\in H$. Then
+  $hx = kx$ and right cancellation implies that $h = k$, so that
+  $\varphi$ is injective. And $\varphi$ is surjective by definition
+  ($y\in\mathcal{O}$ means that there is $h\in H$ such that $hx =
+  y$). Therefore $\varphi$ is a bijection and
+  $\ord{H} = \ord{\mathcal{O}}$.
+
+  From the previous exercise, we know that the orbits under the action
+  of $H$ partition $G$. Each equivalence class $\mathcal{O}$ has
+  cardinality $\ord{H}$, so $\ord{G} = n\ord{H}$ where $n$ is the
+  number of orbits. Hence $\ord{H}$ divides $\ord{G}$.
+\end{proof}
