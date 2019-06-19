@@ -506,3 +506,19 @@ and an octahedron are isomorphic.
   From this and the previous exercise, we see that the groups of rigid
   motions of the cube and the octahedron are isomorphic.
 \end{proof}
+
+\Exercise{23} Explain why the action of the group of rigid motions of
+a cube on the set of three pairs of opposite faces is not
+faithful. Find the kernel of this action.
+\begin{solution}
+  The group of rigid motions of a cube has order $24$ but the
+  permutations on the set of pairs of opposite faces has order
+  $\ord{S_3} = 6$. Therefore the action cannot be faithful.
+
+  Construct a line through the center of each pair of opposite
+  faces. Then a $180^\circ$ rotation about each of these lines will
+  send each pair of opposite faces to itself. These are the only
+  rotations that fix pairs of opposing faces, so the kernel of the
+  action consists of these three $180^\circ$ rotations along with the
+  identity transformation.
+\end{solution}
