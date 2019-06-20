@@ -67,3 +67,39 @@ subgroup of the given group.
     so $a/b\in G$. Hence $G\leq\R^\times$.
   \end{proof}
 \end{enumerate}
+
+\Exercise2 In each of (a)--(e) prove that the specified subset is {\em
+  not} a subgroup of the given group:
+\begin{enumerate}
+\item the set of $2$-cycles in $S_n$ for $n\geq3$
+  \begin{proof}
+    For any $n\geq3$, the $2$-cycles $(1\,2)$ and $(2\,3)$ are members
+    of $S_n$, yet $(2\,3)(1\,2) = (1\,3\,2)$ which is not a
+    $2$-cycle. So this set is not a subgroup.
+  \end{proof}
+\item the set of reflections in $D_{2n}$ for $n\geq3$
+  \begin{proof}
+    Since $s$ and $sr$ are reflections, but $s(sr) = r$ is not, this
+    set is not closed under the group operation so it is not a
+    subgroup.
+  \end{proof}
+\item for $n$ a composite integer $>1$ and $G$ a group containing an
+  element of order $n$, the set $\{x\in G\mid\ord{x}=n\}\cup\{1\}$
+  \begin{proof}
+    Let $p\mid n$ for $p$ a prime. Then $(x^{n/p})^p = x^n = 1$, so
+    $\ord{x^{n/p}}<n$ and the set is not closed under the group
+    operation.
+  \end{proof}
+\item the set of (positive and negative) odd integers in $\Z$ together
+  with $0$
+  \begin{proof}
+    Since $1 + 1 = 2$, this set is not closed under addition and is
+    therefore not a subgroup.
+  \end{proof}
+\item the set of real numbers whose square is a rational number (under
+  addition)
+  \begin{proof}
+    $\sqrt2$ and $\sqrt3$ are in this subset, but $\sqrt2 + \sqrt3$ is
+    not, so this cannot be a subgroup.
+  \end{proof}
+\end{enumerate}
