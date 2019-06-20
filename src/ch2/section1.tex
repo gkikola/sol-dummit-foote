@@ -1,0 +1,69 @@
+\chapter{Subgroups}
+
+\section{Definition and Examples}
+
+Let $G$ be a group.
+
+\Exercise1 In each of (a)--(e) prove that the specified subset is a
+subgroup of the given group.
+\begin{enumerate}
+\item the set of complex numbers of the form $a + ai$, $a\in\R$ (under
+  addition)
+  \begin{proof}
+    Call the set $G$. $G$ is obviously nonempty. For any $a + ai$ and
+    $b + bi$ in $G$, we have
+    \begin{equation*}
+      (a + ai) - (b + bi) = (a - b) + (a - b)i\in G,
+    \end{equation*}
+    so by Proposition~1, $G\leq\C$.
+  \end{proof}
+\item the set of complex numbers of absolute value $1$, i.e., the unit
+  circle in the complex plane (under multiplication)
+  \begin{proof}
+    Let $G$ denote the complex numbers of absolute value $1$, and let
+    $\overline{z}$ denote the conjugate of $z$. Then $G$ is nonempty
+    and for any $z,w\in G$, we have
+    \begin{equation*}
+      \abs{zw^{-1}} = \abs{z}\abs{w^{-1}}
+      = \abs{z}\frac{\abs{\overline{w}}}{\abs{w}^2} = 1,
+    \end{equation*}
+    so $zw^{-1}\in G$. Therefore $G\leq\C^\times$.
+  \end{proof}
+\item for fixed $n\in\Z^+$ the set of rational numbers whose
+  denominators divide $n$ (under addition)
+  \begin{proof}
+    Let $G$ denote the subset in question. $G$ is clearly not
+    empty. Let $a,b\in G$ be arbitrary. Then there is $x,y\in\Z$ and
+    $k,\ell\in\Z^+$ so that $a = x/(kn)$ and $b = y/(\ell n)$. Then we
+    have
+    \begin{equation*}
+      a - b = \frac{x}{kn} - \frac{y}{\ell n}
+      = \frac{\ell x - ky}{\ell kn} = \frac{z}{mn}
+    \end{equation*}
+    where $z\in\Z$ and $m\in\Z^+$. Therefore $a - b\in G$ so that
+    $G\leq\Q$.
+  \end{proof}
+\item for fixed $n\in\Z^+$ the set of rational numbers whose
+  denominators are relatively prime to $n$ (under addition)
+  \begin{proof}
+    Again, let $G$ denote the subset, which is clearly nonempty. Take
+    $a/b$ and $c/d$ in $G$, so that $(b,n) = (d,n) = 1$. Then
+    \begin{equation*}
+      \frac{a}b - \frac{c}d = \frac{ad - bc}{bd}.
+    \end{equation*}
+    Let $k = (bd, n)$. If $k > 1$, then there is a prime number $m$
+    which divides $k$. Then $m\mid bd$ which implies $m\mid b$ or
+    $m\mid d$, which is impossible since $m\mid n$. Therefore $k = 1$
+    and $a/b - c/d \in G$. So $G\leq\Q$.
+  \end{proof}
+\item the set of nonzero real numbers whose square is a rational
+  number (under multiplication)
+  \begin{proof}
+    Let $G$ be the set in question, which is clearly nonempty. If
+    $a,b\in G$, then $a^2,b^2\in\Q$. Then
+    \begin{equation*}
+      \left(\frac{a}b\right)^2 = \frac{a^2}{b^2} \in \Q,
+    \end{equation*}
+    so $a/b\in G$. Hence $G\leq\R^\times$.
+  \end{proof}
+\end{enumerate}
