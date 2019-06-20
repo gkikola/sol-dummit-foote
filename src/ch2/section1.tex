@@ -103,3 +103,43 @@ subgroup of the given group.
     not, so this cannot be a subgroup.
   \end{proof}
 \end{enumerate}
+
+\Exercise3 Show that the following subsets of the dihedral group $D_8$
+are actually subgroups:
+\begin{enumerate}
+\item $\{1,r^2,s,sr^2\}$
+  \begin{proof}
+    This is a finite group so it suffices to show that it is closed
+    under the group operation of composition. We have
+    \begin{align*}
+      r^2(r^2) &= 1, \\
+      r^2(s) &= sr^2, \\
+      r^2(sr^2) &= s, \\
+      s(r^2) &= sr^2, \\
+      s^2 &= 1, \\
+      s(sr^2) &= r^2, \\
+      sr^2(r^2) &= s, \\
+      sr^2(s) &= r^2, \\
+      sr^2(sr^2) &= 1.
+    \end{align*}
+    Therefore this subset is a subgroup.
+  \end{proof}
+\item $\{1,r^2,sr,sr^3\}$
+  \begin{proof}
+    Again, we can simply enumerate the possibilities. We find that
+    \begin{equation*}
+      r^2(r^2) = sr(sr) = sr^3(sr^3) = 1,
+    \end{equation*}
+    \begin{equation*}
+      r^2(sr) = sr(r^2) = sr^3,
+    \end{equation*}
+    \begin{equation*}
+      r^2(sr^3) = sr^3(r^2) = sr,
+    \end{equation*}
+    and
+    \begin{equation*}
+      sr(sr^3) = sr^3(sr) = r^2.
+    \end{equation*}
+    Therefore this is a subgroup.
+  \end{proof}
+\end{enumerate}
