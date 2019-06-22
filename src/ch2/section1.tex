@@ -143,3 +143,27 @@ are actually subgroups:
     Therefore this is a subgroup.
   \end{proof}
 \end{enumerate}
+
+\Exercise4 Give an explicit example of a group $G$ and an infinite
+subset $H$ of $G$ that is closed under the group operation but is not
+a subgroup of $G$.
+\begin{solution}
+  Let $G = \R^\times$ with the operation of multiplication. Then if
+  $H$ is the nonzero integers, $H$ is closed under multiplication but
+  is not a subgroup since it is not closed under inverses (for
+  example, $2$ has no inverse in $H$).
+\end{solution}
+
+\Exercise5 Prove that $G$ cannot have a subgroup $H$ with
+$\ord{H} = n - 1$, where $n = \ord{G} > 2$.
+\begin{proof}
+  If such a subgroup $H$ does exist, then it must exclude exactly one
+  element $g$ from $G$. Since $\ord{H}\geq2$, we can take a nonidentity
+  element $h\in H$.
+
+  Consider the element $gh$. If $gh\not\in H$, then $gh = g$ and
+  cancellation implies that $h$ is the identity, which is a
+  contradiction. On the other hand, if $gh\in H$, then
+  $(gh)h^{-1} = g\in H$, a contradiction. So the subgroup $H$ does not
+  exist.
+\end{proof}
