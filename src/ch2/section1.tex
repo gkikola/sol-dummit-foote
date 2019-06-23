@@ -268,3 +268,30 @@ $SL_n(F)\leq GL_n(F)$.
     we see that $ab^{-1}\in H$ as well. Hence $H\leq G$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{11} Let $A$ and $B$ be groups. Prove that the following sets
+are subgroups of the direct product $A\times B$:
+\begin{enumerate}
+\item $\{(a, 1) \mid a\in A\}$
+  \begin{proof}
+    Call the set $H$. Then $(1,1)\in H$ so $H$ is nonempty. For any
+    $a_1,a_2\in A$ we have $a_1a_2^{-1}\in A$, so
+    $(a_1,1)(a_2,1)^{-1} = (a_1a_2^{-1}, 1)\in H$. Therefore
+    $H\leq A\times B$.
+  \end{proof}
+\item $\{(1, b) \mid b\in B\}$
+  \begin{proof}
+    The proof is almost the same as in part (a): $H$ is nonempty, and
+    for any $b_1,b_2\in B$ we have
+    $(1,b_1)(1,b_2)^{-1} = (1,b_1b_2^{-1})\in H$, so
+    $H\leq A\times B$.
+  \end{proof}
+\item $\{(a, a) \mid a\in A\}$, where here we assume $B = A$ (called
+  the {\em diagonal subgroup})
+  \begin{proof}
+    Again, call the subset $H$. $(1,1)\in H$ so $H$ is nonempty. For
+    any $a_1,a_2\in A$, we have $a_1a_2^{-1}\in A$ so
+    $(a_1,a_1)(a_2,a_2)^{-1} = (a_1a_2^{-1}, a_1a_2^{-1})\in
+    H$. Therefore $H$ is a subgroup of $A^2$.
+  \end{proof}
+\end{enumerate}
