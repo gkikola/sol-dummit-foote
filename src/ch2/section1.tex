@@ -211,3 +211,19 @@ product.
   but $(1,1) + (-1,0) = (0, 1)\not\in K$. Therefore $K$ is not a
   subgroup of $G$.
 \end{solution}
+
+\Exercise8 Let $H$ and $K$ be subgroups of $G$. Prove that $H\cup K$
+is a subgroup if and only if either $H\subseteq K$ or $K\subseteq H$.
+\begin{proof}
+  Suppose $H\cup K$ is a subgroup of $G$. If $H\subseteq K$ then we
+  are done. Suppose $H\not\subseteq K$ so that there is $h\in H$ such
+  that $h\not\in K$. Let $k$ be any element in $K$. Since
+  $h,k\in H\cup K$, we must have $hk\in H\cup K$. But if $hk\in K$,
+  then $hk(k^{-1}) = h\in K$, which contradicts the choice of $h$. So
+  $hk\in H$. And $h^{-1}\in H$, so $h^{-1}(hk) = k\in H$. Hence every
+  element of $K$ is in $H$ so that $K\subseteq H$.
+
+  Conversely, suppose $H\subseteq K$. Then $H\cup K = K$ is a
+  subgroup. Similarly, if $K\subseteq H$, then $H\cup K = H$ is a
+  subgroup. This completes the proof.
+\end{proof}
