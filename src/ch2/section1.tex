@@ -243,3 +243,28 @@ $SL_n(F)\leq GL_n(F)$.
   \end{equation*}
   so $AB^{-1}\in SL_n(F)$, which shows that $SL_n(F)$ is a subgroup.
 \end{proof}
+
+\Exercise{10}
+\begin{enumerate}
+\item Prove that if $H$ and $K$ are subgroups of $G$ then so is their
+  intersection $H\cap K$.
+  \begin{proof}
+    Since $1\in H$ and $1\in K$, $1\in H\cap K$ and the intersection
+    is nonempty. For any $a,b\in H\cap K$, we must have $ab^{-1}\in H$
+    since $a,b\in H$ and $H$ is a subgroup. Similarly we must have
+    $ab^{-1}\in K$, so $ab^{-1}\in H\cap K$ and $H\cap K\leq G$.
+  \end{proof}
+\item Prove that the intersection of an arbitrary nonempty collection
+  of subgroups of $G$ is again a subgroup of $G$ (do not assume the
+  collection is countable).
+  \begin{proof}
+    Let $H_\alpha$ be a subgroup of $G$ for all $\alpha$ belonging to
+    some set of indices $A$. Let
+    \begin{equation*}
+      H = \bigcap_{\alpha\in A} H_\alpha.
+    \end{equation*}
+    Then $1\in H$ so $H$ is nonempty. If $a,b\in H$, then for any
+    $\alpha$ we have $a,b\in H_\alpha$, so $ab^{-1}\in H_\alpha$ and
+    we see that $ab^{-1}\in H$ as well. Hence $H\leq G$.
+  \end{proof}
+\end{enumerate}
