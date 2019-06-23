@@ -193,3 +193,21 @@ is not a subgroup when $G$ is non-abelian.
   Then $f$ and $g$ have order $2$ but $f\circ g$, given by
   $x\mapsto x - 1$, has infinite order.
 \end{solution}
+
+\Exercise7 Fix some $n\in\Z$ with $n > 1$. Find the torsion subgroup
+of $\Z\times(\Z/n\Z)$. Show that the set of elements of infinite order
+together with the identity is {\em not} a subgroup of this direct
+product.
+\begin{solution}
+  Let $G = \Z\times(\Z/n\Z)$ (with componentwise addition) and let $H$
+  be the torsion subgroup. Since every nonzero integer has infinite
+  order, members of $H$ must have the form $(0, k)$ for
+  $k\in\Z/n\Z$. But $\Z/n\Z$ is a finite group, so all of its members
+  have finite order. Therefore $H = \{ (0, k) \mid k\in\Z/n\Z \}$. And
+  we know that this is a subgroup by the previous exercise.
+
+  Now let $K$ be the set of elements of $G$ having infinite order
+  together with the identity. Then $(1, 1)\in K$ and $(-1, 0)\in K$,
+  but $(1,1) + (-1,0) = (0, 1)\not\in K$. Therefore $K$ is not a
+  subgroup of $G$.
+\end{solution}
