@@ -167,3 +167,29 @@ $\ord{H} = n - 1$, where $n = \ord{G} > 2$.
   $(gh)h^{-1} = g\in H$, a contradiction. So the subgroup $H$ does not
   exist.
 \end{proof}
+
+\Exercise6 Let $G$ be an abelian group. Prove that
+$\{g\in G\mid\ord{g}<\infty\}$ is a subgroup of $G$ (called the {\em
+  torsion subgroup} of $G$). Give an explicit example where this set
+is not a subgroup when $G$ is non-abelian.
+\begin{solution}
+  Let $G$ be abelian and let $H$ be the elements of $G$ having finite
+  order. $H$ is nonempty since $1\in H$. Suppose $a,b\in H$. Then
+  $\ord{a} = m$ and $\ord{b} = n$ for some finite $m$ and $n$. Since
+  $G$ is abelian we have
+  \begin{equation*}
+    (ab^{-1})^{mn} = a^{mn}(b^{mn})^{-1} = 1.
+  \end{equation*}
+  Therefore $ab^{-1}\in H$ and $H$ is a subgroup of $G$.
+
+  Now, for a non-abelian counterexample, consider the group of
+  invertible functions from $\R\to\R$ under function composition. Let
+  $f\colon\R\to\R$ and $g\colon\R\to\R$ be given by
+  \begin{equation*}
+    f(x) = -x
+    \quad\text{and}\quad
+    g(x) = 1 - x.
+  \end{equation*}
+  Then $f$ and $g$ have order $2$ but $f\circ g$, given by
+  $x\mapsto x - 1$, has infinite order.
+\end{solution}
