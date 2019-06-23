@@ -227,3 +227,19 @@ is a subgroup if and only if either $H\subseteq K$ or $K\subseteq H$.
   subgroup. Similarly, if $K\subseteq H$, then $H\cup K = H$ is a
   subgroup. This completes the proof.
 \end{proof}
+
+\Exercise9 Let $G = GL_n(F)$, where $F$ is any field. Define
+\begin{equation*}
+  SL_n(F) = \{A\in GL_n(F) \mid \det(A) = 1\}
+\end{equation*}
+(called the {\em special linear group}). Prove that
+$SL_n(F)\leq GL_n(F)$.
+\begin{proof}
+  First, note that $SL_n(F)$ is nonempty since the identity matrix $I$
+  has determinant $1$. Now let $A,B\in SL_n(F)$. We know from linear
+  algebra that
+  \begin{equation*}
+    \det(AB^{-1}) = \det(A)\det(B^{-1}) = \det(A)\det(B)^{-1} = 1,
+  \end{equation*}
+  so $AB^{-1}\in SL_n(F)$, which shows that $SL_n(F)$ is a subgroup.
+\end{proof}
