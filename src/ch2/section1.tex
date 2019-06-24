@@ -295,3 +295,25 @@ are subgroups of the direct product $A\times B$:
     H$. Therefore $H$ is a subgroup of $A^2$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{12} Let $A$ be an abelian group and fix some $n\in\Z$. Prove
+that the following sets are subgroups of $A$:
+\begin{enumerate}
+\item $\{a^n \mid a\in A\}$
+  \begin{proof}
+    Call the subset $H$. Then $1^n = 1\in H$ so $H$ is nonempty. If
+    $a^n,b^n\in H$ then, since $A$ is abelian,
+    \begin{equation*}
+      a^n(b^n)^{-1} = a^n(b^{-1})^n = (ab^{-1})^n.
+    \end{equation*}
+    Therefore $a^n(b^n)^{-1}\in H$ and $H\leq A$.
+  \end{proof}
+\item $\{a\in A\mid a^n = 1\}$
+  \begin{proof}
+    Again, call the set $H$. Then $1\in H$ so $H$ is nonempty. Suppose
+    $a,b\in H$. Then $a^n = 1$ and
+    $(b^{-1})^n = (b^n)^{-1} = 1^{-1} = 1$. Since $A$ is abelian, we
+    have $(ab^{-1})^n = a^n(b^{-1})^n = 1$ so $ab^{-1}\in
+    H$. Therefore $H\leq A$.
+  \end{proof}
+\end{enumerate}
