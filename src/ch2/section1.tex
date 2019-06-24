@@ -317,3 +317,29 @@ that the following sets are subgroups of $A$:
     H$. Therefore $H\leq A$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{13} Let $H$ be a subgroup of the additive group of rational
+numbers with the property that $1/x\in H$ for every nonzero element
+$x$ of $H$. Prove that $H = 0$ or $\Q$.
+\begin{proof}
+  Suppose $H$ is a subgroup of $\Q$ with the given property. Certainly
+  $0\in H$. If $H = 0$ then there is nothing left to prove, so suppose
+  $H\neq0$. Then $x\in H$ for some nonzero $x\in\Q$. And we may take
+  $x$ to be positive, since if $x < 0$ then $-x > 0$ and $-x\in H$
+  since $H$ is closed under additive inverses.
+
+  Write $x = a/b$ for positive integers $a$ and $b$. Since $H$ is
+  closed under addition, we have
+  \begin{equation*}
+    bx = \overbrace{\frac{a}b + \frac{a}b
+      + \cdots + \frac{a}b}^{\text{$b$ terms}} = a\in H.
+  \end{equation*}
+  Also, $a$ is nonzero, so by hypothesis $1/a\in H$. By the same
+  reasoning as above, we have $a(1/a) = 1\in H$. And since $H$ is
+  closed under addition and inverses, this shows that $\Z\subseteq H$.
+
+  Now, let $r\in\Q$ be arbitrary and write $r = p/q$ for integers $p$
+  and $q$ (with $q$ nonzero). Since $q\in H$, we have $1/q\in H$ and
+  so $p(1/q) = p/q\in H$. This shows that $\Q\subseteq H$. But
+  $H\subseteq\Q$, so $H = \Q$ and the proof is complete.
+\end{proof}
