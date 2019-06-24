@@ -352,3 +352,57 @@ subgroup of $D_{2n}$ (here $n\geq3$).
   has order $n>2$. So this set is not closed under the group operation
   and thus is not a subgroup.
 \end{proof}
+
+\Exercise{15} Let $H_1\leq H_2\leq\cdots$ be an ascending chain of
+subgroups of $G$. Prove that $\bigcup_{i=1}^\infty H_i$ is a subgroup
+of $G$.
+\begin{proof}
+  Let $H = \bigcup_{i=1}^\infty H_i$. Obviously $1\in H$, so $H$ is
+  nonempty. Let $a,b\in H$. Then $a\in H_i$ for some $i$ and
+  $b\in H_j$ for some $j$. If $k = \max(i,j)$, then $a$ and $b$ both
+  belong to $H_k$, so $ab^{-1}$ belongs also to $H_k$. Therefore
+  $ab^{-1}\in H$ as required. Hence $H\leq G$.
+\end{proof}
+
+\Exercise{16} Let $n\in\Z^+$ and let $F$ be a field. Prove that the
+set
+\begin{equation*}
+  \{(a_{ij})\in GL_n(F)\mid \text{$a_{ij} = 0$ for all $i > j$}\}
+\end{equation*}
+is a subgroup of $GL_n(F)$ (called the group of {\em upper triangular}
+matrices).
+\begin{proof}
+  Fix an $n\in\Z^+$ and call the set of $n\times n$ upper triangular
+  matrices $H$. $H$ is nonempty, since the identity matrix is in $H$.
+
+  Let $A, B\in H$, where the $ij$th entry of $A$ is $a_{ij}$ and the
+  corresponding entry of $B$ is $b_{ij}$. If $AB = C$ with
+  $C = (c_{ij})$ then
+  \begin{equation*}
+    c_{ij} = \sum_{k=0}^n a_{ik}b_{kj},
+  \end{equation*}
+  and if $i > j$ then this sum must be $0$ since $a_{ik} = 0$ for
+  $k < i$ and $b_{kj} = 0$ for $k \geq i > j$. Therefore $H$ is closed
+  under multiplication.
+
+  Lastly, we need to show that $H$ is closed under inverses. Consider
+  the matrix $A$. Since $A\in GL_n(F)$ we know that $A$ is
+  invertible. And since the determinant of an upper triangular matrix
+  is the product of the diagonal entries, we must have $a_{ii}\neq 0$
+  for each $i$.
+
+  Let $D = A^{-1}$, so that $DA = I$ for $D = (d_{ij})$. Suppose that
+  $D$ is not upper triangular, and let $d_{ij}$ be nonzero for some
+  $i > j$. Suppose also that $d_{ij}$ is the first nonzero entry in
+  row $i$. Then
+  \begin{equation*}
+    \sum_{k=1}^n d_{ik}a_{kj} = 0
+  \end{equation*}
+  since $DA = I$. But $d_{ik} = 0$ for each $k < j$ since $d_{ij}$ is
+  the first nonzero entry in the row. And $a_{kj} = 0$ for each
+  $k > j$ since $A$ is upper triangular. Therefore the only term which
+  survives is $d_{ij}a_{jj}$, which is nonzero. But then the sum is
+  nonzero, which gives a contradiction. Therefore $D$ is upper
+  triangular and $H$ is closed under inverses. This shows that
+  $H\leq GL_n(F)$.
+\end{proof}
