@@ -406,3 +406,34 @@ matrices).
   triangular and $H$ is closed under inverses. This shows that
   $H\leq GL_n(F)$.
 \end{proof}
+
+\Exercise{17} Let $n\in\Z^+$ and let $F$ be a field. Prove that the
+set
+\begin{equation*}
+  \{(a_{ij})\in GL_n(F) \mid \text{$a_{ij} = 0$ for all $i > j$,
+    and $a_{ii} = 1$ for all $i$}\}
+\end{equation*}
+is a subgroup of $GL_n(F)$.
+\begin{proof}
+  Again, call the set $H$. We know $H$ is nonempty since $I\in H$.
+
+  Let $A,B\in H$. By the previous exercise we know that the product
+  $AB$ must be upper triangular. So we need only check that the
+  diagonal entries are each $1$. For each $i$, we have
+  \begin{equation*}
+    \sum_{k=1}^n a_{ik}b_{ki} = a_{ii}b_{ii} = 1,
+  \end{equation*}
+  since all nondiagonal terms are $0$ (because $a_{ik} = 0$ for
+  $k < i$ and $b_{ki} = 0$ for $k > i$). Therefore $H$ is closed under
+  products.
+
+  Now let $D = (d_{ij})$ be such that $DA = I$. Again, by the previous
+  exercise we know that $D$ must be an upper triangular matrix, so we
+  need only ensure that the diagonal entries are each $1$. For each
+  $i$, we have
+  \begin{equation*}
+    1 = \sum_{k=1}^n d_{ik}a_{ki} = d_{ii}a_{ii} = d_{ii},
+  \end{equation*}
+  since nondiagonal terms are $0$. Therefore $H$ is closed under
+  inverses, and $H\leq GL_n(F)$.
+\end{proof}
