@@ -21,3 +21,13 @@
   Since $C_G(A)\leq N_G(A)$ for any $A\subseteq G$, we must have
   $N_G(Z(G)) = G$.
 \end{proof}
+
+\Exercise3 Prove that if $A$ and $B$ are subsets of $G$ with
+$A\subseteq B$ then $C_G(B)$ is a subgroup of $C_G(A)$.
+\begin{proof}
+  Suppose $A$ and $B$ are as stated. Let $g\in C_G(B)$. Then
+  $gbg^{-1} = b$ for any $b\in B$. But $A\subseteq B$, so
+  $gag^{-1} = a$ for any $a\in A$ as well. Therefore $g\in
+  C_G(A)$. This shows that $C_G(B)\subseteq C_G(A)$, and since both
+  are subgroups of $G$, we have $C_G(B)\leq C_G(A)$.
+\end{proof}
