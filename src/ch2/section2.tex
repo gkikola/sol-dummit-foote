@@ -1,0 +1,23 @@
+\section{Centralizers and Normalizers, Stabilizers and Kernels}
+
+\Exercise1 Prove that
+\begin{equation*}
+  C_G(A) = \{g\in G \mid \text{$g^{-1}ag = a$ for all $a\in A$}\}.
+\end{equation*}
+\begin{proof}
+  By multiplying on the left by $g$ and on the right by $g^{-1}$, we
+  see that $g^{-1}ag = a$ if and only if $gag^{-1} = a$. Therefore the
+  above set is a valid alternative way to define the centralizer of
+  $A$.
+\end{proof}
+
+\Exercise2 Prove that $C_G(Z(G)) = G$ and deduce that $N_G(Z(G)) = G$.
+\begin{proof}
+  Let $g\in G$ be arbitrary. If $a\in Z(G)$, then in particular,
+  $ga = ag$ which shows that $gag^{-1} = a$. Therefore
+  $g\in C_G(Z(G))$ for any $g\in G$, so $G\leq C_G(Z(G))$. But we know
+  $C_G(Z(G))\leq G$, so this establishes equality.
+
+  Since $C_G(A)\leq N_G(A)$ for any $A\subseteq G$, we must have
+  $N_G(Z(G)) = G$.
+\end{proof}
