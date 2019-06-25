@@ -31,3 +31,65 @@ $A\subseteq B$ then $C_G(B)$ is a subgroup of $C_G(A)$.
   C_G(A)$. This shows that $C_G(B)\subseteq C_G(A)$, and since both
   are subgroups of $G$, we have $C_G(B)\leq C_G(A)$.
 \end{proof}
+
+\Exercise4 For each of $S_3$, $D_8$, and $Q_8$ compute the
+centralizers of each element and find the center of each group. Does
+Lagrange's Theorem simplify your work?
+\begin{solution}
+  The centralizer of $1$ (for any group) is the entire group. The
+  centralizers of the other elements can be computed directly. For
+  example, $C_{S_3}((1\,2))$ must at minimum include $1$ and $(1\,2)$
+  itself. We can test the other elements directly (note
+  $(1\,2)^{-1} = (1\,2)$):
+  \begin{align*}
+    (1\,2)(1\,3)(1\,2) &= (2\,3), \\
+    (1\,2)(2\,3)(1\,2) &= (1\,3), \\
+    (1\,2)(1\,2\,3)(1\,2) &= (1\,3\,2), \\
+    (1\,2)(1\,3\,2)(1\,2) &= (1\,2\,3).
+  \end{align*}
+  So, $C_{S_3}((1\,2)) = \{ 1, (1\,2) \}$.
+
+  We can use Lagrange's Theorem to reduce some of the checking. For
+  example, let $a = (1\,3)$. Then $C_{S_3}(a)$ must include the
+  subgroup $\{1, (1\,3)\}$, so $2$ divides $\ord{C_{S_3}(a)}$. On the
+  other hand, $\ord{C_{S_3}(a)}$ divides $\ord{S_3} = 6$. Therefore
+  there are only two possibilities, either $\ord{C_{S_3}(a)} = 2$ or
+  $6$. Since $(1\,3)$ does not commute with $(1\,2)$, we know that the
+  order must be $2$. So $C_{S_3}(a) = \{ 1, (1\,3) \}$. Similarly, we
+  find $C_{S_3}((2\,3)) = \{ 1, (2\,3) \}$.
+
+  Now let $a = (1\,2\,3)$. We have $a^{-1} = (1\,3\,2) = a^2$ so
+  $C_{S_3}(a)$ must contain the cyclic subgroup $\{1, a, a^2\}$ and we
+  see that $3$ divides $\ord{C_{S_3}(a)}$. So the order is either $3$
+  or $6$. But it must be $3$, since $(1\,2\,3)$ does not commute with
+  $(1\,2)$, for example. So $C_{S_3}(a) = \{1, a, a^2\}$. Similarly,
+  $C_{S_3}((1\,3\,2))$ is this same set.
+
+  From the above results, we see that the center of $S_3$ is
+  $Z(S_3) = \{1\}$, since no non-identity element commutes with every
+  element of $S_3$.
+
+  Similarly, we may find the centralizers of $D_8$:
+  \begin{align*}
+    C_{D_8}(r) &= \{1, r, r^2, r^3\}, \\
+    C_{D_8}(r^2) &= D_8, \\
+    C_{D_8}(r^3) &= \{1, r, r^2, r^3\}, \\
+    C_{D_8}(s) &= \{1, r^2, s, sr^2\}, \\
+    C_{D_8}(sr) &= \{1, r^2, sr, sr^3\}, \\
+    C_{D_8}(sr^2) &= \{1, r^2, s, sr^2\}, \\
+    C_{D_8}(sr^3) &= \{1, r^2, sr, sr^3\}.
+  \end{align*}
+  And we see that $Z(D_8) = \{1, r^2\}$.
+
+  Finally, for $Q_8$, we have:
+  \begin{align*}
+    C_{Q_8}(-1) &= Q_8, \\
+    C_{Q_8}(i) &= \{1, -1, i, -i\}, \\
+    C_{Q_8}(-i) &= \{1, -1, i, -i\}, \\
+    C_{Q_8}(j) &= \{1, -1, j, -j\}, \\
+    C_{Q_8}(-j) &= \{1, -1, j, -j\}, \\
+    C_{Q_8}(k) &= \{1, -1, k, -k\}, \\
+    C_{Q_8}(-k) &= \{1, -1, k, -k\}.
+  \end{align*}
+  And $Z(Q_8) = \{1, -1\}$.
+\end{solution}
