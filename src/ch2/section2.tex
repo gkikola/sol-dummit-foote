@@ -141,3 +141,32 @@ group $G$ and subgroup $A$ of $G$, $C_G(A) = A$ and $N_G(A) = G$.
     so $N_G(A) = G$.
   \end{solution}
 \end{enumerate}
+
+\Exercise6 Let $H$ be a subgroup of the group $G$.
+\begin{enumerate}
+\item Show that $H\leq N_G(H)$. Give an example to show that this is
+  not necessarily true if $H$ is not a subgroup.
+  \begin{solution}
+    Let $g\in H$. First, take $x\in gHg^{-1}$. Then $x = ghg^{-1}$ for
+    some $h\in H$. Since $H$ is a subgroup and thus closed under the
+    group operation, we have $x\in H$. Conversely, if $x\in H$ then by
+    definition $x\in gHg^{-1}$. Therefore $gHg^{-1} = H$ and we see
+    that $g\in N_G(H)$. Since this is true for all $g\in H$, it
+    follows that $H\leq N_G(H)$.
+
+    As a counterexample for the case where $H$ is not a subgroup,
+    consider $G = D_4$ and $H = \{1, r, s\}$. Then
+    $sHs = \{1, r^3, s\} \neq H$, so $s\not\in N_G(H)$ and
+    $H\not\subseteq N_G(H)$.
+  \end{solution}
+\item Show that $H\leq C_G(H)$ if and only if $H$ is abelian.
+  \begin{proof}
+    Suppose $H\leq C_G(H)$ and let $a,b\in H$. Then $a\in C_G(H)$ so
+    in particular, $aba^{-1} = b$, or equivalently, $ab =
+    ba$. Therefore $H$ is abelian.
+
+    Conversely, suppose $H$ is abelian. If $a\in H$, then $ah = ha$
+    for each $h\in H$. Equivalently, $aha^{-1} = h$, so that
+    $a\in C_G(H)$. This shows that $H\leq C_G(H)$.
+  \end{proof}
+\end{enumerate}
