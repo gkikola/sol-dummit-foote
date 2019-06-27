@@ -170,3 +170,32 @@ group $G$ and subgroup $A$ of $G$, $C_G(A) = A$ and $N_G(A) = G$.
     $a\in C_G(H)$. This shows that $H\leq C_G(H)$.
   \end{proof}
 \end{enumerate}
+
+\Exercise7 Let $n\in\Z$ with $n\geq3$. Prove the following:
+\begin{enumerate}
+\item $Z(D_{2n}) = 1$ if $n$ is odd
+  \begin{proof}
+    Suppose $r^k\in Z(D_{2n})$ for $k\in\Z^+$. Since $sr^k = r^{-k}s$,
+    we must have $r^k = r^{-k}$. Therefore $r^{2k} = 1$ and we see
+    that $2 \mid n$, which is a contradiction.
+
+    $s$ can't be in the center since it doesn't commute with $r$. Now
+    suppose $sr^k\in Z(D_{2n})$, with $k\in\Z^+$. In order to commute
+    with $r$, we must have $(sr^k)r = r(sr^k)$. This implies
+    $sr^{k+1} = sr^{k-1}$, so $r^{k+1} = r^{k-1}$ and we see that
+    $r^2 = 1$, which means $n \leq 2$, another contradiction.
+
+    Therefore the only element in $Z(D_{2n})$ is $1$.
+  \end{proof}
+\item $Z(D_{2n}) = \{1,r^k\}$ if $n = 2k$
+  \begin{proof}
+    From the previous proof we know that the only possible candidates
+    are $1$ and $r^k$ where $n = 2k$. And since $r^{2k} = 1$ we see
+    that $r^k = r^{-k}$. Any element $x$ in $D_{2n}$ can be written as
+    $x = s^ir^j$ for $i\in\{0,1\}$ and $j\in\Z$, $j\geq 0$, so,
+    \begin{equation*}
+      r^k(s^ir^j) = s^ir^{-k}r^j = s^ir^kr^j = s^ir^{k+j} = (s^ir^j)r^k.
+    \end{equation*}
+    Hence $Z(D_{2n}) = \{1, r^k\}$.
+  \end{proof}
+\end{enumerate}
