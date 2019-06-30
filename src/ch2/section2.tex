@@ -199,3 +199,47 @@ group $G$ and subgroup $A$ of $G$, $C_G(A) = A$ and $N_G(A) = G$.
     Hence $Z(D_{2n}) = \{1, r^k\}$.
   \end{proof}
 \end{enumerate}
+
+\Exercise8 Let $G = S_n$, fix an $i\in\{1,2,\dots,n\}$ and let
+$G_i = \{\sigma\in G\mid\sigma(i) = i\}$ (the stabilizer of $i$ in
+$G$). Use group actions to prove that $G_i$ is a subgroup of $G$. Find
+$\ord{G_i}$.
+\begin{proof}
+  Let $A = \{1,2,\dots,n\}$. We know that $S_n$ acts on $A$ by
+  $\sigma\cdot j = \sigma(j)$. Then
+  \begin{equation*}
+    G_i = \{\sigma\in G\mid \sigma\cdot i = i\}.
+  \end{equation*}
+
+  Now $1\in G_i$ by definition of a group action, so $G_i$ is
+  nonempty. Suppose $\sigma, \tau\in G_i$. Again, by definition of an
+  action,
+  \begin{equation*}
+    \sigma\tau\cdot i = \sigma\cdot(\tau\cdot i) = \sigma\cdot i = i,
+  \end{equation*}
+  so $G_i$ is closed under composition. And, since
+  \begin{equation*}
+    i = (b^{-1}b)\cdot i = b^{-1}\cdot(b\cdot i) = b^{-1}\cdot i,
+  \end{equation*}
+  we see that $G_i$ is closed under inverses. Therefore $G_i\leq G$.
+
+  Lastly, since every member of $G_i$ fixes $i$, we have that
+  $G_i\cong S_{n-1}$ so that $\ord{G_i} = (n-1)!$.
+\end{proof}
+
+\Exercise9 For any subgroup $H$ of $G$ and any nonempty subset $A$ of
+$G$ define $N_H(A)$ to be the set $\{h\in H \mid hAh^{-1} = A\}$. Show
+that $N_H(A) = N_G(A)\cap H$ and deduce that $N_H(A)$ is a subgroup of
+$H$ (note that $A$ need not be a subset of $H$).
+\begin{proof}
+  Certainly $N_H(A)\subseteq N_G(A)$, since every member $h$ of
+  $N_H(A)$ is a member of $G$ for which $hAh^{-1} = A$. And
+  $N_H(A)\subseteq H$, so $N_H(A)\subseteq N_G(A)\cap H$.
+
+  Now pick $h\in N_G(A)\cap H$. Since $h\in N_G(A)$, we have
+  $hAh^{-1} = A$. And since $h\in H$, we see that $h\in N_H(A)$. This
+  shows that $N_G(A)\cap H\subseteq N_H(A)$. Therefore
+  $N_H(A) = N_G(A)\cap H$ and $N_H(A)$ must be a subgroup of $G$ (and
+  hence $H$) since it is the intersection of two subgroups of $G$ (see
+  Exercise~\ref{exercise-intersection-of-subgroups-is-subgroup}).
+\end{proof}
