@@ -243,3 +243,17 @@ $H$ (note that $A$ need not be a subset of $H$).
   hence $H$) since it is the intersection of two subgroups of $G$ (see
   Exercise~\ref{exercise-intersection-of-subgroups-is-subgroup}).
 \end{proof}
+
+\Exercise{10} Let $H$ be a subgroup of order $2$ in $G$. Show that
+$N_G(H) = C_G(H)$. Deduce that if $N_G(H) = G$ then $H\leq Z(G)$.
+\begin{proof}
+  Let $H = \{1, a\}$ and suppose $g\in N_G(H)$. Then $gHg^{-1} =
+  H$. Since $g1g^{-1} = 1$, we must have $gag^{-1} = a$. Therefore
+  $g\in C_G(H)$ and we see that $N_G(H)\leq C_G(H)$.
+
+  Now suppose $g\in C_G(H)$. Then $g1g^{-1} = 1$ and $gag^{-1} = a$,
+  so $gHg^{-1} = H$ and $g\in N_G(H)$. Hence $C_G(H)\leq N_G(H)$ and
+  in fact $C_G(H) = N_G(H)$.
+
+  Finally, if $N_G(H) = G$, then $C_G(H) = G$ so that $H\leq Z(G)$.
+\end{proof}
