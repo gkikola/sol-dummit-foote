@@ -264,3 +264,114 @@ $N_G(H) = C_G(H)$. Deduce that if $N_G(H) = G$ then $H\leq Z(G)$.
   all $a\in A$, so this shows that $gAg^{-1} = A$. Therefore
   $Z(G)\leq N_G(A)$.
 \end{proof}
+
+\Exercise{12} Let $R$ be the set of all polynomials with integer
+coefficients in the independent variables $x_1,x_2,x_3,x_4$ i.e., the
+members of $R$ are finite sums of elements of the form
+$ax_1^{r_1}x_2^{r_2}x_3^{r_3}x_4^{r_4}$, where $a$ is any integer and
+$r_1,\dots, r_4$ are nonnegative integers. For example,
+\begin{equation}
+  \label{eq:sample-polynomial}
+  12x_1^5x_2^7x_4 - 18x_2^3x_3 + 11x_1^6x_2x_3^3x_4^{23}
+\end{equation}
+is a typical element of $R$. Each $\sigma\in S_4$ gives a permutation
+of $\{x_1,\dots,x_4\}$ by defining $\sigma\cdot x_i =
+x_{\sigma(i)}$. This may be extended to a map from $R$ to $R$ by
+defining
+\begin{equation*}
+  \sigma\cdot p(x_1,x_2,x_3,x_4)
+  = p(x_{\sigma(1)},x_{\sigma(2)},x_{\sigma(3)},x_{\sigma(4)})
+\end{equation*}
+for all $p(x_1,x_2,x_3,x_4)\in R$ (i.e., $\sigma$ simply permutes the
+indices of the variables). For example, if $\sigma = (1\,2)(3\,4)$ and
+$p(x_1,\dots,x_4)$ is the polynomial in \eqref{eq:sample-polynomial}
+above, then
+\begin{align*}
+  \sigma\cdot p(x_1,x_2,x_3,x_4)
+  &= 12x_2^5x_1^7x_3 - 18x_1^3x_4 + 11x_2^6x_1x_4^3x_3^{23} \\
+  &= 12x_1^7x_2^5x_3 - 18x_1^3x_4 + 11x_1x_2^6x_3^{23}x_4^3.
+\end{align*}
+\begin{enumerate}
+\item Let $p = p(x_1,\dots,x_4)$ be the polynomial in
+  \eqref{eq:sample-polynomial} above, let $\sigma = (1\,2\,3\,4)$ and
+  let $\tau = (1\,2\,3)$. Compute $\sigma\cdot p$,
+  $\tau\cdot(\sigma\cdot p)$, $(\tau\circ\sigma)\cdot p$, and
+  $(\sigma\circ\tau)\cdot p$.
+  \begin{solution}
+    $\tau\circ\sigma = (1\,3\,4\,2)$ and
+    $\sigma\circ\tau = (1\,3\,2\,4)$. So
+    \begin{align*}
+      \sigma\cdot p
+      &= 12x_1x_2^5x_3^7 - 18x_3^3x_4 + 11x_1^{23}x_2^6x_3x_4^3, \\
+      \tau\cdot(\sigma\cdot p)
+      &= 12x_1^7x_2x_3^5 - 18x_1^3x_4 + 11x_1x_2^{23}x_3^6x_4^3, \\
+      (\tau\circ\sigma)\cdot p
+      &= 12x_1^7x_2x_3^5 - 18x_1^3x_4 + 11x_1x_2^{23}x_3^6x_4^3, \\
+      \intertext{and}
+      (\sigma\circ\tau)\cdot p
+      &= 12x_1x_3^5x_4^7 - 18x_2x_4^3 + 11x_1^{23}x_2^3x_3^6x_4.\qedhere
+    \end{align*}
+  \end{solution}
+\item Prove that these definitions give a (left) group action of $S_4$
+  on $R$.
+  \begin{proof}
+    Clearly $1\cdot p = p$ for any $p\in R$. For any
+    $\sigma,\tau\in S_4$ we have
+    \begin{align*}
+      \sigma\cdot(\tau\cdot p(x_1,x_2,x_3,x_4))
+      &= \sigma\cdot p(x_{\tau(1)},x_{\tau(2)},
+        x_{\tau(3)},x_{\tau(4)}) \\
+      &= p(x_{\sigma(\tau(1))},x_{\sigma(\tau(2))},
+      x_{\sigma(\tau(3))},x_{\sigma(\tau(4))}) \\
+      &= (\sigma\circ\tau)\cdot p(x_1,x_2,x_3,x_4).
+    \end{align*}
+    Therefore the mapping is a group action.
+  \end{proof}
+\item Exhibit all permutations in $S_4$ that stabilize $x_4$ and prove
+  that they form a subgroup isomorphic to $S_3$.
+  \begin{solution}
+    The stabilizer of $x_4$ consists of all permutations which fix
+    $x_4$: $1$, $(1\,2)$, $(1\,3)$, $(2\,3)$, $(1\,2\,3)$,
+    $(1\,3\,2)$. But these correspond precisely to the elements of
+    $S_3$, so these permutations form a subgroup of $S_4$ which is
+    isomorphic to $S_3$.
+  \end{solution}
+\item Exhibit all permutations in $S_4$ that stabilize the element
+  $x_1 + x_2$ and prove that they form an abelian subgroup of order
+  $4$.
+  \begin{solution}
+    If $\sigma$ is a member of the stabilizer $R_{x_1+x_2}$ then
+    $\sigma\cdot(x_1 + x_2) = x_1 + x_2$. There are two ways this can
+    happen: $\sigma$ can fix $1$ and $2$, or $\sigma$ can send $1$ to
+    $2$ and vice versa. So the permutations in the stabilizer are $1$,
+    $(1\,2)$, $(3\,4)$, and $(1\,2)(3\,4)$. All of these elements
+    commute with each other (since they consist of disjoint cycles),
+    so $R_{x_1+x_2}$ is an abelian subgroup of order $4$.
+  \end{solution}
+\item Exhibit all permutations in $S_4$ that stabilize the element
+  $x_1x_2 + x_3x_4$ and prove that they form a subgroup isomorphic to
+  the dihedral group of order $8$.
+  \begin{solution}
+    The permutations in $S_4$ which stabilize $x_1x_2 + x_3x_4$ are
+    $1$, $(1\,2)$, $(3\,4)$, $(1\,2)(3\,4)$, $(1\,3)(2\,4)$,
+    $(1\,4)(2\,3)$, $(1\,3\,2\,4)$, and $(1\,4\,2\,3)$.
+
+    Let $\varphi\colon R_{x_1x_2+x_3x_4}\to D_8$ be the map for which
+    \begin{equation*}
+      \varphi(1\,2) = s
+      \quad\text{and}\quad
+      \varphi(1\,3\,2\,4) = r.
+    \end{equation*}
+    Then $\varphi$ extends to an isomorphism since $(1\,2)^2 = 1$,
+    $(1\,3\,2\,4)^4 = 1$ and
+    $(1\,2)(1\,3\,2\,4) = (1\,3\,2\,4)^{-1}(1\,2)$.
+  \end{solution}
+\item Show that the permutations in $S_4$ that stabilize the element
+  $(x_1 + x_2)(x_3 + x_4)$ are exactly the same as those found in part
+  (e).
+  \begin{solution}
+    Checking each possibility in turn will show that the permutations
+    in this stabilizer are exactly the same as those in the previous
+    part of the problem.
+  \end{solution}
+\end{enumerate}
