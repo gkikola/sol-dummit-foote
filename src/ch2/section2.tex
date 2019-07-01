@@ -400,3 +400,88 @@ Prove that this defines a (left) group action of $S_n$ on $R$.
   \end{align*}
   Therefore this mapping does define a group action on $R$.
 \end{proof}
+
+\Exercise{14} Let $H(F)$ be the Heisenberg group over the field $F$
+introduced in Exercise~\ref{exercise-heisenberg-intro}. Determine
+which matrices lie in the center of $H(F)$ and prove that $Z(H(F))$ is
+isomorphic to the additive group $F$.
+\begin{solution}
+  Let
+  \begin{equation*}
+    X =
+    \begin{pmatrix}
+      1 & a & b \\
+      0 & 1 & c \\
+      0 & 0 & 1
+    \end{pmatrix}
+    \quad\text{and}\quad
+    Y =
+    \begin{pmatrix}
+      1 & d & e \\
+      0 & 1 & f \\
+      0 & 0 & 1
+    \end{pmatrix}
+  \end{equation*}
+  be elements of $H(F)$. If $X\in Z(H(F))$ then $XY = YX$ for any
+  $Y\in H(F)$. Computing $XY$ and $YX$ for the matrices above gives
+  \begin{equation*}
+    XY =
+    \begin{pmatrix}
+      1 & a & b \\
+      0 & 1 & c \\
+      0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & d & e \\
+      0 & 1 & f \\
+      0 & 0 & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1 & a + d & af + b + e \\
+      0 & 1 & c + f \\
+      0 & 0 & 1
+    \end{pmatrix}
+  \end{equation*}
+  and
+  \begin{equation*}
+    YX =
+    \begin{pmatrix}
+      1 & d & e \\
+      0 & 1 & f \\
+      0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & a & b \\
+      0 & 1 & c \\
+      0 & 0 & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1 & a + d & b + cd + e \\
+      0 & 1 & c + f \\
+      0 & 0 & 1
+    \end{pmatrix}.
+  \end{equation*}
+  So $af + b + e = b + cd + e$ or $af = cd$. Since $Y$ can be
+  arbitrary, the only way to guarantee this is for $a = c = 0$. If $a$
+  and $c$ are both nonzero, then any $Y$ with $f = 0$ and $d = 1$ will
+  not commute with $X$. Therefore,
+  \begin{equation*}
+    Z(H(F)) =
+    \left\{
+    \begin{pmatrix}
+      1 & 0 & a \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{pmatrix}
+    \in H(F)
+    \;\middle|\;
+    a\in F
+    \right\}.
+  \end{equation*}
+
+  We can see that $Z(H(F))\cong F$ since the map
+  $\varphi\colon Z(H(F))\to F$ which sends a matrix in $Z(H(F))$ to
+  its upper-right entry is an isomorphism.
+\end{solution}
