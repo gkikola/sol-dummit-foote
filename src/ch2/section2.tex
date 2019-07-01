@@ -375,3 +375,28 @@ above, then
     part of the problem.
   \end{solution}
 \end{enumerate}
+
+\Exercise{13} Let $n$ be a positive integer and let $R$ be the set of
+all polynomials with integer coefficients in the independent variables
+$x_1,x_2,\dots,x_n$, i.e., the members of $R$ are finite sums of
+elements of the form $ax_1^{r_1}x_2^{r_2}\cdots x_n^{r_n}$, where $a$
+is any integer and $r_1,\dots,r_n$ are nonnegative integers. For each
+$\sigma\in S_n$ define a map
+\begin{equation*}
+  \sigma\colon R\to R
+  \quad\text{by}\quad
+  \sigma\cdot p(x_1,x_2,\dots,x_n) = p(x_{\sigma(1)},x_{\sigma(2)},
+  \dots,x_{\sigma(n)}).
+\end{equation*}
+Prove that this defines a (left) group action of $S_n$ on $R$.
+\begin{proof}
+  Clearly $1\cdot p(x_1,\dots,x_n) = p(x_1,\dots,x_n)$. And for
+  $\sigma,\tau\in S_n$ we have
+  \begin{align*}
+    \sigma\cdot(\tau\cdot p(x_1,x_2,\dots,x_n))
+    &= \sigma\cdot p(x_{\tau(1)},x_{\tau(2)},\dots,x_{\tau(n)}) \\
+    &= p(x_{\sigma(\tau(1))},x_{\sigma(\tau(2))},\dots,x_{\sigma(\tau(n))}) \\
+    &= (\sigma\circ\tau)\cdot p(x_1,x_2,\dots,x_n).
+  \end{align*}
+  Therefore this mapping does define a group action on $R$.
+\end{proof}
