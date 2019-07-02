@@ -112,3 +112,84 @@ every $\bar a$. Find all inclusions between subgroups in $\Z/48\Z$.
     \gen{\bar0} &\leq \gen{\bar0}. \qedhere
   \end{align*}
 \end{solution}
+
+\Exercise7 Let $Z_{48} = \gen{x}$ and use the isomorphism
+$\Z/48\Z\cong Z_{48}$ given by $\bar1\mapsto x$ to list all subgroups
+of $Z_{48}$ as computed in the preceding exercise.
+\begin{solution}
+  The subgroups are $\gen{x}$, $\gen{x^2}$, $\gen{x^3}$, $\gen{x^4}$,
+  $\gen{x^6}$, $\gen{x^8}$, $\gen{x^{12}}$, $\gen{x^{16}}$,
+  $\gen{x^{24}}$, and $1$.
+\end{solution}
+
+\Exercise8 Let $Z_{48} = \gen{x}$. For which integers $a$ does the map
+$\varphi_a$ defined by $\varphi_a\colon\bar1\mapsto x^a$ extend to an
+{\em isomorphism} from $\Z/48\Z$ onto $Z_{48}$.
+\begin{solution}
+  Choose an $a$ with $(a,48) = d > 1$ and set $b = 48 / d$. If
+  $\varphi_a$ is a homomorphism, then
+  \begin{equation*}
+    \varphi_a(\bar{b}) = \varphi_a(b\cdot\bar1)
+    = \varphi_a(\bar1)^b = x^{ab} = (x^{48})^{a/d} = 1 = \varphi_a(\bar0).
+  \end{equation*}
+  Therefore, in this case, $\varphi_a$ is not an injection and thus
+  not an isomorphism.
+
+  This suggests that $\varphi_a$ extends to an isomorphism if and only
+  if $(a,48) = 1$, which we will now prove. First we show that the
+  function $\bar{b}\mapsto x^{ab}$ is well defined, i.e., that the
+  value of the function is not affected by the choice of
+  representative for $\bar{b}$. Suppose $\bar{b} = \bar{c}$. Then
+  $48k = b - c$ for some integer $k$, and we have
+  \begin{equation*}
+    \varphi_a(\bar{b}) = x^{ab} = x^{a(48k + c)} = (x^{48})^{ak}x^{ac}
+    = 1^{ak}x^{ac} = x^{ac} = \varphi_a(\bar{c}).
+  \end{equation*}
+
+  Now, $\varphi_a$ is certainly a homomorphism, since
+  \begin{equation*}
+    \varphi_a(\bar{b} + \bar{c}) = x^{a(b + c)} = x^{ab}x^{ac} =
+    \varphi_a(\bar{b})\varphi_a(\bar{c}).
+  \end{equation*}
+  To show injectivity, suppose
+  $\varphi_a(\bar{b}) = \varphi_a(\bar{c})$. Then $x^{ab} = x^{ac}$ or
+  $x^{a(b - c)} = 1$. Hence $48\mid a(b - c)$ and since $(a,48) = 1$
+  we have $48\mid(b - c)$. This shows that $\bar{b} = \bar{c}$.
+
+  Finally, since $\ord{\Z/48\Z} = \ord{Z_{48}} < \infty$, we know that
+  injectivity of $\varphi_a$ implies surjectivity, so that $\varphi_a$
+  is an isomorphism.
+\end{solution}
+
+\Exercise9 Let $Z_{36} = \gen{x}$. For which integers $a$ does the map
+$\psi_a$ defined by $\psi_a\colon\bar1\mapsto x^a$ extend to a {\em
+  well defined homomorphism} from $\Z/48\Z$ into $Z_{36}$. Can
+$\psi_a$ ever be a surjective homomorphism?
+\begin{solution}
+  Suppose $\bar{b} = \bar{c}$ for integers $b$ and $c$. If $\psi_a$ is
+  well defined then $\psi_a(\bar{b}) = \psi_a(\bar{c})$, that is,
+  $x^{ab} = x^{ac}$. Then $x^{a(b - c)} = 1$ so we must have
+  $36\mid a(b-c)$. But $48\mid(b - c)$, so there is an integer $k$ for
+  which $48k = b - c$ and we have that $36\mid48ak$. If we choose
+  $\bar{b}$ and $\bar{c}$ so that $k = 1$, then we must have $3\mid a$
+  as a necessary condition for $36\mid48ak$. It is also sufficient
+  that $3\mid a$, since $36\mid144mk$.
+
+  Since
+  \begin{equation*}
+    \psi_a(\bar{b} + \bar{c}) = x^{a(b + c)}
+    = x^{ab}x^{ac} = \psi_a(\bar{b})\psi_a(\bar{c}),
+  \end{equation*}
+  we see that $\psi_a$ is a well defined homomorphism if and only if
+  $3\mid a$.
+
+  Lastly, suppose $\psi_a(\bar{b}) = x$. Since $a = 3k$ for some
+  integer $k$, we have
+  \begin{equation*}
+    x = \psi_a(\bar{b}) = x^{ab} = x^{3kb}.
+  \end{equation*}
+  Therefore $x^{3kb - 1} = 1$ and we see that $36$ divides $3kb -
+  1$. But this is impossible since if $36m = 3kb - 1$ then
+  $1 = 3kb - 36m = 3(kb - 12m)$ and $3\mid1$, a contradiction. So the
+  homomorphism $\psi_a$ can never be surjective.
+\end{solution}
