@@ -60,3 +60,55 @@ infinite group.
     &= 16800. \qedhere
   \end{align*}
 \end{solution}
+
+\Exercise6 In $\Z/48\Z$ write out all elements of $\gen{\bar{a}}$ for
+every $\bar a$. Find all inclusions between subgroups in $\Z/48\Z$.
+\begin{solution}
+  The elements of each subgroup are
+  \begin{align*}
+    \Z/48\Z = \gen{\bar1}
+    &= \{\bar0, \bar1, \bar2, \bar3, \dots, \overline{46},
+      \overline{47}\}, \\
+    \gen{\bar2} &= \{\bar0, \bar2, \bar4, \bar6, \dots,
+                  \overline{44}, \overline{46}\}, \\
+    \gen{\bar3} &= \{\bar0, \bar3, \bar6, \bar9, \dots,
+                  \overline{42}, \overline{45}\}, \\
+    \gen{\bar4} &= \{\bar0, \bar4, \bar8, \overline{12}, \dots,
+                  \overline{40}, \overline{44}\}, \\
+    \gen{\bar6} &= \{\bar0, \bar6, \overline{12}, \overline{18},
+                  \overline{24}, \overline{30}, \overline{36},
+                  \overline{42}\}, \\
+    \gen{\bar8} &= \{\bar0, \bar8, \overline{16}, \overline{24},
+                  \overline{32}, \overline{40}\}, \\
+    \gen{\overline{12}} &= \{\bar0, \overline{12}, \overline{24},
+                          \overline{36}\}, \\
+    \gen{\overline{16}} &= \{\bar0, \overline{16}, \overline{32}\}, \\
+    \gen{\overline{24}} &= \{\bar0, \overline{24}\}, \\
+    \gen{\bar0} &= \{\bar0\}.
+  \end{align*}
+  And we have the following inclusions:
+  \begin{align*}
+    \gen{\bar0}, \gen{\bar1}, \gen{\bar2}, \gen{\bar3}, \gen{\bar4},
+    \gen{\bar6}, \gen{\bar8}, \gen{\overline{12}}, \gen{\overline{16}},
+    \gen{\overline{24}}
+    &\leq \gen{\bar1}, \\
+    \gen{\bar0}, \gen{\bar2}, \gen{\bar4}, \gen{\bar6}, \gen{\bar8},
+    \gen{\overline{12}}, \gen{\overline{16}}, \gen{\overline{24}}
+    &\leq \gen{\bar2}, \\
+    \gen{\bar0}, \gen{\bar3}, \gen{\bar6}, \gen{\overline{12}},
+    \gen{\overline{16}}, \gen{\overline{24}}
+    &\leq \gen{\bar3}, \\
+    \gen{\bar0}, \gen{\bar4}, \gen{\bar8}, \gen{\overline{12}},
+    \gen{\overline{16}}, \gen{\overline{24}}
+    &\leq \gen{\bar4}, \\
+    \gen{\bar0}, \gen{\bar6}, \gen{\overline{12}}, \gen{\overline{24}}
+    &\leq \gen{\bar6}, \\
+    \gen{\bar0}, \gen{\bar8}, \gen{\overline{16}}, \gen{\overline{24}}
+    &\leq \gen{\bar8}, \\
+    \gen{\bar0}, \gen{\overline{12}}, \gen{\overline{24}}
+    &\leq \gen{\overline{12}}, \\
+    \gen{\bar0}, \gen{\overline{16}} &\leq \gen{\overline{16}}, \\
+    \gen{\bar0}, \gen{\overline{24}} &\leq \gen{\overline{24}}, \\
+    \gen{\bar0} &\leq \gen{\bar0}. \qedhere
+  \end{align*}
+\end{solution}
