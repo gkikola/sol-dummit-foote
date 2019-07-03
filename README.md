@@ -5,8 +5,27 @@ Description
 -----------
 
 This is an unofficial solution guide to the book Abstract Algebra,
-third edition, by Dummit and Foote. It is not meant to be complete,
-but I may add more over time.
+third edition, by Dummit and Foote.
+
+Please [contact me](gkikola@gmail.com) if you find any errors,
+formatting mistakes, or other issues. I appreciate any corrections or
+feedback.
+
+
+Download
+--------
+
+This solution guide is available as a
+[PDF file](https://www.gregkikola.com/guides/dfsol.pdf).
+
+
+Building from Source
+--------------------
+
+You will need a LaTeX installation. To build the PDF, you can either
+use the included Makefile (which requires this [latexmk
+script](http://personal.psu.edu/jcc8//software/latexmk-jcc/)), or you
+can build manually with `pdflatex src/dfsol.tex`.
 
 
 Copyright
