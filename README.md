@@ -7,7 +7,7 @@ Description
 This is an unofficial solution guide to the book Abstract Algebra,
 third edition, by Dummit and Foote.
 
-Please [contact me](gkikola@gmail.com) if you find any errors,
+Please [contact me](mailto:gkikola@gmail.com) if you find any errors,
 formatting mistakes, or other issues. I appreciate any corrections or
 feedback.
 
