@@ -193,3 +193,31 @@ $\psi_a$ ever be a surjective homomorphism?
   $1 = 3kb - 36m = 3(kb - 12m)$ and $3\mid1$, a contradiction. So the
   homomorphism $\psi_a$ can never be surjective.
 \end{solution}
+
+\Exercise{10} What is the order of $\overline{30}$ in $\Z/54\Z$? Write
+out all the elements and their orders in $\gen{\overline{30}}$.
+\begin{solution}
+  Since $\ord{\bar1} = 54$, by Proposition~5~(2) we have
+  \begin{equation*}
+    \ord{\overline{30}} = \ord{30\cdot\bar1} = \frac{54}{(30,54)}
+    = \frac{54}{6} = 9.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    \gen{\overline{30}} = \{\bar0, \bar6, \overline{12},
+    \overline{18}, \overline{24}, \overline{30}, \overline{36},
+    \overline{42}, \overline{48}\}
+  \end{equation*}
+  where
+  \begin{align*}
+    \ord{\bar0} &= 1, \\
+    \ord{\bar6} &= 9, \\
+    \ord{\overline{12}} &= 9, \\
+    \ord{\overline{18}} &= 3, \\
+    \ord{\overline{24}} &= 9, \\
+    \ord{\overline{30}} &= 9, \\
+    \ord{\overline{36}} &= 3, \\
+    \ord{\overline{42}} &= 9, \\
+    \ord{\overline{48}} &= 9. \qedhere
+  \end{align*}
+\end{solution}
