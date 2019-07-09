@@ -240,6 +240,7 @@ subgroup of $D_8$ which is not cyclic.
 \end{solution}
 
 \Exercise{12} Prove that the following groups are {\em not} cyclic:
+\label{exercise-prove-groups-not-cyclic}
 \begin{enumerate}
 \item $Z_2\times Z_2$
   \begin{proof}
@@ -326,4 +327,41 @@ $a = 13, 65, 626, 1195, -6, -81, -570$ and $-1211$.
     \sigma^{-1211} = \sigma^{-101(12)+1} = \sigma
     &= (1\;2\;3\;4\;5\;6\;7\;8\;9\;10\;11\;12). \qedhere
   \end{align*}
+\end{solution}
+
+\Exercise{15} Prove that $\Q\times\Q$ is not cyclic.
+\begin{proof}
+  In Exercise~\ref{exercise-prove-groups-not-cyclic} we showed that
+  $\Z\times\Z$ is not cyclic. But $\Z\times\Z$ is a subgroup of
+  $\Q\times\Q$, and a cyclic group cannot have a non-cyclic
+  subgroup. Therefore $\Q\times\Q$ is not cyclic.
+\end{proof}
+
+\Exercise{16} Assume $\ord{x} = n$ and $\ord{y} = m$. Suppose that $x$
+and $y$ {\em commute}: $xy = yx$. Prove that $\ord{xy}$ divides the
+least common multiple of $m$ and $n$. Need this be true if $x$ and $y$
+do {\em not} commute? Give an example of commuting elements $x,y$ such
+that the order of $xy$ is not equal to the least common multiple of
+$\ord{x}$ and $\ord{y}$.
+\begin{solution}
+  Let $\ell$ be the least common multiple of $m$ and $n$. Then there
+  are integers $a$ and $b$ such that $am = \ell$ and $bn = \ell$. So
+  if $\ord{x} = m$ and $\ord{y} = n$ for commuting elements $x$ and
+  $y$, then
+  \begin{equation*}
+    (xy)^\ell = x^\ell y^\ell = (x^m)^a(y^n)^b = 1.
+  \end{equation*}
+  Therefore $\ord{xy}$ must divide $\ell$ by Proposition~3, which
+  completes the proof.
+
+  We note that this need not be true if $x$ and $y$ do not
+  commute. For example, in the symmetric group $S_3$,
+  $\ord{(1\,2)} = \ord{(2\,3)} = 2$ but $(1\,2)(2\,3) = (1\,2\,3)$
+  which has order $3$. Clearly $3\nmid2$.
+
+  Finally, for an example where $x$ and $y$ commute but the order of
+  $xy$ does not equal the least common multiple of $\ord{x}$ and
+  $\ord{y}$, consider the cyclic group $Z_{10}$. This group is abelian
+  so all elements commute, and we have $\ord{x^2} = 5$ and
+  $\ord{x^3} = 10$, but $\ord{x^5} = 2 \neq 10$.
 \end{solution}
