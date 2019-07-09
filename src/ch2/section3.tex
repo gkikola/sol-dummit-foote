@@ -471,3 +471,30 @@ $x^{p^n} = 1$ then $\ord{x} = p^m$ for some $m\leq n$.
 % $(1 + 2^2)^{2^{n-3}}\not\equiv1\pmod{2^n}$. Deduce that $5$ is an
 % element of order $2^{n-2}$ in the multiplicative group
 % $(\Z/2^n\Z)^\times$.
+
+\Exercise{23} Show that $(\Z/2^n\Z)^\times$ is not cyclic for any
+$n\geq3$.
+\begin{proof}
+  By Theorem~7 we know that if $(\Z/2^n\Z)^\times$ is cyclic, then it
+  must have at most one subgroup with order $2$. Therefore the proof
+  will be complete if we can show that $(\Z/2^n\Z)^\times$ has more
+  than one distinct subgroup of order $2$. This is equivalent to
+  showing that the group has more than one element with order $2$.
+
+  For $n\geq3$, we have
+  \begin{equation*}
+    (2^n-1)^2 \equiv (-1)^2 \equiv 1 \pmod{2^n}
+  \end{equation*}
+  and
+  \begin{align*}
+    (2^{n-1}-1)^2
+    &= 2^{2n-2} - 2^n + 1 \\
+    &= 2^{n-2}2^n - 2^n + 1 \\
+    &\equiv 1 \pmod{2^n}.
+  \end{align*}
+  As long as $n\geq3$, both of the elements $\overline{2^n-1}$ and
+  $\overline{2^{n-1}-1}$ are distinct from $\bar1$ and hence have
+  order $2$. And the two elements are distinct, since
+  $2^{n-1}\not\equiv2^n\pmod{2^n}$. Hence $(\Z/2^n\Z)^\times$ cannot
+  be cyclic.
+\end{proof}
