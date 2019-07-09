@@ -377,3 +377,50 @@ $\ord{x}$ and $\ord{y}$.
     Z_n = \gen{x\mid x^n = 1}.\qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise{18} Show that if $H$ is any group and $h$ is an element of
+$H$ with $h^n = 1$, then there is a unique homomorphism from
+$Z_n = \gen{x}$ to $H$ such that $x\mapsto h$.
+\begin{proof}
+  Define the function $\varphi\colon Z_n\to H$ by
+  \begin{equation*}
+    \varphi(x^n) = h^n.
+  \end{equation*}
+  First we need to show that $\varphi$ is well defined. Suppose
+  $x^a = x^b$. Then $x^{a-b} = 1$ so $n\mid(a-b)$ (Proposition~3). So
+  there is an integer $c$ such that $cn = a - b$. We may then write
+  $a = cn + b$ so that
+  \begin{equation*}
+    \varphi(x^a) = h^a = h^{cn+b} = (h^n)^ch^b = h^b = \varphi(x^b)
+  \end{equation*}
+  as required.
+
+  To show that $\varphi$ is a homomorphism, consider two arbitrary
+  elements $y = x^k$ and $z = x^\ell$ in $Z_n$. By the exponent rules
+  established in Exercise~\ref{exercise-exponent-rules}, we have
+  \begin{equation*}
+    \varphi(yz) = \varphi(x^kx^\ell) = \varphi(x^{k+\ell})
+    = h^{k+\ell} = h^kh^\ell = \varphi(x^k)\varphi(x^\ell)
+    = \varphi(y)\varphi(z),
+  \end{equation*}
+  so $\varphi$ is indeed a homomorphism.
+
+  Lastly, to show uniqueness, suppose $\psi\colon Z_n\to H$ is any
+  homomorphism such that $\psi(x) = h$. Then for any integer $k$, we
+  wish to show that we must have
+  \begin{equation*}
+    \psi(x^k) = h^k.
+  \end{equation*}
+  Note that we only need to consider $0\leq k\leq n-1$ since any other
+  power is equal to one of these. We now proceed by induction on
+  $k$. $\psi(x) = h$ by assumption, so the base case is
+  satisfied. Suppose $\psi(x^k) = h^k$ for some nonnegative integer
+  $k$. Then by the definition of a homomorphism and by the inductive
+  hypothesis,
+  \begin{equation*}
+    \psi(x^{k+1}) = \psi(x^kx)
+    = \psi(x^k)\psi(x) = h^kh = h^{k+1},
+  \end{equation*}
+  which establishes that $\varphi = \psi$ and thus completes the
+  proof.
+\end{proof}
