@@ -424,3 +424,21 @@ $Z_n = \gen{x}$ to $H$ such that $x\mapsto h$.
   which establishes that $\varphi = \psi$ and thus completes the
   proof.
 \end{proof}
+
+\Exercise{19} Show that if $H$ is any group and $h$ is an element of
+$H$, then there is a unique homomorphism from $\Z$ to $H$ such that
+$1\mapsto h$.
+\begin{proof}
+  Let $\varphi\colon\Z\to H$ be given by
+  \begin{equation*}
+    \varphi(n) = h^n.
+  \end{equation*}
+  Then $\varphi$ is a function which maps $1$ to $h$. It is also a
+  homomorphism, since for any integers $m$ and $n$,
+  \begin{equation*}
+    \varphi(m + n) = h^{m+n} = h^mh^n = \varphi(m)\varphi(n).
+  \end{equation*}
+  Finally, this homomorphism is uniquely determined because any
+  homomorphism $\psi\colon\Z\to H$ such that $\psi(1) = h$ must
+  satisfy $\psi(n) = \psi(n1) = \psi(1)^n = h^n$.
+\end{proof}
