@@ -442,3 +442,32 @@ $1\mapsto h$.
   homomorphism $\psi\colon\Z\to H$ such that $\psi(1) = h$ must
   satisfy $\psi(n) = \psi(n1) = \psi(1)^n = h^n$.
 \end{proof}
+
+\Exercise{20} Let $p$ be a prime and let $n$ be a positive
+integer. Show that if $x$ is an element of the group $G$ such that
+$x^{p^n} = 1$ then $\ord{x} = p^m$ for some $m\leq n$.
+\begin{proof}
+  If $x^{p^n} = 1$, then by Proposition~3 we have $\ord{x}$ divides
+  $p^n$. But the only integers that divide a prime power $p^n$ are
+  smaller prime powers $p^m$ (including $p^0 = 1$). Therefore
+  $\ord{x} = p^m$ for some nonnegative integer $m$ with $m\leq n$.
+\end{proof}
+
+% \Exercise{21} Let $p$ be an odd prime and let $n$ be a positive
+% integer. Use the Binomial Theorem to show that
+% $(1 + p)^{p^{n-1}}\equiv1\pmod{p^n}$ but
+% $(1 + p)^{p^{n-2}}\not\equiv1\pmod{p^n}$. Deduce that $1 + p$ is an
+% element of order $p^{n-1}$ in the multiplicative group
+% $(\Z/p^n\Z)^\times$.
+% \begin{proof}
+%   Consider the binomial coefficient
+%   \begin{equation*}
+%     \binom{p^{n-1}}k = \frac{p^{n-1}(p^{n-1}-1)\cdots(p^{n-1}-k+1)}{k!}.
+%   \end{equation*}
+% \end{proof}
+
+% \Exercise{22} Let $n$ be an integer $\geq3$. Use the Binomial Theorem
+% to show that $(1 + 2^2)^{2^{n-2}}\equiv1\pmod{2^n}$ but
+% $(1 + 2^2)^{2^{n-3}}\not\equiv1\pmod{2^n}$. Deduce that $5$ is an
+% element of order $2^{n-2}$ in the multiplicative group
+% $(\Z/2^n\Z)^\times$.
