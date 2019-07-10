@@ -545,3 +545,30 @@ $n\geq3$.
     $g\gen{x}g^{-1} = \gen{x}$ and $g\in N_G(\gen{x})$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{25} Let $G$ be a cyclic group of order $n$ and let $k$ be an
+integer relatively prime to $n$. Prove that the map $x\mapsto x^k$ is
+surjective. Use Lagrange's Theorem to prove the same is true for any
+finite group of order $n$.
+\begin{proof}
+  We will prove the general result directly. Fix an integer $k$
+  relatively prime to $n$ and let $\varphi$ denote the map
+  $x\mapsto x^k$ for the group $G$, where $\ord{G} = n$. Since
+  $(n,k) = 1$, we may find $a,b\in\Z$ such that
+  \begin{equation*}
+    ak + bn = 1.
+  \end{equation*}
+
+  Now let $g\in G$ be arbitrary and consider the image of $g^a$ under
+  $\varphi$. We have
+  \begin{equation*}
+    \varphi(g^a) = g^{ak} = g^{1 - bn} = g(g^n)^{-b}.
+  \end{equation*}
+  We know by Langrange's Theorem that $\ord{g}$ divides $n$ (since
+  $\gen{g}$ is a cyclic subgroup of order $\ord{g}$), so $g^n =
+  1$. We then have
+  \begin{equation*}
+    \varphi(g^a) = g,
+  \end{equation*}
+  which completes the proof that $\varphi$ is surjective.
+\end{proof}
