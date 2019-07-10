@@ -498,3 +498,50 @@ $n\geq3$.
   $2^{n-1}\not\equiv2^n\pmod{2^n}$. Hence $(\Z/2^n\Z)^\times$ cannot
   be cyclic.
 \end{proof}
+
+\Exercise{24} Let $G$ be a finite group and let $x\in G$.
+\begin{enumerate}
+\item Prove that if $g\in N_G(\gen{x})$ then $gxg^{-1} = x^a$ for some
+  $a\in\Z$.
+  \begin{proof}
+    If $g\in N_G(\gen{x})$ then $g\gen{x}g^{-1} = \gen{x}$. Since
+    $gxg^{-1}\in g\gen{x}g^{-1}$, we must have $gxg^{-1}\in\gen{x}$ or
+    $gxg^{-1} = x^a$ for some integer $a$.
+  \end{proof}
+\item Prove conversely that if $gxg^{-1} = x^a$ for some $a\in\Z$ then
+  $g\in N_G(\gen{x})$.
+  \begin{proof}
+    Suppose $gxg^{-1} = x^a$ for an integer $a$.
+
+    First we will show that
+    \begin{equation}
+      \label{eq:conjugate-of-power-is-power-of-conjugate}
+      gx^kg^{-1} = (gxg^{-1})^k
+      \quad\text{for all $k\in\Z$}.
+    \end{equation}
+    This obviously holds for $k = 0$, so suppose $k\neq0$. Since
+    $gx^{-1}g^{-1} = (gxg^{-1})^{-1}$, it is sufficient to show that
+    \eqref{eq:conjugate-of-power-is-power-of-conjugate} is true for
+    positive integers $k$.
+
+    We proceed by induction on $k$. The base case is trivial. Suppose
+    $gx^kg^{-1} = (gxg^{-1})^k$ for some positive integer $k$. Then
+    \begin{align*}
+      gx^{k+1}g^{-1}
+      &= gx^kxg^{-1} = gx^k(g^{-1}g)xg^{-1} \\
+      &= (gx^kg^{-1})(gxg^{-1}) = (gxg^{-1})^{k+1},
+    \end{align*}
+    so \eqref{eq:conjugate-of-power-is-power-of-conjugate} holds for
+    all integers $k$.
+
+    Now suppose $y\in g\gen{x}g^{-1}$. Then there is $k\in\Z$ such
+    that $y = gx^kg^{-1}$. From the preceding paragraph, we then have
+    $y = (gxg^{-1})^k = x^{ak}$. Therefore $y\in\gen{x}$ so that
+    $g\gen{x}g^{-1}\leq\gen{x}$.
+
+    But we know that $\ord{g\gen{x}g^{-1}} = \ord{\gen{x}}$ by
+    Exercise~\ref{exercise-conjugation-is-automorphism}. Since $x$ has
+    finite order ($G$ is finite), it follows that
+    $g\gen{x}g^{-1} = \gen{x}$ and $g\in N_G(\gen{x})$.
+  \end{proof}
+\end{enumerate}
