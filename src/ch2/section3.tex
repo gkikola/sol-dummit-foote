@@ -572,3 +572,102 @@ finite group of order $n$.
   \end{equation*}
   which completes the proof that $\varphi$ is surjective.
 \end{proof}
+
+\Exercise{26} Let $Z_n$ be a cyclic group of order $n$ and for each
+integer $a$ let
+\begin{equation*}
+  \sigma_a\colon Z_n\to Z_n
+  \quad\text{by}\quad
+  \sigma_a(x) = x^a \quad\text{for all $x\in Z_n$}.
+\end{equation*}
+\begin{enumerate}
+\item Prove that $\sigma_a$ is an automorphism of $Z_n$ if and only if
+  $a$ and $n$ are relatively prime.
+  \begin{proof}
+    $\sigma_a$ is a homomorphism since for any $x,y\in Z_n$,
+    \begin{equation*}
+      \sigma_a(xy) = (xy)^a = x^ay^a = \sigma_a(x)\sigma_a(y),
+    \end{equation*}
+    where the second equality holds due to the fact that $Z_n$ is
+    abelian. Therefore $\sigma_a$ is an automorphism if and only if it
+    is bijective. But $Z_n$ is finite, so $\sigma_a$ is bijective if
+    and only if it is surjective.
+
+    If $a$ and $n$ are relatively prime, then we know by the previous
+    exercise that $\sigma_a$ is surjective and hence an automorphism.
+
+    Conversely, suppose $\sigma_a$ is a bijection, let $d = (n,a)$,
+    and find integers $b,c$ such that $n = bd$ and $a = cd$. If $g$ is
+    a generator for $Z_n$ then
+    \begin{equation*}
+      \sigma_a(g^b) = g^{ab} = g^{cdb} = g^{cn} = (g^n)^c = 1 = \sigma_a(1).
+    \end{equation*}
+    If $g^b$ is distinct from $1$, then the map $\sigma_a$ is not
+    injective and we have a contradiction. Therefore $g^b = 1$, and
+    since $\ord{g} = n$ it follows that $n = b$ so that
+    $d = (n,a) = 1$.
+  \end{proof}
+\item Prove that $\sigma_a = \sigma_b$ if and only if
+  $a\equiv b\pmod n$.
+  \begin{proof}
+    Let $Z_n = \gen{g}$.
+
+    First suppose that $\sigma_a = \sigma_b$. Then in particular
+    \begin{equation*}
+      g^a = \sigma_a(g) = \sigma_b(g) = g^b
+    \end{equation*}
+    so that $g^{a-b} = 1$. Thus by Proposition~3, $n\mid(a-b)$. That
+    is, $a\equiv b\pmod{n}$.
+
+    Conversely, if $a\equiv b\pmod{n}$ then $nc = a - b$ for some
+    integer $c$ and we have for any $g^k\in Z_n$,
+    \begin{equation*}
+      \sigma_a(g^k) = g^{ak}
+      = g^{(nc+b)k} = g^{bk}(g^n)^{ck} = g^{bk} = \sigma_b(g^k),
+    \end{equation*}
+    hence $\sigma_a = \sigma_b$ as required.
+  \end{proof}
+\item Prove that {\em every} automorphism of $Z_n$ is equal to
+  $\sigma_a$ for some integer $a$.
+  \begin{proof}
+    Let $\varphi\in\Aut(Z_n)$ and suppose $\varphi(g) = g^k$, where
+    $g$ is a generator for $Z_n$. Then for any $g^i\in Z_n$, we have
+    \begin{equation*}
+      \varphi(g^i) = \varphi(g)^i = (g^k)^i = g^{ik} = \sigma_k(g^i),
+    \end{equation*}
+    which shows that $\varphi = \sigma_k$.
+  \end{proof}
+\item Prove that $\sigma_a\circ\sigma_b = \sigma_{ab}$. Deduce that
+  the map $\bar{a}\mapsto\sigma_a$ is an isomorphism of
+  $(\Z/n\Z)^\times$ onto the automorphism group of $Z_n$ (so
+  $\Aut(Z_n)$ is an abelian group of order $\varphi(n)$).
+  \begin{proof}
+    It is immediate from the definition of $\sigma_a$ and $\sigma_b$
+    that
+    \begin{equation*}
+      (\sigma_a\circ\sigma_b)(g^i) = \sigma_a(g^{bi})
+      = g^{abi} = \sigma_{ab}(g^i)
+    \end{equation*}
+    for any $g^i\in Z_n$.
+
+    By part (a) above, we know that $\bar{a}\in(\Z/n\Z)^\times$ if and
+    only if $\sigma_a\in\Aut(Z_n)$. So we may define
+    \begin{equation*}
+      \psi\colon(\Z/n\Z)^\times\to \Aut(Z_n)
+      \quad\text{by}\quad
+      \psi(\bar{a}) = \sigma_a.
+    \end{equation*}
+    We know by part (b) that $\psi$ is well defined. And $\psi$ is a
+    homomorphism since
+    \begin{equation*}
+      \psi(\bar{a}\bar{b}) = \psi(\overline{ab})
+      = \sigma_{ab} = \sigma_a\circ\sigma_b
+      = \psi(\bar{a})\circ\psi(\bar{b}).
+    \end{equation*}
+    Now, $\psi$ is injective by part (b), and it is surjective by part
+    (c). Therefore $\psi$ is an isomorphism and
+    $(\Z/n\Z)^\times \cong \Aut(Z_n)$. It follows that $\Aut(Z_n)$ is
+    an abelian group of order $\varphi(n)$ where $\varphi$ is the
+    Euler $\varphi$-function.
+  \end{proof}
+\end{enumerate}
