@@ -228,3 +228,38 @@ groups of order $24$.
   $S_4$ cannot contain a subgroup isomorphic to $Q_8$, and this is
   enough to show that $SL_2(\F_3)$ is not isomorphic to $S_4$.
 \end{proof}
+
+\Exercise{12} Prove that the subgroup of upper triangular matrices in
+$GL_3(\F_2)$ is isomorphic to the dihedral group of order $8$.
+\begin{proof}
+  Let $T$ denote the upper triangular matrices of $GL_3(\F_2)$. There
+  are $6$ entries in a $3\times3$ matrix that are on or above the
+  diagonal. However, none of the diagonal entries can be zero since
+  such matrices would have a determinant of zero. Therefore $T$ has
+  only $2^3 = 8$ elements.
+
+  Now, let
+  \begin{equation*}
+    A =
+    \begin{pmatrix}
+      1 & 1 & 1 \\
+      0 & 1 & 1 \\
+      0 & 0 & 1
+    \end{pmatrix}
+    \quad\text{and}\quad
+    B =
+    \begin{pmatrix}
+      1 & 1 & 1 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{pmatrix}.
+  \end{equation*}
+  By direct computation we can see that $A^4 = B^2 = I$ and that
+  $AB = BA^{-1}$. Thus the mapping $\varphi\colon D_8\to T$ for which
+  $\varphi(r) = A$ and $\varphi(s) = B$ extends to a
+  homomorphism. Since $A$ generates a cyclic subgroup of $T$ with
+  order $4$ and $B$ is not in this subgroup, it follows that
+  $\gen{A,B} = T$ which shows that $\varphi$ is actually
+  surjective. Since $\ord{T} = \ord{D_8}$ it must be injective as
+  well. Hence $T\cong D_8$.
+\end{proof}
