@@ -435,3 +435,20 @@ $k$\textsuperscript{th} multiple of some element of $A$).
     not divisible.
   \end{proof}
 \end{enumerate}
+
+\Exercise{20} Prove that if $A$ and $B$ are nontrivial abelian groups,
+then $A\times B$ is divisible if and only if both $A$ and $B$ are
+divisible groups.
+\begin{proof}
+  Suppose $A\times B$ is divisible. Let $a\in A$ and $b\in B$ be
+  arbitrary, and let $k$ be any nonzero integer. Then there is
+  $(c,d)\in A\times B$ such that $(c,d)^k = (a,b)$. But
+  $(c,d)^k = (c^k,d^k)$, so $c^k = a$ and $d^k = b$, which shows that
+  $A$ and $B$ are both divisible.
+
+  Conversely, let $A$ and $B$ be divisible, let $(a,b)\in A\times B$
+  be arbitrary, and let $k$ be any nonzero integer. Since $A$ is
+  divisible, there is $c\in A$ with $c^k = a$, and since $B$ is
+  divisible there is $d\in B$ with $d^k = b$. Then $(c,d)^k = (a,b)$,
+  which shows that $A\times B$ is divisible.
+\end{proof}
