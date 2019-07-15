@@ -411,3 +411,27 @@ $M$ are $M$ and $G$.
     $K$. This contradiction shows that $H$ is maximal.
   \end{proof}
 \end{enumerate}
+
+\Exercise{19} A nontrivial abelian group $A$ (written
+multiplicatively) is called {\em divisible} if for each element
+$a\in A$ and each nonzero integer $k$ there is an element $x\in A$
+such that $x^k = a$, i.e., each element has a $k$\textsuperscript{th}
+root in $A$ (in additive notation, each element is the
+$k$\textsuperscript{th} multiple of some element of $A$).
+\begin{enumerate}
+\item Prove that the additive group of rational numbers, $\Q$, is
+  divisible.
+  \begin{proof}
+    Let $r\in\Q$ and $k\in\Z$ be arbitrary, with $k$ nonzero. Then
+    $x = r/k$ is such that $kx = r$. Hence $\Q$ is divisible.
+  \end{proof}
+\item Prove that no finite abelian group is divisible.
+  \begin{proof}
+    Let $G$ be any nontrivial finite abelian group, and suppose
+    $\ord{G} = n$. Since $G$ is nontrivial, we may choose a
+    nonidentity element $x\in G$. Then there is no element $y\in G$
+    such that $y^n = x$, for the simple reason that we must have
+    $y^n = 1$ (since $\ord{y}$ has to divide $n$). Therefore $G$ is
+    not divisible.
+  \end{proof}
+\end{enumerate}
