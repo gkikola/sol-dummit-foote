@@ -350,3 +350,64 @@ is a finite set $A$ such that $H = \gen{A}$.
   say $q = 2^n$. Then $1/2^{n+1}$ is not an integer multiple of $p/q$,
   but it is in $H$. This shows that $H$ is not cyclic.
 \end{solution}
+
+\Exercise{16} A subgroup $M$ of a group $G$ is called a {\em maximal
+  subgroup} if $M\neq G$ and the only subgroups of $G$ which contain
+$M$ are $M$ and $G$.
+\begin{enumerate}
+\item Prove that if $H$ is a proper subgroup of the finite group $G$
+  then there is a maximal subgroup of $G$ containing $H$.
+  \begin{proof}
+    If $H$ is maximal, then we are done. If $H$ is not maximal, then
+    there is a subgroup $K_1$ of $G$ such that $H<K_1<G$. If $K_1$ is
+    maximal, we are done. But if $K_1$ is not maximal, there is a
+    subgroup $K_2$ with $H<K_1<K_2<G$. If $K_2$ is maximal, we are
+    done, and if not, keep repeating the procedure. Since $G$ is
+    finite, this process must eventually come to an end, so that $K_n$
+    is maximal for some positive integer $n$. Then $K_n$ is a maximal
+    subgroup containing $H$.
+  \end{proof}
+\item Show that the subgroup of all rotations in a dihedral group is a
+  maximal subgroup.
+  \begin{proof}
+    Fix a positive integer $n>1$ and let $H\leq D_{2n}$ consist of the
+    rotations of $D_{2n}$. That is, $H = \gen{r}$. Now, this subgroup
+    is proper since it does not contain $s$. If $H$ is not maximal,
+    then by the previous proof we know there is a maximal subset $K$
+    containing $H$. Then $K$ must contain a reflection $sr^k$ for
+    $k\in\{0,1,\dots,n-1\}$. Then since $sr^k\in K$ and
+    $r^{n-k}\in K$, it follows by closure that
+    \begin{equation*}
+      s = (sr^k)(r^{n-k})\in K.
+    \end{equation*}
+    But $D_{2n} = \gen{r,s}$, so this shows that $K = D_{2n}$, which
+    is a contradiction. Therefore $H$ must be maximal.
+  \end{proof}
+\item Show that if $G = \gen{x}$ is a cyclic group of order $n\geq1$
+  then a subgroup $H$ is maximal if and only if $H = \gen{x^p}$ for
+  some prime $p$ dividing $n$.
+  \begin{proof}
+    Suppose $H$ is a maximal subgroup of $G$. Then $H$ is cyclic, and
+    we may write $H = \gen{x^k}$ for some integer $k$, with $k >
+    1$. Let $d = (n,k)$. Since $H$ is a proper subgroup, we know by
+    Proposition~6 that $d > 1$. Choose a prime factor $p$ of $d$. If
+    $k = p = d$ then $k\mid n$ as required.
+
+    If, however, $k$ is not prime, then consider the subgroup
+    $K = \gen{x^p}$. Since $p$ is a proper divisor of $k$, it follows
+    that $H<K$. But $H$ is maximal, so we must have $K = G$. Again by
+    Proposition~6, we must then have $(p,n) = 1$. However, $p$ divides
+    $d$ which divides $n$, so $p\mid n$ and $(p,n) = p > 1$, a
+    contradiction. Therefore $k = p$ and the left-to-right implication
+    holds.
+
+    Now, for the converse, suppose $H = \gen{x^p}$ for $p$ a prime
+    dividing $n$. If $H$ is not maximal then the first part of this
+    exercise shows that there is a maximal subgroup $K$ containing
+    $H$. Then $K = \gen{x^q}$. So $x^p\in\gen{x^q}$, which implies
+    $q\mid p$. But the only divisors of $p$ are $1$ and $p$. If
+    $q = 1$ then $K = G$ and $K$ cannot be a proper subgroup, and if
+    $q = p$ then $H = K$ and $H$ cannot be a proper subgroup of
+    $K$. This contradiction shows that $H$ is maximal.
+  \end{proof}
+\end{enumerate}
