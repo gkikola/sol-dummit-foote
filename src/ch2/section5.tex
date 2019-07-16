@@ -1,0 +1,52 @@
+\section{The Lattice of Subgroups of a Group}
+
+\Exercise1 Let $H$ and $K$ be subgroups of $G$. Exhibit all possible
+sublattices which show only $G$, $1$, $H$, $K$ and their joins and
+intersections. What distinguishes the different drawings?
+\begin{solution}
+  In general, when $H$ and $K$ are distinct, with a nontrivial
+  intersection and a join that is a proper subgroup, the sublattice
+  might look something like the following:
+  \begin{center}
+    \begin{tikzpicture}
+      [subgroup/.style={rectangle,fill=white}]
+      \node at (0,3.5) {};
+      \node (G) at (0,3) [subgroup] {$G$};
+      \node (join) at (0,2) [subgroup] {$\gen{H,K}$};
+      \node (H) at (-1,1) [subgroup] {$H$};
+      \node (K) at (1,1) [subgroup] {$K$};
+      \node (cap) at (0,0) [subgroup] {$H\cap K$};
+      \node (1) at (0,-1) [subgroup] {$1$};
+      \node at (0,-1.5) {};
+      \draw (G) -- (join) -- (H) -- (cap) -- (K) -- (join);
+      \draw (cap) -- (1);
+    \end{tikzpicture}
+  \end{center}
+  In other cases, we may have $H = K$, or $H\geq K$:
+  \begin{center}
+    \begin{tikzpicture}
+      [subgroup/.style={rectangle,fill=white}]
+      \begin{scope}[xshift=-1.5cm]
+        \node at (0,3.5) {};
+        \node (G) at (0,3) [subgroup] {$G$};
+        \node (HK) at (0,1.5) [subgroup] {$H = K$};
+        \node (1) at (0,0) [subgroup] {$1$};
+        \node at (0,-0.5) {};
+        \draw (G) -- (HK) -- (1);
+      \end{scope}
+      \begin{scope}[xshift=1.5cm]
+        \node at (0,3.5) {};
+        \node (G) at (0,3) [subgroup] {$G$};
+        \node (H) at (0,2) [subgroup] {$H$};
+        \node (K) at (0,1) [subgroup] {$K$};
+        \node (1) at (0,0) [subgroup] {$1$};
+        \node at (0,-0.5) {};
+        \draw (G) -- (H) -- (K) -- (1);
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+  There are several other possibilities, for example one of $H$ or $K$
+  could be trivial, or we could have $\gen{H,K} = G$, and various
+  other options. The drawings are distinguished by the relationships
+  between the various subgroups.
+\end{solution}
