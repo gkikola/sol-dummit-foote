@@ -108,3 +108,36 @@ isomorphic to $V_4$.
   is a homomorphism. But $\varphi$ is clearly also a bijection, so
   $\varphi$ is an isomorphism and $\gen{s,r^2}\cong V_4$.
 \end{proof}
+
+\Exercise4 Use the given lattice to find all pairs of elements that
+generate $D_8$ (there are $12$ pairs).
+\begin{solution}
+  First, we know that $D_8 = \gen{s,r}$. Now, looking at the cyclic
+  subgroups in the lattice, we see that the only subgroup containing
+  both $\gen{s}$ and $\gen{rs}$ is $D_8$ itself. Hence
+  $\gen{s, rs} = D_8$. Similarly, the only subgroup containing
+  $\gen{s}$ and $\gen{r^3s}$ is $D_8$, so $\gen{s, r^3s} =
+  D_8$. Continuing in this way, we can find all the pairs that
+  generate $D_8$ (noting that $\gen{r} = \gen{r^3}$). We now list all
+  of the generating pairs:
+  \begin{multline*}
+    \gen{s,r}, \gen{s,r^3}, \gen{s,rs}, \gen{s,r^3s},
+    \gen{r^2s,r}, \gen{r^2s,r^3}, \\ \gen{r^2s,rs}, \gen{r^2s,r^3s},
+    \gen{r,rs}, \gen{r^3,rs}, \gen{r^3,r^3s}, \gen{r,r^3s}.
+    \qedhere
+  \end{multline*}
+\end{solution}
+
+\Exercise5 Use the given lattice to find all elements $x\in D_{16}$
+such that $D_{16} = \gen{x, s}$ (there are $8$ such elements $x$).
+\begin{solution}
+  Note that $\gen{r} = \gen{r^3} = \gen{r^5} = \gen{r^7}$. We now
+  proceed as in the previous problem, pairing $\gen{s}$ with other
+  cyclic subgroups such that all of $D_{16}$ is the smallest group
+  containing both subgroups. We find the following generating pairs:
+  \begin{equation*}
+    \gen{s,r},\gen{s,r^3},\gen{s,r^5},\gen{s,r^7},
+    \gen{s,sr^3}, \gen{s,sr^7},\gen{s,sr^5},\gen{s,sr}.
+    \qedhere
+  \end{equation*}
+\end{solution}
