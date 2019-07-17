@@ -77,3 +77,34 @@ satisfy the given condition.
     $\gen{s,r^2}$, and $D_{16}$.
   \end{solution}
 \end{enumerate}
+
+\Exercise3 Show that the subgroup $\gen{s, r^2}$ of $D_8$ is
+isomorphic to $V_4$.
+\begin{proof}
+  The subgroup $\gen{s, r^2}$ consists of the elements
+  $\{1, s, r^2, sr^2\}$, and $V_4 = \{1, a, b, c\}$. Note that both
+  groups are abelian and of order $4$.
+
+  Define the mapping $\varphi\colon\gen{s,r^2}\to V_4$ by
+  \begin{equation*}
+    \varphi(1) = 1,
+    \quad
+    \varphi(s) = a,
+    \quad
+    \varphi(r^2) = b,
+    \quad\text{and}\quad
+    \varphi(sr^2) = c.
+  \end{equation*}
+  We now directly verify that $\varphi$ is a homomorphism:
+  \begin{align*}
+    \varphi(s^2) &= \varphi(1) = 1 = a^2 = \varphi(s)^2, \\
+    \varphi(sr^2) &= c = ab = \varphi(s)\varphi(r^2), \\
+    \varphi(ssr^2) &= \varphi(r^2) = b = ac = \varphi(s)\varphi(sr^2), \\
+    \varphi(r^4) &= \varphi(1) = 1 = b^2 = \varphi(r^2)^2, \\
+    \varphi(r^2sr^2) &= \varphi(s) = a = bc = \varphi(r^2)\varphi(sr^2), \\
+    \varphi((sr^2)^2) &= \varphi(1) = 1 = c^2 = \varphi(sr^2)^2.
+  \end{align*}
+  Since both groups are abelian, this is enough to show that $\varphi$
+  is a homomorphism. But $\varphi$ is clearly also a bijection, so
+  $\varphi$ is an isomorphism and $\gen{s,r^2}\cong V_4$.
+\end{proof}
