@@ -141,3 +141,69 @@ such that $D_{16} = \gen{x, s}$ (there are $8$ such elements $x$).
     \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise6 Use the given lattices to help find the centralizers of
+every element in the following groups:
+\begin{enumerate}
+\item $D_8$
+  \begin{solution}
+    Since $s$ commutes with $r^2$, we see from the lattice that
+    $C_{D_8}(s) = \gen{s, r^2}$ (this centralizer cannot be all of
+    $D_8$ since $s$ does not commute with $r$). $r^2$ commutes with
+    everything (it is in the center of $D_8$), so
+    $C_{D_8}(r^2) = D_8$. By similar reasoning, we find the following
+    centralizers:
+    \begin{align*}
+      C_{D_8}(1) &= D_8, \\
+      C_{D_8}(r) &= \gen{r}, \\
+      C_{D_8}(r^2) &= D_8, \\
+      C_{D_8}(r^3) &= \gen{r}, \\
+      C_{D_8}(s) &= \gen{s, r^2}, \\
+      C_{D_8}(rs) &= \gen{rs,r^2}, \\
+      C_{D_8}(r^2s) &= \gen{s, r^2}, \\
+      C_{D_8}(r^3s) &= \gen{rs, r^2}. \qedhere
+    \end{align*}
+  \end{solution}
+\item $Q_8$
+  \begin{solution}
+    We know that $-1$ commutes with every element, but $i$, $j$, and
+    $k$ do not commute with each other. Therefore
+    \begin{align*}
+      C_{Q_8}(1) &= Q_8, \\
+      C_{Q_8}(-1) &= Q_8, \\
+      C_{Q_8}(i) = C_{Q_8}(-i) &= \gen{i}, \\
+      C_{Q_8}(j) = C_{Q_8}(-j) &= \gen{j}, \\
+      C_{Q_8}(k) = C_{Q_8}(-k) &= \gen{k}. \qedhere
+    \end{align*}
+  \end{solution}
+\item $S_3$
+  \begin{solution}
+    From the lattice we see that every nontrivial subgroup is maximal,
+    so the centralizer of each cycle is either the subgroup generated
+    by that cycle, or else all of $S_3$. But none of $(1\,2)$,
+    $(1\,3)$, $(2\,3)$, and $(1\,2\,3)$ commute with each other, so
+    none of the centralizers can be all of $S_3$, aside from
+    $C_{S_3}(1)$. This gives
+    \begin{align*}
+      C_{S_3}(1) &= S_3, \\
+      C_{S_3}(1\,2) &= \gen{(1\,2)}, \\
+      C_{S_3}(1\,3) &= \gen{(1\,3)}, \\
+      C_{S_3}(2\,3) &= \gen{(2\,3)}, \\
+      C_{S_3}(1\,2\,3) = C_{S_3}(1\,3\,2) &= \gen{(1\,2\,3)}. \qedhere
+    \end{align*}
+  \end{solution}
+\item $D_{16}$
+  \begin{solution}
+    We use similar reasoning as we did for $D_8$.
+    \begin{align*}
+      C_{D_{16}}(1) &= D_{16}, \\
+      C_{D_{16}}(r) = C_{D_{16}}(r^2) = C_{D_{16}}(r^3) &= \gen{r}, \\
+      C_{D_{16}}(r^5) = C_{D_{16}}(r^6) = C_{D_{16}}(r^7) &= \gen{r}, \\
+      C_{D_{16}}(r^4) &= D_{16}, \\
+      C_{D_{16}}(s) = C_{D_{16}}(sr^4) &= \gen{s, r^4}, \\
+      C_{D_{16}}(sr) = C_{D_{16}}(sr^5) &= \gen{sr^5, r^4}, \\
+      C_{D_{16}}(sr^2) = C_{D_{16}}(sr^6) &= \gen{sr^2, r^4}, \\
+      C_{D_{16}}(sr^3) = C_{D_{16}}(sr^7) &= \gen{sr^3, r^4}. \qedhere
+    \end{align*}
+  \end{solution}
+\end{enumerate}
