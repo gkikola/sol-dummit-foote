@@ -331,6 +331,7 @@ subgroup:
 
 \Exercise{10} Classify groups of order $4$ by proving that if
 $\ord{G} = 4$ then $G\cong Z_4$ or $G\cong V_4$.
+\label{exercise:classify:groups-4}
 \begin{proof}
   Let $G = \{1,a,b,c\}$. If $G$ is cyclic, then certainly $G\cong Z_4$
   since all cyclic groups of the same order are isomorphic. So assume
@@ -364,6 +365,7 @@ contained in one of these three subgroups. Fill in the missing
 subgroups in the provided lattice of all subgroups of the
 quasidihedral group, exhibiting each subgroup with at most two
 generators.
+\label{exercise:lattice:QD16}
 \begin{solution}
   Certainly $\gen{\sigma^2}$ is between $\gen{\sigma}$ and
   $\gen{\sigma^4}$. By taking powers of the other elements, we see
@@ -499,6 +501,7 @@ $\gen{u,v^2}\cong Z_2\times Z_4$, $\gen{v}\cong Z_8$ and
 $\gen{uv}\cong Z_8$. Show that the lattice of subgroups of $M$ is the
 same as the lattice of subgroups of $Z_2\times Z_8$ but that these two
 groups are not isomorphic.
+\label{exercise:lattice:modular16}
 \begin{solution}
   We will use the presentation for $Z_2\times Z_4$ given in
   Exercise~\ref{exercise:lattice:Z2-times-Z4}. Since
@@ -583,3 +586,30 @@ subgroups of $D_{16}$ of order $8$.
   extends to a surjective homomorphism, which must be injective as
   well since $K$ has $8$ elements. Therefore $\gen{sr,r^2}\cong D_8$.
 \end{solution}
+
+\Exercise{16} Use the lattice of subgroups of the quasidihedral group
+of order $16$ to show that every element of order $2$ is contained in
+the proper subgroup $\gen{\tau,\sigma^2}$.
+\begin{proof}
+  Every element of order $2$ generates a cyclic subgroup having order
+  $2$. From the lattice of $QD_{16}$
+  (Exercise~\ref{exercise:lattice:QD16}) we see that every cyclic
+  subgroup of $QD_{16}$ is contained in $\gen{\sigma^2,\tau}$ except
+  for $\gen{\tau\sigma}$ and $\gen{\tau\sigma^3}$. But neither
+  $\tau\sigma$ nor $\tau\sigma^3$ has order $2$ (they both have order
+  $4$), so we see that every element of order $2$ is indeed contained
+  in $\gen{\sigma^2,\tau}$.
+\end{proof}
+
+\Exercise{17} Use the lattice of subgroups of the modular group $M$ of
+order $16$ to show that the set $\{x\in M\mid x^2 = 1\}$ is a subgroup
+of $M$ isomorphic to the Klein $4$-group.
+\begin{proof}
+  We know from Exercise~\ref{exercise:classify:groups-4} that every
+  group of order $4$ is isomorphic to either $Z_4$ or $V_4$. From the
+  lattice we constructed in Exercise~\ref{exercise:lattice:modular16},
+  we see that $\gen{u,v^4}$ contains only the four elements $1$, $u$,
+  $v^4$, and $uv^4$. Since each of these (aside from $1$) has order
+  $2$, we know that $\gen{u,v^4}$ is not cyclic and so cannot be
+  isomorphic to $Z_4$. Therefore $\gen{u,v^4}\cong V_4$.
+\end{proof}
