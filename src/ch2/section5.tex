@@ -613,3 +613,45 @@ of $M$ isomorphic to the Klein $4$-group.
   $2$, we know that $\gen{u,v^4}$ is not cyclic and so cannot be
   isomorphic to $Z_4$. Therefore $\gen{u,v^4}\cong V_4$.
 \end{proof}
+
+\Exercise{18} Use the lattice to help find the centralizer of every
+element of $QD_{16}$.
+\begin{solution}
+  Since $\sigma^4\tau = \tau\sigma^{12} = \tau\sigma^4$, we see that
+  $\sigma^4$ commutes with $\tau$ and hence belongs to the center of
+  the group (since it commutes with each generator).
+
+  From the lattice, we see that the centralizer of $\tau$ is either
+  equal to $\gen{\sigma^4,\tau}$, or to $\gen{\sigma^2,\tau}$, or to
+  all of $QD_{16}$. But we can rule out the latter two cases, since
+  $\tau$ does not commute with $\sigma^2$:
+  \begin{equation*}
+    \sigma^2\tau = \tau\sigma^6.
+  \end{equation*}
+  A similar case can be made for the centralizer of $\tau\sigma^4$.
+
+  For $\tau\sigma^2$ and $\tau\sigma^6$ we see that both commute with
+  $\sigma^4$ and $\tau\sigma^2$, but neither commutes with $\sigma^2$,
+  so their centralizer must be $\gen{\sigma^4,\tau\sigma^2}$.
+
+  $\tau\sigma$ and $\tau\sigma^3$ do not commute with $\sigma^2$, so
+  their respective centralizers are just the cyclic subgroups that
+  they generate.
+
+  Lastly, the powers of $\sigma$ all commute with each other. Putting
+  all this information together, we get
+  \begin{align*}
+    C_{QD_{16}}(1) = C_{QD_{16}}(\sigma^4) &= QD_{16}, \\
+    C_{QD_{16}}(\sigma) = C_{QD_{16}}(\sigma^2)
+    = C_{QD_{16}}(\sigma^3) &= \gen{\sigma}, \\
+    C_{QD_{16}}(\sigma^5) = C_{QD_{16}}(\sigma^6)
+    = C_{QD_{16}}(\sigma^7) &= \gen{\sigma}, \\
+    C_{QD_{16}}(\tau) = C_{QD_{16}}(\tau\sigma^4) &= \gen{\sigma^4,\tau}, \\
+    C_{QD_{16}}(\tau\sigma^2)
+    = C_{QD_{16}}(\tau\sigma^6) &= \gen{\sigma^4,\tau\sigma^2}, \\
+    C_{QD_{16}}(\tau\sigma)
+    = C_{QD_{16}}(\tau\sigma^5) &= \gen{\tau\sigma}, \\
+    C_{QD_{16}}(\tau\sigma^3)
+    = C_{QD_{16}}(\tau\sigma^7) &= \gen{\tau\sigma^3}. \qedhere
+  \end{align*}
+\end{solution}
