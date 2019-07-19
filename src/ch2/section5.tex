@@ -411,3 +411,41 @@ generators.
     \end{tikzpicture}
   \end{center}
 \end{solution}
+
+\Exercise{12} The group
+\begin{equation*}
+  A = Z_2\times Z_4 = \gen{a,b\mid a^2 = b^4 = 1,\; ab = ba}
+\end{equation*}
+has order $8$ and has three subgroups of order $4$:
+$\gen{a,b^2}\cong V_4$, $\gen{b}\cong Z_4$ and $\gen{ab}\cong Z_4$ and
+every proper subgroup is contained in one of these three. Draw the
+lattice of all subgroups of $A$ giving each subgroup in terms of at
+most two generators.
+\begin{solution}
+  Writing out the elements of $A$ gives
+  \begin{equation*}
+    A = \{1, a, b, b^2, b^3, ab, ab^2, ab^3\}.
+  \end{equation*}
+  There are three elements with order $2$, namely $a$, $b^2$, and
+  $ab^2$. Since $\gen{a,b^2}\cong V_4$, we see that $\gen{a}$,
+  $\gen{b^2}$, and $\gen{ab^2}$ must be directly contained in
+  $\gen{a,b^2}$. From this and the other given information, we form
+  the following lattice.
+  \begin{center}
+    \begin{tikzpicture}
+      \node (A) at (0,0) {$A$};
+      \node (b) at (0, -2) {$\gen{b}$};
+      \node (a_b2) at (-2, -2) {$\gen{a, b^2}$};
+      \node (ab) at (2, -2) {$\gen{ab}$};
+      \node (b2) at (0, -4) {$\gen{b^2}$};
+      \node (a) at (-4, -4) {$\gen{a}$};
+      \node (ab2) at (-2, -4) {$\gen{ab^2}$};
+      \node (1) at (-2, -6) {$1$};
+      \draw (A) -- (a_b2) -- (a) -- (1);
+      \draw (a_b2) -- (ab2) -- (1);
+      \draw (a_b2) -- (b2);
+      \draw (A) -- (b) -- (b2) -- (1);
+      \draw (A) -- (ab) -- (b2);
+    \end{tikzpicture}
+  \end{center}
+\end{solution}
