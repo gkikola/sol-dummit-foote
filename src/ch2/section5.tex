@@ -328,3 +328,86 @@ subgroup:
     \end{center}
   \end{solution}
 \end{enumerate}
+
+\Exercise{10} Classify groups of order $4$ by proving that if
+$\ord{G} = 4$ then $G\cong Z_4$ or $G\cong V_4$.
+\begin{proof}
+  Let $G = \{1,a,b,c\}$. If $G$ is cyclic, then certainly $G\cong Z_4$
+  since all cyclic groups of the same order are isomorphic. So assume
+  that $G$ is not cyclic, so that no element has order $4$. Since the
+  order of each element must divide the order of the group, it follows
+  that $a$, $b$, $c$ each have order $2$.
+
+  Now consider the product $ab$. If $ab = 1$, then multiplying by $a$
+  on the left gives $b = a$, so $a$ and $b$ are not distinct, which is
+  a contradiction. If $ab = a$, then multiplying by $a$ gives $b = 1$,
+  another contradiction. For the same reason we cannot have $ab =
+  b$. So the only possibility is $ab = c$.
+
+  Using exactly the same argument, we can see that $ba = c$,
+  $ac = ca = b$, and $bc = cb = a$. Since $G$ has the same
+  multiplication table as $V_4$, it follows that $G\cong V_4$. Indeed,
+  any identity-preserving bijection between them is an isomorphism.
+\end{proof}
+
+\Exercise{11} Consider the group of order $16$ with the following
+presentation:
+\begin{equation*}
+  QD_{16} = \gen{\sigma,\tau \mid \sigma^8 = \tau^2 = 1,\;
+    \sigma\tau = \tau\sigma^3}
+\end{equation*}
+(called the {\em quasidihedral} or {\em semidihedral} group of order
+$16$). This group has three subgroups of order $8$:
+$\gen{\tau,\sigma^2}\cong D_8$, $\gen{\sigma} \cong Z_8$ and
+$\gen{\sigma^2,\sigma\tau}\cong Q_8$ and every proper subgroup is
+contained in one of these three subgroups. Fill in the missing
+subgroups in the provided lattice of all subgroups of the
+quasidihedral group, exhibiting each subgroup with at most two
+generators.
+\begin{solution}
+  Certainly $\gen{\sigma^2}$ is between $\gen{\sigma}$ and
+  $\gen{\sigma^4}$. By taking powers of the other elements, we see
+  that the other missing cyclic subgroups are
+  \begin{align*}
+    \gen{\tau\sigma} &= \{1, \tau\sigma, \sigma^4, \tau\sigma^5\}, \\
+    \gen{\tau\sigma^3} &= \{1, \tau\sigma^3, \sigma^4, \tau\sigma^7\}, \\
+    \gen{\tau\sigma^4} &= \{1, \tau\sigma^4\}. \\\intertext{and}
+    \gen{\tau\sigma^6} &= \{1, \tau\sigma^6\}.
+  \end{align*}
+  $\gen{\sigma^4,\tau}$ must contain $\gen{\tau\sigma^4}$, and we see
+  that $\gen{\tau\sigma^6}$ must be the sibling of
+  $\gen{\tau\sigma^2}$, whose containing subgroup would then be
+  $\gen{\sigma^4, \tau\sigma^2}$. The remaining cyclic subgroups are
+  contained in $\gen{\sigma^2, \tau\sigma}$. This gives the following
+  lattice.
+  \begin{center}
+    \begin{tikzpicture}
+      \node (1) at (0,0) {$1$};
+      \node (sigma4) at (0,2) {$\gen{\sigma^4}$};
+      \node (tau) at (-1,2) {$\gen{\tau}$};
+      \node (tausigma4) at (-2,2) {$\gen{\tau\sigma^4}$};
+      \node (tausigma6) at (-3,2) {$\gen{\tau\sigma^6}$};
+      \node (tausigma2) at (-4,2) {$\gen{\tau\sigma^2}$};
+      \node (sigma2) at (0,4) {$\gen{\sigma^2}$};
+      \node (sigma4_tau) at (-1.5,4) {$\gen{\sigma^4,\tau}$};
+      \node (sigma4_tausigma2) at (-3.5,4) {$\gen{\sigma^4,\tau\sigma^2}$};
+      \node (tausigma) at (1.5,4) {$\gen{\tau\sigma}$};
+      \node (tausigma3) at (3.5,4) {$\gen{\tau\sigma^3}$};
+      \node (sigma) at (0,6) {$\gen{\sigma}$};
+      \node (sigma2_tau) at (-1.5,6) {$\gen{\sigma^2,\tau}$};
+      \node (sigma2_tausigma) at (1.5,6) {$\gen{\sigma^2,\tau\sigma}$};
+      \node (QD16) at (0,7.5) {$QD_{16}$};
+      \draw (QD16) -- (sigma) -- (sigma2) -- (sigma4) -- (1);
+      \draw (QD16) -- (sigma2_tau) -- (sigma4_tau) -- (tau) -- (1);
+      \draw (QD16) -- (sigma2_tausigma) -- (tausigma) -- (sigma4);
+      \draw (sigma2_tau) -- (sigma4_tausigma2) -- (tausigma6) -- (1);
+      \draw (sigma2_tau) -- (sigma2) -- (sigma2_tausigma);
+      \draw (sigma2_tausigma) -- (tausigma3) -- (sigma4);
+      \draw (sigma4_tau) -- (sigma4);
+      \draw (sigma4_tau) -- (tausigma4) -- (1);
+      \draw (sigma4_tausigma2) -- (tausigma2) -- (1);
+      \draw[draw=white,line width=6pt] (sigma4_tausigma2) -- (sigma4);
+      \draw (sigma4_tausigma2) -- (sigma4);
+    \end{tikzpicture}
+  \end{center}
+\end{solution}
