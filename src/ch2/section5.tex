@@ -544,3 +544,42 @@ groups are not isomorphic.
   isomorphic to $Z_2\times Z_8$ since the latter is abelian and $M$ is
   not ($uv \neq vu$).
 \end{solution}
+
+\Exercise{15} Describe the isomorphism type of each of the three
+subgroups of $D_{16}$ of order $8$.
+\begin{solution}
+  Since $\ord{r} = 8$, we see that $\gen{r}\cong Z_8$.
+
+  Next, consider the subgroup $H = \gen{s,r^2}$ and observe that
+  \begin{equation*}
+    (r^2)^4 = s^2 = 1
+    \quad\text{and}\quad
+    (r^2)s = sr^6 = s(r^2)^{-1}.
+  \end{equation*}
+  Since $s$ and $r^2$ in $D_{16}$ satisfy the same relations as $s$
+  and $r$ do in $D_8$, the map $\varphi\colon D_8\to H$ given by
+  \begin{equation*}
+    \varphi(r) = r^2
+    \quad\text{and}\quad
+    \varphi(s) = s
+  \end{equation*}
+  extends to a surjective homomorphism. And it is easy to see that $H$
+  consists of only eight elements, namely elements of the form
+  $s^ir^{2j}$ where $i\in\{0,1\}$ and $j\in\{0,1,2,3\}$. Therefore
+  $\varphi$ must be a bijection, and we have $\gen{s,r^2}\cong D_8$.
+
+  Now consider the subgroup $K = \gen{sr,r^2}$. We have
+  \begin{equation*}
+    (r^2)^4 = (sr)^2 = 1
+    \quad\text{and}\quad
+    (r^2)(sr) = sr^7 = (sr)(r^2)^{-1}.
+  \end{equation*}
+  So the map $\psi\colon D_8\to K$ given by
+  \begin{equation*}
+    \varphi(r) = r^2
+    \quad\text{and}\quad
+    \varphi(s) = sr
+  \end{equation*}
+  extends to a surjective homomorphism, which must be injective as
+  well since $K$ has $8$ elements. Therefore $\gen{sr,r^2}\cong D_8$.
+\end{solution}
