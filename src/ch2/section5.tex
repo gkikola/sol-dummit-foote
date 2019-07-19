@@ -421,6 +421,7 @@ $\gen{a,b^2}\cong V_4$, $\gen{b}\cong Z_4$ and $\gen{ab}\cong Z_4$ and
 every proper subgroup is contained in one of these three. Draw the
 lattice of all subgroups of $A$ giving each subgroup in terms of at
 most two generators.
+\label{exercise:lattice:Z2-times-Z4}
 \begin{solution}
   Writing out the elements of $A$ (in terms of $a$ and $b$) gives
   \begin{equation*}
@@ -484,4 +485,62 @@ subgroup in terms of at most two generators.
       -- (x_y4) -- (xy4) -- (1);
     \end{tikzpicture}
   \end{center}
+\end{solution}
+
+\Exercise{14} Let $M$ be the group of order $16$ with the following
+presentation:
+\begin{equation*}
+  \gen{u,v \mid u^2 = v^8 = 1, \; vu = uv^5}
+\end{equation*}
+(sometimes called the {\em modular} group of order $16$). It has three
+subgroups of order $8$: $\gen{u,v^2}$, $\gen{v}$ and $\gen{uv}$ and
+every proper subgroup is contained in one of these three. Prove that
+$\gen{u,v^2}\cong Z_2\times Z_4$, $\gen{v}\cong Z_8$ and
+$\gen{uv}\cong Z_8$. Show that the lattice of subgroups of $M$ is the
+same as the lattice of subgroups of $Z_2\times Z_8$ but that these two
+groups are not isomorphic.
+\begin{solution}
+  We will use the presentation for $Z_2\times Z_4$ given in
+  Exercise~\ref{exercise:lattice:Z2-times-Z4}. Since
+  $u^2 = (v^2)^4 = 1$ and $u(v^2) = (v^2)u$, it follows that the
+  mapping $\varphi\colon Z_2\times Z_4\to\gen{u,v^2}$ defined by
+  \begin{equation*}
+    \varphi(a) = u
+    \quad\text{and}\quad
+    \varphi(b) = v^2
+  \end{equation*}
+  extends to a homomorphism. $\varphi$ is surjective by construction
+  and hence bijective since we know that both groups $Z_2\times Z_4$
+  and $\gen{u,v^2}$ have order $8$. Therefore
+  $\gen{u,v^2}\cong Z_2\times Z_4$.
+
+  Since we know $\ord{\gen{v}} = \ord{\gen{uv}} = 8$, we automatically
+  know that both subgroups are isomorphic to $Z_8$, since all cyclic
+  groups of the same order are isomorphic. We see that the subgroups
+  of $M$ share the same relationships as the subgroups of
+  $Z_2\times Z_8$, so they have the same lattice, with $x$ replaced by
+  $u$ and $y$ replaced by $v$:
+  \begin{center}
+    \begin{tikzpicture}
+      \node (G) at (2, 2) {$M$};
+      \node (xy) at (2, 0) {$\gen{uv}$};
+      \node (y) at (4, 0) {$\gen{v}$};
+      \node (x_y2) at (0,0) {$\gen{u,v^2}$};
+      \node (y2) at (2, -2) {$\gen{v^2}$};
+      \node (x_y4) at (-2, -2) {$\gen{u, v^4}$};
+      \node (xy2) at (0, -2) {$\gen{uv^2}$};
+      \node (y4) at (0, -4) {$\gen{v^4}$};
+      \node (x) at (-4, -4) {$\gen{u}$};
+      \node (xy4) at (-2, -4) {$\gen{uv^4}$};
+      \node (1) at (-2, -6) {$1$};
+      \draw (G) -- (x_y2) -- (x_y4) -- (x) -- (1);
+      \draw (G) -- (y) -- (y2) -- (y4) -- (1);
+      \draw (G) -- (xy) -- (y2) -- (x_y2) -- (xy2) -- (y4)
+      -- (x_y4) -- (xy4) -- (1);
+    \end{tikzpicture}
+  \end{center}
+
+  Finally, we note that, despite having the same lattice, $M$ is not
+  isomorphic to $Z_2\times Z_8$ since the latter is abelian and $M$ is
+  not ($uv \neq vu$).
 \end{solution}
