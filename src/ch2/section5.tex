@@ -655,3 +655,71 @@ element of $QD_{16}$.
     = C_{QD_{16}}(\tau\sigma^7) &= \gen{\tau\sigma^3}. \qedhere
   \end{align*}
 \end{solution}
+
+\Exercise{19} Use the lattice to help find $N_{D_{16}}(\gen{s,r^4})$.
+\begin{solution}
+  Let $H = \gen{s,r^4}$. From the lattice, we see that the normalizer
+  of $H$ must be either $H$ itself, or $\gen{s,r^2}$, or
+  $D_{16}$. Since
+  \begin{align*}
+    r^2(r^4)(r^2)^{-1} = r^2r^4r^6 &= r^4\in H, \\
+    r^2s(r^2)^{-1} = r^2sr^6 &= sr^4\in H, \\
+    \intertext{and}
+    r^2(sr^4)(r^2)^{-1} = r^2sr^2 &= s\in H,
+  \end{align*}
+  we see that $r^2H(r^2)^{-1} = H$ so $\gen{s,r^2}\leq
+  N_{D_{16}}(H)$. However, since
+  \begin{equation*}
+    rsr^7 = sr^7r^7 = sr^6 \not\in H,
+  \end{equation*}
+  we see that $rHr^{-1}\neq H$ so the normalizer of $H$ cannot be all
+  of $D_{16}$. Therefore $N_{D_{16}}(H) = \gen{s,r^2}$.
+\end{solution}
+
+\Exercise{20} Use the lattice of subgroups of $QD_{16}$ to help find
+the normalizers
+\begin{enumerate}
+\item $N_{QD_{16}}(\gen{\tau\sigma})$
+  \begin{solution}
+    Let $H = \gen{\tau\sigma}$. From the lattice
+    (Exercise~\ref{exercise:lattice:QD16}) we see that there are only
+    three possibilities for the normalizer of $H$: it is either $H$
+    itself, or $\gen{\sigma^2,\tau\sigma}$ or else all of
+    $QD_{16}$. Since $H = \{1,\tau\sigma,\sigma^4,\tau\sigma^5\}$, we
+    can compute the elements of $\sigma^2H(\sigma^2)^{-1}$ as follows:
+    \begin{align*}
+      \sigma^2(\tau\sigma)\sigma^6 = \tau\sigma^6\sigma^7
+      &= \tau\sigma^5, \\
+      \sigma^2\sigma^4\sigma^6 &= \sigma^4, \\
+      \sigma^2(\tau\sigma^5)\sigma^6
+      = \sigma^2\tau\sigma^3 &= \tau\sigma.
+    \end{align*}
+    So $\sigma^2H(\sigma^2)^{-1} = H$ and therefore $\sigma^2$ is in
+    the normalizer of $H$. But $\sigma$ is not in the normalizer,
+    since
+    \begin{equation*}
+      \sigma(\tau\sigma)\sigma^7 = \sigma\tau = \tau\sigma^3\not\in H.
+    \end{equation*}
+    Thus the only possibility is
+    $N_{QD_{16}}(H) = \gen{\sigma^2,\tau\sigma}$.
+  \end{solution}
+\item $N_{QD_{16}}(\gen{\tau, \sigma^4})$
+  \begin{solution}
+    Let $K = \gen{\tau, \sigma^4}$. Again there are three
+    possibilities. $K = \{1, \tau, \sigma^4, \tau\sigma^4\}$, so as
+    before, we compute the elements of $\sigma^2K(\sigma^2)^{-1}$:
+    \begin{align*}
+      \sigma^2\tau\sigma^6 = \tau\sigma^{12} &= \tau\sigma^4, \\
+      \sigma^2\sigma^4\sigma^6 &= \sigma^4, \\
+      \sigma^2(\tau\sigma^4)\sigma^6 = \sigma^2\tau\sigma^2
+      &= \tau.
+    \end{align*}
+    So $\sigma^2K(\sigma^2)^{-1} = K$ and we must have
+    $\gen{\tau, \sigma^2}\leq N_{QD_{16}}(K)$. And since
+    \begin{equation*}
+      \sigma\tau\sigma^7 = \tau\sigma^2\not\in K,
+    \end{equation*}
+    we see that the normalizer cannot be all of $QD_{16}$. Therefore
+    $N_{QD_{16}}(K) = \gen{\tau,\sigma^2}$.
+  \end{solution}
+\end{enumerate}
