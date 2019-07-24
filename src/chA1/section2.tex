@@ -1,0 +1,29 @@
+\section{Partially Ordered Sets and Zorn's Lemma}
+
+\Exercise1 Let $A$ be the collection of all finite subsets of $\R$
+ordered by inclusion. Discuss the existence (or nonexistence) of upper
+bounds, minimal and maximal elements (where minimal elements are
+defined analogously to maximal elements). Explain why this is not a
+well ordering.
+\begin{solution}
+  Subsets of $A$ may or may not have upper bounds. For example, take
+  the set of all singleton sets containing integers,
+  \begin{equation*}
+    X = \{\{1\}, \{2\}, \{3\}, \dots\}.
+  \end{equation*}
+  $X$ is a subset of $A$ but it does not have an upper bound since
+  $\Z^+\not\in A$. Any finite subset of $A$, however, will have an
+  upper bound, namely the union of the sets in the subset. So for
+  example $\{\emptyset, \{1,2\}, \{1,3,5\}\}\subset A$ has the upper
+  bound $\{1,2,3,5\}\in A$.
+
+  $A$ does not have any maximal elements, since given any $Y$ in $A$,
+  we can simply append to the set $Y$ any real number not already in
+  $Y$, in order to obtain a new finite subset of $\R$ containing
+  $Y$. $A$ does have a minimal element, however, namely the empty set.
+
+  Set inclusion ($\subseteq$) is not a well ordering on $A$ since it
+  is not a total ordering. That is, there exist elements $X$ and $Y$
+  of $A$ such that $X\not\subseteq Y$ and $Y\not\subseteq X$ (for an
+  example, take $X = \{0\}$ and $Y = \{1\}$).
+\end{solution}
