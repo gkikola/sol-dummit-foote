@@ -45,3 +45,40 @@ ordering.
   take $Y$ to be the set of odd integers. Then $X\not\subseteq Y$ and
   $Y\not\subseteq X$.
 \end{solution}
+
+\Exercise3 Show that the following partial orderings on the given sets
+are not well orderings:
+\begin{enumerate}
+\item $\R$ under the usual relation $\leq$.
+\item $\R^+$ under the usual relation $\leq$.
+\item $\R^+\cup\{0\}$ under the usual relation $\leq$.
+\item $\Z$ under the usual relation $\leq$.
+\end{enumerate}
+\begin{proof}
+  In each case, $\leq$ is a total ordering. However, it is not a well
+  ordering since in each case there exist nonempty subsets which have
+  no smallest element.
+
+  For $\R$, $\R^+$, and $\R^+\cup\{0\}$ the interval $(0,1)$ is a
+  subset of each but has no smallest member. For $\Z$, the entire set
+  $\Z$ itself is a subset with no smallest member.
+\end{proof}
+
+\Exercise4 Show that $\Z^+$ is well ordered under the usual relation
+$\leq$.
+\begin{proof}
+  Given any two positive integers $m$ and $n$, we must have either
+  $m\leq n$, $n\leq m$, or both (if $m = n$). Therefore $\leq$ is a
+  total ordering.
+
+  Let $A$ be an arbitrary nonempty subset of $\Z^+$. Pick an integer
+  $a\in A$. Then the set $\{1,2,\dots,a\}\cap A$ is nonempty and
+  finite. Being finite, it must have a smallest member $b$. If
+  $c\in A$ is such that $c\leq b$, then certainly $c\leq a$ (by
+  transitivity), so $c\in\{1,2,\dots,a\}\cap A$. Since $b$ is the
+  smallest member of this set, we must have $c = b$.
+
+  We have shown that $\leq$ is a total ordering such that any nonempty
+  subset of $\Z^+$ has a smallest member. Therefore $\Z^+$ is well
+  ordered under the relation $\leq$.
+\end{proof}
