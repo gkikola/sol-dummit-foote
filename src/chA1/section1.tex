@@ -1,0 +1,37 @@
+\appendix
+\chapter{Cartesian Products and Zorn's Lemma}
+
+\section{Cartesian Products}
+
+\Exercise1 Let $I$ and $J$ be two indexing sets and let $A$ be an
+arbitrary set. For any function $\varphi\colon J\to I$ define
+\begin{equation*}
+  \varphi^*\colon\prod_{i\in I}A\to\prod_{j\in J}A
+  \quad\text{by}\quad
+  \varphi^*(f) = f\circ\varphi
+  \quad\text{for all choice functions $f\in\prod_{i\in I}A$}.
+\end{equation*}
+\begin{enumerate}
+\item Let $I = \{1, 2\}$, let $J = \{1, 2, 3\}$ and let
+  $\varphi\colon J\to I$ be defined by $\varphi(1) = 2$,
+  $\varphi(2) = 2$, and $\varphi(3) = 1$. Describe explicitly how an
+  ordered pair in $A\times A$ maps to a $3$-tuple in
+  $A\times A\times A$ under this $\varphi^*$.
+  \begin{solution}
+    Suppose $f$ corresponds to the ordered pair $(a,b)$ in
+    $A^2$. Since $\varphi$ sends indices $1$ and $2$ in $J$ to index
+    $2$ in $I$ and index $3$ in $J$ to index $1$ in $I$, we see that
+    $\varphi^*(f)$ corresponds to the $3$-tuple $(b,b,a)$ in $A^3$.
+  \end{solution}
+\item Let $I = J = \{1,2,\dots,n\}$ and assume $\varphi$ is a
+  permutation of $I$. Describe in terms of $n$-tuples in
+  $A\times A\times\cdots\times A$ the function $\varphi^*$.
+  \begin{solution}
+    $\varphi^*$ sends the $n$-tuple $(a_1,a_2,\dots,a_n)$ in $A^n$ to
+    the $n$-tuple
+    \begin{equation*}
+      (a_{\varphi(1)},a_{\varphi(2)},\dots,a_{\varphi(n)})
+    \end{equation*}
+    in $A^n$.
+  \end{solution}
+\end{enumerate}
