@@ -27,3 +27,21 @@ well ordering.
   of $A$ such that $X\not\subseteq Y$ and $Y\not\subseteq X$ (for an
   example, take $X = \{0\}$ and $Y = \{1\}$).
 \end{solution}
+
+\Exercise2 Let $A$ be the collection of all infinite subsets of $\R$
+ordered by inclusion. Discuss the existence (or nonexistence) of upper
+bounds, minimal and maximal elements. Explain why this is not a well
+ordering.
+\begin{solution}
+  In this case, every subset of $A$ has an upper bound since the union
+  of the sets in the subset is a member of $A$. $A$ has one maximal
+  element, $\R$ itself, but no minimal elements since, given any set
+  $X\in A$, we may pick some element $x$ in $X$, so that $X - \{x\}$
+  is an infinite subset of $\R$ which is contained in $X$.
+
+  This ordering is not a well ordering for the same reason as in the
+  previous exercise: set inclusion $\subseteq$ is not a total ordering
+  on $A$. For example, take $X$ to be the set of even integers and
+  take $Y$ to be the set of odd integers. Then $X\not\subseteq Y$ and
+  $Y\not\subseteq X$.
+\end{solution}
