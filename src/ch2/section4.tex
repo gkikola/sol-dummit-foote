@@ -412,6 +412,59 @@ $M$ are $M$ and $G$.
   \end{proof}
 \end{enumerate}
 
+\Exercise{17} This is an exercise involving Zorn's Lemma to prove that
+every nontrivial finitely generated group possesses maximal
+subgroups. Let $G$ be a finitely generated group, say
+$G = \gen{g_1,g_2,\dots,g_n}$, and let $\mathcal{S}$ be the set of all
+proper subgroups of $G$. Then $\mathcal{S}$ is partially ordered by
+inclusion. Let $\mathcal{C}$ be a chain in $\mathcal{S}$.
+\begin{enumerate}
+\item Prove that the union, $H$, of all the subgroups in $\mathcal{C}$
+  is a subgroup of $G$.
+  \begin{proof}
+    We assume that $\mathcal{C}$ is nonempty. Set
+    \begin{equation*}
+      H = \bigcup_{K\in\mathcal{C}}K.
+    \end{equation*}
+    Since a subgroup cannot be empty, $H$ is nonempty. Suppose $a$ and
+    $b$ are any members of $H$. Then $a\in K_1$ and $b\in K_2$ for
+    some $K_1,K_2\in\mathcal{C}$. Since $\mathcal{C}$ is a chain, we
+    must have either $K_1\leq K_2$ or $K_2\leq K_1$ (or both). Without
+    loss of generality, we may assume $K_1\leq K_2$. Then $a$ and $b$
+    both belong to $K_2$. $K_2$ is a subgroup, so $ab^{-1}$ also
+    belongs to $K_2$ and hence to $H$. This shows that $H$ is a
+    subgroup of $G$.
+  \end{proof}
+\item Prove that $H$ is a {\em proper} subgroup.
+  \begin{proof}
+    Assume the contrary, so that in particular $H$ contains each
+    generator $g_1$, $\dots$, $g_n$ of $G$. Then there are subgroups
+    $K_1$, $K_2$, $\dots$, $K_n$ (not necessarily distinct) such that
+    $g_i\in K_i$ for each $i$ with $1\leq i\leq n$. Since
+    $\mathcal{C}$ is a chain, we can order the $K_i$ so that
+    \begin{equation*}
+      K_1\leq K_2\leq K_3\leq\cdots\leq K_n.
+    \end{equation*}
+    Then every generator of $G$ belongs to the subgroup $K_n$. This
+    shows that {\em every} element of $G$ must belong to $K_n$, so
+    that $K_n$ is not proper. But every member of $\mathcal{C}$ is a
+    proper subgroup, so this gives a contradiction.
+  \end{proof}
+\item Use Zorn's Lemma to show that $\mathcal{S}$ has a maximal
+  element (which is, by definition, a maximal subgroup).
+  \begin{proof}
+    Since $G$ is nontrivial, the set $\mathcal{S}$ is nonempty because
+    the trivial subgroup is a proper subgroup. The set $H$ constructed
+    above is also a proper subgroup and so belongs to
+    $\mathcal{S}$. And each $K_i$ in $\mathcal{C}$ is a subgroup of
+    $H$, so $H$ is an upper bound for $\mathcal{C}$. Since
+    $\mathcal{C}$ was chosen arbitrarily, we have shown that every
+    chain in the nonempty partially ordered set $\mathcal{S}$ has an
+    upper bound. By Zorn's Lemma, $\mathcal{S}$ must have a maximal
+    element.
+  \end{proof}
+\end{enumerate}
+
 \Exercise{19} A nontrivial abelian group $A$ (written
 multiplicatively) is called {\em divisible} if for each element
 $a\in A$ and each nonzero integer $k$ there is an element $x\in A$
