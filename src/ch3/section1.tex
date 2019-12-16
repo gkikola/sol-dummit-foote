@@ -165,3 +165,49 @@ fibers of $\pi$ geometrically.
   0$. And for $a\in\R$, the fiber over $a$ is the line with equation
   $x + y = a$, which is just a translate of the kernel.
 \end{solution}
+
+\Exercise8 Let $\varphi\colon\R^\times\to\R^\times$ be the map sending
+$x$ to the absolute value of $x$. Prove that $\varphi$ is a
+homomorphism and find the image of $\varphi$. Describe the kernel and
+the fibers of $\varphi$.
+\begin{solution}
+  For any $x,y\in\R^\times$ we have
+  \begin{equation*}
+    \varphi(xy) = \abs{xy} = \abs{x}\abs{y} = \varphi(x)\varphi(y)
+  \end{equation*}
+  and $\varphi$ is a homomorphism. Its image is $\R^+$, the positive
+  reals.
+
+  The kernel of $\varphi$ is the set $\{-1,1\}$, since
+  $\varphi(\pm1) = 1$ and no other real number has an absolute value
+  of $1$. Likewise, the fiber over the real number $a$ is $\{-a, a\}$.
+\end{solution}
+
+\Exercise9 Define $\varphi\colon\C^\times\to\R^\times$ by
+$\varphi(a + bi) = a^2 + b^2$. Prove that $\varphi$ is a homomorphism
+and find the image of $\varphi$. Describe the kernel and the fibers of
+$\varphi$ geometrically (as subsets of the plane).
+\begin{solution}
+  Let $a + bi$ and $c + di$ be any members of $\C^\times$. Then
+  \begin{align*}
+    \varphi((a + bi)(c + di))
+    &= \varphi((ac - bd) + (ad + bc)i) \\
+    &= (ac - bd)^2 + (ad + bc)^2 \\
+    &= a^2c^2 - 2abcd + b^2d^2 + a^2d^2 + 2abcd + b^2c^2 \\
+    &= a^2(c^2 + d^2) + b^2(c^2 + d^2) \\
+    &= (a^2 + b^2)(c^2 + d^2) \\
+    &= \varphi(a + bi)\varphi(c + di),
+  \end{align*}
+  and $\varphi$ is a homomorphism. Let $a+bi\in\C^\times$. Since $a$
+  and $b$ cannot both be zero, $a^2 + b^2 > 0$. So
+  $\im\varphi\subseteq\R^+$. But for any $a\in\R^+$, we have
+  $\varphi(\sqrt{a} + 0i) = a$ and we see that $\im\varphi = \R^+$.
+
+  The kernel of $\varphi$ is the set
+  \begin{equation*}
+    \ker\varphi = \{a + bi\in\C^\times \mid a^2 + b^2 = 1\}.
+  \end{equation*}
+  This is a circle of radius 1 centered at the origin in the complex
+  plane. For $a\in\R^+$, the fiber over $a$ is the circle of radius
+  $\sqrt{a}$.
+\end{solution}
