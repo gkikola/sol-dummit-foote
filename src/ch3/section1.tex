@@ -58,3 +58,22 @@ such that $uv = w$.
   \end{align*}
   So $v\in Y$ as required.
 \end{proof}
+
+\Exercise3 Let $A$ be an abelian group and let $B$ be a subgroup of
+$A$. Prove that $A/B$ is abelian. Give an example of a non-abelian
+group $G$ containing a proper normal subgroup $N$ such that $G/N$ is
+abelian.
+\begin{solution}
+  Let $a_1B, a_2B \in A/B$, where $a_1,a_2\in A$. Since $A$ is
+  abelian, we have
+  \begin{equation*}
+    a_1Ba_2B = (a_1a_2)B = (a_2a_1)B = a_2Ba_1B.
+  \end{equation*}
+  Therefore $A/B$ is abelian.
+
+  For the second part of the problem, let $G$ be the non-abelian
+  dihedral group $D_8$ and let $N$ the proper normal subgroup
+  $\gen{r^2}$. In the text it was shown that $G/N \cong V_4$, the
+  Klein four-group, which is abelian. Therefore $G/N$ is abelian even
+  though $G$ is not.
+\end{solution}
