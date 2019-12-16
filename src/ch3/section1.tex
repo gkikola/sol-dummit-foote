@@ -252,3 +252,150 @@ $\varphi$).
   \end{align*}
   and $\ker\varphi = \varphi^{-1}(\bar0) = \{\bar0, \bar4\}$.
 \end{solution}
+
+\Exercise{11} Let $F$ be a field and let
+\begin{equation*}
+  G = \left\{
+    \begin{pmatrix}
+      a & b \\
+      0 & c
+    \end{pmatrix}
+    \;\;\middle|\;\;
+    a,b,c\in F,\;\; ac\neq0
+  \right\}
+  \leq GL_2(F).
+\end{equation*}
+\begin{enumerate}
+\item Prove that the map
+  \begin{equation*}
+    \varphi\colon
+    \begin{pmatrix}
+      a & b \\ 0 & c
+    \end{pmatrix}
+    \mapsto a
+  \end{equation*}
+  is a surjective homomorphism from $G$ onto $F^\times$. Describe the
+  fibers and kernel of $\varphi$.
+  \begin{solution}
+    First, for any $a\in F^\times$, we have
+    \begin{equation*}
+      \varphi\left(
+      \begin{pmatrix}
+        a & 1 \\ 0 & 1
+      \end{pmatrix}
+      \right) = a,
+    \end{equation*}
+    so $\varphi$ is surjective. And for any $a,b,c,d,e,f\in F$ with
+    $ac\neq0$ and $df\neq0$, we have
+    \begin{align*}
+      \varphi\left(\begin{pmatrix} a & b \\ 0 & c \end{pmatrix}
+              \begin{pmatrix} d & e \\ 0 & f \end{pmatrix}\right)
+      &= \varphi\left(\begin{pmatrix} ad & ae + bf \\
+          0 & cf \end{pmatrix}\right) \\
+      &= ad \\
+      &= \varphi\left(\begin{pmatrix} a & b \\ 0 & c \end{pmatrix}\right)
+         \varphi\left(\begin{pmatrix} d & e \\ 0 & f \end{pmatrix}\right),
+    \end{align*}
+    so $\varphi$ is a homomorphism.
+
+    For each $a\in F^\times$, the fiber over $a$ is given by
+    \begin{equation*}
+      \varphi^{-1}(a) =
+      \left\{
+        \begin{pmatrix}
+          a & x \\
+          0 & y
+        \end{pmatrix}
+        \;\;\middle|\;\;
+        x,y\in F,\;\;y\neq0
+      \right\},
+    \end{equation*}
+    with the kernel being the fiber above $1$.
+  \end{solution}
+
+\item Prove that the map
+  \begin{equation*}
+    \psi\colon
+    \begin{pmatrix}
+      a & b \\ 0 & c
+    \end{pmatrix}
+    \mapsto (a,c)
+  \end{equation*}
+  is a surjective homomorphism from $G$ onto
+  $F^\times\times F^\times$. Describe the fibers and kernel of $\psi$.
+  \begin{solution}
+    The proof is entirely similar to the proof for $\varphi$ in the
+    previous part of the problem and is omitted here. The fiber over
+    $(a,c)$ is
+    \begin{equation*}
+      \psi^{-1}((a,c)) =
+      \left\{
+        \begin{pmatrix}
+          a & x \\
+          0 & c
+        \end{pmatrix}
+        \;\;\middle|\;\;
+        x\in F
+      \right\},
+    \end{equation*}
+    with $\ker\psi = \psi^{-1}((1,1))$.
+  \end{solution}
+
+\item Let
+  \begin{equation*}
+    H = \left\{
+      \begin{pmatrix}
+        1 & b \\ 0 & 1
+      \end{pmatrix}
+      \;\middle|\;
+      b\in F
+    \right\}.
+  \end{equation*}
+  Prove that $H$ is isomorphic to the additive group $F$.
+  \begin{proof}
+    Define $\rho\colon H\to F$ by
+    \begin{equation*}
+      \rho\left(
+        \begin{pmatrix}
+          1 & b \\
+          0 & 1
+        \end{pmatrix}
+      \right) = b.
+    \end{equation*}
+    Then $\rho$ is a bijection since it has the obvious two-sided
+    inverse $\rho^{-1}\colon F\to H$ given by
+    \begin{equation*}
+      \rho^{-1}(b) =
+      \begin{pmatrix}
+        1 & b \\
+        0 & 1
+      \end{pmatrix},
+    \end{equation*}
+    and it is a homomorphism since
+    \begin{align*}
+      \rho\left(
+      \begin{pmatrix}
+        1 & b_1 \\ 0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & b_2 \\ 0 & 1
+      \end{pmatrix}
+      \right)
+      &= \rho\left(
+        \begin{pmatrix}
+          1 & b_1 + b_2 \\ 0 & 1
+        \end{pmatrix}
+      \right) \\
+      &= b_1 + b_2 \\
+      &= \rho\left(
+      \begin{pmatrix}
+        1 & b_1 \\ 0 & 1
+      \end{pmatrix}\right) +
+      \rho\left(\begin{pmatrix}
+        1 & b_2 \\ 0 & 1
+      \end{pmatrix}
+      \right).
+    \end{align*}
+    Therefore $\rho$ is an isomorphism and $H\cong F$.
+  \end{proof}
+\end{enumerate}
