@@ -37,3 +37,24 @@ $\ker\varphi\trianglelefteq G$.
   shows that $\ker\varphi = \varphi^{-1}(E) \trianglelefteq G$ since
   the trivial subgroup is always normal.
 \end{proof}
+
+\Exercise2 Let $\varphi\colon G\to H$ be a homomorphism of groups with
+kernel $K$ and let $a,b\in\varphi(G)$. Let $X\in G/K$ be the fiber
+above $a$ and let $Y$ be the fiber above $b$, i.e.,
+$X = \varphi^{-1}(a)$, $Y = \varphi^{-1}(b)$. Fix an element $u$ of
+$X$ (so $\varphi(u) = a$). Prove that if $XY = Z$ in the quotient
+group $G/K$ and $w$ is any member of $Z$, then there is some $v\in Y$
+such that $uv = w$.
+\begin{proof}
+  Let $v = u^{-1}w$. We want to show that $v\in Y$, or
+  $\varphi(v) = b$. Since $\varphi$ is a homomorphism and since
+  $Z = \varphi^{-1}(ab)$, we have
+  \begin{align*}
+    \varphi(v) &= \varphi(u^{-1}w) \\
+               &= \varphi(u)^{-1}\varphi(w) \\
+               &= a^{-1}(ab) \\
+               &= (a^{-1}a)b \\
+               &= b.
+  \end{align*}
+  So $v\in Y$ as required.
+\end{proof}
