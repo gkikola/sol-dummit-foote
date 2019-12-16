@@ -145,3 +145,23 @@ fibers of $\varphi$ and prove that $\varphi$ is a homomorphism.
   \end{equation*}
   so $\varphi$ is a homomorphism.
 \end{solution}
+
+\Exercise7 Define $\pi\colon\R^2\to\R$ by $\pi((x,y)) = x + y$. Prove
+that $\pi$ is a surjective homomorphism and describe the kernel and
+fibers of $\pi$ geometrically.
+\begin{solution}
+  For any $(x_1,y_1), (x_2,y_2)\in\R^2$, we have
+  \begin{align*}
+    \pi((x_1,y_1) + (x_2,y_2))
+    &= \pi((x_1 + x_2, y_1 + y_2)) \\
+    &= (x_1 + x_2) + (y_1 + y_2) \\
+    &= (x_1 + y_1) + (x_2 + y_2) \\
+    &= \pi((x_1,y_1)) + \pi((x_2,y_2)),
+  \end{align*}
+  so $\pi$ is a homomorphism. And for any $x\in\R$, we have
+  $\pi((x, 0)) = x + 0 = x$, so $\pi$ is also surjective.
+
+  $\ker\pi$ is simply the diagonal line whose equation is $x + y =
+  0$. And for $a\in\R$, the fiber over $a$ is the line with equation
+  $x + y = a$, which is just a translate of the kernel.
+\end{solution}
