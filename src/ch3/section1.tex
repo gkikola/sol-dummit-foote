@@ -128,3 +128,20 @@ $gN$ in $G/N$ may be strictly smaller than the order of $g$ in $G$.
   $N = \gen{x^2} = \{1, x^2\}$. Now the element $x^2$ has order $2$ in
   $G$, but $x^2N = 1N$ has order $1$ in $G/N$.
 \end{solution}
+
+\Exercise6 Define $\varphi\colon\R^\times\to\{\pm1\}$ by letting
+$\varphi(x)$ be $x$ divided by the absolute value of $x$. Describe the
+fibers of $\varphi$ and prove that $\varphi$ is a homomorphism.
+\begin{solution}
+  The fiber above $1$ is the positive reals, and the fiber above $-1$
+  is the negative reals.
+
+  Let $x,y\in\R^\times$ be arbitrary. Then
+  \begin{equation*}
+    \varphi(xy)
+    = \frac{xy}{\abs{xy}}
+    = \frac{x}{\abs{x}}\cdot\frac{y}{\abs{y}}
+    = \varphi(x)\varphi(y),
+  \end{equation*}
+  so $\varphi$ is a homomorphism.
+\end{solution}
