@@ -211,3 +211,44 @@ $\varphi$ geometrically (as subsets of the plane).
   plane. For $a\in\R^+$, the fiber over $a$ is the circle of radius
   $\sqrt{a}$.
 \end{solution}
+
+\Exercise{10} Let $\varphi\colon\Z/8\Z\to\Z/4\Z$ by
+$\varphi(\bar a) = \bar a$. Show that this is a well defined,
+surjective homomorphism and describe its fibers and kernel explicitly
+(showing that $\varphi$ is well defined involves the fact that
+$\bar a$ has a different meaning in the domain and range of
+$\varphi$).
+\begin{solution}
+  To show that $\varphi$ is well defined we need to show that any
+  choice of representative for a particular congruence class in
+  $\Z/8\Z$ will produce the same congruence class in $\Z/4\Z$ under
+  $\varphi$. Suppose then that $\bar a = \bar b$, where
+  $\bar a,\bar b\in\Z/8\Z$. Then for some integer $k$, $a = b + 8k$
+  and we have
+  \begin{align*}
+    \varphi(\bar a)
+    &= \varphi(\overline{b + 8k}) \\
+    &= \overline{b + 8k} \\
+    &= \overline{b + 4(2k)} \\
+    &= \bar b \\
+    &= \varphi(\bar b)
+  \end{align*}
+  and $\varphi$ is well defined. It is also a homomorphism since
+  \begin{align*}
+    \varphi(\bar a + \bar b)
+    &= \varphi(\overline{a + b}) \\
+    &= \overline{a + b} \\
+    &= \bar a + \bar b \\
+    &= \varphi(\bar a) + \varphi(\bar b).
+  \end{align*}
+  And it is clearly surjective.
+
+  The fibers of $\varphi$ are
+  \begin{align*}
+    \varphi^{-1}(\bar0) &= \{\bar0, \bar4\}, \\
+    \varphi^{-1}(\bar1) &= \{\bar1, \bar5\}, \\
+    \varphi^{-1}(\bar2) &= \{\bar2, \bar6\}, \\
+    \varphi^{-1}(\bar3) &= \{\bar3, \bar7\},
+  \end{align*}
+  and $\ker\varphi = \varphi^{-1}(\bar0) = \{\bar0, \bar4\}$.
+\end{solution}
