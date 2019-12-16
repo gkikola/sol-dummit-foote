@@ -100,3 +100,31 @@ $(gN)^\alpha = g^\alpha N$ for all $\alpha\in\Z$.
   By induction, we conclude that $(gN)^\alpha = g^\alpha N$ for all
   $\alpha\geq1$, so the proof is complete.
 \end{proof}
+
+\Exercise5 Use the preceding exercise to prove that the order of the
+element $gN$ in $G/N$ is $n$, where $n$ is the smallest positive
+integer such that $g^n\in N$ (and $gN$ has infinite order if no such
+positive integer exists). Give an example to show that the order of
+$gN$ in $G/N$ may be strictly smaller than the order of $g$ in $G$.
+\begin{solution}
+  Fix an element $gN$ in $G/N$. First, if possible, let $n$ be the
+  smallest positive integer such that $g^n\in N$. Then $g^nN =
+  1N$. So, by the previous exercise, we know that $(gN)^n = 1N$. This
+  shows that $\ord{gN}\leq n$. On the other hand, if $m$ is any
+  positive integer with $(gN)^m = 1N$ then, using the previous
+  exercise again, $g^mN = 1N$ so that $g^m\in N$. Since $n$ is the
+  smallest positive integer with $g^n\in N$, this shows that
+  $\ord{gN}\geq n$, which completes the proof for the case of finite
+  order.
+
+  Next, suppose that there is no such $n$. Then for each positive
+  integer $k$, $g^k\not\in N$. If $gN$ were to have finite order, say
+  $(gN)^m = 1N$, then the previous exercise would show that
+  $g^m\in N$, giving a contradiction. This shows that $gN$ has
+  infinite order, which completes the proof.
+
+  Lastly, for the example, consider $G = Z_4$, the cyclic group of
+  order $4$. Let $x$ be a generator for $G$ and take
+  $N = \gen{x^2} = \{1, x^2\}$. Now the element $x^2$ has order $2$ in
+  $G$, but $x^2N = 1N$ has order $1$ in $G/N$.
+\end{solution}
