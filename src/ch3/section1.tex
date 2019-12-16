@@ -77,3 +77,26 @@ abelian.
   Klein four-group, which is abelian. Therefore $G/N$ is abelian even
   though $G$ is not.
 \end{solution}
+
+\Exercise4 Prove that in the quotient group $G/N$,
+$(gN)^\alpha = g^\alpha N$ for all $\alpha\in\Z$.
+\begin{proof}
+  First, if $\alpha = 0$, then $(gN)^0 = 1N = g^0N$, so the statement
+  is true in this case. We also know by Proposition~5 that
+  $(gN)^{-1} = g^{-1}N$. So it will suffice to prove the statement
+  only for positive $\alpha$, which we will do by induction on
+  $\alpha$.
+
+  The case where $\alpha = 1$ is trivial. For the inductive step,
+  suppose that the statement $(gN)^k = g^kN$ holds for some particular
+  $k\geq1$. Then
+  \begin{align*}
+    (gN)^{k+1}
+    &= (gN)^kgN \\
+    &= g^kNgN \\
+    &= (g^kg)N \\
+    &= g^{k+1}N.
+  \end{align*}
+  By induction, we conclude that $(gN)^\alpha = g^\alpha N$ for all
+  $\alpha\geq1$, so the proof is complete.
+\end{proof}
