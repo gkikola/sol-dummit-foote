@@ -1,0 +1,39 @@
+\chapter{Quotient Groups and Homomorphisms}
+
+\section{Definitions and Examples}
+
+Let $G$ and $H$ be groups.
+
+\Exercise1 Let $\varphi\colon G\to H$ be a homomorphism and let $E$ be
+a subgroup of $H$. Prove that $\varphi^{-1}(E)\leq G$ (i.e., the
+preimage or pullback of a subgroup under a homomorphism is a
+subgroup). If $E\trianglelefteq H$ prove that
+$\varphi^{-1}(E)\trianglelefteq G$. Deduce that
+$\ker\varphi\trianglelefteq G$.
+\begin{proof}
+  Note that $\varphi(1) = 1\in E$ so $\varphi^{-1}(E)$ is
+  nonempty. Suppose $a, b \in \varphi^{-1}(E)$, so that
+  $\varphi(a) = x$ and $\varphi(b) = y$ for some $x,y\in E$. Then,
+  since $\varphi$ is a homomorphism, we have
+  \begin{equation*}
+    \varphi(ab^{-1}) = \varphi(a)\varphi(b)^{-1} = xy^{-1} \in E,
+  \end{equation*}
+  which shows that $ab^{-1}\in\varphi^{-1}(E)$. By the subgroup
+  criterion, this shows that $\varphi^{-1}(E)\leq G$.
+
+  Now suppose that $E$ is a normal subgroup of $H$. Let $g\in G$ and
+  $n\in\varphi^{-1}(E)$. Then $\varphi(g) = h$ for some $h\in H$ and
+  $\varphi(n) = x$ for some $x\in E$. We have
+  \begin{align*}
+    \varphi(gng^{-1})
+    &= \varphi(g)\varphi(n)\varphi(g)^{-1} \\
+    &= hxh^{-1}.
+  \end{align*}
+  But $hxh^{-1}\in E$ since $E\trianglelefteq H$, so
+  $gng^{-1}\in\varphi^{-1}(E)$. The choice of $g$ and $n$ were
+  arbitrary, so this shows that $\varphi^{-1}(E)\trianglelefteq G$.
+
+  Lastly, if we let $E$ be the trivial subgroup of $H$, then the above
+  shows that $\ker\varphi = \varphi^{-1}(E) \trianglelefteq G$ since
+  the trivial subgroup is always normal.
+\end{proof}
