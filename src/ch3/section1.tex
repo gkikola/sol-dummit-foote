@@ -535,3 +535,23 @@ replaced by the map $\varphi\colon r\mapsto e^{4\pi ir}$.
     torsion subgroups are also isomorphic. Hence $\Q/\Z\cong G$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{15} Prove that a quotient of a divisible abelian group by
+any proper subgroup is also divisible. Deduce that $\Q/\Z$ is
+divisible.
+\begin{proof}
+  Let $G$ be a divisible abelian group and let $H<G$ be a proper
+  subgroup. Let $g\in G$ be arbitrary and let $k\neq0$ be an
+  integer. Since $G$ is divisible, there is an element $x\in G$ such
+  that $x^k = g$. Then, by
+  Exercise~\ref{exercise:quotient-group:coset-exponent}, we know that
+  \begin{equation*}
+    (xH)^k = x^kH = gH,
+  \end{equation*}
+  which shows that $G/H$ is also divisible.
+
+  We have shown in
+  Exercise~\ref{exercise:generated-subgroups:divisible-group} that
+  $\Q$ is divisible. Since $\Z$ is a proper subgroup, we must have
+  that $\Q/\Z$ is divisible as well.
+\end{proof}
