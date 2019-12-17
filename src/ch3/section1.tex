@@ -555,3 +555,26 @@ divisible.
   $\Q$ is divisible. Since $\Z$ is a proper subgroup, we must have
   that $\Q/\Z$ is divisible as well.
 \end{proof}
+
+\Exercise{16} Let $G$ be a group, let $N$ be a normal subgroup of $G$
+and let $\overline{G} = G/N$. Prove that if $G = \gen{x,y}$ then
+$\overline{G} = \gen{\bar x,\bar y}$. Prove more generally that if
+$G = \gen{S}$ for any subset $S$ of $G$, then
+$\overline{G} = \gen{\overline{S}}$.
+\begin{proof}
+  We will prove the general case, since the arguments are
+  similar. Suppose $G = \gen{S}$. Then for any $g\in G$, we may write
+  \begin{equation*}
+    g = s_1s_2\cdots s_k,
+    \quad\text{where $s_i\in S$ for $1\leq i\leq k$}.
+  \end{equation*}
+  Let $\overline{S}$ be cosets of the form $sN$, where $s\in S$. Then
+  $gN$ may be written as
+  \begin{align*}
+    gN &= (s_1s_2\cdots s_k)N \\
+       &= (s_1N)(s_2N)\cdots(s_kN).
+  \end{align*}
+  This shows that every coset in $\overline{G}$ can be written as a
+  product of cosets in $\overline{S}$. Therefore
+  $\overline{G} = \gen{\overline{S}}$.
+\end{proof}
