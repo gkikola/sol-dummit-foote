@@ -399,3 +399,36 @@ $\varphi$).
     Therefore $\rho$ is an isomorphism and $H\cong F$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{12} Let $G$ be the additive group of real numbers, let $H$
+be the multiplicative group of complex numbers of absolute value $1$
+(the unit circle $S^1$ in the complex plane) and let
+$\varphi\colon G\to H$ be the homomorphism
+$\varphi\colon r\mapsto e^{2\pi ir}$. Draw the points on a real line
+which lie in the kernel of $\varphi$. Describe similarly the elements
+in the fibers of $\varphi$ above the points $-1$, $i$, and
+$e^{4\pi i/3}$ of $H$.
+\begin{solution}
+  The kernel of $\varphi$ is simply $\Z$, since $e^{2\pi ir} = 1$ if
+  and only if $r$ is an integer:
+  \begin{center}
+    \begin{tikzpicture}
+      \draw [->] (-5.6,0) -- (5.6,0);
+      \foreach \i in {-5,...,5}{
+        \draw [fill] (\i,0) circle [radius=1.5pt];
+        \node [below] at (\i,0) {$\i$};
+      }
+    \end{tikzpicture}
+  \end{center}
+
+  The specified fibers are
+  \begin{align*}
+    \varphi^{-1}(-1)
+    &= \frac12 + \Z = \left\{k + \frac12 \;\middle|\; k\in\Z\right\}, \\
+    \varphi^{-1}(i)
+    &= \frac14 + \Z = \left\{k + \frac14 \;\middle|\; k\in\Z\right\}, \\
+    \varphi^{-1}(e^{4\pi i/3})
+    &= \frac23 + \Z = \left\{k + \frac23 \;\middle|\; k\in\Z\right\}.
+      \qedhere
+  \end{align*}
+\end{solution}
