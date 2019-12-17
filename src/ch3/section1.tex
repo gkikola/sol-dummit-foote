@@ -78,7 +78,9 @@ abelian.
   though $G$ is not.
 \end{solution}
 
-\Exercise4 Prove that in the quotient group $G/N$,
+\Exercise4
+\label{exercise:quotient-group:coset-exponent}
+Prove that in the quotient group $G/N$,
 $(gN)^\alpha = g^\alpha N$ for all $\alpha\in\Z$.
 \begin{proof}
   First, if $\alpha = 0$, then $(gN)^0 = 1N = g^0N$, so the statement
@@ -400,7 +402,9 @@ $\varphi$).
   \end{proof}
 \end{enumerate}
 
-\Exercise{12} Let $G$ be the additive group of real numbers, let $H$
+\Exercise{12}
+\label{exercise:quotient-group:r-to-s1-kernel}
+Let $G$ be the additive group of real numbers, let $H$
 be the multiplicative group of complex numbers of absolute value $1$
 (the unit circle $S^1$ in the complex plane) and let
 $\varphi\colon G\to H$ be the homomorphism
@@ -464,3 +468,70 @@ replaced by the map $\varphi\colon r\mapsto e^{4\pi ir}$.
       \qedhere
   \end{align*}
 \end{solution}
+
+\Exercise{14} Consider the additive quotient group $\Q/\Z$.
+\begin{enumerate}
+\item Show that every coset of $\Z$ in $\Q$ contains exactly one
+  representative $q\in\Q$ in the range $0\leq q<1$.
+  \begin{proof}
+    Let $t\in\Q$ be arbitrary. Write $t = m/n$ in lowest terms. We may
+    use the division algorithm to find unique integers $q$ and $r$
+    with $0\leq r<n$ such that $m = nq + r$. Then $t = q + r/n$, where
+    $0\leq r/n<1$. Then we have
+    \begin{equation*}
+      t + \Z = \{t + k\mid k\in\Z\}
+      = \left\{\frac{r}n + (k+q) \;\middle|\; k\in\Z\right\}
+      = \frac{r}n + \Z.
+    \end{equation*}
+    From the uniqueness of $q$ and $r$, it follows that $r/n$ is the
+    only representative of $t + \Z$ that is in the range $[0,1)$.
+  \end{proof}
+\item Show that every element of $\Q/\Z$ has finite order but that
+  there are elements of arbitrarily large order.
+  \begin{proof}
+    Again, let $t\in\Q$ be arbitrary, with $t = m/n$ for integers $m$
+    and $n$, with $n>0$. Then
+    \begin{equation*}
+      n(t + \Z) = nt + \Z = m + \Z = 0 + \Z,
+    \end{equation*}
+    so $t + \Z$ has finite order (note that the first equality follows
+    from Exercise~\ref{exercise:quotient-group:coset-exponent}).
+
+    Given any positive integer $k$, the coset $1/k + \Z$ has order
+    $k$. Since $k$ can be made arbitrarily large, we see that $\Q/\Z$
+    contains elements of arbitrarily large order.
+  \end{proof}
+\item Show that $\Q/\Z$ is the torsion subgroup of $\R/\Z$.
+  \begin{proof}
+    We need to show that the only elements in $\R/\Z$ having finite
+    order belong to $\Q/\Z$. So suppose $r$ is an irrational
+    representative of a coset having finite order $n$. Then
+    \begin{equation*}
+      nr + \Z = n(r + \Z) = 0 + \Z.
+    \end{equation*}
+    This implies that $nr\in\Z$, say $m = nr$. Then $r = m/n$ and
+    $r\in\Q$, contradicting our choice of $r$. Therefore $r$ cannot
+    have finite order. So $\Q/\Z$ is indeed the torsion subgroup of
+    $\R/\Z$.
+  \end{proof}
+\item Prove that $\Q/\Z$ is isomorphic to the multiplicative group of
+  roots of unity in $\C^\times$.
+  \begin{proof}
+    Let $S^1$ be the unit circle in the complex plane and let $G$ be
+    the multiplicative group of the roots of unity. From
+    Exercise~\ref{exercise:quotient-group:r-to-s1-kernel} we know that
+    $\R/\Z \cong S^1$, as we can exhibit the explicit isomorphism
+    $\varphi$ by
+    \begin{equation*}
+      \varphi(r + \Z) = e^{2\pi ir}.
+    \end{equation*}
+
+    Now consider the torsion subgroup of $S^1$. By definition, $z\in S^1$
+    has finite order, say $n$, if and only if $z^n = 1$, i.e. if and
+    only if $z\in G$. So we see that $G$ is actually the torsion
+    subgroup of $S^1$.
+
+    Since $\R/\Z$ is isomorphic to $S^1$, it follows that their
+    torsion subgroups are also isomorphic. Hence $\Q/\Z\cong G$.
+  \end{proof}
+\end{enumerate}
