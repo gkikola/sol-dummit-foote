@@ -919,3 +919,55 @@ of $G$, hence is normal).
     isomorphism. Hence $\overline{G}\cong Z_2\times Z_4$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{20} Let $G = \Z/24\Z$ and let
+$\widetilde{G} = G/\gen{\overline{12}}$, where for each integer $a$ we
+simplify notation by writing $\widetilde{\overline{a}}$ as
+$\tilde{a}$.
+\begin{enumerate}
+\item Show that
+  $\widetilde{G} = \{\tilde0, \tilde1, \dots, \widetilde{11}\}$.
+  \begin{proof}
+    Since $\gen{\overline{12}} = \{\bar0, \overline{12}\}$, each coset
+    will consist of the pair
+    \begin{equation*}
+      \{\bar{n}, \overline{12 + n}\} = \tilde{n}
+      \quad\text{for $0\leq n\leq 11$},
+    \end{equation*}
+    and each of these is distinct.
+  \end{proof}
+\item Find the order of each element of $\widetilde{G}$.
+  \begin{solution}
+    The orders are
+    \begin{align*}
+      \ord{\tilde0} &= 1,
+      & \ord{\tilde6} &= 2, \\
+      \ord{\tilde1} &= 12,
+      & \ord{\tilde7} &= 12, \\
+      \ord{\tilde2} &= 6,
+      & \ord{\tilde8} &= 3, \\
+      \ord{\tilde3} &= 4,
+      & \ord{\tilde9} &= 4, \\
+      \ord{\tilde4} &= 3,
+      & \ord{\widetilde{10}} &= 6, \\
+      \ord{\tilde5} &= 12,
+      & \ord{\widetilde{11}} &= 12. \qedhere
+    \end{align*}
+  \end{solution}
+\item Prove that $\widetilde{G}\cong\Z/12\Z$.
+  \begin{proof}
+    Define the function $\varphi\colon\widetilde{G}\to\Z/12\Z$ by
+    \begin{equation*}
+      \varphi(\tilde{n}) = \bar{n}.
+    \end{equation*}
+    This is clearly a bijection, and it is a homomorphism since
+    \begin{equation*}
+      \varphi(\widetilde{m} + \tilde{n})
+      = \overline{m + n}
+      = \overline{m} + \bar{n}
+      = \varphi(\widetilde{m}) + \varphi(\tilde{n})
+    \end{equation*}
+    for any $\widetilde{m},\tilde{n}\in\widetilde{G}$. Therefore
+    $\widetilde{G}\cong\Z/12\Z$.
+  \end{proof}
+\end{enumerate}
