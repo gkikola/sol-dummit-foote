@@ -1091,3 +1091,37 @@ abelian group $G$ is normal).
     $g\in G$. As before, this is enough to complete the proof.
   \end{proof}
 \end{enumerate}
+
+\Exercise{23} Prove that the join of any nonempty collection of normal
+subgroups of a group is a normal subgroup.
+\begin{proof}
+  Let $G$ be a group and $I$ a nonempty set of indices, and let
+  $\{N_\alpha\mid\alpha\in I\}$ be a collection of subgroups of $G$,
+  with $N_\alpha\trianglelefteq G$ for each $\alpha\in I$. Let $N$ be
+  the join of all the subgroups in the collection:
+  \begin{equation*}
+    N = \gen{N_\alpha \mid \alpha\in I}.
+  \end{equation*}
+
+  Fix an element $g\in G$ and $n\in N$. Since $n$ belongs to the join
+  of $\{N_\alpha\}$, we can write $n$ as the product of finitely many
+  elements, each belonging to one of the sets in the collection:
+  \begin{equation*}
+    n = x_1x_2\cdots x_k,
+    \quad\text{where for each $i$,
+      $x_i\in N_{\alpha_i}$ for some $\alpha_i\in I$}.
+  \end{equation*}
+  Since $N_{\alpha_i}\trianglelefteq G$ for each $i$, we have
+  $gx_ig^{-1}\in N_{\alpha_i}\subseteq N$. Now notice that we can
+  write
+  \begin{align*}
+    gng^{-1}
+    &= gx_1x_2x_3\cdots x_{k-1}x_kg^{-1} \\
+    &= gx_1(g^{-1}g)x_2(g^{-1}g)x_3\cdots x_{k-1}(g^{-1}g)x_kg^{-1} \\
+    &= (gx_1g^{-1})(gx_2g^{-1})\cdots(gx_kg^{-1}).
+  \end{align*}
+  Therefore $gng^{-1}$ can be written as a product of elements in $N$,
+  and so must be in $N$ by closure. Since $g$ and $n$ were chosen
+  arbitrarily, this shows that $gNg^{-1}\subseteq N$ for each $g\in G$
+  so that $N\trianglelefteq G$.
+\end{proof}
