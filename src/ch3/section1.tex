@@ -971,3 +971,86 @@ $\tilde{a}$.
     $\widetilde{G}\cong\Z/12\Z$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{21} Let $G = Z_4\times Z_4$ be given in terms of the
+following generators and relations:
+\begin{equation*}
+  G = \gen{x,y \mid x^4 = y^4 = 1, xy = yx}.
+\end{equation*}
+Let $\overline{G} = G/\gen{x^2y^2}$ (note that every subgroup of the
+abelian group $G$ is normal).
+\begin{enumerate}
+\item Show that the order of $\overline{G}$ is $8$.
+  \begin{proof}
+    Since $x$ and $y$ commute, $(x^2y^2)^2 = 1$ and so
+    $\gen{x^2y^2} = \{1, x^2y^2\}$. The cosets of $\gen{x^2y^2}$ in
+    $G$ are as follows:
+    \begin{align*}
+      \bar1 &= \{1, x^2y^2\},
+      & \bar{y} &= \{y, x^2y^3\}, \\
+      \bar{x} &= \{x, x^3y^2\},
+      & \overline{xy} &= \{xy, x^3y^3\}, \\
+      \overline{x^2} &= \{x^2, y^2\},
+      & \overline{x^2y} &= \{x^2y, y^3\}, \\
+      \overline{x^3} &= \{x^3, xy^2\},
+      & \overline{x^3y} &= \{x^3y, xy^3\}.
+    \end{align*}
+    Each of these is distinct, and all elements in $G$ are accounted
+    for. Therefore $\ord{\overline{G}} = 8$.
+  \end{proof}
+\item Exhibit each element of $\overline{G}$ in the form
+  $\bar{x}^a\bar{y}^b$, for some integers $a$ and $b$.
+  \begin{solution}
+    As given above, the elements are $\bar1$, $\bar{x}$,
+    $\overline{x^2}$, $\overline{x^3}$, $\bar{y}$, $\overline{xy}$,
+    $\overline{x^2y}$, and $\overline{x^3y}$.
+  \end{solution}
+\item Find the order of each of the elements of $\overline{G}$
+  exhibited in (b).
+  \begin{solution}
+    The orders are
+    \begin{align*}
+      \ord{\bar1} &= 1,
+      & \ord{\bar{y}} &= 4, \\
+      \ord{\bar{x}} &= 4,
+      & \ord{\overline{xy}} &= 2, \\
+      \ord{\overline{x^2}} &= 2,
+      & \ord{\overline{x^2y}} &= 4, \\
+      \ord{\overline{x^3}} &= 4,
+      & \ord{\overline{x^3y}} &= 2. \qedhere
+    \end{align*}
+  \end{solution}
+\item Prove that $\overline{G} \cong Z_4\times Z_2$.
+  \begin{proof}
+    Let $a$ be a generator for $Z_4$ and $b$ a generator for
+    $Z_2$. Also, in $\overline{G}$, let $\bar{u} = \bar{x}$ and
+    $\bar{v} = \overline{xy}$, and note that every element in
+    $\overline{G}$ can be written in the form $\bar{u}^m\bar{v}^n$ for
+    integers $m$ and $n$. Define a function
+    $\varphi\colon\overline{G}\to Z_4\times Z_2$ by
+    \begin{equation*}
+      \varphi(\overline{u^mv^n}) = (a^m, b^n).
+    \end{equation*}
+
+    First we show that $\varphi$ is well defined. Suppose
+    $\overline{u^mv^n} = \overline{u^pv^q}$. Then
+    $\overline{x^{m+n}y^n} = \overline{x^{p+q}y^q}$ and we must have
+    $n\equiv q\pmod4$ and $m+n\equiv p+q\pmod4$, which together imply
+    that $m\equiv p\pmod4$ and $n\equiv q\pmod2$. This means that in
+    $Z_4\times Z_2$, the elements $(a^m,b^n)$ and $(a^p,b^q)$ are
+    actually the same, so $\varphi$ is a well defined function.
+
+    Next, $\varphi$ is easily seen to be surjective. And since both
+    groups have the same order, it is also a bijection.
+
+    Finally, $\varphi$ is a homomorphism since
+    \begin{align*}
+      \varphi((a^m,b^n)(a^p,b^q))
+      &= \varphi((a^{m+p},b^{n+q})) \\
+      &= \overline{x^{m+p}y^{n+q}} \\
+      &= \overline{x^my^n}\cdot\overline{x^py^q} \\
+      &= \varphi((a^m,b^n))\varphi((a^p,b^q)).
+    \end{align*}
+    Therefore $\overline{G}\cong Z_4\times Z_2$.
+  \end{proof}
+\end{enumerate}
