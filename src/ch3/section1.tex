@@ -1054,3 +1054,40 @@ abelian group $G$ is normal).
     Therefore $\overline{G}\cong Z_4\times Z_2$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{22}
+\begin{enumerate}
+\item Prove that if $H$ and $K$ are normal subgroups of a group $G$
+  then their intersection $H\cap K$ is also a normal subgroup of $G$.
+  \begin{proof}
+    Suppose $H$ and $K$ are normal subgroups of $G$. We already know
+    that $H\cap K$ is a subgroup of $G$, so we need to show that it is
+    normal. Choose any $g\in G$ and any $x\in H\cap K$. Since $x\in H$
+    and $H\trianglelefteq G$, we know $gxg^{-1}\in H$. Likewise, since
+    $x\in K$ and $K\trianglelefteq G$, we have $gxg^{-1}\in
+    K$. Therefore $gxg^{-1}\in H\cap K$. This shows that
+    $g(H\cap K)g^{-1}\subseteq H\cap K$, and this is true for all
+    $g\in G$. By Theorem~6~(5), this is enough to show that
+    $H\cap K\trianglelefteq G$.
+  \end{proof}
+\item Prove that the intersection of an arbitrary nonempty collection
+  of normal subgroups of a group is a normal subgroup (do not assume
+  the collection is countable).
+  \begin{proof}
+    Let $G$ be a group and let $I$ be a nonempty set of indices, not
+    necessarily countable. Consider the collection of subgroups
+    $\{N_\alpha \mid \alpha\in I\}$, where $N_\alpha\trianglelefteq G$
+    for each $\alpha\in I$. Let
+    \begin{equation*}
+      N = \bigcap_{\alpha\in I}N_\alpha.
+    \end{equation*}
+    We know $N$ is a subgroup of $G$ by
+    Exercise~\ref{exercise-intersection-of-subgroups-is-subgroup}.
+
+    For any $g\in G$ and any $n\in N$, we must have $n\in N_\alpha$
+    for each $\alpha$. And since $N_\alpha\trianglelefteq G$, we have
+    $gng^{-1}\in N_\alpha$ for each $\alpha$. Therefore
+    $gng^{-1}\in N$, which shows that $gNg^{-1}\subseteq N$ for each
+    $g\in G$. As before, this is enough to complete the proof.
+  \end{proof}
+\end{enumerate}
