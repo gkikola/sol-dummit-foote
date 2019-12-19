@@ -1125,3 +1125,14 @@ subgroups of a group is a normal subgroup.
   arbitrarily, this shows that $gNg^{-1}\subseteq N$ for each $g\in G$
   so that $N\trianglelefteq G$.
 \end{proof}
+
+\Exercise{24} Prove that if $N\trianglelefteq G$ and $H$ is any
+subgroup of $G$ then $N\cap H\trianglelefteq H$.
+\begin{proof}
+  We know that the intersection of two subgroups is a subgroup, so
+  $N\cap H$ is a subgroup of $H$. Let $h\in H$ and $x\in N\cap
+  H$. Then since $x\in N$ and $N\trianglelefteq G$, $hxh^{-1}\in
+  N$. But $x\in H$ so $hxh^{-1}\in H$. Therefore
+  $hxh^{-1}\in N\cap H$. Since this is true for any $h\in H$ and
+  $x\in N\cap H$, we have $N\cap H\trianglelefteq H$.
+\end{proof}
