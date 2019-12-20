@@ -1136,3 +1136,91 @@ subgroup of $G$ then $N\cap H\trianglelefteq H$.
   $hxh^{-1}\in N\cap H$. Since this is true for any $h\in H$ and
   $x\in N\cap H$, we have $N\cap H\trianglelefteq H$.
 \end{proof}
+
+\Exercise{25}
+\begin{enumerate}
+\item Prove that a subgroup $N$ of $G$ is normal if and only if
+  $gNg^{-1}\subseteq N$ for {\em all} $g\in G$.
+  \begin{proof}
+    The left-to-right implication is immediate from the
+    definition. For the other direction, suppose that $N$ is a
+    subgroup of a group $G$, with
+    \begin{equation}
+      \label{equation:quotient-group:g-normalize-N}
+      gNg^{-1}\subseteq N
+      \quad\text{for each $g\in G$}.
+    \end{equation}
+    Fix an element $g_0\in G$ and let $x\in N$. Consider the element
+    $y = g_0^{-1}xg_0$. Then $y\in N$ by
+    \eqref{equation:quotient-group:g-normalize-N} (simply take
+    $g = g_0^{-1}$). Therefore
+    \begin{equation*}
+      g_0yg_0^{-1} = g_0(g_0^{-1}xg_0)g_0^{-1} = x.
+    \end{equation*}
+    This shows that $x\in g_0Ng_0^{-1}$. Since $g_0\in G$ was
+    arbitrary, $x\in gNg^{-1}$ for each $g$ so that
+    $N\subseteq gNg^{-1}$. Together with
+    \eqref{equation:quotient-group:g-normalize-N}, we have
+    $gNg^{-1} = N$ so that $N\trianglelefteq G$.
+  \end{proof}
+\item Let $G = GL_2(\Q)$, let $N$ be the subgroup of upper triangular
+  matrices with integer entries and $1$'s on the diagonal, and let $g$
+  be the diagonal matrix with entries $2,1$. Show that
+  $gNg^{-1}\subseteq N$ but $g$ does {\em not} normalize $N$.
+  \begin{proof}
+    We have
+    \begin{equation*}
+      N = \left\{
+        \begin{pmatrix}
+          1 & b \\
+          0 & 1
+        \end{pmatrix}
+        \;\middle|\;
+        b\in\Z
+      \right\}
+      \quad\text{and}\quad
+      g =
+      \begin{pmatrix}
+        2 & 0 \\
+        0 & 1
+      \end{pmatrix}.
+    \end{equation*}
+    For any $b\in\Z$,
+    \begin{equation*}
+      g\begin{pmatrix} 1 & b \\ 0 & 1 \end{pmatrix}g^{-1} =
+      \begin{pmatrix}
+        2 & 0 \\
+        0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & b \\
+        0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        \frac12 & 0 \\
+        0 & 1
+      \end{pmatrix} \\
+      =
+      \begin{pmatrix}
+        1 & 2b \\
+        0 & 1
+      \end{pmatrix}\in N,
+    \end{equation*}
+    and we see that $gNg^{-1}\subseteq N$.
+
+    But notice that elements in $gNg^{-1}$ must have an even integer
+    in the upper-right entry. This will always be the case, regardless
+    of which $n\in N$ we use. Now consider the element
+    \begin{equation*}
+      x =
+      \begin{pmatrix}
+        1 & 1 \\
+        0 & 1
+      \end{pmatrix}\in N.
+    \end{equation*}
+    Then there is no matrix $n$ in $N$ with the property that
+    $gng^{-1} = x$, because as we have observed, the upper-right entry
+    of $gng^{-1}$ is always even. Consequently, $g$ does not normalize
+    $N$.
+  \end{proof}
+\end{enumerate}
