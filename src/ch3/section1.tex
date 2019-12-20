@@ -1454,3 +1454,19 @@ and only if $g\in N_G(N)$.
   a symmetric argument, we also have $gN\subseteq Ng$. Therefore the
   two sets are equal: $gN = Ng$.
 \end{proof}
+
+\Exercise{31} Prove that if $H\leq G$ and $N$ is a normal subgroup of
+$H$ then $H\leq N_G(N)$. Deduce that $N_G(N)$ is the largest subgroup
+of $G$ in which $N$ is normal (i.e., is the join of all subgroups $H$
+for which $N\trianglelefteq H$).
+\begin{proof}
+  We already know that $N_G(N)$ is a subgroup, so we only need to
+  establish that $H\subseteq N_G(N)$. But this is easy: Let $h\in
+  H$. Since $N\trianglelefteq H$ we have $hNh^{-1} = N$. Therefore
+  $h\in N_G(N)$. This shows that $H\leq N_G(N)$.
+
+  Clearly $N\trianglelefteq N_G(N)$, and we have shown that every
+  subgroup of $G$ in which $N$ is normal must be a subgroup of
+  $N_G(N)$. This implies that $N_G(N)$ is the largest subgroup of $G$
+  in which $N$ is normal.
+\end{proof}
