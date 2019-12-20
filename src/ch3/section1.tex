@@ -1227,7 +1227,9 @@ subgroup of $G$ then $N\cap H\trianglelefteq H$.
   \end{proof}
 \end{enumerate}
 
-\Exercise{26} Let $a,b\in G$.
+\Exercise{26}
+\label{exercise:quotient-group:conjugate-properties}
+Let $a,b\in G$.
 \begin{enumerate}
 \item Prove that the conjugate of the product of $a$ and $b$ is the
   product of the conjugate of $a$ and the conjugate of $b$. Prove that
@@ -1470,3 +1472,30 @@ for which $N\trianglelefteq H$).
   $N_G(N)$. This implies that $N_G(N)$ is the largest subgroup of $G$
   in which $N$ is normal.
 \end{proof}
+
+\Exercise{32} Prove that every subgroup of $Q_8$ is normal. For each
+subgroup find the isomorphism type of its corresponding quotient.
+\begin{solution}
+  The subgroups of $Q_8$ are $1$, $\gen{-1}$, $\gen{i}$, $\gen{j}$,
+  $\gen{k}$, and $Q_8$. From the lattice for $Q_8$, we know that
+  $\gen{i}$, $\gen{j}$, and $\gen{k}$ are maximal subgroups, so their
+  normalizers are either themselves or $Q_8$. But it is easy to check
+  that, for example, $j\gen{i}(-j) = \gen{i}$, so
+  $N_{Q_8}(\gen{i}) = Q_8$. By a similar argument, we conclude that
+  \begin{equation*}
+    N_{Q_8}(\gen{i}) = N_{Q_8}(\gen{j}) = N_{Q_8}(\gen{k}) = Q_8,
+  \end{equation*}
+  so each of these subgroups is normal. And $\gen{-1}$ is certainly
+  normal since it is in the center of $Q_8$. Therefore every subgroup
+  of $Q_8$ is normal.
+
+  Now $Q_8/\gen{-1} = \{\bar1, \bar i, \bar j, \bar k\}$ has order
+  $4$. And since $\bar{i}\cdot\bar{i} = \overline{-1} = \bar1$, we see
+  that $\bar{i}$ has order $2$. Similarly $\bar{j}$ and $\bar{k}$ have
+  order $2$. From the classification of groups of order $4$, we know
+  that $Q_8/\gen{-1}\cong V_4$, where $V_4$ is the Klein four-group.
+
+  Similarly, $Q_8/\gen{i} = \{\bar1, \bar{j}\}$ has order $2$, so it
+  must be isomorphic to $Z_2$. By symmetry,
+  $Q_8/\gen{j}\cong Q_8/\gen{k}\cong Z_2$ as well.
+\end{solution}
