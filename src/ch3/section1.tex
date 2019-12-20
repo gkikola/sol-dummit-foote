@@ -1434,3 +1434,23 @@ $tSt^{-1}\subseteq N$ for all $t\in T$.
   Exercise~\ref{exercise:quotient-group:normalizer-iff-generator1}
   finishes the proof.
 \end{proof}
+
+\Exercise{30} Let $N\leq G$ and let $g\in G$. Prove that $gN = Ng$ if
+and only if $g\in N_G(N)$.
+\begin{proof}
+  Suppose $gN = Ng$. Then for any $x\in N$, there is a $y\in N$ such
+  that $gx = yg$. Multiplying on the right by $g^{-1}$ gives
+  $gxg^{-1} = y\in N$. This is true for any $x\in N$, so
+  $gNg^{-1}\subseteq N$. On the other hand, if $x\in N$, then there is
+  a $y\in N$ such that $xg = gy$, and multiplying on the right by
+  $g^{-1}$ gives $x = gyg^{-1}\in gNg^{-1}$. So $N\subseteq gNg^{-1}$
+  and we conclude that the two sets are equal. Therefore
+  $g\in N_G(N)$.
+
+  Conversely, suppose $g$ normalizes $N$. Let $x\in N$ be
+  arbitrary. Then we have $x\in gNg^{-1}$ so that $x = gyg^{-1}$ for
+  some $y\in N$. Multiplying on the right by $g$ gives $xg =
+  gy$. Therefore $xg\in gN$ for all $x\in N$, so $Ng\subseteq gN$. By
+  a symmetric argument, we also have $gN\subseteq Ng$. Therefore the
+  two sets are equal: $gN = Ng$.
+\end{proof}
