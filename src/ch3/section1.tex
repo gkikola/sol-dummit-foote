@@ -1324,7 +1324,9 @@ subgroup of $G$ then $N\cap H\trianglelefteq H$.
   \end{proof}
 \end{enumerate}
 
-\Exercise{27} Let $N$ be a {\em finite} subgroup of a group $G$. Show
+\Exercise{27}
+\label{exercise:quotient-group:normalizer-finite-criterion}
+Let $N$ be a {\em finite} subgroup of a group $G$. Show
 that $gNg^{-1}\subseteq N$ if and only if $gNg^{-1} = N$. Deduce that
 $N_G(N) = \{g\in G\mid gNg^{-1}\subseteq N\}$.
 \begin{proof}
@@ -1355,4 +1357,80 @@ $N_G(N) = \{g\in G\mid gNg^{-1}\subseteq N\}$.
   \begin{equation*}
     N_G(N) = \{g\in G\mid gNg^{-1}\subseteq N\}. \qedhere
   \end{equation*}
+\end{proof}
+
+\Exercise{28}
+\label{exercise:quotient-group:normalizer-iff-generator1}
+Let $N$ be a {\em finite} subgroup of a group $G$ and
+assume $N = \gen{S}$ for some subset $S$ of $G$. Prove that an element
+$g\in G$ normalizes $N$ if and only if $gSg^{-1}\subseteq N$.
+\begin{proof}
+  Fix an element $g\in G$. First, if $gNg^{-1} = N$ then it must be
+  true that $gSg^{-1}\subseteq N$, since $gSg^{-1}$ is a subset of
+  $gNg^{-1}$.
+
+  Conversely, suppose $gSg^{-1}\subseteq N$. If $S$ is empty then $N$
+  is trivial and must be normal, so suppose $S$ is nonempty. Choose
+  any $x\in N$. Since $S$ generates $N$, we have
+  \begin{equation*}
+    x = s_1s_2\cdots s_k,
+    \quad\text{where $s_i\in S$ for each $i=1,2,\dots,k$}.
+  \end{equation*}
+  As the conjugate of a product is the product of the conjugates, we
+  know that $gxg^{-1} = gs_1g^{-1}\cdots gs_kg^{-1}$. Since
+  $gs_ig^{-1}\in gSg^{-1}\subseteq N$, we have $gxg^{-1}\in N$. And
+  our choice of $x\in N$ was arbitrary, so $gNg^{-1}\subseteq
+  N$. Since $N$ is finite, we may use the result from
+  Exercise~\ref{exercise:quotient-group:normalizer-finite-criterion},
+  to conclude that $g$ normalizes $N$.
+\end{proof}
+
+\Exercise{29} Let $N$ be a {\em finite} subgroup of $G$ and suppose
+$G = \gen{T}$ and $N = \gen{S}$ for some subsets $S$ and $T$ of
+$G$. Prove that $N$ is normal in $G$ if and only if
+$tSt^{-1}\subseteq N$ for all $t\in T$.
+\begin{proof}
+  If $N$ is normal in $G$ then $gNg^{-1} = N$ for all $g\in G$, so
+  clearly $tSt^{-1}\subseteq N$ for any $t\in T$.
+
+  For the other direction, suppose that $tSt^{-1}\subseteq N$ for all
+  $t\in T$. If $S$ or $T$ is the empty set, then the result is
+  obvious, so suppose $S$ and $T$ are nonempty. Choose any $g\in
+  G$. We can write
+  \begin{equation*}
+    g = t_1t_2\cdots t_k
+    \quad\text{with $t_i\in T$ for each $i = 1,2,\dots,k$}.
+  \end{equation*}
+
+  We will use induction on $k$ to prove that $gSg^{-1}\subseteq N$. If
+  $k = 1$, then $gSg^{-1} = t_1St_1^{-1} \subseteq N$, so the base
+  case is satisfied. Now assume that $gSg^{-1}\subseteq N$ whenever
+  $g$ can be written as the product of $k$ elements from $t$, and
+  consider
+  \begin{equation*}
+    g = t_1t_2\cdots t_kt_{k+1},
+    \quad\text{$t_i\in T$ for each $i$}.
+  \end{equation*}
+  Set $h = t_1t_2\cdots t_k$, so that $g = ht_{k+1}$. By the induction
+  assumption, $hSh^{-1}\subseteq N$. So for any $s\in S$, we have
+  \begin{equation*}
+    gsg^{-1}
+    = ht_{k+1}s(ht_{k+1})^{-1}
+    = ht_{k+1}st_{k+1}^{-1}h^{-1}
+    = hxh^{-1},
+  \end{equation*}
+  where $x = t_{k+1}st_{k+1}^{-1}\in N$. So $x$ can be written as
+  \begin{equation*}
+    x = s_1s_2\cdots s_\ell,
+    \quad\text{$s_i\in S$ for $i = 1, 2, \dots, \ell$}
+  \end{equation*}
+  and
+  \begin{equation*}
+    hxh^{-1} = (hs_1h^{-1})(hs_2h^{-1})\cdots(hs_\ell h^{-1}) \in N.
+  \end{equation*}
+  So $gsg^{-1}\in N$, which gives $gSg^{-1}\subseteq N$. By induction,
+  this statement is true for any $g\in G$. And since $N$ is finite,
+  our result from
+  Exercise~\ref{exercise:quotient-group:normalizer-iff-generator1}
+  finishes the proof.
 \end{proof}
