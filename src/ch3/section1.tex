@@ -1323,3 +1323,36 @@ subgroup of $G$ then $N\cap H\trianglelefteq H$.
     that $N\trianglelefteq G$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{27} Let $N$ be a {\em finite} subgroup of a group $G$. Show
+that $gNg^{-1}\subseteq N$ if and only if $gNg^{-1} = N$. Deduce that
+$N_G(N) = \{g\in G\mid gNg^{-1}\subseteq N\}$.
+\begin{proof}
+  Fix an element $g\in G$. If $gNg^{-1} = N$ then certainly
+  $gNg^{-1}\subseteq N$.
+
+  Conversely, suppose that $gNg^{-1}\subseteq N$. Define the function
+  $\varphi\colon N\to gNg^{-1}$ by
+  \begin{equation*}
+    \varphi(x) = gxg^{-1}.
+  \end{equation*}
+  We will show that $\varphi$ is a bijection. First, if
+  $gag^{-1} = gbg^{-1}$ for $a,b\in N$, then cancellation shows that
+  $a = b$. Therefore $\varphi$ is injective. And if $y\in gNg^{-1}$,
+  then by definition there is some $x\in N$ with
+  $y = gxg^{-1} = \varphi(x)$, so $\varphi$ is surjective. We conclude
+  that $\varphi$ is a bijection, and therefore
+  $\ord{gNg^{-1}} = \ord{N}$. But $gNg^{-1}\subseteq N$ and $N$ is
+  finite, so we must have equality:
+  \begin{equation*}
+    gNg^{-1} = N.
+  \end{equation*}
+
+  Finally, we know by definition that
+  $N_G(N) = \{g\in G\mid gNg^{-1} = N\}$. As was just proved,
+  $gNg^{-1} = N$ if and only if $gNg^{-1}\subseteq N$ (since $N$ is
+  finite), so the normalizer can also be written as
+  \begin{equation*}
+    N_G(N) = \{g\in G\mid gNg^{-1}\subseteq N\}. \qedhere
+  \end{equation*}
+\end{proof}
