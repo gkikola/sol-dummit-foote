@@ -1752,3 +1752,35 @@ quotient of $A\times B$ by this subgroup is isomorphic to $B$.
   \end{align*}
   and $\varphi$ is a bijective homomorphism. Therefore $G/H\cong B$.
 \end{proof}
+
+\Exercise{38} Let $A$ be an abelian group and let $D$ be the
+(diagonal) subgroup $\{(a,a)\mid a\in A\}$ of $A\times A$. Prove that
+$D$ is a normal subgroup of $A\times A$ and $(A\times A)/D\cong A$.
+\begin{proof}
+  Since $A$ is abelian, $A\times A$ is abelian. Every subgroup of an
+  abelian group is normal, so $D\trianglelefteq A\times A$.
+
+  Two cosets $(a_1,b_1)D$ and $(a_2,b_2)D$ are equal if and only if
+  \begin{equation*}
+    (a_1,b_1)^{-1}(a_2,b_2)\in D,
+  \end{equation*}
+  that is if and only if $a_1^{-1}a_2 = b_1^{-1}b_2$ or
+  $a_1b_1^{-1} = a_2b_2^{-1}$. Therefore the mapping
+  $\varphi\colon(A\times A)/D\to A$ given by
+  \begin{equation*}
+    \varphi((a,b)D) = ab^{-1}
+  \end{equation*}
+  is a well defined injection. It is also a surjection, since for any
+  element $a\in A$, $\varphi((a,1)D) = a$. And $\varphi$ is a
+  homomorphism since
+  \begin{align*}
+    \varphi((a_1,b_1)D(a_2,b_2)D)
+    &= \varphi((a_1a_2,b_1b_2)D) \\
+    &= a_1a_2(b_1b_2)^{-1} \\
+    &= (a_1b_1^{-1})(a_2b_2^{-1}) \\
+    &= \varphi((a_1,b_1)D)\varphi((a_2,b_2)D),
+  \end{align*}
+  where the second-to-last equality follows from the fact that $A$ is
+  abelian. We have shown that $\varphi$ is an isomorphism of groups,
+  so $(A\times A)/D\cong A$.
+\end{proof}
