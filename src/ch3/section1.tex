@@ -1810,3 +1810,25 @@ of $A\times A$. Prove that $D$ is not normal in $A\times A$.
   \end{equation*}
   We conclude that $D$ is not a normal subgroup of $A\times A$.
 \end{proof}
+
+\Exercise{40} Let $G$ be a group, let $N$ be a normal subgroup of $G$
+and let $\overline{G} = G/N$. Prove that $\bar{x}$ and $\bar{y}$
+commute in $\overline{G}$ if and only if $x^{-1}y^{-1}xy\in N$. (The
+element $x^{-1}y^{-1}xy$ is called the {\em commutator} of $x$ and $y$
+and is denoted $[x,y]$.)
+\begin{proof}
+  First suppose that $\overline{xy} = \overline{yx}$. Then $xyN = yxN$
+  so that $xyz_1 = yxz_2$ for some $z_1,z_2\in N$, which implies that
+  \begin{equation*}
+    x^{-1}y^{-1}xy = z_2z_1^{-1} \in N.
+  \end{equation*}
+
+  Conversely, assume that $x^{-1}y^{-1}xy \in N$, so that
+  $x^{-1}y^{-1}xy = z$ for some $z\in N$. Then
+  \begin{equation*}
+    xy = yxz.
+  \end{equation*}
+  Now $a\in xyN$ if and only if $a = xyz_0$ for some $z_0\in N$, if
+  and only if $a = yxzz_0$, if and only if $a\in yxN$. By symmetry,
+  this shows that $\overline{xy} = \overline{yx}$.
+\end{proof}
