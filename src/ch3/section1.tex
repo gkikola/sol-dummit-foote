@@ -1706,3 +1706,49 @@ the isomorphism type of the quotient group.
   \end{equation*}
   This shows that $G$ is abelian.
 \end{proof}
+
+\Exercise{37} Let $A$ and $B$ be groups. Show that
+$\{(a,1)\mid a\in A\}$ is a normal subgroup of $A\times B$ and the
+quotient of $A\times B$ by this subgroup is isomorphic to $B$.
+\begin{proof}
+  Let $G = A\times B$ and $H = \{(a,1)\mid a\in A\}$. Then for any
+  $(a,1)\in H$ and $(x,y)\in G$, we have
+  \begin{align*}
+    (x,y)(a,1)(x,y)^{-1}
+    &= (x,y)(a,1)(x^{-1},y^{-1}) \\
+    &= (xax^{-1}, yy^{-1}) \\
+    &= (xax^{-1},1)\in H.
+  \end{align*}
+  This shows that $H\trianglelefteq G$.
+
+  Define the mapping $\varphi\colon G/H\to B$ by
+  \begin{equation*}
+    \varphi((a,b)H) = b.
+  \end{equation*}
+  Suppose $(a_1,b_1)$ and $(a_2,b_2)$ are representatives of the same
+  coset of $H$. Then
+  \begin{equation*}
+    (a_1,b_1)^{-1}(a_2,b_2) = (a_1^{-1}a_2,b_1^{-1}b_2) \in H.
+  \end{equation*}
+  So $b_1^{-1}b_2 = 1$, which implies that $b_1 = b_2$, so $\varphi$
+  is well defined.
+
+  Next we show that $\varphi$ is a bijection. Let $(a_1,b)H$ and
+  $(a_2,b)H$ be cosets in $G/H$, so that both cosets have the same
+  image under $\varphi$. Then
+  \begin{equation*}
+    (a_1,b)^{-1}(a_2,b) = (a_1^{-1}a_2,b^{-1}b) = (a_1^{-1}a_2,1)\in H.
+  \end{equation*}
+  This shows that $(a_1,b)H = (a_2,b)H$ so that $\varphi$ is
+  injective. And for any $b\in B$, $\varphi((1,b)H) = b$, so $\varphi$
+  is surjective also.
+
+  Finally, let $(a_1,b_1)H$ and $(a_2,b_2)H$ be cosets of $H$. Then
+  \begin{align*}
+    \varphi((a_1,b_1)H(a_2,b_2)H)
+    &= \varphi((a_1a_2,b_1b_2)H) \\
+    &= b_1b_2 \\
+    &= \varphi((a_1,b_1)H)\varphi((a_2,b_2)H),
+  \end{align*}
+  and $\varphi$ is a bijective homomorphism. Therefore $G/H\cong B$.
+\end{proof}
