@@ -1835,10 +1835,11 @@ denoted $[x,y]$.)
   $\overline{xy} = \overline{yx}$.
 \end{proof}
 
-\Exercise{41} Let $G$ be a group. Prove that
-$N = \gen{x^{-1}y^{-1}xy\mid x,y\in G}$ is a normal subgroup of $G$
-and $G/N$ is abelian ($N$ is called the {\em commutator subgroup} of
-$G$).
+\Exercise{41}
+\label{exercise:quotient-group:commutator-subgroup-is-normal}
+Let $G$ be a group. Prove that $N = \gen{x^{-1}y^{-1}xy\mid x,y\in G}$
+is a normal subgroup of $G$ and $G/N$ is abelian ($N$ is called the
+{\em commutator subgroup} of $G$).
 \begin{proof}
   For any $g\in G$ and $x^{-1}y^{-1}xy\in N$ we have
   \begin{align*}
@@ -1853,4 +1854,21 @@ $G$).
   We know that $G/N$ is abelian by
   Exercise~\ref{exercise:quotient-group:commutator-of-x-y}, since
   $[x,y]\in N$ for any $\bar{x},\bar{y}\in G/N$.
+\end{proof}
+
+\Exercise{42} Assume both $H$ and $K$ are normal subgroups of $G$ with
+$H\cap K = 1$. Prove that $xy = yx$ for all $x\in H$ and $y\in K$.
+\begin{proof}
+  Fix $x\in H$ and $y\in K$. Since $H\trianglelefteq G$, we know that
+  $y^{-1}xy\in H$. So $x^{-1}y^{-1}xy\in H$ also. And since
+  $K\trianglelefteq G$, we have $x^{-1}y^{-1}x\in K$ so that
+  $x^{-1}y^{-1}xy\in K$ also. Therefore $x^{-1}y^{-1}xy\in H\cap
+  K$. But $H\cap K = 1$. This shows that
+  \begin{equation*}
+    x^{-1}y^{-1}xy = 1,
+    \quad\text{or}\quad
+    xy = yx.
+  \end{equation*}
+  Since this is true for any $x\in H$ and $y\in K$, the proof is
+  complete.
 \end{proof}
