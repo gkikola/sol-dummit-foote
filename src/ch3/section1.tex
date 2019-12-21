@@ -1564,3 +1564,52 @@ find the isomorphism type of its corresponding quotient.
     \cong D_8/\gen{sr,r^2} \cong Z_2. \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise{34} Let $D_{2n} = \gen{r,s\mid r^n = s^2 = 1, rs = sr^{-1}}$
+be the usual presentation of the dihedral group of order $2n$ and let
+$k$ be a positive integer dividing $n$.
+\begin{enumerate}
+\item Prove that $\gen{r^k}$ is a normal subgroup of $D_{2n}$.
+  \begin{proof}
+    First, since $r^k$ commutes with $r$, we know that
+    $r\in N_{D_{2n}}(\gen{r^k})$. Also,
+    \begin{equation*}
+      sr^ks^{-1} = sr^ks = s^2r^{-k} = (r^k)^{-1}\in\gen{r^k}.
+    \end{equation*}
+    Therefore $s\in N_{D_{2n}}(\gen{r^k})$. Since both $s$ and $r$
+    (the generators of $D_{2n}$) normalize $\gen{r^k}$, we must have
+    $N_{D_{2n}}(\gen{r^k}) = D_{2n}$. Therefore
+    $\gen{r^k}\trianglelefteq D_{2n}$.
+  \end{proof}
+
+\item Prove that $D_{2n}/\gen{r^k}\cong D_{2k}$.
+  \begin{proof}
+    Since $\gen{r^k} = \{1,r^k,r^{2k},\dots,r^{n-k}\}$, we see that
+    the order of $\gen{r^k}$ is $n/k$. Therefore, each coset will
+    consist of $n/k$ elements, so the cosets will partition $D_{2n}$
+    into $2n/(n/k) = 2k$ distinct sets.
+
+    Consider the two cosets
+    \begin{align*}
+      \bar{r} &= \{r, r^{k+1}, r^{2k+1}, \dots, r^{n-k+1}\} \\
+      \intertext{and}
+      \bar{s} &= \{s, sr^k, sr^{2k}, \dots, sr^{n-k}\}.
+    \end{align*}
+    These are clearly distinct. Observe that
+    \begin{equation*}
+      (\bar{r})^k = \overline{r^k} = \bar1
+      \quad\text{and}\quad
+      (\bar{s})^2 = \overline{s^2} = \bar1,
+    \end{equation*}
+    so $\ord{\bar{s}} = 2$ and $\ord{\bar{r}} \leq k$. But if $0<i<k$,
+    then $\overline{r^i}\neq\bar1$, so $\ord{\bar{r}} = k$. Moreover,
+    \begin{equation*}
+      (\bar{r})(\bar{s}) = \overline{rs} = \overline{sr^{-1}}
+      = (\bar{s})(\bar{r})^{-1}.
+    \end{equation*}
+    Since we have shown that $D_{2n}/\gen{r^k}$ has the same number of
+    elements as $D_{2k}$, and since $\bar{r}$ and $\bar{s}$ satisfy
+    the same relations as $r$ and $s$ do in the group presentation for
+    $D_{2k}$, it follows that $D_{2n}/\gen{r^k}\cong D_{2k}$.
+  \end{proof}
+\end{enumerate}
