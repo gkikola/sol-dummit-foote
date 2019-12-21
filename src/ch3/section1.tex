@@ -1679,3 +1679,30 @@ the isomorphism type of the quotient group.
   We have now established that $\varphi$ is a bijective homomorphism
   from $G$ to $F^\times$. Therefore $G\cong F^\times$.
 \end{solution}
+
+\Exercise{36} Prove that if $G/Z(G)$ is cyclic then $G$ is abelian.
+\begin{proof}
+  Let $G$ be a group such that $G/Z(G)$ is cyclic. Then
+  $G/Z(G) = \gen{xZ(G)}$ for some $x\in G$. In particular, any coset
+  $yZ(G)$ can be written in the form
+  \begin{equation}
+    \label{equation:quotient-group:cyclic-quotient}
+    yZ(G) = (xZ(G))^k = x^kZ(G),
+    \quad k\in\Z.
+  \end{equation}
+
+  Now let $a,b\in G$. Since every element of $G$ belongs to some coset
+  of $Z(G)$, \eqref{equation:quotient-group:cyclic-quotient} allows us
+  to write
+  \begin{equation*}
+    a = x^iz_1
+    \quad\text{and}\quad
+    b = x^jz_2,
+  \end{equation*}
+  for some $i,j\in\Z$ and $z_1,z_2\in Z(G)$. Since $z_1$ and $z_2$
+  commute with $x$, and since $x$ commutes with itself, we have
+  \begin{equation*}
+    ab = x^iz_1x^jz_2 = x^jz_2x^iz_1 = ba.
+  \end{equation*}
+  This shows that $G$ is abelian.
+\end{proof}
