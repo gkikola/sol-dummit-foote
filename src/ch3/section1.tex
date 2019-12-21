@@ -1784,3 +1784,29 @@ $D$ is a normal subgroup of $A\times A$ and $(A\times A)/D\cong A$.
   abelian. We have shown that $\varphi$ is an isomorphism of groups,
   so $(A\times A)/D\cong A$.
 \end{proof}
+
+\Exercise{39} Suppose $A$ is the non-abelian group $S_3$ and $D$ is
+the diagonal subgroup
+\begin{equation*}
+  \{(a,a)\mid a\in A\}
+\end{equation*}
+of $A\times A$. Prove that $D$ is not normal in $A\times A$.
+\begin{proof}
+  Let $a = (1\,3)$ and $b = (1\,2\,3)$ be members of $A = S_3$. Then
+  $a^{-1} = a$ and $b^{-1} = (3\,2\,1)$. Let
+  \begin{equation*}
+    x = (a,b)\in A\times A
+    \quad\text{and}\quad
+    y = (a,a)\in D.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    xyx^{-1} = (a^3, bab^{-1}) = (a, bab^{-1}).
+  \end{equation*}
+  If $D\trianglelefteq A\times A$, then we must have $xyx^{-1}\in D$,
+  so that $a = bab^{-1}$. But
+  \begin{equation*}
+    bab^{-1} = (1\,2\,3)(1\,3)(3\,2\,1) = (2\,3) \neq (1\,3) = a.
+  \end{equation*}
+  We conclude that $D$ is not a normal subgroup of $A\times A$.
+\end{proof}
