@@ -1811,11 +1811,13 @@ of $A\times A$. Prove that $D$ is not normal in $A\times A$.
   We conclude that $D$ is not a normal subgroup of $A\times A$.
 \end{proof}
 
-\Exercise{40} Let $G$ be a group, let $N$ be a normal subgroup of $G$
-and let $\overline{G} = G/N$. Prove that $\bar{x}$ and $\bar{y}$
-commute in $\overline{G}$ if and only if $x^{-1}y^{-1}xy\in N$. (The
-element $x^{-1}y^{-1}xy$ is called the {\em commutator} of $x$ and $y$
-and is denoted $[x,y]$.)
+\Exercise{40}
+\label{exercise:quotient-group:commutator-of-x-y}
+Let $G$ be a group, let $N$ be a normal subgroup of $G$ and let
+$\overline{G} = G/N$. Prove that $\bar{x}$ and $\bar{y}$ commute in
+$\overline{G}$ if and only if $x^{-1}y^{-1}xy\in N$. (The element
+$x^{-1}y^{-1}xy$ is called the {\em commutator} of $x$ and $y$ and is
+denoted $[x,y]$.)
 \begin{proof}
   First suppose that $\overline{xy} = \overline{yx}$. Then $xyN = yxN$
   so that $xyz_1 = yxz_2$ for some $z_1,z_2\in N$, which implies that
@@ -1829,6 +1831,26 @@ and is denoted $[x,y]$.)
     xy = yxz.
   \end{equation*}
   Now $a\in xyN$ if and only if $a = xyz_0$ for some $z_0\in N$, if
-  and only if $a = yxzz_0$, if and only if $a\in yxN$. By symmetry,
-  this shows that $\overline{xy} = \overline{yx}$.
+  and only if $a = yxzz_0$, if and only if $a\in yxN$. Therefore
+  $\overline{xy} = \overline{yx}$.
+\end{proof}
+
+\Exercise{41} Let $G$ be a group. Prove that
+$N = \gen{x^{-1}y^{-1}xy\mid x,y\in G}$ is a normal subgroup of $G$
+and $G/N$ is abelian ($N$ is called the {\em commutator subgroup} of
+$G$).
+\begin{proof}
+  For any $g\in G$ and $x^{-1}y^{-1}xy\in N$ we have
+  \begin{align*}
+    g(x^{-1}y^{-1}xy)g^{-1}
+    &= gx^{-1}(g^{-1}g)y^{-1}(g^{-1}g)x(g^{-1}g)yg^{-1} \\
+    &= (gxg^{-1})^{-1}(gyg^{-1})^{-1}(gxg^{-1})(gyg^{-1}) \in N.
+  \end{align*}
+  Since the conjugates of the generators of $N$ are themselves in $N$,
+  this shows that $gNg^{-1}\subseteq N$ for all $g\in G$. That is,
+  $N\trianglelefteq G$.
+
+  We know that $G/N$ is abelian by
+  Exercise~\ref{exercise:quotient-group:commutator-of-x-y}, since
+  $[x,y]\in N$ for any $\bar{x},\bar{y}\in G/N$.
 \end{proof}
