@@ -1613,3 +1613,69 @@ $k$ be a positive integer dividing $n$.
     $D_{2k}$, it follows that $D_{2n}/\gen{r^k}\cong D_{2k}$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{35} Prove that $SL_n(F)\trianglelefteq GL_n(F)$ and describe
+the isomorphism type of the quotient group.
+\begin{solution}
+  We have shown in Exercise~\ref{exercise:SLn-is-subgroup} that
+  $SL_n(F)\leq GL_n(F)$, so we only need to show that it is normal.
+
+  Take any matrix $A\in GL_n(F)$ and $B\in SL_n(F)$. Then
+  \begin{equation*}
+    \det(ABA^{-1})
+    = \det(A)\det(B)\det(A)^{-1}
+    = \det(A)\cdot1\cdot\det(A)^{-1}
+    = 1.
+  \end{equation*}
+  This shows that $ABA^{-1}\in SL_n(F)$, and we conclude that
+  $SL_n(F)\trianglelefteq GL_n(F)$.
+
+  Now let $G = GL_n(F)/SL_n(F)$ and consider the map
+  $\varphi\colon G\to F^\times$ defined by
+  \begin{equation*}
+    \varphi(\overline{A}) = \det(A),
+  \end{equation*}
+  where $\overline{A}$ is the coset whose representative is $A$.
+
+  First we must show that this mapping is well defined. Suppose the
+  matrices $A,B\in GL_n(F)$ are such that
+  $\overline{A} = \overline{B}$. Each element in the coset
+  $\overline{A}$ is of the form $AS$, for some $S\in SL_n(F)$. Then
+  $\det(AS) = \det(A)\det(S) = \det(A)$. But
+  $\overline{A} = \overline{B}$ so we also have $AS = BS_0$ for some
+  $S_0\in SL_n(F)$. Then
+  \begin{equation*}
+    \det(A) = \det(BS_0) = \det(B)\det(S_0) = \det(B).
+  \end{equation*}
+  So $\varphi$ is a well defined function from $G$ to $F^\times$.
+
+  Next we show that $\varphi$ is injective. Suppose
+  $\det(A) = \det(B)$ for the matrices $A,B\in GL_n(F)$. We need to
+  show that $\overline{A} = \overline{B}$. Take any
+  $X\in\overline{A}$, so that $X = AS$ for some $S\in SL_n(F)$. Then
+  the matrix $T = B^{-1}AS$ belongs to $SL_n(F)$ since
+  \begin{equation*}
+    \det(T) = \det(B^{-1}AS)
+    = \det(B)^{-1}\det(A)\det(S) = \det(A)^{-1}\det(A) = 1.
+  \end{equation*}
+  Now $X = (BB^{-1})(AS) = BT\in\overline{B}$, so that
+  $\overline{A}\subseteq\overline{B}$. By symmetry, the reverse
+  inclusion holds and we see that $\overline{A} = \overline{B}$ so
+  that $\varphi$ is injective.
+
+  For surjectivity, let $f\in F^\times$ be arbitrary. Let $A$ be the
+  diagonal matrix with upper-left entry $f$ and all other diagonal
+  entries $1$. Then $\det(A) = f$ so that $\varphi(\overline{A}) = f$
+  and $\varphi$ is surjective.
+
+  Lastly, we show that $\varphi$ is a homomorphism. For any
+  $\overline{A},\overline{B}\in G$, we have
+  \begin{equation*}
+    \varphi(\overline{AB})
+    = \det(AB)
+    = \det(A)\det(B)
+    = \varphi(\overline{A})\varphi(\overline{B}).
+  \end{equation*}
+  We have now established that $\varphi$ is a bijective homomorphism
+  from $G$ to $F^\times$. Therefore $G\cong F^\times$.
+\end{solution}
