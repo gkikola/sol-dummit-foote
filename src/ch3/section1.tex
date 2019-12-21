@@ -1499,3 +1499,68 @@ subgroup find the isomorphism type of its corresponding quotient.
   must be isomorphic to $Z_2$. By symmetry,
   $Q_8/\gen{j}\cong Q_8/\gen{k}\cong Z_2$ as well.
 \end{solution}
+
+\Exercise{33} Find all normal subgroups of $D_8$ and for each of these
+find the isomorphism type of its corresponding quotient.
+\begin{solution}
+  Certainly the trivial subgroup $\gen1$ is normal in $D_8$, as is
+  $D_8$ itself. $D_8/\gen1\cong D_8$ and $D_8/D_8\cong\gen1$.
+
+  Now consider the subgroups of order $2$, aside from $\gen{r^2}$. For
+  these we have
+  \begin{align*}
+    rsr^{-1} &= rsr^3 = sr^2\not\in\gen{s}, \\
+    r(sr)r^{-1} &= rs = sr^3 \not\in\gen{sr}, \\
+    r(sr^2)r^{-1} &= rsr = s \not\in\gen{sr^2}, \\
+    r(sr^3)r^{-1} &= rsr^2 = sr \not\in\gen{sr^3},
+  \end{align*}
+  so none of $\gen{s}$, $\gen{sr}$, $\gen{sr^2}$, and $\gen{sr^3}$ are
+  normal in $D_8$.
+
+  Next, since $\gen{r^2} = Z(D_8)$, we know that
+  $\gen{r^2}\trianglelefteq D_8$. The cosets in $D_8/\gen{r^2}$ are
+  \begin{align*}
+    \bar1 &= \{1, r^2\}, \\
+    \bar{r} &= \{r, r^3\}, \\
+    \bar{s} &= \{s, sr^2\}, \\
+    \overline{sr} &= \{sr, sr^3\}.
+  \end{align*}
+  Since $\ord{\bar{r}} = \ord{\bar{s}} = \ord{\overline{sr}} = 2$, we
+  see that $D_8/\gen{r^2}\cong V_4$.
+
+  From the lattice for $D_8$, we know that the remaining subgroups are
+  maximal. So their normalizers are either the subgroups themselves or
+  all of $D_8$. Since
+  \begin{align*}
+    s\gen{r}s^{-1} &= \{1, r^3, r^2, r\} = \gen{r}, \\
+    r\gen{s,r^2}r^{-1} &= \{1, sr^2, r^2, s\} = \gen{s,r^2}, \\
+  \intertext{and}
+    r\gen{sr,r^2}r^{-1} &= \{1, sr^3, r^2, sr\} = \gen{sr,r^2},
+  \end{align*}
+  we see that
+  $N_{D_8}(\gen{r}) = N_{D_8}(\gen{s,r^2}) = N_{D_8}(\gen{sr,r^2}) =
+  D_8$. Therefore $\gen{r}$, $\gen{s,r^2}$, and $\gen{sr,r^2}$ are
+  normal in $D_8$. The cosets of $\gen{r}$ are
+  \begin{equation*}
+    \bar1 = \{1,r,r^2,r^3\}
+    \quad\text{and}\quad
+    \bar{s} = \{s,sr,sr^2,sr^3\},
+  \end{equation*}
+  the cosets of $\gen{s,r^2}$ are
+  \begin{equation*}
+    \bar1 = \{1,s,r^2,sr^2\}
+    \quad\text{and}\quad
+    \bar{r} = \{r, r^3, sr^3, sr\},
+  \end{equation*}
+  and the cosets of $\gen{sr,r^2}$ are
+  \begin{equation*}
+    \bar1 = \{1,sr,r^2,sr^3\}
+    \quad\text{and}\quad
+    \bar{r} = \{r,s,r^3,sr^2\}.
+  \end{equation*}
+  Since there are only two distinct cosets in each case, we have
+  \begin{equation*}
+    D_8/\gen{r} \cong D_8/\gen{s,r^2}
+    \cong D_8/\gen{sr,r^2} \cong Z_2. \qedhere
+  \end{equation*}
+\end{solution}
