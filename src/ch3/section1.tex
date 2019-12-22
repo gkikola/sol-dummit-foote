@@ -565,7 +565,10 @@ $G = \gen{S}$ for any subset $S$ of $G$, then
 $\overline{G} = \gen{\overline{S}}$.
 \begin{proof}
   We will prove the general case, since the arguments are
-  similar. Suppose $G = \gen{S}$. Then for any $g\in G$, we may write
+  similar. Suppose $G = \gen{S}$. If $S$ is empty then $G$ and $N$ are
+  trivial and we vacuously have $\overline{G} =
+  \gen{\overline{S}}$. So let $S$ be nonempty. Then for any $g\in G$,
+  we may write
   \begin{equation*}
     g = s_1s_2\cdots s_k,
     \quad\text{where $s_i\in S$ for $1\leq i\leq k$}.
