@@ -1872,3 +1872,64 @@ $H\cap K = 1$. Prove that $xy = yx$ for all $x\in H$ and $y\in K$.
   Since this is true for any $x\in H$ and $y\in K$, the proof is
   complete.
 \end{proof}
+
+\Exercise{43} Assume $\mathcal{P} = \{A_i\mid i\in I\}$ is any
+partition of $G$ with the property that $\mathcal{P}$ is a group under
+the ``quotient operation'' defined as follows: to compute the product
+of $A_i$ with $A_j$ take any element $a_i$ of $A_i$ and any element
+$a_j$ of $A_j$ and let $A_iA_j$ be the element of $\mathcal{P}$
+containing $a_ia_j$ (this operation is assumed to be well
+defined). Prove that the element of $\mathcal{P}$ that contains the
+identity of $G$ is a normal subgroup of $G$ and the elements of
+$\mathcal{P}$ are the cosets of this subgroup (so $\mathcal{P}$ is
+just a quotient group of $G$ in the usual sense).
+\begin{proof}
+  Let $\mathcal{P}$ be as stated. For any $x\in G$, let $\bar{x}$
+  denote the element of $\mathcal{P}$ which contains $x$.
+
+  First we show that $\bar1\leq G$. $1\in\bar1$ so the set is
+  nonempty. Take any $x,y\in\bar1$, so that
+  $\bar{x} = \bar{y} = \bar1$. By definition of the operation on
+  $\mathcal{P}$, we have
+  \begin{equation*}
+    \overline{xy} = \bar{x}\cdot\bar{y} = \bar1\cdot\bar1
+    = \overline{1\cdot1} = \bar1,
+  \end{equation*}
+  so $xy\in\bar1$. Moreover,
+  \begin{equation*}
+    \overline{x^{-1}}
+    = \bar1\cdot\overline{x^{-1}}
+    = \bar{x}\cdot\overline{x^{-1}}
+    = \overline{xx^{-1}} = \bar1,
+  \end{equation*}
+  and $x^{-1}\in\bar1$. This shows that $\bar1$ is a subgroup of $G$.
+
+  Next, take any $g\in G$ and $x\in\bar1$. Then
+  \begin{equation*}
+    \overline{gxg^{-1}}
+    = \bar{g}\cdot\bar{x}\cdot\overline{g^{-1}}
+    = \bar{g}\cdot\bar1\cdot\overline{g^{-1}}
+    = \overline{gg^{-1}}
+    = \bar1.
+  \end{equation*}
+  Therefore $gxg^{-1}\in\bar1$ and $\bar1\trianglelefteq G$.
+
+  Finally, we show that the coset $g\bar1$ is a member of
+  $\mathcal{P}$. In particular, we show that $g\bar1 = \bar{g}$. If
+  $x\in g\bar1$, then $x = gy$ for some $y\in\bar1$. Then
+  \begin{equation*}
+    \bar{x} = \overline{gy} = \bar{g}\cdot\bar{y}
+    = \bar{g}\cdot\bar1 = \bar{g},
+  \end{equation*}
+  so $x\in\bar{g}$ and $g\bar1\subseteq\bar{g}$.
+
+  Conversely, if $x\in\bar{g}$, then $\bar{x} = \bar{g}$. Multiplying
+  on the left by $\bar{g}^{-1}$ gives
+  $\overline{g^{-1}x} = \overline{g^{-1}g} = \bar1$. Therefore
+  $g^{-1}x\in\bar1$. So
+  \begin{equation*}
+    x = gg^{-1}x = g(g^{-1}x) \in g\bar1,
+  \end{equation*}
+  and we see that $g\bar1\supseteq\bar{g}$. This shows that
+  $g\bar{1} = \bar{g}$ as required.
+\end{proof}
