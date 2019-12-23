@@ -54,3 +54,25 @@ is correct.
   $\gen{k}$, and the latter three are maximal by Lagrange. Therefore
   the lattice is correct.
 \end{proof}
+
+\Exercise4 Show that if $\ord{G} = pq$ for some primes $p$ and $q$
+(not necessarily distinct) then either $G$ is abelian or $Z(G) = 1$.
+\begin{proof}
+  Let $G$ be as stated. If $G$ is abelian, there is nothing left to
+  prove, so suppose $G$ is not abelian. Then $Z(G)$ is proper. By
+  Lagrange, there are only three possibilities for the order of
+  $Z(G)$: the order is either $1$, $p$, or $q$.
+
+  Now assume that $Z(G)$ is not trivial. Then without loss of
+  generality we may suppose that $\ord{Z(G)} = p$. Since the center of
+  a group is always normal, we may consider the quotient group
+  $G/Z(G)$. Again by Lagrange, we have
+  \begin{equation*}
+    \ord{G/Z(G)} = \frac{\ord{G}}{\ord{Z(G)}} = \frac{pq}p = q.
+  \end{equation*}
+  Now, $q$ is prime, so we may apply Corollary~10 to conclude that
+  $G/Z(G)$ is cyclic. Then by
+  Exercise~\ref{exercise:quotient-group:center-quotient-cyclic}, it
+  follows that $G$ is abelian, which is a contradiction. Therefore
+  $Z(G)$ is the trivial subgroup, and the proof is complete.
+\end{proof}
