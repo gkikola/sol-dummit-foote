@@ -146,3 +146,15 @@ equivalence class of each $a\in G$. Use this to prove Proposition~4.
   of $H$. Therefore the left cosets of $H$ form a partition of $G$,
   providing an alternative proof for Proposition~4.
 \end{proof}
+
+\Exercise8 Prove that if $H$ and $K$ are finite subgroups of $G$ whose
+orders are relatively prime then $H\cap K = 1$.
+\begin{proof}
+  Let $H$ and $K$ be as stated, and let $n = \ord{H\cap K}$. We know
+  that the intersection of two subgroups is a subgroup, so
+  $H\cap K\leq H$. By Lagrange's Theorem, $n$ must divide
+  $\ord{H}$. But $H\cap K\leq K$ also, so $n$ must divide
+  $\ord{K}$. And since $\ord{H}$ and $\ord{K}$ have no common divisor
+  other than $1$, we must have $n = 1$. Therefore $H\cap K$ is the
+  trivial subgroup.
+\end{proof}
