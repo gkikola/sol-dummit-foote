@@ -109,3 +109,40 @@ is correct.
     $H\trianglelefteq G$ by definition.
   \end{proof}
 \end{enumerate}
+
+\Exercise6 Let $H\leq G$ and let $g\in G$. Prove that if the right
+coset $Hg$ equals {\em some} left coset of $H$ in $G$ then it equals
+the left coset $gH$ and $g$ must be in $N_G(H)$.
+\begin{proof}
+  Suppose $Hg = aH$ for some $a\in G$. Since $g\in Hg$, we have
+  $g\in aH$. Since the (right) cosets of $H$ form a partition of $G$
+  (Proposition~4), this implies that $aH = gH$. Therefore $Hg = gH$
+  and $g\in N_G(H)$.
+\end{proof}
+
+\Exercise7 Let $H\leq G$ and define a relation $\sim$ on $G$ by
+\begin{equation*}
+  a\sim b \quad\text{if and only if}\quad b^{-1}a\in H.
+\end{equation*}
+Prove that $\sim$ is an equivalence relation and describe the
+equivalence class of each $a\in G$. Use this to prove Proposition~4.
+\begin{proof}
+  For any $a\in G$, we certainly have $a^{-1}a = 1\in H$, so $a\sim a$
+  and $\sim$ is reflexive. If $a\sim b$ for $a,b\in G$ then, since $H$
+  must be closed under inverses, we have
+  $a^{-1}b = (b^{-1}a)^{-1} \in H$ so that $b\sim a$, and $\sim$ is
+  symmetric. Lastly, if $a\sim b$ and $b\sim c$ for $a,b,c\in G$, then
+  \begin{equation*}
+    c^{-1}a
+    = c^{-1}(bb^{-1})a
+    = (c^{-1}b)(b^{-1}a) \in H,
+  \end{equation*}
+  so $a\sim c$ and we see that $\sim$ is transitive. This shows that
+  $\sim$ is an equivalence relation.
+
+  Note that the equivalence classes of $\sim$ form a partition of $G$
+  (see Proposition~2 of Section~0.1). It is not difficult to see that
+  $a\sim b$ if and only if $a$ and $b$ belong to the same left coset
+  of $H$. Therefore the left cosets of $H$ form a partition of $G$,
+  providing an alternative proof for Proposition~4.
+\end{proof}
