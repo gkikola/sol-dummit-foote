@@ -158,3 +158,141 @@ orders are relatively prime then $H\cap K = 1$.
   other than $1$, we must have $n = 1$. Therefore $H\cap K$ is the
   trivial subgroup.
 \end{proof}
+
+\Exercise9 Let $G$ be a finite group and let $p$ be a prime dividing
+$\ord{G}$. Let $\mathcal{S}$ denote the set of $p$-tuples of elements
+of $G$ the product of whose coordinates is $1$:
+\begin{equation*}
+  \mathcal{S} = \{(x_1,x_2,\dots,x_p) \mid
+  \text{$x_i\in G$ and $x_1x_2\cdots x_p = 1$}\}.
+\end{equation*}
+\begin{enumerate}
+\item Show that $\mathcal{S}$ has $\ord{G}^{p-1}$ elements, hence has
+  order divisible by $p$.
+  \begin{proof}
+    Let $\mathcal{T}$ be the set of all $(p-1)$-tuples of elements of
+    $G$. Then $\mathcal{T}$ has $\ord{G}^{p-1}$ elements. We show that
+    $\mathcal{S}$ and $\mathcal{T}$ share the same cardinality.
+
+    Define $\varphi\colon\mathcal{T}\to\mathcal{S}$ by
+    \begin{equation*}
+      \varphi(x_1,x_2,\dots,x_{p-1})
+      = (x_1,x_2,\dots,x_{p-1},(x_1x_2\cdots x_{p-1})^{-1}).
+    \end{equation*}
+    Given two elements $\alpha,\beta\in\mathcal{S}$, if
+    $\alpha = \beta$ then clearly their first $p-1$ coordinates must
+    be equal, so $\mathcal{T}$ is injective. Now suppose
+    $\alpha\in\mathcal{S}$. Then the image of the first $p-1$
+    coordinates of $\alpha$ under $\mathcal{T}$ must be $\alpha$,
+    since the last coordinate is completely determined by the others
+    (group inverses are unique). Therefore $\varphi$ is a bijection,
+    so $\ord{\mathcal{S}} = \ord{\mathcal{T}} = \ord{G}^{p-1}$.
+  \end{proof}
+\end{enumerate}
+Define the relation $\sim$ on $\mathcal{S}$ by letting
+$\alpha\sim\beta$ if $\beta$ is a cyclic permutation of $\alpha$.
+\begin{enumerate}
+  \setcounter{enumi}1
+\item Show that a cyclic permutation of an element of $\mathcal{S}$ is
+  again an element of $\mathcal{S}$.
+  \begin{proof}
+    Let $\alpha = (x_1,x_2,\dots,x_p)\in\mathcal{S}$. Then
+    $x_1x_2\cdots x_p = 1$. Multiplying on the left by $x_p$ and then
+    on the right by $x_p^{-1}$ gives
+    \begin{equation*}
+      x_px_1x_2\cdots x_{p-1} = x_px_p^{-1} = 1.
+    \end{equation*}
+    Therefore $(x_p,x_1,x_2,\dots,x_{p-1})\in\mathcal{S}$. We may
+    repeat this process $p-1$ times to see that all cyclic
+    permutations of $\alpha$ are in $\mathcal{S}$.
+  \end{proof}
+\item Prove that $\sim$ is an equivalence relation on $\mathcal{S}$.
+  \begin{proof}
+    Let $\alpha,\beta,\gamma\in\mathcal{S}$ be arbitrary. $\alpha$ is
+    a cyclic permutation of itself (namely the identity permutation),
+    so $\alpha\sim\alpha$ and $\sim$ is reflexive.
+
+    If $\alpha\sim\beta$ then $\beta$ is a cyclic permutation of
+    $\alpha$, so by taking the inverse of this permutation we see that
+    $\alpha$ is a cyclic permutation of $\beta$. Therefore
+    $\beta\sim\alpha$, and $\sim$ is symmetric.
+
+    Lastly, if $\alpha\sim\beta$ and $\beta\sim\gamma$ then $\gamma$
+    is a cyclic permutation of $\beta$ and $\beta$ is a cyclic
+    permutation of $\alpha$, and by taking the composition of these
+    two permutations we see that $\gamma$ is a cyclic permutation of
+    $\alpha$, so that $\alpha\sim\gamma$. Thus $\sim$ is transitive
+    and the proof is complete.
+  \end{proof}
+\item Prove that an equivalence class contains a single element if and
+  only if it is of the form $(x,x,\dots,x)$ with $x^p = 1$.
+  \begin{proof}
+    Take any $\alpha\in\mathcal{S}$ and let $[\alpha]$ denote the
+    equivalence class containing $\alpha$.
+
+    First, if $\alpha$ is the only element in $[\alpha]$, then all
+    cyclic permutations of $\alpha$ must be the same. This is not
+    possible unless all coordinates of $\alpha$ are the same. So
+    $\alpha$ has the form $(x,x,\dots,x)$, where $x^p = 1$.
+
+    Conversely, if $\alpha$ has the form $(x,x,\dots,x)$ with all
+    coordinates the same, then every cyclic permutation of $\alpha$
+    will leave $\alpha$ unchanged. Therefore $[\alpha]$ contains only
+    the one element.
+  \end{proof}
+\item Prove that every equivalence class has order $1$ or $p$ (this
+  uses the fact that $p$ is a {\em prime}). Deduce that
+  $\ord{G}^{p-1} = k + pd$, where $k$ is the number of classes of size
+  $1$ and $d$ is the number of classes of size $p$.
+  \begin{proof}
+    Again, let $\alpha\in\mathcal{S}$ with $[\alpha]$ denoting the
+    corresponding equivalence class, and let
+    \begin{equation*}
+      \alpha = (x_1,x_2,\dots,x_p),
+    \end{equation*}
+    with the $x_i$'s not necessarily distinct. Suppose $[\alpha]$
+    contains exactly $n$ members. Then $1\leq n\leq p$. For all
+    $k\in\Z$, we must have
+    \begin{equation}
+      \label{eq:quotient-group:cauchy:cond-for-xi-eq-xj}
+      x_i = x_j
+      \quad\text{whenever}\quad
+      i + kn \equiv j \pmod{p},
+    \end{equation}
+    since $\alpha$ can only be cycled $n$ times before arriving back
+    at itself.
+
+    Now there are two cases, either $n = p$ or $1\leq n<p$. In the
+    first case there is nothing left to prove, so assume $1\leq
+    n<p$. Then $(n,p) = 1$ since $p$ is prime. So by
+    Exercise~\ref{exercise:prelim:z-mod-nz-cross}, we know that $n$
+    has a multiplicative inverse, $n^{-1}$, modulo $p$. Then, taking
+    $k = n^{-1}$, \eqref{eq:quotient-group:cauchy:cond-for-xi-eq-xj}
+    tells us that $x_i = x_j$ whenever $i+1\equiv
+    j\pmod{p}$. Therefore $x_{i+1} = x_i$ for all $i$ with
+    $1\leq i<p$, and $x_1 = x_p$. But then every coordinate of
+    $\alpha$ is the same, so $[\alpha]$ has only one member. Hence
+    $n = 1$ in this case.
+
+    We have shown that if $[\alpha]$ has exactly $n$ elements, then
+    $n = 1$ or $n = p$. Since the equivalence classes partition
+    $\mathcal{S}$, we see that
+    \begin{equation*}
+      \ord{G}^{p-1} = \ord{\mathcal{S}} = k + pd,
+    \end{equation*}
+    where $k$ is the number of classes of size $1$ and $d$ is the
+    number of classes of size $p$.
+  \end{proof}
+\item Since $\{(1,1,\dots,1)\}$ is an equivalence class of size $1$,
+  conclude from (e) that there must be a nonidentity element $x$ in
+  $G$ with $x^p = 1$, i.e., $G$ contains an element of order $p$.
+  \begin{proof}
+    Since $p$ divides $\ord{G}$, it certainly divides
+    $\ord{G}^{p-1}$. So $p\mid(k + pd)$. But this implies that
+    $p\mid k$. Therefore $k > 1$, so there must be more than one
+    equivalence class of $\sim$ having only one element. One of these
+    must be of the form $(x,x,\dots,x)$ where $x$ is not the identity
+    of $G$. Therefore this $x$ is such that $x^p = 1$, so $\ord{x}$
+    divides $p$. We know $x$ is not the identity, so $\ord{x} = p$.
+  \end{proof}
+\end{enumerate}
