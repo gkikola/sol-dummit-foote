@@ -76,3 +76,36 @@ is correct.
   follows that $G$ is abelian, which is a contradiction. Therefore
   $Z(G)$ is the trivial subgroup, and the proof is complete.
 \end{proof}
+
+\Exercise5 Let $H$ be a subgroup of $G$ and fix some element $g\in G$.
+\begin{enumerate}
+\item Prove that $gHg^{-1}$ is a subgroup of $G$ of the same order as
+  $H$.
+  \begin{proof}
+    $1\in gHg^{-1}$, so $gHg^{-1}$ is nonempty. Let
+    $x,y\in gHg^{-1}$. Then $x = gh_1g^{-1}$ and $y = gh_2g^{-1}$
+    for some $h_1,h_2\in H$. We have
+    \begin{align*}
+      xy^{-1} &= (gh_1g^{-1})(gh_2g^{-1})^{-1} \\
+              &= (gh_1g^{-1})(gh_2^{-1}g^{-1}) \\
+              &= gh_1(g^{-1}g)h_2^{-1}g^{-1} \\
+              &= gh_1h_2^{-1}g^{-1} \in gHg^{-1}.
+    \end{align*}
+    By the subgroup criterion, $gHg^{-1}\leq G$.
+
+    Now define the map $\varphi\colon H\to gHg^{-1}$ by
+    $\varphi(h) = ghg^{-1}$. Then $\varphi$ is clearly surjective. It
+    is also injective, since $gh_1g^{-1} = gh_2g^{-1}$ implies that
+    $h_1 = h_2$ by the left and right cancellation laws. This shows
+    that $\ord{H} = \ord{gHg^{-1}}$ (in fact they are isomorphic).
+  \end{proof}
+\item Deduce that if $n\in\Z^+$ and $H$ is the unique subgroup of $G$
+  of order $n$ then $H\trianglelefteq G$.
+  \begin{proof}
+    For any $g\in G$, we know from the above that $gHg^{-1}\leq G$ and
+    that $\ord{gHg^{-1}} = \ord{H} = n$. Since $H$ is the only
+    subgroup of $G$ with order $n$, it follows that $H =
+    gHg^{-1}$. Since this is true for every $g\in G$,
+    $H\trianglelefteq G$ by definition.
+  \end{proof}
+\end{enumerate}
