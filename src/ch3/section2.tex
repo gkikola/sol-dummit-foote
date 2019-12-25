@@ -531,3 +531,33 @@ function).
   Since $(\Z/(p^n-1)\Z)^\times$ has order $\varphi(p^n - 1)$, we know
   by Corollary~9 that $n\mid\varphi(p^n-1)$.
 \end{solution}
+
+\Exercise{18} Let $G$ be a finite group, let $H$ be a subgroup of $G$
+and let $N\trianglelefteq G$. Prove that if $\ord{H}$ and $\ord{G:N}$
+are relatively prime then $H\leq N$.
+\begin{proof}
+  By Proposition~13 we know that
+  \begin{equation*}
+    \ord{HN} = \frac{\ord{H}\ord{N}}{\ord{H\cap N}}.
+  \end{equation*}
+  Now $H\cap N\leq H$, so $\ord{H\cap N}$ divides $\ord{H}$ and we can
+  write
+  \begin{equation*}
+    \ord{HN} = k\ord{N},
+  \end{equation*}
+  where $k = \ord{H}/\ord{H\cap N}$. But $HN\leq G$ since $N$ is
+  normal in $G$ (Corollary~15), so $k\ord{N}$ divides $\ord{G}$. That
+  is, there is an integer $\ell$ such that
+  \begin{equation*}
+    k\ell\ord{N} = \ord{G},
+    \quad\text{or}\quad
+    k\ell = \frac{\ord{G}}{\ord{N}} = \ord{G:N}.
+  \end{equation*}
+  We see that $k$ divides $\ord{G:N}$. But $k$ also divides
+  $\ord{H}$. Since $k$ is a common divisor of two relatively prime
+  numbers, it follows that $k = 1$. Therefore
+  \begin{equation*}
+    \ord{H} = \ord{H\cap N}
+  \end{equation*}
+  and we must have $H = H\cap N$ so that $H\leq N$.
+\end{proof}
