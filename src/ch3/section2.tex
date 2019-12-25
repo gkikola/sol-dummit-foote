@@ -297,9 +297,11 @@ $\alpha\sim\beta$ if $\beta$ is a cyclic permutation of $\alpha$.
   \end{proof}
 \end{enumerate}
 
-\Exercise{10} Suppose $H$ and $K$ are subgroups of finite index in the
-(possibly infinite) group $G$ with $\ord{G:H} = m$ and
-$\ord{G:K} = n$. Prove that
+\Exercise{10}
+\label{exercise:quotient-group:index-subgroup-intersection}
+Suppose $H$ and $K$ are subgroups of finite index in the (possibly
+infinite) group $G$ with $\ord{G:H} = m$ and $\ord{G:K} = n$. Prove
+that
 \begin{equation*}
   \text{l.c.m.}(m,n)\leq\ord{G:H\cap K}\leq mn.
 \end{equation*}
@@ -342,4 +344,45 @@ $\ord{G:H\cap K} = \ord{G:H}\cdot\ord{G:K}$.
 
   Finally, if $(m,n) = 1$, then $[m,n] = mn$, and we see that
   $\ord{G:H\cap K}$ must equal $mn$.
+\end{proof}
+
+\Exercise{11}
+\label{exercise:quotient-group:subgroup-of-subgroup-index}
+Let $H\leq K\leq G$. Prove that $\ord{G:H} = \ord{G:K}\cdot\ord{K:H}$
+(do not assume $G$ is finite).
+\begin{proof}
+  Since cosets of $H$ are contained within cosets of $K$, if $H$ has
+  infinite index in $K$ or if $K$ has infinite index in $G$ then $H$
+  has infinite index in $G$ also. So we will assume that $\ord{K:H}$
+  and $\ord{G:K}$ are finite.
+
+  Let $m,n\in\Z^+$ where
+  \begin{equation*}
+    m = \ord{G:K}
+    \quad\text{and}\quad
+    n = \ord{K:H}.
+  \end{equation*}
+  Let $g_1,g_2,\dots,g_m$ be representatives of the distinct cosets of
+  $K$ in $G$, and let $k_1,k_2,\dots,k_n$ be representatives of the
+  distinct cosets of $H$ in $K$. Take any element $a\in G$. Since the
+  cosets of $K$ partition $G$, $a$ belongs to exactly one coset
+  $g_iK$, so $a = g_ib$ for some $b\in K$. And since the cosets of $H$
+  partition $K$, $b$ belongs to exactly one coset $k_jH$, so
+  $b = k_jc$ for some $c\in H$. Then $a = g_ik_jc$, where $i$ and $j$
+  are uniquely determined.
+
+  Note that, within each coset $g_iK$, we cannot have
+  $g_ik_{j_1}H = g_ik_{j_2}H$ with $j_1\neq j_2$. For, if this is
+  possible, then let $x$ belong to this common coset. Then
+  $x = g_ik_{j_1}h_1$ and $x = g_ik_{j_2}h_2$ for some $h_1,h_2\in
+  H$. Multiplying on the left by $g_i^{-1}$ then gives
+  $k_{j_1}h_1 = k_{j_2}h_2$, and we see that $k_{j_1}$ and $k_{j_2}$
+  are representatives of the same coset of $H$ in $K$, which is a
+  contradiction.
+
+  Therefore the cosets of $H$ partition $G$ into $mn$ disjoint
+  subsets, so
+  \begin{equation*}
+    \ord{G:H} = mn = \ord{G:K}\cdot\ord{K:H}. \qedhere
+  \end{equation*}
 \end{proof}
