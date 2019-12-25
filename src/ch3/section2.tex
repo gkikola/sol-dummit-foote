@@ -475,3 +475,18 @@ order $8$ or a normal subgroup of order $3$.
   having order $3\cdot3 = 9$, but this is impossible. Therefore $S_4$
   has no normal subgroup of order $3$.
 \end{proof}
+
+\Exercise{15} Let $G = S_n$ and for fixed $i\in\{1,2,\dots,n\}$ let
+$G_i$ be the stabilizer of $i$. Prove that $G_i\cong S_{n-1}$.
+\begin{proof}
+  Let $G$ act on $\{1,2,\dots,n\}$ and fix some $i$ from this latter
+  set. Now suppose $\sigma\in G_i$. We can always write $\sigma$ as a
+  product of disjoint cycles using the Cycle Decomposition Algorithm
+  presented in Section~1.3. Each of the cycles in the cycle
+  decomposition of sigma must not contain $i$, since $i$ needs to be
+  stabilized. Therefore $G_i$ consists of all permutations of the set
+  $\{1,2,\dots,n\} - \{i\}$, that is it is the permutations of a set
+  with $n-1$ elements. And it has been shown that, for finite sets $A$
+  and $B$, $S_A\cong S_B$ when $\ord{A} = \ord{B}$. Therefore
+  $G_i\cong S_{n-1}$.
+\end{proof}
