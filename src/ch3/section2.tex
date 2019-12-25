@@ -296,3 +296,50 @@ $\alpha\sim\beta$ if $\beta$ is a cyclic permutation of $\alpha$.
     divides $p$. We know $x$ is not the identity, so $\ord{x} = p$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{10} Suppose $H$ and $K$ are subgroups of finite index in the
+(possibly infinite) group $G$ with $\ord{G:H} = m$ and
+$\ord{G:K} = n$. Prove that
+\begin{equation*}
+  \text{l.c.m.}(m,n)\leq\ord{G:H\cap K}\leq mn.
+\end{equation*}
+Deduce that if $m$ and $n$ are relatively prime then
+$\ord{G:H\cap K} = \ord{G:H}\cdot\ord{G:K}$.
+\begin{proof}
+  For any $g\in G$, consider the cosets $gH$, $gK$, and $g(H\cap
+  K)$. First, if $x\in g(H\cap K)$, then $x\in gH$ and $x\in gK$ so
+  $g(H\cap K)\subseteq(gH\cap gK)$. On the other hand, if $x\in gH$
+  and $x\in gK$, then $g^{-1}x\in H\cap K$, so $x\in g(H\cap K)$ and
+  we have $(gH\cap gK)\subseteq g(H\cap K)$. Therefore
+  \begin{equation*}
+    gH\cap gK = g(H\cap K)
+    \quad\text{for all $g\in G$}.
+  \end{equation*}
+  Now each coset of $H\cap K$ is the intersection of one coset of $H$
+  and one coset of $K$. There are exactly $mn$ such intersections, so
+  $\ord{G:H\cap K}$ is finite and is at most $mn$.
+
+  Now let $g_1,g_2,\dots,g_m$ be representatives of the cosets of $H$
+  in $G$. Since $H\cap K$ has finite index in $G$, it also has finite
+  index in $H$, so we may let $h_1,h_2,\dots,h_t$ be representatives
+  of the cosets of $H\cap K$ in $H$ (where $t = \ord{H:H\cap
+    K}$).
+
+  Let $a\in G$ be arbitrary. Then $a$ belongs to exactly one coset
+  $g_iH$. That is, $a = g_ib$ for some $b\in H$. And $b$ belongs to
+  exactly one coset $h_j(H\cap K)$, so $b = h_jc$ for $c\in H\cap
+  K$. Then $a = g_ih_jc$, and we see that every element of $G$ belongs
+  to exactly one coset $g_ih_j(H\cap K)$. This shows that
+  \begin{equation*}
+    \ord{G:H\cap K} = \ord{G:H}\ord{H:H\cap K}.
+  \end{equation*}
+
+  We now know that $\ord{G:H}$ divides $\ord{G:H\cap
+    K}$. That is, if $\ord{G:H\cap K} = s$, then $m\mid s$. By a
+  symmetric argument, we know that $n\mid s$ also. Therefore
+  $s\geq[m,n]$, where $[m,n]$ denotes the least common multiple of $m$
+  and $n$. This completes the proof of the inequality.
+
+  Finally, if $(m,n) = 1$, then $[m,n] = mn$, and we see that
+  $\ord{G:H\cap K}$ must equal $mn$.
+\end{proof}
