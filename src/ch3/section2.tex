@@ -561,3 +561,14 @@ are relatively prime then $H\leq N$.
   \end{equation*}
   and we must have $H = H\cap N$ so that $H\leq N$.
 \end{proof}
+
+\Exercise{19} Prove that if $N$ is a normal subgroup of the finite
+group $G$ and $(\ord{N},\ord{G:N}) = 1$ then $N$ is the unique
+subgroup of $G$ of order $\ord{N}$.
+\begin{proof}
+  Suppose $H$ is a subgroup that also has order $\ord{N}$. Then
+  $\ord{H}$ and $\ord{G:N}$ are relatively prime, so we may apply the
+  result from the previous exercise to conclude that $H\leq N$. And
+  since they have the same order, $H = N$. Therefore $N$ is the only
+  subgroup with order $\ord{N}$.
+\end{proof}
