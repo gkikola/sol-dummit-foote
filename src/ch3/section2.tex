@@ -490,3 +490,28 @@ $G_i$ be the stabilizer of $i$. Prove that $G_i\cong S_{n-1}$.
   and $B$, $S_A\cong S_B$ when $\ord{A} = \ord{B}$. Therefore
   $G_i\cong S_{n-1}$.
 \end{proof}
+
+\Exercise{16} Use Lagrange's Theorem in the multiplicative group
+$(\Z/p\Z)^\times$ to prove {\em Fermat's Little Theorem}: if $p$ is a
+prime then $a^p\equiv a\pmod{p}$ for all $a\in\Z$.
+\begin{proof}
+  Let $p$ be a prime. Then
+  \begin{equation*}
+    (\Z/p\Z)^\times = \{\bar1,\bar2,\bar3,\dots,\overline{p-1}\}.
+  \end{equation*}
+  Now either $a$ is a multiple of $p$ or not. If not, then
+  $\bar{a}\in(\Z/p\Z)^\times$ and by Lagrange's Theorem and
+  Corollary~9, we know that $\ord{\bar{a}}$ must divide
+  $p-1$. Therefore $\bar{a}^{p-1} = \bar1$, so
+  \begin{equation*}
+    a^{p-1}\equiv 1\pmod{p},
+  \end{equation*}
+  and multiplying both sides by $a$ gives the desired result.
+
+  The other possibility is that $a$ and $p$ are not relatively
+  prime. In this case, we have
+  \begin{equation*}
+    a^p\equiv0\equiv a\pmod{p},
+  \end{equation*}
+  and the result still holds.
+\end{proof}
