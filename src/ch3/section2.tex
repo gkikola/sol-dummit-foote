@@ -377,3 +377,32 @@ Let $H\leq K\leq G$. Prove that $\ord{G:H} = \ord{G:K}\cdot\ord{K:H}$
     \ord{G:H} = mn = \ord{G:K}\cdot\ord{K:H}. \qedhere
   \end{equation*}
 \end{proof}
+
+\Exercise{12} Let $H\leq G$. Prove that the map $x\mapsto x^{-1}$
+sends each left coset of $H$ in $G$ onto a right coset of $H$ and
+gives a bijection between the set of left cosets and the set of right
+cosets of $H$ in $G$ (hence the number of left cosets of $H$ in $G$
+equals the number of right cosets).
+\begin{proof}
+  Let $\varphi$ be a mapping between the set of left cosets of $H$ in
+  $G$ to the set of right cosets, given by
+  \begin{equation*}
+    \varphi(xH) = Hx^{-1}.
+  \end{equation*}
+  First we show that $\varphi$ is well defined. Suppose $x$ and $y$
+  are representatives of the same left coset $gH$. Then $x = gh_1$ and
+  $y = gh_2$ for some $h_1,h_2\in H$. So
+  $x^{-1} = h_1^{-1}g^{-1}\in Hg^{-1}$ and
+  $y^{-1} = h_2^{-1}g^{-1}\in Hg^{-1}$, and we see that $\varphi$
+  sends both $xH$ and $yH$ to the same right coset $Hg^{-1}$ and is
+  therefore well defined.
+
+  To show that $\varphi$ is a bijection, we simply exhibit a two-sided
+  inverse function. Let $\psi$ send the set of right cosets of $H$ in
+  $G$ onto the set of left cosets via the map $Hx \mapsto x^{-1}H$. By
+  the same argument as before, $\psi$ is well
+  defined. $\psi\circ\varphi$ and $\varphi\circ\psi$ are obviously the
+  identity, so $\psi = \varphi^{-1}$ and $\varphi$ is a bijection. It
+  follows that the number of left cosets of $H$ in $G$ is equal to the
+  number of right cosets.
+\end{proof}
