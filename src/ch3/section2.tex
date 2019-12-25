@@ -515,3 +515,19 @@ prime then $a^p\equiv a\pmod{p}$ for all $a\in\Z$.
   \end{equation*}
   and the result still holds.
 \end{proof}
+
+\Exercise{17} Let $p$ be a prime and let $n$ be a positive
+integer. Find the order of $\bar{p}$ in
+\begin{equation*}
+  (\Z/(p^n-1)\Z)^\times
+\end{equation*}
+and deduce that $n\mid\varphi(p^n-1)$ (here $\varphi$ is Euler's
+function).
+\begin{solution}
+  Note that $p^n\equiv1\pmod{p^n-1}$ so $\ord{\bar p}\leq n$. On the
+  other hand, if $p^k\equiv1\pmod{p^n-1}$, then $(p^n-1)\mid(p^k-1)$
+  and we see that $k\geq n$. Therefore $\ord{\bar p} = n$.
+
+  Since $(\Z/(p^n-1)\Z)^\times$ has order $\varphi(p^n - 1)$, we know
+  by Corollary~9 that $n\mid\varphi(p^n-1)$.
+\end{solution}
