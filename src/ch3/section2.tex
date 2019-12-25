@@ -572,3 +572,26 @@ subgroup of $G$ of order $\ord{N}$.
   since they have the same order, $H = N$. Therefore $N$ is the only
   subgroup with order $\ord{N}$.
 \end{proof}
+
+\Exercise{20} If $A$ is an abelian group with $A\trianglelefteq G$ and
+$B$ is any subgroup of $G$ prove that $A\cap B\trianglelefteq AB$.
+\begin{proof}
+  We know that $AB$ is a subgroup of $G$ by Corollary~15. We want to
+  show that $A\cap B\trianglelefteq AB$. Take any member $ab\in AB$,
+  where $a\in A$ and $b\in B$, and let $c\in A\cap B$. Then
+  \begin{equation*}
+    (ab)c(ab)^{-1} = abcb^{-1}a^{-1}.
+  \end{equation*}
+  Now, since $A\trianglelefteq G$, it follows that $bcb^{-1}\in A$,
+  and since $a^{-1}$ must commute with other members of $A$, we have
+  \begin{equation*}
+    (ab)c(ab)^{-1} = a(bcb^{-1})a^{-1} = aa^{-1}(bcb^{-1}) = bcb^{-1}.
+  \end{equation*}
+  We know already that $bcb^{-1}\in A$. But $bcb^{-1}$ is also a
+  product of elements from $B$, so $bcb^{-1}\in A\cap B$. What we have
+  shown is that for all $ab\in AB$,
+  \begin{equation*}
+    (ab)(A\cap B)(ab)^{-1}\subseteq A\cap B.
+  \end{equation*}
+  This proves that $A\cap B\trianglelefteq AB$.
+\end{proof}
