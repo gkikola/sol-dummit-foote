@@ -321,26 +321,17 @@ $\ord{G:H\cap K} = \ord{G:H}\cdot\ord{G:K}$.
   and one coset of $K$. There are exactly $mn$ such intersections, so
   $\ord{G:H\cap K}$ is finite and is at most $mn$.
 
-  Now let $g_1,g_2,\dots,g_m$ be representatives of the cosets of $H$
-  in $G$. Since $H\cap K$ has finite index in $G$, it also has finite
-  index in $H$, so we may let $h_1,h_2,\dots,h_t$ be representatives
-  of the cosets of $H\cap K$ in $H$ (where $t = \ord{H:H\cap
-    K}$).
-
-  Let $a\in G$ be arbitrary. Then $a$ belongs to exactly one coset
-  $g_iH$. That is, $a = g_ib$ for some $b\in H$. And $b$ belongs to
-  exactly one coset $h_j(H\cap K)$, so $b = h_jc$ for $c\in H\cap
-  K$. Then $a = g_ih_jc$, and we see that every element of $G$ belongs
-  to exactly one coset $g_ih_j(H\cap K)$. This shows that
+  As we will show in
+  Exercise~\ref{exercise:quotient-group:subgroup-of-subgroup-index}
+  below, we must have
   \begin{equation*}
     \ord{G:H\cap K} = \ord{G:H}\ord{H:H\cap K}.
   \end{equation*}
-
-  We now know that $\ord{G:H}$ divides $\ord{G:H\cap
-    K}$. That is, if $\ord{G:H\cap K} = s$, then $m\mid s$. By a
-  symmetric argument, we know that $n\mid s$ also. Therefore
-  $s\geq[m,n]$, where $[m,n]$ denotes the least common multiple of $m$
-  and $n$. This completes the proof of the inequality.
+  So $\ord{G:H}$ divides $\ord{G:H\cap K}$. That is, if
+  $\ord{G:H\cap K} = s$, then $m\mid s$. By the same argument, we know
+  that $n\mid s$ also. Therefore $s\geq[m,n]$, where $[m,n]$ denotes
+  the least common multiple of $m$ and $n$. This completes the proof
+  of the inequality.
 
   Finally, if $(m,n) = 1$, then $[m,n] = mn$, and we see that
   $\ord{G:H\cap K}$ must equal $mn$.
