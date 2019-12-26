@@ -613,3 +613,54 @@ index. Deduce that $\Q/\Z$ has no proper subgroups of finite index.
   We know that $\Q/\Z$ cannot have proper subgroups of finite index
   for exactly the same reason.
 \end{proof}
+
+\Exercise{22} Use Lagrange's Theorem in the multiplicative group
+$(\Z/n\Z)^\times$ to prove {\em Euler's Theorem}:
+$a^{\varphi(n)}\equiv1\pmod{n}$ for every integer $a$ relatively prime
+to $n$, where $\varphi$ denotes Euler's $\varphi$-function.
+\begin{proof}
+  We know that $(\Z/n\Z)^\times$ has order equal to $\varphi(n)$. If
+  $a$ is relatively prime to $n$, then $\bar{a}\in(\Z/n\Z)^\times$ so
+  $\ord{\bar{a}}$ must divide $\varphi(n)$. Therefore
+  $a^{\varphi(n)}\equiv1\pmod{n}$.
+\end{proof}
+
+\Exercise{23} Determine the last two digits of $3^{3^{100}}$.
+\begin{solution}
+  Since $100 = 2^2\cdot5^2$, we compute
+  \begin{equation*}
+    \varphi(100) = \varphi(2^2)\varphi(5^2)
+    = (2^2 - 2)(5^2 - 5) = 40.
+  \end{equation*}
+  Also, $\varphi(40) = \varphi(2^3)\varphi(5) = 16$.
+
+  Now $(3,16) = 1$, so by Euler's Theorem we know that
+  \begin{equation*}
+    3^{\varphi(40)} = 3^{16}\equiv1\pmod{40}.
+  \end{equation*}
+  Therefore
+  \begin{align*}
+    3^{100}
+    &= 3^{6\cdot16+4} \\
+    &= (3^{16})^6\cdot3^4 \\
+    &\equiv 1^6\cdot3^4\pmod{40} \\
+    &\equiv 81\pmod{40} \\
+    &\equiv 1\pmod{40}.
+  \end{align*}
+  This shows that $3^{100} = 1 + 40k$ for some $k\in\Z$.
+
+  Since $(3,100) = 1$, we again have by Euler's Theorem that
+  \begin{equation*}
+    3^{\varphi(100)} = 3^{40}\equiv1\pmod{100}.
+  \end{equation*}
+  Therefore
+  \begin{align*}
+    3^{3^{100}}
+    &= 3^{1 + 40k} \\
+    &= 3\cdot(3^{40})^k \\
+    &\equiv 3\cdot1^k\pmod{100} \\
+    &\equiv 3\pmod{100}.
+  \end{align*}
+  So the last two digits of $3^{3^{100}}$ in decimal notation are
+  $03$.
+\end{solution}
