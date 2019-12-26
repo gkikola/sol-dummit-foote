@@ -595,3 +595,21 @@ $B$ is any subgroup of $G$ prove that $A\cap B\trianglelefteq AB$.
   \end{equation*}
   This proves that $A\cap B\trianglelefteq AB$.
 \end{proof}
+
+\Exercise{21} Prove that $\Q$ has no proper subgroups of finite
+index. Deduce that $\Q/\Z$ has no proper subgroups of finite index.
+\begin{proof}
+  Suppose $\Q$ does have a proper subgroup of finite index, call it
+  $H$. Since $\Q$ is abelian, $H\trianglelefteq\Q$. In
+  Exercise~\ref{exercise:quotient-group:divisible-quotient} of the
+  previous section, we showed that the quotient of a divisible abelian
+  group by a proper subgroup must also be divisible. And we know $\Q$
+  is divisible by
+  Exercise~\ref{exercise:generated-subgroups:divisible-group}, so
+  $\Q/H$ is divisible. But then $\Q/H$ is a finite abelian group that
+  is divisible, and we showed that this was impossible in that same
+  exercise. Therefore $H$ cannot be a proper subgroup of finite index.
+
+  We know that $\Q/\Z$ cannot have proper subgroups of finite index
+  for exactly the same reason.
+\end{proof}
