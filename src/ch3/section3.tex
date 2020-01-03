@@ -1,0 +1,21 @@
+\section{The Isomorphism Theorems}
+
+Let $G$ be a group.
+
+\Exercise1 Let $F$ be a finite field of order $q$ and let
+$n\in\Z^+$. Prove that
+\begin{equation*}
+  \ord{GL_n(F):SL_n(F)} = q - 1.
+\end{equation*}
+\begin{proof}
+  In Exercise~\ref{exercise:quotient-group:GL-mod-SL} we saw that
+  $GL_n(F)/SL_n(F)\cong F^\times$. Therefore
+  \begin{equation*}
+    \ord{GL_n(F):SL_n(F)}
+    = \ord{GL_n(F)/SL_n(F)}
+    = \ord{F^\times}
+    = q - 1,
+  \end{equation*}
+  since $F^\times$ consists of all members of $F$ excluding the $0$
+  element.
+\end{proof}
