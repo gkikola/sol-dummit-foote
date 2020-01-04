@@ -161,3 +161,36 @@ index $p$ then for all $K\leq G$ either
     \ord{K:H\cap K} = \ord{HK:H} = \ord{G:H} = p. \qedhere
   \end{equation*}
 \end{proof}
+
+\Exercise4 Let $C$ be a normal subgroup of the group $A$ and let $D$
+be a normal subgroup of the group $B$. Prove that
+\begin{equation*}
+  (C\times D)\trianglelefteq(A\times B)
+  \quad\text{and}\quad
+  (A\times B)/(C\times D)\cong(A/C)\times(B/D).
+\end{equation*}
+\begin{proof}
+  Define the map $\varphi\colon A\times B\to(A/C)\times(B/D)$ by
+  \begin{equation*}
+    \varphi((a,b)) = (aC,bD).
+  \end{equation*}
+  This is a homomorphism since
+  \begin{align*}
+    \varphi((a_1,b_1)(a_2,b_2))
+    &= \varphi((a_1a_2,b_1b_2)) \\
+    &= (a_1a_2C, b_1b_2D) \\
+    &= (a_1C,b_1D)(a_2C,b_2D) \\
+    &= \varphi((a_1,b_1))\varphi((a_2,b_2)).
+  \end{align*}
+  Moreover, we can show that $\ker\varphi = C\times D$. For, if
+  $\varphi((a,b)) = (1C,1D)$, then $a\in C$ and $b\in D$ so that
+  $(a,b)\in C\times D$ and $\ker\varphi\leq C\times D$. On the other
+  hand, if $(c,d)\in C\times D$ then
+  $\varphi((c,d)) = (cC, dD) = (1C,1D)$ so
+  $\ker\varphi\geq C\times D$. Therefore $\ker\varphi = C\times D$.
+
+  We now have, by the First Isomorphism Theorem, that
+  $C\times D\trianglelefteq A\times B$ and
+  $(A\times B)/(C\times D)\cong \varphi(A\times B) =
+  (A/C)\times(B/D)$.
+\end{proof}
