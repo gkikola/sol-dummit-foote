@@ -131,3 +131,33 @@ $n\in\Z^+$. Prove that
     so $gag^{-1}\in A$. Hence $A\trianglelefteq G$. \qedhere
   \end{enumerate}
 \end{proof}
+
+\Exercise3 Prove that if $H$ is a normal subgroup of $G$ of prime
+index $p$ then for all $K\leq G$ either
+\begin{enumerate}
+\item $K\leq H$ or
+\item $G = HK$ and $\ord{K:K\cap H} = p$.
+\end{enumerate}
+\begin{proof}
+  Let $H$ have prime index $p$ as stated. Since $K\leq N_G(H) = G$, we
+  may apply the Second Isomorphism Theorem to see that $KH\leq G$ and
+  $H\trianglelefteq KH$. And $KH = HK$ by Proposition~14. Now consider
+  the index of $HK$ in $G$.
+
+  We know by
+  Exercise~\ref{exercise:quotient-group:subgroup-of-subgroup-index}
+  that
+  \begin{equation*}
+    \ord{G:H} = \ord{G:HK}\cdot\ord{HK:H}.
+  \end{equation*}
+  But $\ord{G:H}$ is prime, so there are only two possibilities for
+  $\ord{G:HK}$: Either $HK$ has index $1$, in which case $HK = G$, or
+  $\ord{G:HK} = p$. In the latter case, $\ord{HK:H} = 1$ so $H = HK$
+  which implies that $K\leq H$.
+
+  So either $K\leq H$ or $G = HK$. And if $G = HK$, then the Second
+  Isomorphism Theorem tells us that $K/(H\cap K)\cong HK/H$, so
+  \begin{equation*}
+    \ord{K:H\cap K} = \ord{HK:H} = \ord{G:H} = p. \qedhere
+  \end{equation*}
+\end{proof}
