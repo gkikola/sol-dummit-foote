@@ -19,3 +19,115 @@ $n\in\Z^+$. Prove that
   since $F^\times$ consists of all members of $F$ excluding the $0$
   element.
 \end{proof}
+
+\Exercise2 Prove all parts of the Lattice Isomorphism Theorem.
+\begin{proof}
+  First we show that there is a bijection from the set $\mathcal{A}$
+  of subgroups $A$ of $G$ containing $N$ onto the set
+  $\overline{\mathcal{A}}$ of subgroups $\overline{A} = A/N$ of
+  $G/N$. Let $\pi\colon G\to G/N$ be the natural projection of $G$
+  onto $G/N$. Then define the map
+  $\Phi\colon\mathcal{A}\to\overline{\mathcal{A}}$ by
+  \begin{equation*}
+    \Phi(A) = \pi(A) = \{aN \mid a\in A\}.
+  \end{equation*}
+  That $\Phi(A)\leq G/N$ for any $A\leq G$ is easy to check: $\Phi(A)$
+  is nonempty since it includes $1N$, and if $a,b\in A$, then
+  \begin{equation*}
+    (aN)(bN)^{-1} = (ab^{-1})N\in\Phi(A).
+  \end{equation*}
+
+  To show $\Phi$ is injective, suppose $\Phi(A) = \Phi(B)$. Let
+  $a\in A$. Then $\pi(a) = \pi(b)$ for some $b\in B$, so
+  $b^{-1}a\in N$ and $a\in bN$. Since $N\leq B$, this shows that
+  $a\in B$ so that $A\subseteq B$. A similar argument will show that
+  $A\supseteq B$ and so $A = B$.
+
+  To see that $\Phi$ is surjective, let $\overline{A} = A/N$ be a
+  subgroup of $G/N$. We saw in
+  Exercise~\ref{exercise:quotient-group:preimage-of-hom-is-subgroup}
+  that the complete preimage of a subgroup in $G/N$ is a subgroup of
+  $G$, so there is $A\in\mathcal{A}$ such that
+  $\Phi(A) = \overline{A}$.
+
+  We have shown that $\Phi$ is a bijection. Now suppose $A,B\leq G$
+  with $N\leq A$ and $N\leq B$.
+  \begin{enumerate}
+  \item $A\leq B$ if and only if $\overline{A}\leq\overline{B}$.
+
+    If $A\leq B$, then every coset of $N$ in $A$ is clearly also a
+    coset of $N$ in $B$, so that $\overline{A}\leq\overline{B}$. On
+    the other hand, if $\overline{A}\leq\overline{B}$ then for any
+    $a\in A$, we have $aN\in\overline{B}$ so that $b^{-1}a\in N$ for
+    some $b\in B$, which implies $a\in bN\subseteq B$, so $A\leq B$.
+  \item If $A\leq B$, then
+    $\ord{B:A} = \ord{\overline{B}:\overline{A}}$.
+
+    Define the map $\psi\colon B/A\to\overline{B}/\overline{A}$ by
+    \begin{equation*}
+      \psi(bA) = (bN)\overline{A} = \bar{b}\overline{A}.
+    \end{equation*}
+
+    First we show that $\psi$ is well defined. Suppose $b_1A = b_2A$,
+    so that $b_1$ and $b_2$ are representatives of the same coset of
+    $A$ in $B$. Then $b_2^{-1}b_1\in A$ so
+    $(b_2^{-1}b_1)N \in \overline{A}$. This implies that
+    $(b_1N)\overline{A} = (b_2N)\overline{A}$, or
+    $\overline{b_1}\overline{A} = \overline{b_2}\overline{A}$ as
+    required.
+
+    Next, we show injectivity. If $\psi(b_1A) = \psi(b_2A)$ then
+    $(b_1N)\overline{A} = (b_2N)\overline{A}$ so that
+    $(b_2^{-1}b_1)N\in\overline{A}$ or $b_2^{-1}b_1N = aN$ for some
+    $a\in A$. Then $b_2^{-1}b_1\in A$ so $b_1A = b_2A$.
+
+    Finally, surjectivity is clear, since any coset $(bN)\overline{A}$
+    of $\overline{A}$ in $\overline{B}$ can be obtained from the image
+    of the coset $bA$.
+
+    We have shown that there is a bijection between the elements of
+    $B/A$ and the elements of $\overline{B}/\overline{A}$, so
+    $\ord{B:A} = \ord{\overline{B}:\overline{A}}$.
+  \item $\overline{\gen{A, B}} = \gen{\overline{A}, \overline{B}}$.
+
+    $xN\in\overline{\gen{A,B}}$ if and only if $x\in\gen{A,B}$, if and
+    only if
+    \begin{equation*}
+      x = x_1x_2\cdots x_n,
+      \quad\text{where $x_i\in A\cup B$ for each $i$}.
+    \end{equation*}
+    But this is true if and only if
+    \begin{equation*}
+      xN = (x_1N)(x_2N)\cdots(x_nN),
+      \quad\text{$x_iN\in\overline{A}\cup\overline{B}$ for each $i$},
+    \end{equation*}
+    if and only if $xN\in\gen{\overline{A},\overline{B}}$. Therefore
+    $\overline{\gen{A,B}} = \gen{\overline{A},\overline{B}}$.
+  \item $\overline{A\cap B} = \overline{A}\cap\overline{B}$.
+
+    $xN \in \overline{A\cap B}$ if and only if $x\in A\cap B$ if and
+    only if $x\in A$ and $x\in B$, and this is true if and only if
+    $xN\in\overline{A}$ and $xN\in\overline{B}$ or
+    $xN\in\overline{A}\cap\overline{B}$.
+  \item $A\trianglelefteq G$ if and only if
+    $\overline{A}\trianglelefteq\overline{G}$.
+
+    Suppose $A\trianglelefteq G$. Then if $g\in G$ and $a\in A$, we
+    have $gag^{-1}\in A$, and
+    \begin{equation*}
+      (gN)(aN)(g^{-1}N)
+      = (gag^{-1})N
+      \in\overline{A}.
+    \end{equation*}
+    Therefore $\overline{A}\trianglelefteq\overline{G}$.
+
+    Conversely, suppose
+    $\overline{A}\trianglelefteq\overline{G}$. Then if
+    $\bar{g}\in\overline{G}$ and $\bar{a}\in\overline{A}$, we have
+    \begin{equation*}
+      \bar{g}\bar{a}\bar{g}^{-1}
+      = (gag^{-1})N \in \overline{A},
+    \end{equation*}
+    so $gag^{-1}\in A$. Hence $A\trianglelefteq G$. \qedhere
+  \end{enumerate}
+\end{proof}
