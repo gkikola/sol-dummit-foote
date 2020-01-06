@@ -202,6 +202,58 @@ Isomorphism Theorem to draw the lattice of subgroups of
 $QD_{16}/\gen{\sigma^4}$. Which group of order $8$ has the same
 lattice as this quotient? Use generators and relations for
 $QD_{16}/\gen{\sigma^4}$ to decide the isomorphism type of this group.
+\begin{solution}
+  Note that
+  \begin{equation*}
+    \sigma^4\tau = \tau\sigma^{12} = \tau\sigma^4,
+  \end{equation*}
+  so $\sigma^4$ commutes with every element of $QD_{16}$. This is
+  enough to show that $\gen{\sigma^4}\trianglelefteq QD_{16}$.
+
+  Using the Lattice Isomorphism Theorem, we get the following lattice
+  for $QD_{16}/\gen{\sigma^4}$.
+  \begin{center}
+    \begin{tikzpicture}
+      \node (sigma4) at (0,2) {$\bar1$};
+      \node (sigma2) at (0,4) {$\overline{\gen{\sigma^2}}$};
+      \node (sigma4_tau) at (-1.5,4) {$\overline{\gen{\sigma^4,\tau}}$};
+      \node (sigma4_tausigma2) at (-3.5,4)
+      {$\overline{\gen{\sigma^4,\tau\sigma^2}}$};
+      \node (tausigma) at (1.5,4) {$\overline{\gen{\tau\sigma}}$};
+      \node (tausigma3) at (3.5,4) {$\overline{\gen{\tau\sigma^3}}$};
+      \node (sigma) at (0,6) {$\overline{\gen{\sigma}}$};
+      \node (sigma2_tau) at (-1.5,6) {$\overline{\gen{\sigma^2,\tau}}$};
+      \node (sigma2_tausigma) at (1.5,6)
+      {$\overline{\gen{\sigma^2,\tau\sigma}}$};
+      \node (QD16) at (0,7.5) {$QD_{16}/\gen{\sigma^4}$};
+      \draw (QD16) -- (sigma) -- (sigma2) -- (sigma4);
+      \draw (QD16) -- (sigma2_tau) -- (sigma4_tau);
+      \draw (QD16) -- (sigma2_tausigma) -- (tausigma) -- (sigma4);
+      \draw (sigma2_tau) -- (sigma4_tausigma2);
+      \draw (sigma2_tau) -- (sigma2) -- (sigma2_tausigma);
+      \draw (sigma2_tausigma) -- (tausigma3) -- (sigma4);
+      \draw (sigma4_tau) -- (sigma4);
+      \draw (sigma4_tausigma2) -- (sigma4);
+    \end{tikzpicture}
+  \end{center}
+
+  We can see that the dihedral group $D_8$ has the same lattice
+  structure as $QD_{16}/\gen{\sigma^4}$. Since
+  \begin{equation*}
+    \bar\sigma^4 = \overline{\sigma^4} = \bar1,
+    \qquad
+    \bar\tau^2 = \overline{\tau^2} = \bar1,
+  \end{equation*}
+  and
+  \begin{equation*}
+    \bar\tau\bar\sigma = \overline{\tau\sigma}
+    = \overline{\sigma^3\tau}
+    = \bar\sigma^{-1}\bar\tau,
+  \end{equation*}
+  we see that the generators $\bar\sigma$ and $\bar\tau$ satisfy the
+  same relations as $s$ and $r$ do in $D_8$. Therefore
+  $QD_{16}/\gen{\sigma^4}\cong D_8$.
+\end{solution}
 
 \Exercise6 Let $M = \gen{v,u}$ be the modular group of order $16$
 described in Exercise~\ref{exercise:lattice:modular16}. Prove that
@@ -210,3 +262,49 @@ to draw the lattice of subgroups of $M/\gen{v^4}$. Which group of
 order $8$ has the same lattice as this quotient? Use generators and
 relations for $M/\gen{v^4}$ to decide the isomorphism type of this
 group.
+\begin{solution}
+  Since
+  \begin{equation*}
+    uv^4
+    = uv^{20}
+    = v^4u,
+  \end{equation*}
+  we see that $v^4$ commutes with every element of $M$ so that
+  $\gen{v^4}\trianglelefteq M$. We get the following lattice.
+  \begin{center}
+    \begin{tikzpicture}[scale=0.75]
+      \node (G) at (2, 2) {$M/\gen{v^4}$};
+      \node (xy) at (2, 0) {$\overline{\gen{uv}}$};
+      \node (y) at (4, 0) {$\overline{\gen{v}}$};
+      \node (x_y2) at (0,0) {$\overline{\gen{u,v^2}}$};
+      \node (y2) at (2, -2) {$\overline{\gen{v^2}}$};
+      \node (x_y4) at (-2, -2) {$\overline{\gen{u, v^4}}$};
+      \node (xy2) at (0, -2) {$\overline{\gen{uv^2}}$};
+      \node (y4) at (0, -4) {$\bar1$};
+      \draw (G) -- (x_y2) -- (x_y4);
+      \draw (G) -- (y) -- (y2) -- (y4);
+      \draw (G) -- (xy) -- (y2) -- (x_y2) -- (xy2) -- (y4) -- (x_y4);
+    \end{tikzpicture}
+  \end{center}
+
+  Notice that the lattice looks similar to the one we constructed for
+  $Z_2\times Z_4$ in Exercise~\ref{exercise:lattice:Z2-times-Z4}. We
+  have
+  \begin{equation*}
+    \bar{u}^2 = \overline{u^2} = \bar1,
+    \qquad
+    \bar{v}^4 = \overline{v^4} = \bar1,
+  \end{equation*}
+  and
+  \begin{equation*}
+    \bar{u}\bar{v}
+    = \overline{uv}
+    = \overline{uv^{25}}
+    = \overline{v^5u}
+    = \bar{v}\bar{u}.
+  \end{equation*}
+  Since the generators $\bar{u}$ and $\bar{v}$ satisfy the same
+  relations as do $a$ and $b$ in the presentation for $Z_2\times Z_4$
+  (given in Exercise~\ref{exercise:lattice:Z2-times-Z4}), we conclude
+  that $M/\gen{v^4}$ is isomorphic to $Z_2\times Z_4$.
+\end{solution}
