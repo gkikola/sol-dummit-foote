@@ -406,3 +406,53 @@ $N$ is a Sylow $p$-subgroup of $N$.)
   \end{equation*}
   So $\ord{PN/N} = p^{a-b}$ and $\ord{P\cap N} = p^b$.
 \end{proof}
+
+\Exercise{10} Generalize the preceding exercise as follows. A subgroup
+$H$ of a finite group $G$ is called a {\em Hall subgroup} of $G$ if
+its index in $G$ is relatively prime to its order:
+$(\ord{G:H},\ord{H})=1$. Prove that if $H$ is a Hall subgroup of $G$
+and $N\trianglelefteq G$, then $H\cap N$ is a Hall subgroup of $N$ and
+$HN/N$ is a Hall subgroup of $G/N$.
+\begin{proof}
+  Since $\ord{H}$ divides $\ord{G}$, we can write $\ord{G} = k\ord{H}$
+  for some integer $k$, with $(k,\ord{H}) = 1$.
+
+  By the formula from Proposition~13, we have
+  \begin{equation*}
+    \ord{HN} = \frac{\ord{H}\ord{N}}{\ord{H\cap N}}
+    = \ord{H}\cdot\frac{\ord{N}}{\ord{H\cap N}}.
+  \end{equation*}
+  Since $\ord{HN}$ must divide $\ord{G}$, we have
+  \begin{equation*}
+    \frac{\ord{N}}{\ord{H\cap N}}
+    \quad\text{divides}\quad
+    k.
+  \end{equation*}
+  This tells us that $(\ord{N:H\cap N}, \ord{H}) = 1$. And since
+  $\ord{H\cap N}$ divides $\ord{H}$, we also have
+  \begin{equation*}
+    (\ord{N:H\cap N}, \ord{H\cap N}) = 1,
+  \end{equation*}
+  so that $H\cap N$ is a Hall subgroup of $N$.
+
+  Next, observe that
+  \begin{align*}
+    \ord{G/N:HN/N}
+    &= \frac{\ord{G}/\ord{N}}{\ord{HN}/\ord{N}}
+    = \frac{\ord{G}}{\ord{HN}} \\
+    &= \frac{\ord{G}/\ord{H}}{\ord{HN}/\ord{H}}
+    = \frac{\ord{G:H}}{\ord{HN:H}}.
+  \end{align*}
+  This implies that $\ord{G/N:HN/N}$ divides $\ord{G:H}$. Also,
+  \begin{equation*}
+    \ord{HN/N}
+    = \frac{\ord{H}\ord{N}}{\ord{N}\ord{H\cap N}}
+    = \frac{\ord{H}}{\ord{H\cap N}},
+  \end{equation*}
+  which shows that $\ord{HN/N}$ divides $\ord{H}$. But $\ord{G:H}$ and
+  $\ord{H}$ are relatively prime, so
+  \begin{equation*}
+    (\ord{G/N:HN/N}, \ord{HN/N}) = 1.
+  \end{equation*}
+  Therefore $HN/N$ is also a Hall subgroup of $G/N$.
+\end{proof}
