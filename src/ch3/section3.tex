@@ -63,31 +63,16 @@ $n\in\Z^+$. Prove that
   \item If $A\leq B$, then
     $\ord{B:A} = \ord{\overline{B}:\overline{A}}$.
 
-    Define the map $\psi\colon B/A\to\overline{B}/\overline{A}$ by
+    Every coset $bA$ of $A$ in $B$ corresponds to a coset
+    $\bar{b}\overline{A}$ of $\overline{A}$ in $\overline{B}$. And
+    every coset $\bar{b}\overline{A}$ of $\overline{A}$ corresponds to
+    a coset $bA$ of $A$. It is then easy to check that
+    $bA\mapsto\bar{b}\overline{A}$ is a bijection from the cosets of
+    $A$ in $B$ onto the cosets of $\overline{A}$ in
+    $\overline{B}$. Therefore
     \begin{equation*}
-      \psi(bA) = (bN)\overline{A} = \bar{b}\overline{A}.
+      \ord{B:A} = \ord{\overline{B}:\overline{A}}.
     \end{equation*}
-
-    First we show that $\psi$ is well defined. Suppose $b_1A = b_2A$,
-    so that $b_1$ and $b_2$ are representatives of the same coset of
-    $A$ in $B$. Then $b_2^{-1}b_1\in A$ so
-    $(b_2^{-1}b_1)N \in \overline{A}$. This implies that
-    $(b_1N)\overline{A} = (b_2N)\overline{A}$, or
-    $\overline{b_1}\overline{A} = \overline{b_2}\overline{A}$ as
-    required.
-
-    Next, we show injectivity. If $\psi(b_1A) = \psi(b_2A)$ then
-    $(b_1N)\overline{A} = (b_2N)\overline{A}$ so that
-    $(b_2^{-1}b_1)N\in\overline{A}$ or $b_2^{-1}b_1N = aN$ for some
-    $a\in A$. Then $b_2^{-1}b_1\in A$ so $b_1A = b_2A$.
-
-    Finally, surjectivity is clear, since any coset $(bN)\overline{A}$
-    of $\overline{A}$ in $\overline{B}$ can be obtained from the image
-    of the coset $bA$.
-
-    We have shown that there is a bijection between the elements of
-    $B/A$ and the elements of $\overline{B}/\overline{A}$, so
-    $\ord{B:A} = \ord{\overline{B}:\overline{A}}$.
   \item $\overline{\gen{A, B}} = \gen{\overline{A}, \overline{B}}$.
 
     $xN\in\overline{\gen{A,B}}$ if and only if $x\in\gen{A,B}$, if and
@@ -107,7 +92,7 @@ $n\in\Z^+$. Prove that
 
     $xN \in \overline{A\cap B}$ if and only if $x\in A\cap B$ if and
     only if $x\in A$ and $x\in B$, and this is true if and only if
-    $xN\in\overline{A}$ and $xN\in\overline{B}$ or
+    $xN\in\overline{A}$ and $xN\in\overline{B}$, that is,
     $xN\in\overline{A}\cap\overline{B}$.
   \item $A\trianglelefteq G$ if and only if
     $\overline{A}\trianglelefteq\overline{G}$.
