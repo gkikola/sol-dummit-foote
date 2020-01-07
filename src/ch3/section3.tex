@@ -195,8 +195,25 @@ $QD_{16}/\gen{\sigma^4}$ to decide the isomorphism type of this group.
   so $\sigma^4$ commutes with every element of $QD_{16}$. This is
   enough to show that $\gen{\sigma^4}\trianglelefteq QD_{16}$.
 
-  Using the Lattice Isomorphism Theorem, we get the following lattice
-  for $QD_{16}/\gen{\sigma^4}$.
+  Using the Lattice Isomorphism Theorem, we draw the lattice for
+  $QD_{16}/\gen{\sigma^4}$ below. We can see that the dihedral group
+  $D_8$ has the same lattice structure as $QD_{16}/\gen{\sigma^4}$.
+
+  Since
+  \begin{equation*}
+    \bar\sigma^4 = \overline{\sigma^4} = \bar1,
+    \qquad
+    \bar\tau^2 = \overline{\tau^2} = \bar1,
+  \end{equation*}
+  and
+  \begin{equation*}
+    \bar\tau\bar\sigma = \overline{\tau\sigma}
+    = \overline{\sigma^3\tau}
+    = \bar\sigma^{-1}\bar\tau,
+  \end{equation*}
+  we see that the generators $\bar\sigma$ and $\bar\tau$ satisfy the
+  same relations as $r$ and $s$ do in $D_8$. Therefore
+  $QD_{16}/\gen{\sigma^4}\cong D_8$.
   \begin{center}
     \begin{tikzpicture}
       \node (sigma4) at (0,2) {$\bar1$};
@@ -221,23 +238,6 @@ $QD_{16}/\gen{\sigma^4}$ to decide the isomorphism type of this group.
       \draw (sigma4_tausigma2) -- (sigma4);
     \end{tikzpicture}
   \end{center}
-
-  We can see that the dihedral group $D_8$ has the same lattice
-  structure as $QD_{16}/\gen{\sigma^4}$. Since
-  \begin{equation*}
-    \bar\sigma^4 = \overline{\sigma^4} = \bar1,
-    \qquad
-    \bar\tau^2 = \overline{\tau^2} = \bar1,
-  \end{equation*}
-  and
-  \begin{equation*}
-    \bar\tau\bar\sigma = \overline{\tau\sigma}
-    = \overline{\sigma^3\tau}
-    = \bar\sigma^{-1}\bar\tau,
-  \end{equation*}
-  we see that the generators $\bar\sigma$ and $\bar\tau$ satisfy the
-  same relations as $s$ and $r$ do in $D_8$. Therefore
-  $QD_{16}/\gen{\sigma^4}\cong D_8$.
 \end{solution}
 
 \Exercise6 Let $M = \gen{v,u}$ be the modular group of order $16$
