@@ -357,3 +357,52 @@ $G = MN$. Prove that $G/(M\cap N)\cong(G/M)\times(G/N)$.
   \end{equation*}
   as required.
 \end{solution}
+
+% \Exercise8 Let $p$ be a prime and let $G$ be the group of $p$-power
+% roots of $1$ in $\C$. Prove that the map $z\mapsto z^p$ is a
+% surjective homomorphism. Deduce that $G$ is isomorphic to a proper
+% quotient of itself.
+
+\Exercise9 Let $p$ be a prime and let $G$ be a group of order $p^am$,
+where $p$ does not divide $m$. Assume $P$ is a subgroup of $G$ of
+order $p^a$ and $N$ is a normal subgroup of $G$ of order $p^bn$, where
+$p$ does not divide $n$. Prove that $\ord{P\cap N} = p^b$ and
+$\ord{PN/N} = p^{a-b}$. (The subgroup $P$ of $G$ is called a {\em
+  Sylow $p$-subgroup} of $G$. This exercise shows that the
+intersection of any Sylow $p$-subgroup of $G$ with a normal subgroup
+$N$ is a Sylow $p$-subgroup of $N$.)
+\begin{proof}
+  We know by Lagrange's Theorem that $\ord{PN}$ divides $\ord{G}$, so
+  that
+  \begin{equation*}
+    \ord{PN} = p^kt
+    \quad\text{where $0\leq k\leq a$ and $t\mid m$}.
+  \end{equation*}
+  Since $P\leq PN$, we also know that $p^a\mid p^kt$, so that $k =
+  a$. And since $N\leq PN$, we know that $n\mid t$. Therefore
+  \begin{equation*}
+    \ord{PN/N}
+    = \frac{\ord{PN}}{\ord{N}}
+    = \frac{p^at}{p^bn}
+    = p^{a-b}s,
+    \quad
+    \text{for some $s\in\Z$ with $t = ns$}.
+  \end{equation*}
+
+  Since $N$ is normal, we may apply the Second Isomorphism Theorem to
+  determine that $PN/N\cong P/P\cap N$. Then
+  \begin{equation*}
+    \ord{P/P\cap N}
+    = \ord{PN/N}
+    = p^{a-b}s.
+  \end{equation*}
+  But $\ord{P}$ must divide $\ord{P/P\cap N}$, so
+  \begin{equation*}
+    \ord{P/P\cap N} = p^{a-b}.
+  \end{equation*}
+  By Lagrange, this implies that
+  \begin{equation*}
+    \ord{P\cap N} = \ord{P}/p^{a-b} = p^b.
+  \end{equation*}
+  So $\ord{PN/N} = p^{a-b}$ and $\ord{P\cap N} = p^b$.
+\end{proof}
