@@ -308,3 +308,52 @@ group.
   (given in Exercise~\ref{exercise:lattice:Z2-times-Z4}), we conclude
   that $M/\gen{v^4}$ is isomorphic to $Z_2\times Z_4$.
 \end{solution}
+
+\Exercise7 Let $M$ and $N$ be normal subgroups of $G$ such that
+$G = MN$. Prove that $G/(M\cap N)\cong(G/M)\times(G/N)$.
+\begin{solution}
+  We draw the lattice for $G$, with the double-lines representing the
+  quotient group $G/(M\cap N)$.
+  \begin{center}
+    \begin{tikzpicture}
+      \node (1) at (0, 0) {$1$};
+      \node (M_cap_N) at (0, 1) {$M\cap N$};
+      \node (M) at (-1, 2) {$M$};
+      \node (N) at (1, 2) {$N$};
+      \node (G) at (0, 3) {$G = MN$};
+      \draw[double] (G) -- (M) -- (M_cap_N) -- (N) -- (G);
+      \draw (M_cap_N) -- (1);
+    \end{tikzpicture}
+  \end{center}
+  Define $\varphi\colon G\to(G/M)\times(G/N)$ by
+  \begin{equation*}
+    \varphi(g) = (gM, gN).
+  \end{equation*}
+  This is a homomorphism since
+  \begin{equation*}
+    \varphi(ab) = (abM, abN) = (aM, aN)(bM, bN) = \varphi(a)\varphi(b).
+  \end{equation*}
+  We also have $\ker\varphi = M\cap N$.
+
+  Next, we will show that $\varphi$ is a surjection. Let
+  $(aM, bN)\in(G/M)\times(G/N)$. Since $G = MN$, we can write
+  $a = m_1n_1$ and $b = m_2n_2$ for some $m_1,m_2\in M$ and
+  $n_1,n_2\in N$. Then
+  \begin{equation*}
+    aM = Ma = Mm_1n_1 = Mn_1 = n_1M
+    \quad\text{and}\quad
+    bN = m_2n_2N = m_2N.
+  \end{equation*}
+  Now
+  \begin{equation*}
+    \varphi(m_2n_1)
+    = (Mm_2n_1, m_2n_1N)
+    = (n_1M, m_2N)
+    = (aM, bN).
+  \end{equation*}
+  So, by the First Isomorphism Theorem, we have
+  \begin{equation*}
+    G/(M\cap N)\cong(G/M)\times(G/N)
+  \end{equation*}
+  as required.
+\end{solution}
