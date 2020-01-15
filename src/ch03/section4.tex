@@ -19,3 +19,53 @@ $G\cong Z_p$ for some prime $p$ (do not assume $G$ is a finite group).
   proper divisor $n$ of $\ord{G}$. Therefore $\ord{G}$ is prime, and
   by Theorem~4 of Chapter~2, $G\cong Z_p$.
 \end{proof}
+
+\Exercise2 Exhibit all $3$ composition series for $Q_8$ and all $7$
+composition series for $D_8$. List the composition factors in each
+case.
+\begin{solution}
+  For $Q_8$, the composition series are
+  \begin{gather*}
+    1 \trianglelefteq \gen{-1}
+    \trianglelefteq \gen{i}
+    \trianglelefteq Q_8, \\
+    1 \trianglelefteq \gen{-1}
+    \trianglelefteq \gen{j}
+    \trianglelefteq Q_8, \\
+    \intertext{and}
+    1 \trianglelefteq \gen{-1}
+    \trianglelefteq \gen{k}
+    \trianglelefteq Q_8.
+  \end{gather*}
+  Note that each subgroup has index $2$ in its containing subgroup,
+  and so must be normal. Each of the composition factors is isomorphic
+  to $Z_2$.
+
+  For $D_8$, we get the following composition series:
+  \begin{gather*}
+    1 \trianglelefteq \gen{s}
+    \trianglelefteq \gen{s,r^2}
+    \trianglelefteq D_8, \\
+    1 \trianglelefteq \gen{r^2s}
+    \trianglelefteq \gen{s,r^2}
+    \trianglelefteq D_8, \\
+    1 \trianglelefteq \gen{r^2}
+    \trianglelefteq \gen{s,r^2}
+    \trianglelefteq D_8, \\
+    1 \trianglelefteq \gen{r^2}
+    \trianglelefteq \gen{r}
+    \trianglelefteq D_8, \\
+    1 \trianglelefteq \gen{r^2}
+    \trianglelefteq \gen{rs,r^2}
+    \trianglelefteq D_8, \\
+    1 \trianglelefteq \gen{rs}
+    \trianglelefteq \gen{rs,r^2}
+    \trianglelefteq D_8, \\
+    1 \trianglelefteq \gen{r^3s}
+    \trianglelefteq \gen{rs,r^2}
+    \trianglelefteq D_8.
+  \end{gather*}
+  Again, each subgroup is normal within its containing subgroup since
+  they each have index $2$. Each composition factor is isomorphic to
+  $Z_2$.
+\end{solution}
