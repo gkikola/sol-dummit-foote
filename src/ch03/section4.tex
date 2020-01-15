@@ -1,0 +1,21 @@
+\section{Composition Series and the H\"older Program}
+
+\Exercise1 Prove that if $G$ is an abelian simple group then
+$G\cong Z_p$ for some prime $p$ (do not assume $G$ is a finite group).
+\begin{proof}
+  Let $G$ be an abelian simple group. Then $\ord{G} > 1$ and we may
+  take some nonidentity element $x$ of $G$. Now, either $\gen{x}\neq G$
+  or $\gen{x} = G$.
+
+  In the first case, $\gen{x}$ is a nontrivial proper subgroup of
+  $G$. But $G$ is abelian, so $\gen{x}$ must be a normal proper
+  subgroup, which contradicts the fact that $G$ is simple. Hence
+  $\gen{x} = G$.
+
+  Then $G$ is cyclic. If $G$ has infinite order, then by Theorem~7 of
+  Chapter~2, $\gen{x^2}$ is a nontrivial proper subgroup, again a
+  contradiction. Therefore $G$ has finite order. But then, again by
+  Theorem~7 of Chapter~2, $\gen{x^n}$ is a proper subgroup for any
+  proper divisor $n$ of $\ord{G}$. Therefore $\ord{G}$ is prime, and
+  by Theorem~4 of Chapter~2, $G\cong Z_p$.
+\end{proof}
