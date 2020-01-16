@@ -85,3 +85,30 @@ order $16$. Deduce that $QD_{16}$ is solvable.
   and is thus isomorphic to the abelian group $Z_2$, we see that
   $QD_{16}$ is solvable.
 \end{solution}
+
+\Exercise4 Use Cauchy's Theorem and induction to show that a finite
+abelian group has a subgroup of order $n$ for each positive divisor
+$n$ of its order.
+\begin{proof}
+  Let $G$ be a finite abelian group. We use induction on
+  $\ord{G}$. Certainly the result holds for the trivial group. And if
+  $\ord{G} = p$ for some prime $p$, then the positive divisors of
+  $\ord{G}$ are $1$ and $p$ and the result is again trivial.
+
+  Now assume that the statement is true for all groups of order
+  strictly smaller than $\ord{G}$, and let $n$ be a positive divisor
+  of $\ord{G}$ with $n > 1$. First, if $n$ is prime then Cauchy's
+  Theorem allows us to find an element $x\in G$ having order $n$. Then
+  $\gen{x}$ is the desired subgroup. On the other hand, if $n$ is not
+  prime, then $n$ has a prime divisor $p$, so that $n = kp$ for some
+  integer $k$. Cauchy's Theorem allows us to find an element $x$
+  having order $p$. Set $N = \gen{x}$. By Lagrange's Theorem,
+  \begin{equation*}
+    \ord{G/N} = \frac{\ord{G}}{\ord{N}} < \ord{G}.
+  \end{equation*}
+  Now, by the inductive hypothesis, the group $G/N$ must have a
+  subgroup of order $k$. And by the Lattice Isomorphism Theorem, this
+  subgroup has the form $H/N$ for some subgroup $H$ of $G$. Then
+  $\ord{H} = k\ord{N} = kp = n$, so that $H$ has order $n$. This
+  completes the inductive step.
+\end{proof}
