@@ -16,7 +16,7 @@ Download
 --------
 
 This solution guide is available as a
-[PDF file](https://www.gregkikola.com/guides/dfsol.pdf).
+[PDF file](https://www.gregkikola.com/dl/guides/dfsol.pdf).
 
 
 Building from Source
