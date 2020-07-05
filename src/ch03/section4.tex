@@ -113,82 +113,113 @@ $n$ of its order.
   completes the inductive step.
 \end{proof}
 
-% \Exercise5 Prove that subgroups and quotient groups of a solvable
-% group are solvable.
-% \begin{proof}
-%   Let $G$ be a solvable group and let $H\leq G$. Since $G$ is
-%   solvable, we may find a chain of subgroups
-%   \begin{equation*}
-%     1 = G_0 \trianglelefteq G_1
-%     \trianglelefteq G_2
-%     \trianglelefteq\cdots
-%     \trianglelefteq G_n = G
-%   \end{equation*}
-%   so that each quotient $G_{i+1}/G_i$ is abelian. For each $i$, define
-%   \begin{equation*}
-%     H_i = G_i\cap H, \quad 0\leq i\leq n.
-%   \end{equation*}
-%   Then $H_i\leq H_{i+1}$ for each $i$. Moreover, if $g\in H_{i+1}$ and
-%   $x\in H_i$, then in particular $g\in G_{i+1}$ and $x\in G_i$, so
-%   that
-%   \begin{equation*}
-%     gxg^{-1}\in G_i
-%   \end{equation*}
-%   because $G_i\trianglelefteq G_{i+1}$. But $g$ and $x$ also belong to
-%   $H$, so
-%   \begin{equation*}
-%     gxg^{-1}\in H_i,
-%   \end{equation*}
-%   which shows that $H_i\trianglelefteq H_{i+1}$ for each $i$.
+\Exercise5 Prove that subgroups and quotient groups of a solvable
+group are solvable.
+\begin{proof}
+  Let $G$ be a solvable group and let $H\leq G$. Since $G$ is
+  solvable, we may find a chain of subgroups
+  \begin{equation*}
+    1 = G_0 \trianglelefteq G_1
+    \trianglelefteq G_2
+    \trianglelefteq\cdots
+    \trianglelefteq G_n = G
+  \end{equation*}
+  so that each quotient $G_{i+1}/G_i$ is abelian. For each $i$, define
+  \begin{equation*}
+    H_i = G_i\cap H, \quad 0\leq i\leq n.
+  \end{equation*}
+  Then $H_i\leq H_{i+1}$ for each $i$. Moreover, if $g\in H_{i+1}$ and
+  $x\in H_i$, then in particular $g\in G_{i+1}$ and $x\in G_i$, so
+  that
+  \begin{equation*}
+    gxg^{-1}\in G_i
+  \end{equation*}
+  because $G_i\trianglelefteq G_{i+1}$. But $g$ and $x$ also belong to
+  $H$, so
+  \begin{equation*}
+    gxg^{-1}\in H_i,
+  \end{equation*}
+  which shows that $H_i\trianglelefteq H_{i+1}$ for each $i$.
 
-%   Next, note that
-%   \begin{equation*}
-%     H_i = G_i\cap H = (G_i\cap G_{i+1})\cap H
-%     = G_i\cap H_{i+1}.
-%   \end{equation*}
-%   By the Second Isomorphism Theorem, we then have
-%   \begin{equation*}
-%     H_{i+1}/H_i = H_{i+1}/(H_{i+1}\cap G_i)
-%     \cong H_{i+1}G_i/G_i \leq G_{i+1}/G_i.
-%   \end{equation*}
-%   Since $H_{i+1}/H_i$ is isomorphic to a subgroup of the abelian group
-%   $G_{i+1}/G_i$, it follows that $H_{i+1}/H_i$ is also abelian. This
-%   completes the proof that $H$ is solvable.
+  Next, note that
+  \begin{equation*}
+    H_i = G_i\cap H = (G_i\cap G_{i+1})\cap H
+    = G_i\cap H_{i+1}.
+  \end{equation*}
+  By the Second Isomorphism Theorem, we then have
+  \begin{equation*}
+    H_{i+1}/H_i = H_{i+1}/(H_{i+1}\cap G_i)
+    \cong H_{i+1}G_i/G_i \leq G_{i+1}/G_i.
+  \end{equation*}
+  Since $H_{i+1}/H_i$ is isomorphic to a subgroup of the abelian group
+  $G_{i+1}/G_i$, it follows that $H_{i+1}/H_i$ is also abelian. This
+  completes the proof that $H$ is solvable.
 
-%   Next, let $N\trianglelefteq G$. For each $i$, define
-%   \begin{equation*}
-%     N_i = G_iN, \quad 0\leq i\leq n.
-%   \end{equation*}
-%   Now let $g\in N_{i+1}$, where $g = g_0n_0$ with $g_0\in G_{i+1}$ and
-%   $n_0\in N$. Also let $x\in N_i$, where $x = g_1n_1$ with
-%   $g_1\in G_i$ and $n_1\in N$. Then
-%   \begin{equation*}
-%     gxg^{-1} = g_0n_0g_1n_1n_0^{-1}g_0^{-1}.
-%   \end{equation*}
-%   Now, since $N$ is normal in $G$, $Ng = gN$, so $n_0g_1 = g_1n_2$
-%   for some $n_2\in N$. Then
-%   \begin{equation*}
-%     gxg^{-1} = g_0g_1(n_2n_1n_0^{-1})g_0^{-1}
-%     = g_0g_1n_3g_0^{-1}
-%   \end{equation*}
-%   for some $n_3\in N$. Then $n_3g_0^{-1} = g_0^{-1}n_4$ for some
-%   $n_4\in N$. And $g_0g_1g_0^{-1}\in G_i$ since
-%   $G_i\trianglelefteq G_{i+1}$, so
-%   \begin{equation*}
-%     gxg^{-1} = g_0g_1g_0^{-1}n_4 \in N_i.
-%   \end{equation*}
-%   This shows that $N_i\trianglelefteq N_{i+1}$. So by the Lattice
-%   Isomorphism Theorem, $N_{i+1}/N \trianglelefteq N_i/N$. This shows
-%   that
-%   \begin{equation*}
-%     1 = N_0/N \trianglelefteq N_1/N \trianglelefteq N_2/N
-%     \trianglelefteq \cdots \trianglelefteq
-%     N_n/N = G/N.
-%   \end{equation*}
-%   Moreover, the Third Isomorphism Theorem says that
-%   \begin{equation*}
-%     (N_{i+1}/N)/(N_i/N) \cong N_{i+1}/N_i,
-%   \end{equation*}
-%   so the proof will be complete if we can show that $N_{i+1}/N_i$ is
-%   abelian.
-% \end{proof}
+  Next, let $N\trianglelefteq G$. For each $i$, define
+  \begin{equation*}
+    N_i = G_iN, \quad 0\leq i\leq n.
+  \end{equation*}
+  Now let $g\in N_{i+1}$, where $g = g_0n_0$ with $g_0\in G_{i+1}$ and
+  $n_0\in N$. Also let $x\in N_i$, where $x = g_1n_1$ with
+  $g_1\in G_i$ and $n_1\in N$. Then
+  \begin{equation*}
+    gxg^{-1} = g_0n_0g_1n_1n_0^{-1}g_0^{-1}.
+  \end{equation*}
+  Now, since $N$ is normal in $G$, $Ng = gN$, so $n_0g_1 = g_1n_2$
+  for some $n_2\in N$. Then
+  \begin{equation*}
+    gxg^{-1} = g_0g_1(n_2n_1n_0^{-1})g_0^{-1}
+    = g_0g_1n_3g_0^{-1}
+  \end{equation*}
+  for some $n_3\in N$. Then $n_3g_0^{-1} = g_0^{-1}n_4$ for some
+  $n_4\in N$. And $g_0g_1g_0^{-1}\in G_i$ since
+  $G_i\trianglelefteq G_{i+1}$, so
+  \begin{equation*}
+    gxg^{-1} = g_0g_1g_0^{-1}n_4 \in N_i.
+  \end{equation*}
+  This shows that $N_i\trianglelefteq N_{i+1}$. So by the Lattice
+  Isomorphism Theorem, we have $N_{i+1}/N \trianglelefteq N_i/N$. This
+  shows that
+  \begin{equation*}
+    1 = N_0/N \trianglelefteq N_1/N \trianglelefteq N_2/N
+    \trianglelefteq \cdots \trianglelefteq
+    N_n/N = G/N.
+  \end{equation*}
+  Moreover, the Third Isomorphism Theorem says that
+  \begin{equation*}
+    (N_{i+1}/N)/(N_i/N) \cong N_{i+1}/N_i,
+  \end{equation*}
+  so the proof will be complete if we can show that $N_{i+1}/N_i$ is
+  abelian.
+
+  Let $x,y\in N_{i+1}/N_i$. Then
+  \begin{equation*}
+    x = (g_0n_0)N_i \quad\text{and}\quad
+    y = (g_1n_1)N_i
+  \end{equation*}
+  for some $g_0,g_1\in G_{i+1}$ and $n_0,n_1\in N$. We have
+  \begin{align*}
+    xyx^{-1}y^{-1}
+    &= (g_0n_0)(g_1n_1)(g_0n_0)^{-1}(g_1n_1)^{-1}N_i \\
+    &= g_0n_0g_1n_1n_0^{-1}g_0^{-1}n_1^{-1}g_1^{-1}N_i.
+  \end{align*}
+  Since $N\trianglelefteq G$, $gN = Ng$ for any $g\in G$, so we can
+  find $n_2\in N$ such that
+  \begin{equation*}
+    xyx^{-1}y^{-1}
+    = g_0g_1g_0^{-1}g^{-1}n_2N_i.
+  \end{equation*}
+  Now $N_i = G_iN = NG_i$ since $N\trianglelefteq G$ (see
+  Proposition~14 and its corollary). Therefore
+  \begin{equation*}
+    n_2N_i = n_2NG_i = NG_i = G_iN
+  \end{equation*}
+  and we get
+  \begin{equation*}
+    xyx^{-1}y^{-1}
+    = g_0g_1g_0^{-1}g^{-1}G_iN
+    = G_iN.
+  \end{equation*}
+  So $xyx^{-1}y^{-1} = 1N_i$ or $xy = yx$. This completes the proof
+  that $G/N$ is solvable.
+\end{proof}
