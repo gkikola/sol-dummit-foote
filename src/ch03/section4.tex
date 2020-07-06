@@ -262,3 +262,30 @@ on $\ord{G}$.
   \end{equation*}
   By induction, the proof is complete.
 \end{proof}
+
+\Exercise7 If $G$ is a finite group and $H\trianglelefteq G$, prove
+that there is a composition series of $G$, one of whose terms is $H$.
+\begin{proof}
+  Note that if $H = G$ then any composition series for $G$ must
+  contain $H$ as its final term, so it will suffice to prove the
+  statement for proper subgroups $H\triangleleft G$.
+
+  If $\ord{G} = 1$, then the result is clear. So suppose $\ord{G} > 1$
+  and assume that the statement is true for all groups with order
+  strictly smaller than $G$. Fix a proper normal subgroup
+  $H\triangleleft G$.
+
+  Now let $N$ be a maximal proper normal subgroup of $G$ containing
+  $H$. Then $G/N$ is simple (by the same argument we used in the
+  previous exercise) and $\ord{N} < \ord{G}$. Apply the induction
+  hypothesis to $N$ in order to find a composition series
+  \begin{equation*}
+    1 = G_0 \trianglelefteq
+    G_1 \trianglelefteq
+    G_2 \trianglelefteq\cdots\trianglelefteq
+    G_r = N \trianglelefteq G,
+  \end{equation*}
+  where $H = G_i$ for some $i$ with $0\leq i\leq r$. Then this is a
+  composition series for $G$, one of whose terms is $H$. By induction,
+  the result holds for all finite groups.
+\end{proof}
