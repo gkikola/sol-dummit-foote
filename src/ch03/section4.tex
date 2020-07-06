@@ -223,3 +223,42 @@ group are solvable.
   So $xyx^{-1}y^{-1} = 1N_i$ or $xy = yx$. This completes the proof
   that $G/N$ is solvable.
 \end{proof}
+
+\Exercise6 Prove part (1) of the Jordan--H\"older Theorem by induction
+on $\ord{G}$.
+\begin{proof}
+  Let $G$ be a finite group with $G\neq1$. We want to show that $G$
+  has a composition series. We will use induction on $\ord{G}$.
+
+  First, if $\ord{G} = 2$, then $G\cong Z_2$ and $G$ has the
+  composition series $1\trianglelefteq G$.
+
+  Now suppose $\ord{G} > 2$, and assume that all nontrivial groups
+  with order strictly less than $G$ have a composition series.
+
+  If $G$ is simple, then it has the composition series
+  $1\trianglelefteq G$ and we are done. So assume $G$ is not
+  simple. Let $N$ be a normal subgroup of $G$, with $N\neq1$ and
+  $N\neq G$, and choose $N$ so that no other proper normal subgroup
+  has larger order.
+
+  Since $N$ is a proper subgroup, it has by the induction hypothesis a
+  composition series
+  \begin{equation*}
+    1 = G_0 \trianglelefteq G_1 \trianglelefteq
+    G_2 \trianglelefteq\cdots\trianglelefteq
+    G_r = N.
+  \end{equation*}
+
+  Consider the quotient group $G/N$. If $G/N$ is not simple, then it
+  has a nontrivial proper normal subgroup $\overline{M}$. By the
+  Lattice Isomorphism Theorem, there is a subgroup
+  $M\trianglelefteq G$ with $N<M$, contradicting the fact that $N$ is
+  maximal. So $G/N$ is simple and $G$ has the composition series
+  \begin{equation*}
+    1 = G_0 \trianglelefteq G_1 \trianglelefteq
+    G_2 \trianglelefteq\cdots\trianglelefteq
+    G_r = N \trianglelefteq G.
+  \end{equation*}
+  By induction, the proof is complete.
+\end{proof}
