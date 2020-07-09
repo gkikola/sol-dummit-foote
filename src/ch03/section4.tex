@@ -442,9 +442,10 @@ a composition series of $G$, one of whose terms is $H$.
 %   \end{equation*}
 % \end{proof}
 
-\Exercise9 Prove the following special case of part (2) of the
-Jordan--H\"older Theorem: assume the finite group $G$ has two
-composition series
+\Exercise9
+\label{exercise:quotient-group:jordan-holder-2-special-case}
+Prove the following special case of part (2) of the Jordan--H\"older
+Theorem: assume the finite group $G$ has two composition series
 \begin{equation*}
   1 = N_0 \trianglelefteq N_1 \trianglelefteq\cdots\trianglelefteq
   N_r = G \quad\text{and}\quad
@@ -496,4 +497,130 @@ same.
     N_{r-1}/1 \cong N_{r-1} \cong G/M_1.
   \end{equation*}
   This completes the proof.
+\end{proof}
+
+\Exercise{10} Prove part (2) of the Jordan--H\"older Theorem by
+induction on $\min\{r, s\}$.
+\begin{proof}
+  Suppose $G$ has the two composition series
+  \begin{equation}
+    \label{eq:quotient-group:holder:G-comp-N-i}
+    1 = N_0 \trianglelefteq
+    N_1 \trianglelefteq
+    N_2 \trianglelefteq\cdots\trianglelefteq
+    N_r = G
+  \end{equation}
+  and
+  \begin{equation}
+    \label{eq:quotient-group:holder:G-comp-M-i}
+    1 = M_0 \trianglelefteq
+    M_1 \trianglelefteq
+    M_2 \trianglelefteq\cdots\trianglelefteq
+    M_s = G.
+  \end{equation}
+  We want to show that $r = s$ and that the composition factors
+  (possibly taken in a different order) are the same up to
+  isomorphism.
+
+  As instructed, we will use induction on $\min\{r, s\}$. In
+  Exercise~\ref{exercise:quotient-group:jordan-holder-2-special-case},
+  we have already taken care of the cases where $\min\{r,
+  s\}\leq2$. Now suppose the statement is true whenever
+  $\min\{r, s\}\leq k$ for some $k\geq 2$.
+
+  Let $H = N_{r-1}\cap M_{s-1}$. Note that $N_{r-1}$ cannot be a
+  proper subgroup of $M_{s-1}$ since it would then be a normal
+  subgroup and, after taking quotients, we would have
+  \begin{equation*}
+    1\triangleleft M_{s-1}/N_{r-1} \triangleleft G/N_{r-1},
+  \end{equation*}
+  contradicting the fact that $G/N_{r-1}$ is simple. For the same
+  reason, $M_{s-1}$ cannot be a proper subgroup of $N_{r-1}$.
+
+  Now consider the case where $M_{s-1} = N_{r-1}$. Then we can apply
+  the induction hypothesis to $M_{s-1}$ to show that $r = s$ and that
+  all composition factors in the two series
+  \begin{equation*}
+    1 = N_0\trianglelefteq\cdots\trianglelefteq N_{r-1}
+    \quad\text{and}\quad
+    1 = M_0\trianglelefteq\cdots\trianglelefteq M_{s-1}
+  \end{equation*}
+  are the same up to isomorphism and reordering. Since
+  $G/M_{s-1} = G/N_{r-1}$, this would complete the inductive step of
+  the proof.
+
+  So we will assume that $M_{s-1}$ and $N_{r-1}$ are distinct and that
+  neither is contained in the other. This implies that both subgroups
+  are proper normal subgroups of $M_{s-1}N_{r-1}$. If
+  $M_{s-1}N_{r-1}\neq G$, then we can apply the Lattice Isomorphism
+  Theorem to determine that
+  \begin{equation*}
+    1 \triangleleft M_{s-1}N_{r-1}/M_{s-1} \triangleleft G/M_{s-1},
+  \end{equation*}
+  which contradicts the fact that $G/M_{s-1}$ is simple. Therefore
+  $G = M_{s-1}N_{r-1}$.
+
+  Now we may apply the Second Isomorphism Theorem to get
+  \begin{equation}
+    \label{eq:quotient-group:holder:G-mod-M}
+    G/M_{s-1} = M_{s-1}N_{r-1}/M_{s-1} \cong N_{r-1}/H
+  \end{equation}
+  and
+  \begin{equation}
+    \label{eq:quotient-group:holder:G-mod-N}
+    G/N_{r-1} = M_{s-1}N_{r-1}/N_{r-1} \cong M_{s-1}/H,
+  \end{equation}
+  showing that both $N_{r-1}/H$ and $M_{s-1}/H$ are simple.
+
+  Now let $H$ have the composition series
+  \begin{equation}
+    \label{eq:quotient-group:holder:H-comp-H-i}
+    1 = H_0 \trianglelefteq
+    H_1 \trianglelefteq
+    H_2 \trianglelefteq\cdots\trianglelefteq
+    H_t = H.
+  \end{equation}
+  Then
+  \begin{equation*}
+    1 = H_0 \trianglelefteq
+    H_1 \trianglelefteq\cdots\trianglelefteq
+    H_t = H \trianglelefteq N_{r-1}
+  \end{equation*}
+  is a composition series for $N_{r-1}$. By the induction hypothesis,
+  $t = r - 2$ and the composition factors for this series are the same
+  as in the series
+  \begin{equation*}
+    1 = N_0 \trianglelefteq
+    N_1 \trianglelefteq\cdots\trianglelefteq
+    N_{r-1}
+  \end{equation*}
+  in some order.
+
+  Similarly,
+  \begin{equation*}
+    1 = H_0 \trianglelefteq
+    H_1 \trianglelefteq\cdots\trianglelefteq
+    H_t = H \trianglelefteq M_{s-1}
+  \end{equation*}
+  is a composition series for $M_{s-1}$, and by hypothesis,
+  $t = s - 2$, and the composition factors are the same as those in
+  the series
+  \begin{equation*}
+    1 = M_0\trianglelefteq
+    M_1\trianglelefteq\cdots\trianglelefteq
+    M_{s-1}
+  \end{equation*}
+  in some order. This shows that $s = t+2 = r$.
+
+  Moreover, the composition factors in
+  \eqref{eq:quotient-group:holder:G-comp-N-i} and
+  \eqref{eq:quotient-group:holder:G-comp-M-i} are isomorphic in some
+  order: $r - 2$ of the factors are isomorphic to the factors in
+  \eqref{eq:quotient-group:holder:H-comp-H-i}, and the remaining two
+  factors in each series are also isomorphic but in the reverse order,
+  as shown in \eqref{eq:quotient-group:holder:G-mod-M} and
+  \eqref{eq:quotient-group:holder:G-mod-N}.
+
+  By induction, we can conclude that part (2) of the Jordan--H\"older
+  Theorem holds in all cases.
 \end{proof}
