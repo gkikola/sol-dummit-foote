@@ -624,3 +624,44 @@ induction on $\min\{r, s\}$.
   By induction, we can conclude that part (2) of the Jordan--H\"older
   Theorem holds in all cases.
 \end{proof}
+
+% \Exercise{11} Prove that if $H$ is a nontrivial normal subgroup of the
+% solvable group $G$ then there is a nontrivial subgroup $A$ of $H$ with
+% $A\trianglelefteq G$ and $A$ abelian.
+
+\Exercise{12} Prove (without using the Feit--Thompson Theorem) that
+the following are equivalent:
+\begin{enumerate}
+\item every group of odd order is solvable
+\item the only simple groups of odd order are those of prime order.
+\end{enumerate}
+\begin{proof}
+  First, suppose that every group of odd order is solvable. Let $G$ be
+  a simple group of odd order. Then $G$ is solvable, so $G$ has a
+  chain of subgroups
+  \begin{equation*}
+    1 = G_0\trianglelefteq G_1\trianglelefteq\cdots\trianglelefteq
+    G_s = G,
+  \end{equation*}
+  where $G_{i+1}/G_i$ is abelian. But $G$ is simple, so $s = 1$ and
+  $G$ itself is abelian. Since an abelian group of finite order $n$
+  has a normal subgroup of order $d$ for every $d$ dividing $n$, it
+  follows that $G$, which is simple, must have prime order. This
+  completes the proof of the left-to-right implication.
+
+  Next, assume that the only simple groups of odd order are those of
+  prime order. Let $G$ be a group of odd order. Now let
+  \begin{equation*}
+    1 = N_0 \trianglelefteq N_1 \trianglelefteq
+    N_2 \trianglelefteq\cdots\trianglelefteq
+    N_r = G
+  \end{equation*}
+  be a composition series for $G$. Fix an $i$ with $0\leq i\leq r-1$,
+  and consider the quotient group $N_{i+1}/N_i$. By Lagrange's
+  Theorem, this quotient group must have odd order (if $G$ has a
+  subgroup of even order then $G$ itself would have even order). But
+  then $N_{i+1}/N_i$ is a simple group of odd order, so by hypothesis
+  it has prime order. But any group of prime order is abelian
+  (Corollary~10), so all the composition factors of $G$ are
+  abelian. Thus $G$ is solvable, completing the proof.
+\end{proof}
