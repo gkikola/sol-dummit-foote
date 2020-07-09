@@ -263,8 +263,9 @@ on $\ord{G}$.
   By induction, the proof is complete.
 \end{proof}
 
-\Exercise7 If $G$ is a finite group and $H\trianglelefteq G$, prove
-that there is a composition series of $G$, one of whose terms is $H$.
+\Exercise7 \label{exercise:holder:comp-series-incl-H}
+If $G$ is a finite group and $H\trianglelefteq G$, prove that there is
+a composition series of $G$, one of whose terms is $H$.
 \begin{proof}
   Note that if $H = G$ then any composition series for $G$ must
   contain $H$ as its final term, so it will suffice to prove the
@@ -288,4 +289,211 @@ that there is a composition series of $G$, one of whose terms is $H$.
   where $H = G_i$ for some $i$ with $0\leq i\leq r$. Then this is a
   composition series for $G$, one of whose terms is $H$. By induction,
   the result holds for all finite groups.
+\end{proof}
+
+% \Exercise8 Let $G$ be a {\em finite} group. Prove that the following
+% are equivalent:
+% \begin{enumerate}
+% \item\label{itm:holder:equiv-G-solvable}
+%   $G$ is solvable
+
+% \item\label{itm:holder:equiv-G-cyclic-factors}
+%   $G$ has a chain of subgroups:
+%   $1 = H_0 \trianglelefteq H_1 \trianglelefteq H_2 \trianglelefteq
+%   \cdots \trianglelefteq H_s = G$ such that $H_{i+1}/H_i$ is cyclic,
+%   $0\leq i\leq s - 1$
+
+% \item\label{itm:holder:equiv-G-prime-factors}
+%   all composition factors of $G$ are of prime order
+
+% \item\label{itm:holder:equiv-G-normal-abelian}
+%   $G$ has a chain of subgroups:
+%   $1 = N_0\trianglelefteq N_1 \trianglelefteq N_2 \trianglelefteq
+%   \cdots \trianglelefteq N_t = G$ such that each $N_i$ is a normal
+%   subgroup of $G$ and $N_{i+1}/N_i$ is abelian, $0\leq i\leq t - 1$.
+% \end{enumerate}
+% \begin{proof}
+%   First, suppose $G$ is solvable. Then we can find a chain of
+%   subgroups
+%   \begin{equation*}
+%     1 = G_0 \trianglelefteq G_1 \trianglelefteq
+%     G_2 \trianglelefteq\cdots\trianglelefteq
+%     G_r = G
+%   \end{equation*}
+%   such that $G_{i+1}/G_i$ is abelian for each $i$ with
+%   $0\leq i\leq r-1$. We will show that this implies
+%   \ref{itm:holder:equiv-G-cyclic-factors}.
+
+%   Fix a particular $i$. If $G_{i+1}/G_i$ happens to be cyclic, we are
+%   done. If not, then since the group is abelian, it must have a
+%   nontrivial cyclic subgroup $\overline{H}$ (we may take as a
+%   generator any element of order $p$, where $p$ is a prime dividing
+%   the order of the group). So, we may write
+%   \begin{equation*}
+%     G_i/G_i = \overline{1} \trianglelefteq
+%     \overline{H} \trianglelefteq
+%     \overline{G}_{i+1} = G_{i+1}/G_i.
+%   \end{equation*}
+%   By the Lattice Isomorphism Theorem, there is a subgroup $H$ such
+%   that
+%   \begin{equation*}
+%     G_i\trianglelefteq H\trianglelefteq G_{i+1}.
+%   \end{equation*}
+%   We now have a chain of subgroups,
+%   \begin{equation*}
+%     1 = G_0 \trianglelefteq
+%     G_1 \trianglelefteq\cdots\trianglelefteq
+%     G_i \trianglelefteq
+%     H \trianglelefteq
+%     G_{i+1} \trianglelefteq\cdots\trianglelefteq
+%     G_r = G,
+%   \end{equation*}
+%   where $H/G_i$ is cyclic and both $H/G_i$ and $G_{i+1}/H$ are
+%   abelian.
+
+%   Relabel the terms in the series to get
+%   \begin{equation*}
+%     1 = H_0 \trianglelefteq
+%     H_1 \trianglelefteq
+%     H_2 \trianglelefteq\cdots\trianglelefteq
+%     H_{r+1} = G.
+%   \end{equation*}
+%   Now if $H_{i+1}/H_i$ is cyclic for all $i$, $1\leq i\leq r$, then we
+%   are done. If not, carry out the same procedure as before to insert a
+%   new subgroup into the chain. Keep repeating the process until all
+%   factors are cyclic. The procedure must eventually terminate since
+%   $G$ is finite and has a finite number of subgroups. Thus we have
+%   proven that \ref{itm:holder:equiv-G-solvable} implies
+%   \ref{itm:holder:equiv-G-cyclic-factors}.
+
+%   Next, to show that \ref{itm:holder:equiv-G-cyclic-factors} implies
+%   \ref{itm:holder:equiv-G-prime-factors}, we can carry out a similar
+%   process. If $H_{i+1}/H_i$ is cyclic but not of prime order, then it
+%   must have a nontrivial subgroup $\overline{H}$ which, by the Lattice
+%   Isomorphism Theorem, corresponds to a subgroup $H$ such that
+%   \begin{equation*}
+%     H_i \trianglelefteq H \trianglelefteq H_{i+1}
+%   \end{equation*}
+%   where $H/H_i$ is of prime order. Again, repeat the process until
+%   each quotient is of prime order. We are left with a composition
+%   series (since each quotient is of prime order and thus
+%   simple). Moreover, any other composition series must also have
+%   factors of prime order by the second part of the Jordan--H\"older
+%   Theorem. Therefore the implication holds.
+
+%   Now suppose \ref{itm:holder:equiv-G-prime-factors} is true. We want
+%   to show that \ref{itm:holder:equiv-G-normal-abelian} also holds. We
+%   will use induction on $\ord{G}$. Certainly the implication is true
+%   when $\ord{G} = 1$, so suppose $\ord{G} > 1$ and assume that
+%   \ref{itm:holder:equiv-G-prime-factors} implies
+%   \ref{itm:holder:equiv-G-normal-abelian} for every group of order
+%   smaller than $G$.
+
+%   Choose a minimal nontrivial normal subgroup $M$ of $G$. Let $G$
+%   have the composition series
+%   \begin{equation*}
+%     1 = G_0 \trianglelefteq
+%     G_1 \trianglelefteq \cdots \trianglelefteq
+%     G_r = G,
+%   \end{equation*}
+%   and let $M$ be one of the terms in this series (such a series must
+%   exist by Exercise~\ref{exercise:holder:comp-series-incl-H}). If
+%   \ref{itm:holder:equiv-G-prime-factors} holds for $G$, then each
+%   composition factor in the above series has prime order. In
+%   particular, this means that we can find a subgroup $N$ with prime
+%   index such that $N\trianglelefteq M$. Then $M/N$ is necessarily
+%   abelian, since it has prime order and is thus cyclic.
+
+%   Let $x,y\in M$ be arbitrary. Since $M/N$ is abelian, we have
+%   \begin{equation*}
+%     (x^{-1}N)(y^{-1}N)(xN)(yN)
+%     = (x^{-1}N)(xN)(y^{-1}N)(yN)
+%     = N.
+%   \end{equation*}
+%   Hence $x^{-1}y^{-1}xy \in N$.
+
+%   Now let $g$ be any member of $G$ and define $H = gNg^{-1}$. Since
+%   $M\trianglelefteq G$, we have $gMg^{-1}\leq M$. But $N$ is contained
+%   in $M$, so we also have $H\leq M$.
+
+%   We want to show that $H$ is normal in $M$. To that end, note that
+%   for any $m\in M$ and $n\in N$,
+%   \begin{equation*}
+%     g^{-1}m(gng^{-1})m^{-1}g = (g^{-1}mg)n(g^{-1}mg)^{-1} \in N
+%   \end{equation*}
+%   since $N\trianglelefteq M$. Now, multiplying on the left by $g$ and on
+%   the right by $g^{-1}$, we get
+%   \begin{equation*}
+%     m(gng^{-1})m^{-1} \in gNg^{-1} = H.
+%   \end{equation*}
+%   Therefore $H\trianglelefteq M$.
+
+%   Since $H\leq N$, we see that $M/H\leq M/N$ by the Lattice
+%   Isomorphism Theorem. $M/N$ is abelian, so $M/H$ is also
+%   abelian. Using the same argument as before, we can see that
+%   \begin{equation*}
+%     x^{-1}y^{-1}xy \in H = gNg^{-1}.
+%   \end{equation*}
+%   $g$ was arbitrary, so this shows that $x^{-1}y^{-1}xy$ is in the
+%   intersection of all $G$-conjugates of $N$. That is,
+%   $x^{-1}y^{-1}xy\in I$ where
+%   \begin{equation*}
+%     I = \bigcap_{g\in G}gNg^{-1}.
+%   \end{equation*}
+% \end{proof}
+
+\Exercise9 Prove the following special case of part (2) of the
+Jordan--H\"older Theorem: assume the finite group $G$ has two
+composition series
+\begin{equation*}
+  1 = N_0 \trianglelefteq N_1 \trianglelefteq\cdots\trianglelefteq
+  N_r = G \quad\text{and}\quad
+  1 = M_0\trianglelefteq M_1\trianglelefteq M_2 = G.
+\end{equation*}
+Show that $r = 2$ and that the list of composition factors is the
+same.
+\begin{proof}
+  First note that $r > 1$ since the existence of $M_1$ shows that $G$
+  is not simple.
+
+  Let $H = M_1\cap N_{r-1}$. By
+  Exercise~\ref{exercise:quotient-group:normal-intersect-subgroup-is-normal}
+  we know that $H\trianglelefteq M_1$. But $M_1\cong M_1/1$ is a simple
+  group, so we must have $H = 1$ or $H = M_1$.
+
+  If $H = M_1$ then $N_{r-1}\trianglelefteq M_1$. Since $M_1$ is
+  simple, $N_{r-1} = M_1$ and we must have $r = 2$. In this case, both
+  composition series are exactly the same. So we will suppose that
+  $H = 1$.
+
+  Since $M_1$ and $N_{r-1}$ are normal subgroups of $G$, their product
+  $M_1N_{r-1}$ is also normal since for $m\in M_1$, $n\in N_{r-1}$,
+  and $g\in G$ we have
+  \begin{equation*}
+    gmng^{-1} = gm(g^{-1}g)ng^{-1} = (gmg^{-1})(gng^{-1}) \in M_1N_{r-1}.
+  \end{equation*}
+
+  Now if $M_1N_{r-1}\neq G$ then
+  $M_1\triangleleft M_1N_{r-1}\triangleleft G$. By the Lattice
+  Isomorphism Theorem we can see that
+  $1 = M_1/M_1 \triangleleft M_1N_{r-1}/M_1 \triangleleft G/M_1$. But
+  $G/M_1$ is simple, so this is impossible. Therefore
+  $M_1N_{r-1} = G$.
+
+  By the Second Isomorphism Theorem, we have
+  \begin{equation*}
+    G/M_1 = M_1N_{r-1}/M_1 \cong N_{r-1}/(M_1\cap N_{r-1})
+    = N_{r-1}/H = N_{r-1}/1 \cong N_{r-1}.
+  \end{equation*}
+  Since $N_{r-1}\cong G/M_1$, we have that $N_{r-1}$ is simple and
+  $r = 2$.
+
+  Moreover, the composition factors in both series are isomorphic, but
+  in the reverse order:
+  \begin{equation*}
+    G/N_{r-1} \cong (G/1)/(G/M_1) \cong M_1/1
+    \quad\text{and}\quad
+    N_{r-1}/1 \cong N_{r-1} \cong G/M_1.
+  \end{equation*}
+  This completes the proof.
 \end{proof}
