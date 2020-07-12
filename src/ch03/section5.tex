@@ -41,3 +41,21 @@ is an even permutation and which is an odd permutation.
   From these, we see that only $\sigma$, $\sigma^2$ and $\tau^2\sigma$
   are even. The rest are odd.
 \end{solution}
+
+\Exercise2 Prove that $\sigma^2$ is an even permutation for every
+permutation $\sigma$.
+\begin{proof}
+  We know that $\sigma$ can be written as a product of
+  transpositions. Let it be written as a product of $n$
+  transpositions,
+  \begin{equation*}
+    \sigma = \sigma_1\sigma_2\cdots\sigma_n,
+  \end{equation*}
+  where each $\sigma_i$ is a transposition. Then we can write
+  \begin{equation*}
+    \sigma^2 = (\sigma_1\cdots\sigma_n)(\sigma_1\cdots\sigma_n).
+  \end{equation*}
+  Since $\sigma^2$ has been written as a product of $2n$
+  transpositions (i.e., an even number of transpositions), $\sigma^2$
+  is even.
+\end{proof}
