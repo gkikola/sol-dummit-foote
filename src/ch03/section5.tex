@@ -158,3 +158,31 @@ $\sigma$ is any transposition and $\tau$ is any $p$-cycle.
   Both $(0\,1)$ and $(0\;1\;2\;\dots\;p-1)$ belong to $G$, so by
   Exercise~\ref{exercise:quotient-group:S-n-gen-12-123n}, $G = S_p$.
 \end{proof}
+
+\Exercise6 Show that $\gen{(1\,3), (1\,2\,3\,4)}$ is a proper subgroup
+of $S_4$. What is the isomorphism type of this subgroup?
+\begin{solution}
+  Let $\sigma = (1\,2\,3\,4)$ and $\tau = (1\,3)$. Note that
+  $\sigma^4 = \tau^2 = 1$. Moreover,
+  \begin{equation*}
+    \sigma\tau = (1\,4)(2\,3)
+  \end{equation*}
+  and
+  \begin{equation*}
+    \tau\sigma^{-1} = (1\,3)(1\,4\,3\,2) = (1\,4)(2\,3),
+  \end{equation*}
+  so $\sigma\tau = \tau\sigma^{-1}$ and we see that $\sigma$ and
+  $\tau$ satisfy exactly the same relations in $S_4$ as $r$ and $s$ do
+  in $D_8$. We can therefore define a surjective homomorphism
+  $\varphi\colon D_8\to\gen{\sigma,\tau}$ with
+  \begin{equation*}
+    \varphi(r) = \sigma
+    \quad\text{and}\quad
+    \varphi(s) = \tau.
+  \end{equation*}
+  This shows that $\gen{\sigma,\tau}$ has at most $8$ elements and is
+  thus a proper subgroup of $S_4$. However, it is easy to directly
+  verify that $\varphi$ maps distinct elements in $D_8$ to distinct
+  elements in $\gen{\sigma,\tau}$, so $\varphi$ is an isomorphism and
+  $\gen{\sigma,\tau}\cong D_8$.
+\end{solution}
