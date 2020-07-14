@@ -93,12 +93,14 @@ $\{(i\;\;i+1) \mid 1\leq i\leq n - 1\}$.
   result holds for all positive integers $n$.
 \end{proof}
 
-\Exercise4 Show that $S_n = \gen{(1\,2), (1\,2\,3\,\dots\,n)}$ for all
-$n\geq2$.
+\Exercise4
+\label{exercise:quotient-group:S-n-gen-12-123n}
+Show that $S_n = \gen{(1\,2), (1\,2\,3\,\dots\,n)}$ for all $n\geq2$.
 \begin{proof}
   Note that, for $i$ with $1\leq i\leq n-2$,
   \begin{equation*}
-    (1\,2\,\dots\,n)(i\;\;i+1)(1\,2\,\dots\,n)^{-1} = (i+1\;\;i+2).
+    (1\,2\,3\,\dots\,n)(i\;\;i+1)(1\,2\,3\,\dots\,n)^{-1}
+    = (i+1\;\;i+2).
   \end{equation*}
   It follows that
   \begin{equation*}
@@ -107,4 +109,52 @@ $n\geq2$.
   \end{equation*}
   so by Exercise~\ref{exercise:quotient-group:S-n-gen-adj}, we are
   done.
+\end{proof}
+
+\Exercise5 Show that if $p$ is prime, $S_p = \gen{\sigma,\tau}$ where
+$\sigma$ is any transposition and $\tau$ is any $p$-cycle.
+\begin{proof}
+  Let $G = \gen{\sigma,\tau}$. Relabel the elements of $S_p$ so that
+  \begin{equation*}
+    \sigma = (0\;1\;2\;\dots\;p-1)
+    \quad\text{and}\quad
+    \tau = (0\;k).
+  \end{equation*}
+  Now observe that
+  \begin{equation*}
+    \sigma\tau\sigma^{-1} = (1\;\;k+1),
+  \end{equation*}
+  where $k+1$ is understood to be the least residue of $k+1$, modulo
+  $p$. Similarly,
+  \begin{equation*}
+    \sigma(1\;\;k+1)\sigma^{-1} = (2\;\;k+2)
+  \end{equation*}
+  and, in general,
+  \begin{equation*}
+    \sigma(n-1\;\;k+n-1)\sigma^{-1} = (n\;\;k+n),
+  \end{equation*}
+  where again all terms are reduced modulo $p$. This shows that
+  $(n\;\;k+n)\in G$ for all positive integers $n$.
+
+  Taking $n = k$, we see that $(k\;2k)\in G$. With $n = 2k$, we have
+  $(2k\;3k)\in G$, and in general, $((m-1)k\;\;mk)\in G$ for all
+  positive integers $m$.
+
+  But
+  \begin{equation*}
+    (0\;k)(k\;2k)(0\;k) = (0\;2k),
+  \end{equation*}
+  so $(0\;2k)\in G$. And
+  \begin{equation*}
+    (0\;2k)(2k\;3k)(0\;2k) = (0\;3k),
+  \end{equation*}
+  so $(0\;3k)\in G$. Continuing in this way, we see that
+  $(0\;nk)\in G$ for all positive integers $n$.
+
+  Since $p$ is prime, $k$ is relatively prime to $p$ and therefore has
+  a multiplicative inverse mod $p$. Let $a$ be this inverse, so that
+  $ak\equiv1\pmod{p}$. Then we see that $(0\;ak) = (0\;1)\in G$.
+
+  Both $(0\,1)$ and $(0\;1\;2\;\dots\;p-1)$ belong to $G$, so by
+  Exercise~\ref{exercise:quotient-group:S-n-gen-12-123n}, $G = S_p$.
 \end{proof}
