@@ -186,3 +186,27 @@ of $S_4$. What is the isomorphism type of this subgroup?
   elements in $\gen{\sigma,\tau}$, so $\varphi$ is an isomorphism and
   $\gen{\sigma,\tau}\cong D_8$.
 \end{solution}
+
+\Exercise7 Prove that the group of rigid motions of a tetrahedron is
+isomorphic to $A_4$.
+\begin{proof}
+  In Exercise~\ref{exercise:intro-groups:tetrahedron-sym-iso-sub-S4},
+  we showed that the group $G$ of rigid motions of a tetrahedron is
+  isomorphic to a subgroup of $S_4$. We will show that this subgroup
+  has $12$ elements and consists only of even permutations, so that it
+  must be $A_4$.
+
+  We have shown in
+  Exercise~\ref{exercise:subgroups:rigid-motion-tetrahedron-12} that
+  there are $12$ elements in $G$. One of these is the identity, eight
+  more are rotations that fix one vertex and permute the remaining
+  three in a $3$-cycle. A $3$-cycle is an even permutation by
+  Proposition~25, so each of these elements in $G$ correspond to
+  elements in $A_4$.
+
+  Finally, the remaining three rotations in $G$ are $180^\circ$
+  rotations leaving no fixed points, each transposing two pairs of
+  vertices. A product of two transpositions is an even permutation, so
+  these elements of $G$ also correspond to elements in
+  $A_4$. Therefore $G\cong A_4$.
+\end{proof}
