@@ -187,8 +187,10 @@ of $S_4$. What is the isomorphism type of this subgroup?
   $\gen{\sigma,\tau}\cong D_8$.
 \end{solution}
 
-\Exercise7 Prove that the group of rigid motions of a tetrahedron is
-isomorphic to $A_4$.
+\Exercise7
+\label{exercise:quotient-group:tetrahedron-rot-iso-A4}
+Prove that the group of rigid motions of a tetrahedron is isomorphic
+to $A_4$.
 \begin{proof}
   In Exercise~\ref{exercise:intro-groups:tetrahedron-sym-iso-sub-S4},
   we showed that the group $G$ of rigid motions of a tetrahedron is
@@ -209,4 +211,33 @@ isomorphic to $A_4$.
   vertices. A product of two transpositions is an even permutation, so
   these elements of $G$ also correspond to elements in
   $A_4$. Therefore $G\cong A_4$.
+\end{proof}
+
+\Exercise8 Prove the lattice of subgroups of $A_4$ given in the text
+is correct.
+\begin{proof}
+  We know from the previous exercise,
+  Exercise~\ref{exercise:quotient-group:tetrahedron-rot-iso-A4}, that
+  $A_4$ is isomorphic to the group of rigid motions of a
+  tetrahedron. By the discussion in Section~3.2 of the text, this
+  group has no subgroup of order $6$.
+
+  By Exercise~\ref{exercise:classify:groups-4}, any subgroup of order
+  $4$ must be isomorphic to either $Z_4$ or $V_4$, where the latter is
+  the Klein $4$-group. But we know from the previous exercise that the
+  rotational symmetries of the tetrahedron each have order $1$, $2$,
+  or $3$, so $A_4$ cannot have a cyclic subgroup of order $4$. On the
+  other hand, it is not difficult to verify that
+  $\gen{(1\,2)(3\,4), (1\,3)(2\,4)}\cong V_4$, and this is the only
+  subgroup of order $4$ since $A_4$ only has three elements of order
+  $2$.
+
+  By Lagrange, the only remaining possibilities for nontrivial proper
+  subgroups are orders $2$ and $3$. These must be cyclic subgroups,
+  and since $A_4$ has three elements of order $2$ and eight elements
+  of order $3$, we see that the cyclic subgroups shown in the lattice
+  are the only possibilities.
+
+  The indices shown on the lattice are also easy to verify using
+  Lagrange's Theorem. Therefore the lattice in the text is correct.
 \end{proof}
