@@ -350,3 +350,18 @@ $S_{n-2}$ for each $n\geq3$.
   to this subgroup then gives an isomorphism. This completes the
   proof.
 \end{proof}
+
+\Exercise{13} Prove that every element of order $2$ in $A_n$ is the
+square of an element of order $4$ in $S_n$.
+\begin{proof}
+  Let $\sigma\in A_n$ with $\ord{\sigma} = 2$. Any element of order
+  $2$ in $A_n$ is a product of an even number of disjoint
+  transpositions. For each pair $(a\;b)$ and $(c\;d)$ of these
+  transpositions, we can write
+  \begin{equation*}
+    (a\;b)(c\;d) = (a\;c\;b\;d)^2.
+  \end{equation*}
+  Therefore $\sigma$ can be written as a product of squares of
+  disjoint $4$-cycles. Since disjoint cycles commute, we can write
+  $\sigma$ as the square of an element of order $4$ in $S_n$.
+\end{proof}
