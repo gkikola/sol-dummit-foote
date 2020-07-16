@@ -114,24 +114,27 @@ Show that $S_n = \gen{(1\,2), (1\,2\,3\,\dots\,n)}$ for all $n\geq2$.
 \Exercise5 Show that if $p$ is prime, $S_p = \gen{\sigma,\tau}$ where
 $\sigma$ is any transposition and $\tau$ is any $p$-cycle.
 \begin{proof}
-  Let $G = \gen{\sigma,\tau}$. Relabel the elements of $S_p$ so that
+  Let $G = \gen{\sigma,\tau}$. For convenience, we will consider $S_p$
+  to be the group of permutations of the set $\{0,1,\dots,p-1\}$
+  rather than $\{1,2,\dots,p\}$. We can also relabel the elements of
+  $S_p$ so that
   \begin{equation*}
-    \sigma = (0\;1\;2\;\dots\;p-1)
+    \sigma = (0\;k)
     \quad\text{and}\quad
-    \tau = (0\;k).
+    \tau = (0\;1\;2\;\dots\;p-1).
   \end{equation*}
   Now observe that
   \begin{equation*}
-    \sigma\tau\sigma^{-1} = (1\;\;k+1),
+    \tau\sigma\tau^{-1} = (1\;\;k+1),
   \end{equation*}
   where $k+1$ is understood to be the least residue of $k+1$, modulo
   $p$. Similarly,
   \begin{equation*}
-    \sigma(1\;\;k+1)\sigma^{-1} = (2\;\;k+2)
+    \tau\circ(1\;\;k+1)\circ\tau^{-1} = (2\;\;k+2)
   \end{equation*}
   and, in general,
   \begin{equation*}
-    \sigma(n-1\;\;k+n-1)\sigma^{-1} = (n\;\;k+n),
+    \tau\circ(n-1\;\;k+n-1)\circ\tau^{-1} = (n\;\;k+n),
   \end{equation*}
   where again all terms are reduced modulo $p$. This shows that
   $(n\;\;k+n)\in G$ for all positive integers $n$.
