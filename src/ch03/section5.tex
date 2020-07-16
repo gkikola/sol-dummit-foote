@@ -391,8 +391,9 @@ $A_4$.
   $\gen{x,y} = A_4$.
 \end{proof}
 
-\Exercise{16} Let $x$ and $y$ be distinct $3$-cycles in $S_5$ with
-$x\neq y^{-1}$.
+\Exercise{16}
+\label{exercise:quotient-group:3-cycles-in-S5}
+Let $x$ and $y$ be distinct $3$-cycles in $S_5$ with $x\neq y^{-1}$.
 \begin{enumerate}
 \item Prove that if $x$ and $y$ fix a common element of
   $\{1,\dots,5\}$, then $\gen{x,y}\cong A_4$.
@@ -458,3 +459,36 @@ $x\neq y^{-1}$.
     $\gen{x,y} = A_5$.
   \end{proof}
 \end{enumerate}
+
+\Exercise{17} If $x$ and $y$ are $3$-cycles in $S_n$, prove that
+$\gen{x,y}$ is isomorphic to $Z_3$, $A_4$, $A_5$, or $Z_3\times Z_3$.
+\begin{proof}
+  Let $T$ be the set of elements in $\{1,2,\dots,n\}$ that are {\em
+    not} fixed by $x$ or by $y$. Then $3\leq\ord{T}\leq6$. We consider
+  each case in turn.
+
+  First, if $\ord{T} = 3$ then either $x = y$ or $x = y^{-1}$. Either
+  way, $\gen{x,y} = \gen{x} \cong Z_3$.
+
+  Next, if $\ord{T} = 4$ or $5$ then, by relabeling, we can see that
+  $\gen{x,y}$ is isomorphic to a subgroup of $S_5$. In both cases,
+  Exercise~\ref{exercise:quotient-group:3-cycles-in-S5} shows that
+  $\gen{x,y}\cong A_4$ or $\gen{x,y}\cong A_5$.
+
+  The last remaining case is $\ord{T} = 6$. In this case $x$ and $y$
+  are disjoint and therefore commute. Every element in $\gen{x,y}$ can
+  then be written uniquely in the form
+  \begin{equation*}
+    x^ay^b, \quad \text{where $0\leq a\leq2$ and $0\leq b\leq2$.}
+  \end{equation*}
+  Let $z$ be a generator for $Z_3$ and define the map
+  $\varphi\colon\gen{x,y}\to Z_3\times Z_3$ by
+  \begin{equation*}
+    \varphi(x^ay^b) = (z^a, z^b).
+  \end{equation*}
+  It is not difficult to check that $\varphi$ is an isomorphism, so
+  that $\gen{x,y}\cong Z_3\times Z_3$ in this case.
+
+  In each case, the subgroup $\gen{x,y}$ is isomorphic to one of
+  $Z_3$, $A_4$, $A_5$, or $Z_3\times Z_3$.
+\end{proof}
