@@ -285,3 +285,21 @@ is solvable.
   are simple since they each have prime order. They are also abelian
   for the same reason, so $A_4$ is solvable.
 \end{solution}
+
+\Exercise{11} Prove that $S_4$ has no subgroup isomorphic to $Q_8$.
+\begin{proof}
+  If there is such a subgroup, let it be $H$. Note that $S_4$ has
+  exactly $6$ elements of order $4$, namely all the $4$-cycles. And
+  $Q_8$ has $6$ elements of order $4$, so $H$ must contain all
+  $4$-cycles in $S_4$. Then $H$ must also contain both
+  \begin{equation*}
+    (1\,2\,3\,4)^2 = (1\,3)(2\,4)
+  \end{equation*}
+  and
+  \begin{equation*}
+    (1\,2\,4\,3)^2 = (1\,4)(2\,3),
+  \end{equation*}
+  two elements of order $2$. Along with the identity, this implies
+  that $H$ has more than $8$ elements, which is impossible. Therefore
+  no such subgroup exists.
+\end{proof}
