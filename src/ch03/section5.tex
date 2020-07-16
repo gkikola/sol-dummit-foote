@@ -303,3 +303,50 @@ is solvable.
   that $H$ has more than $8$ elements, which is impossible. Therefore
   no such subgroup exists.
 \end{proof}
+
+\Exercise{12} Prove that $A_n$ contains a subgroup isomorphic to
+$S_{n-2}$ for each $n\geq3$.
+\begin{proof}
+  Consider the following map $\varphi\colon S_{n-2}\to A_n$:
+  \begin{equation*}
+    \varphi(\sigma) =
+    \begin{cases}
+      \sigma, & \text{if $\sigma$ is even} \\
+      \sigma\circ(n-1\;\;n) & \text{if $\sigma$ is odd.}
+    \end{cases}
+  \end{equation*}
+  Now let $\sigma$ and $\tau$ be members of $S_{n-2}$. We want to show
+  first that
+  \begin{equation}
+    \label{eq:quotient-group:iso-A-n-sub-S-n-minus-2-hom}
+    \varphi(\sigma)\varphi(\tau) = \varphi(\sigma\tau),
+  \end{equation}
+  so that $\varphi$ is a homomorphism. Certainly
+  \eqref{eq:quotient-group:iso-A-n-sub-S-n-minus-2-hom} holds if
+  $\sigma$ and $\tau$ are both even. If both are odd, then
+  \begin{equation*}
+    \sigma\circ(n-1\;\;n)\circ\tau\circ(n-1\;\;n)
+    = \sigma\circ\tau\circ(n-1\;\;n)^2
+    = \sigma\circ\tau,
+  \end{equation*}
+  and \eqref{eq:quotient-group:iso-A-n-sub-S-n-minus-2-hom} holds
+  since $\sigma\tau$ is even. Lastly, if exactly one of $\sigma$ and
+  $\tau$ is odd, then $\sigma\tau$ is odd and
+  \begin{equation*}
+    \varphi(\sigma)\varphi(\tau) = \sigma\circ\tau\circ(n-1\;\;n)
+    = \varphi(\sigma\tau).
+  \end{equation*}
+  In all cases, \eqref{eq:quotient-group:iso-A-n-sub-S-n-minus-2-hom}
+  holds and $\varphi$ is a homomorphism.
+
+  Notice also that $\varphi$ is injective, for if
+  $\varphi(\sigma) = \varphi(\tau)$, then either both $\sigma$ and
+  $\tau$ are even, in which case $\sigma = \tau$, or both are odd in
+  which case multiplication by $(n-1\;\;n)$ again gives
+  $\sigma = \tau$.
+
+  Now $\varphi(S_{n-2})$ is the image of a homomorphism into $A_n$ and
+  is thus a subgroup of $A_n$. Restricting the codomain of $\varphi$
+  to this subgroup then gives an isomorphism. This completes the
+  proof.
+\end{proof}
