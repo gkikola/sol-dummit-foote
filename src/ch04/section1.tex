@@ -1,0 +1,46 @@
+\chapter{Group Actions}
+
+\section{Group Actions and Permutation Representations}
+
+Let $G$ be a group and let $A$ be a nonempty set.
+
+\Exercise1 Let $G$ act on the set $A$. Prove that if $a,b\in A$ and
+$b = g\cdot a$ for some $g\in G$, then $G_b = gG_ag^{-1}$ ($G_a$ is
+the stabilizer of $a$). Deduce that if $G$ acts transitively on $A$
+then the kernel of the action is $\bigcap_{g\in G} gG_ag^{-1}$.
+\begin{proof}
+  Suppose $a,b\in A$ with $b = g\cdot a$ for some $g\in G$. If
+  $h\in G_b$, then $h\cdot b = b$. So
+  \begin{align*}
+    (g^{-1}hg)\cdot a
+    &= (g^{-1}h)\cdot(g\cdot a) \\
+    &= g^{-1}\cdot(h\cdot b) \\
+    &= g^{-1}\cdot b \\
+    &= a,
+  \end{align*}
+  and we have $g^{-1}hg\in G_a$. Letting $k = g^{-1}hg$, we see that
+  $h = gkg^{-1}$ where $k\in G_a$. This shows that
+  $G_b\subseteq gG_ag^{-1}$.
+
+  On the other hand, if $h\in gG_ag^{-1}$, then there is a $k\in G_a$
+  with $h = gkg^{-1}$. Then
+  \begin{align*}
+    h\cdot b
+    &= (gkg^{-1})\cdot b \\
+    &= (gk)\cdot(g^{-1}\cdot b) \\
+    &= (gk)\cdot a \\
+    &= g\cdot(k\cdot a) \\
+    &= g\cdot a \\
+    &= b,
+  \end{align*}
+  so $h\in G_b$. This completes the proof that $G_b = gG_ag^{-1}$.
+
+  We know that the kernel of the action is the set of elements of $G$
+  which stabilize every point in $A$. If the action is transitive,
+  then for any $a,b\in A$ there is some $g\in G$ such that
+  $G_b = gG_ag^{-1}$, as has already been proved. Thus we can write
+  \begin{equation*}
+    \bigcap_{g\in G}gG_ag^{-1} = \bigcap_{b\in A}G_b,
+  \end{equation*}
+  so that the kernel of the action is $\bigcap_{g\in G}gG_ag^{-1}$.
+\end{proof}
