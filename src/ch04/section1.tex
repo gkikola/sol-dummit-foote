@@ -4,7 +4,9 @@
 
 Let $G$ be a group and let $A$ be a nonempty set.
 
-\Exercise1 Let $G$ act on the set $A$. Prove that if $a,b\in A$ and
+\Exercise1
+\label{exercise:group-action:stab-b-conjugate-stab-a}
+Let $G$ act on the set $A$. Prove that if $a,b\in A$ and
 $b = g\cdot a$ for some $g\in G$, then $G_b = gG_ag^{-1}$ ($G_a$ is
 the stabilizer of $a$). Deduce that if $G$ acts transitively on $A$
 then the kernel of the action is $\bigcap_{g\in G} gG_ag^{-1}$.
@@ -43,4 +45,27 @@ then the kernel of the action is $\bigcap_{g\in G} gG_ag^{-1}$.
     \bigcap_{g\in G}gG_ag^{-1} = \bigcap_{b\in A}G_b,
   \end{equation*}
   so that the kernel of the action is $\bigcap_{g\in G}gG_ag^{-1}$.
+\end{proof}
+
+\Exercise2 Let $G$ be a {\em permutation group} on the set $A$ (i.e.,
+$G\leq S_A$), let $\sigma\in G$ and let $a\in A$. Prove that
+$\sigma G_a\sigma^{-1} = G_{\sigma(a)}$. Deduce that if $G$ acts
+transitively on $A$ then
+\begin{equation*}
+  \bigcap_{\sigma\in G}\sigma G_a\sigma^{-1} = 1.
+\end{equation*}
+\begin{proof}
+  Since $G$ naturally acts on $A$ via the map
+  $\sigma\cdot a\mapsto\sigma(a)$, we know by the previous exercise,
+  Exercise~\ref{exercise:group-action:stab-b-conjugate-stab-a}, that
+  \begin{equation*}
+    G_{\sigma(a)} = \sigma G_a\sigma^{-1}.
+  \end{equation*}
+
+  Since $G$ acts faithfully on $A$, the kernel of the action is
+  trivial. If the action is also transitive, then (again by the
+  previous exercise) we have
+  \begin{equation*}
+    \bigcap_{\sigma\in G}\sigma G_a\sigma^{-1} = 1. \qedhere
+  \end{equation*}
 \end{proof}
