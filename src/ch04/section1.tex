@@ -47,7 +47,9 @@ then the kernel of the action is $\bigcap_{g\in G} gG_ag^{-1}$.
   so that the kernel of the action is $\bigcap_{g\in G}gG_ag^{-1}$.
 \end{proof}
 
-\Exercise2 Let $G$ be a {\em permutation group} on the set $A$ (i.e.,
+\Exercise2
+\label{exercise:group-action:perm-stab-b-conjugate-stab-a}
+Let $G$ be a {\em permutation group} on the set $A$ (i.e.,
 $G\leq S_A$), let $\sigma\in G$ and let $a\in A$. Prove that
 $\sigma G_a\sigma^{-1} = G_{\sigma(a)}$. Deduce that if $G$ acts
 transitively on $A$ then
@@ -68,4 +70,30 @@ transitively on $A$ then
   \begin{equation*}
     \bigcap_{\sigma\in G}\sigma G_a\sigma^{-1} = 1. \qedhere
   \end{equation*}
+\end{proof}
+
+\Exercise3 Assume that $G$ is an abelian, transitive subgroup of
+$S_A$. Show that $\sigma(a) \neq a$ for all $\sigma\in G - \{1\}$ and
+all $a\in A$. Deduce that $\ord{G} = \ord{A}$.
+\begin{proof}
+  Let $a\in A$. Since $G$ is abelian, its subgroups are normal. In
+  particular, $\sigma G_a\sigma^{-1} = G_a$. Since $G$ is also
+  transitive, we know by the previous exercise,
+  Exercise~\ref{exercise:group-action:perm-stab-b-conjugate-stab-a},
+  that
+  \begin{equation*}
+    G_a = \bigcap_{\sigma\in G}\sigma G_a\sigma^{-1} = 1.
+  \end{equation*}
+  Thus the stabilizer of $a$ is trivial, so $\sigma(a) = a$ if and
+  only if $\sigma$ is the identity.
+
+  Finally, since $G$ has only one orbit, we have by Proposition~2 that
+  \begin{equation*}
+    \ord{G : G_a} = \ord{A}.
+  \end{equation*}
+  But by Lagrange's Theorem,
+  \begin{equation*}
+    \ord{G : G_a} = \frac{\ord{G}}{\ord{G_a}} = \ord{G},
+  \end{equation*}
+  so $\ord{G} = \ord{A}$ as required.
 \end{proof}
