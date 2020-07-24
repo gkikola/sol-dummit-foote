@@ -166,3 +166,70 @@ $a\in\mathcal{O}$ and find the stabilizer of $a$ in $S_3$.
   For the remaining orbit, we may choose $\mathbf2 = (1,2)$. The
   stabilizer of this element is the identity.
 \end{solution}
+
+\Exercise6 As in Exercise~\ref{exercise:subgroup:poly-integer-coef} of
+Section~2.2 let $R$ be the set of all polynomials with integer
+coefficients in the independent variables $x_1$, $x_2$, $x_3$, $x_4$
+and let $S_4$ act on $R$ by permuting the indices of the four
+variables:
+\begin{equation*}
+  \sigma\cdot p(x_1,x_2,x_3,x_4)
+  = p(x_{\sigma(1)},x_{\sigma(2)},x_{\sigma(3)},x_{\sigma(4)})
+\end{equation*}
+for all $\sigma\in S_4$.
+\begin{enumerate}
+\item Find the polynomials in the orbit of $S_4$ on $R$ containing
+  $x_1 + x_2$.
+  \begin{solution}
+    We saw in Exercise~\ref{exercise:subgroup:poly-integer-coef} that
+    the stabilizer of this polynomial has order $4$. As a subgroup of
+    $S_4$, this stabilizer has index
+    \begin{equation*}
+      \frac{\ord{S_4}}4 = \frac{24}4 = 6.
+    \end{equation*}
+    By Proposition~2, the number of elements in the orbit
+    $\mathcal{O}$ of $S_4$ on $R$ containing $x_1 + x_2$ is $6$. We
+    find
+    \begin{multline*}
+      x_1 + x_2
+      \xrightarrow{(1\,3)}
+      x_2 + x_3
+      \xrightarrow{(2\,4)}
+      x_3 + x_4 \\
+      \xrightarrow{(1\,3)}
+      x_1 + x_4
+      \xrightarrow{(3\,4)}
+      x_1 + x_3
+      \xrightarrow{(1\,2)(3\,4)}
+      x_2 + x_4.
+    \end{multline*}
+    So we see that the orbit $\mathcal{O}$ consists of the above six
+    polynomials.
+  \end{solution}
+
+\item Find the polynomials in the orbit of $S_4$ on $R$ containing
+  $x_1x_2 + x_3x_4$.
+  \begin{solution}
+    Again by Exercise~\ref{exercise:subgroup:poly-integer-coef}, we
+    know that the stabilizer of this polynomial has order $8$. As a
+    result the orbit $\mathcal{O}$ containing this polynomial has
+    order $24/8 = 3$. We find that this orbit is
+    \begin{equation*}
+      \mathcal{O} =
+      \{x_1x_2 + x_3x_4, x_1x_3 + x_2x_4, x_2x_3 + x_1x_4\}.
+      \qedhere
+    \end{equation*}
+  \end{solution}
+
+\item Find the polynomials in the orbit of $S_4$ on $R$ containing
+  $(x_1 + x_2)(x_3 + x_4)$.
+  \begin{solution}
+    We know by Exercise~\ref{exercise:subgroup:poly-integer-coef} that
+    the stabilizer of this polynomial has order $8$. So the orbit
+    containing it has order $3$. The orbit is
+    \begin{equation*}
+      \{(x_1+x_2)(x_3+x_4), (x_1+x_3)(x_2+x_4), (x_1+x_4)(x_2+x_3)\}.
+      \qedhere
+    \end{equation*}
+  \end{solution}
+\end{enumerate}
