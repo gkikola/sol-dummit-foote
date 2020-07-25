@@ -233,3 +233,177 @@ for all $\sigma\in S_4$.
     \end{equation*}
   \end{solution}
 \end{enumerate}
+
+\Exercise7 Let $G$ be a transitive permutation group on the finite set
+$A$. A {\em block} is a nonempty subset $B$ of $A$ such that for all
+$\sigma\in G$ either $\sigma(B) = B$ or $\sigma(B)\cap B = \emptyset$
+(here $\sigma(B)$ is the set $\{\sigma(b)\mid b\in B\}$).
+\begin{enumerate}
+\item Prove that if $B$ is a block containing the element $a$ of $A$,
+  then the set $G_B$ defined by
+  $G_B = \{\sigma\in G\mid \sigma(B) = B\}$ is a subgroup of $G$
+  containing $G_a$.
+  \begin{proof}
+    Certainly $1(B) = B$, so $G_B$ is nonempty. Let $\sigma\in
+    G_B$. Since $B$ is a block, either $\sigma^{-1}(B) = B$ or
+    $\sigma^{-1}(B)\cap B = \emptyset$. But the latter cannot be true
+    because, if it were, we would have for any $b\in B$ that
+    $\sigma^{-1}(\sigma(b)) = b\not\in B$, which is a
+    contradiction. Therefore $\sigma^{-1}\in G_B$ and $G_B$ is closed
+    under inverses. And if $\sigma$ and $\tau$ are both in $G_B$, then
+    \begin{equation*}
+      (\sigma\tau)(B) = \sigma(\tau(B)) = \sigma(B) = B,
+    \end{equation*}
+    so $\sigma\tau\in G_B$. Thus $G_B\leq G$.
+
+    Finally, since $a\in B$, if $\sigma\in G_a$ then
+    $\sigma(a) = a\in B$ so $\sigma(B)$ and $B$ are not disjoint. Thus
+    $\sigma\in G_B$ and we see that $G_a\leq G_B$.
+  \end{proof}
+
+\item Show that if $B$ is a block and
+  $\sigma_1(B), \sigma_2(B), \dots, \sigma_n(B)$ are all the distinct
+  images of $B$ under the elements of $G$, then these form a partition
+  of $A$.
+  \begin{proof}
+    Let $a\in A$ and $b\in B$. Since $G$ is transitive, there is
+    $\sigma\in G$ with $\sigma(b) = a$. Therefore $a$ belongs to at
+    least one of the sets $\sigma_i(B)$, so
+    \begin{equation*}
+      A = \bigcup_{i=1}^n\sigma_i(B).
+    \end{equation*}
+
+    Next we show that the sets $\sigma_i(B)$ are pairwise
+    disjoint. Suppose $\sigma_i(B)$ and $\sigma_j(B)$ are not disjoint
+    for some $i$ and $j$, and let $a$ be an element belonging to their
+    intersection. Then there is $b_1,b_2\in B$ with
+    \begin{equation*}
+      \sigma_i(b_1) = \sigma_j(b_2) = a.
+    \end{equation*}
+    So $b_1 = \sigma_i^{-1}\sigma_j(b_2)$. Since $B$ is a block, this
+    shows that $\sigma_i^{-1}\sigma_j(B) = B$. This then implies that
+    $\sigma_i(B) = \sigma_j(B)$. Since these images are not distinct,
+    we must have $i = j$. Therefore the sets are all pairwise
+    disjoint.
+
+    Each $\sigma_i(B)$ is nonempty, they are pairwise disjoint, and
+    their union is $A$. Therefore these sets form a partition of $A$.
+  \end{proof}
+
+\item A (transitive) group $G$ on a set $A$ is said to be {\em
+    primitive} if the only blocks in $A$ are the trivial ones: the
+  sets of size $1$ and $A$ itself. Show that $S_4$ is primitive on
+  $A = \{1,2,3,4\}$. Show that $D_8$ is not primitive as a permutation
+  group on the four vertices of a square.
+  \begin{proof}
+    First we show that $S_4$ is primitive on $A = \{1,2,3,4\}$. If
+    not, let $B$ be a nontrivial block. If $B$ has two elements, we
+    can without loss of generality assume that $B = \{1,2\}$. Then
+    \begin{equation*}
+      (1\,3)(B) = \{2,3\}.
+    \end{equation*}
+    Since $\{2,3\}\neq B$ and $\{2,3\}\cap B\neq\emptyset$, $B$ cannot
+    be a block. Similarly, if $B$ has three elements, we may assume
+    with full generality that $B = \{1,2,3\}$. Then
+    \begin{equation*}
+      (1\,4)(B) = \{2,3,4\}
+    \end{equation*}
+    and for the same reason as before we see that $B$ cannot be a
+    block. Therefore the only blocks in $A$ are trivial and $S_4$ is
+    primitive.
+
+    Next, to show that $D_8$ is not primitive on the vertices of a
+    square, label the vertices $1,2,3,4$ in clockwise fashion so that
+    $r$ induces the permutation $(1\,2\,3\,4)$ and $s$ the permutation
+    $(2\,4)$. Consider the set
+    \begin{equation*}
+      B = \{1,3\}.
+    \end{equation*}
+    For $g\in D_8$, let $\sigma_g$ denote the permutation of
+    $\{1,2,3,4\}$ induced by $g$. Then we have
+    \begin{align*}
+      \sigma_1(B) &= \{1,3\}, & \sigma_s(B) &= \{1,3\}, \\
+      \sigma_r(B) &= \{2,4\}, & \sigma_{sr}(B) &= \{2,4\}, \\
+      \sigma_{r^2}(B) &= \{1,3\}, & \sigma_{sr^2}(B) &= \{1,3\}, \\
+      \sigma_{r^3}(B) &= \{2,4\}, & \sigma_{sr^3}(B) &= \{2,4\}.
+    \end{align*}
+    In each case, $\sigma(B)$ is either $B$ or is disjoint with $B$,
+    so $B$ is a nontrivial block. Therefore $D_8$ is not primitive on
+    the vertices of a square.
+  \end{proof}
+
+\item Prove that the transitive group $G$ is primitive on $A$ if and
+  only if for each $a\in A$, the only subgroups of $G$ containing
+  $G_a$ are $G_a$ and $G$ (i.e., $G_a$ is a {\em maximal} subgroup of
+  $G$).
+  \begin{proof}
+    First assume that $G$ is primitive on $A$. Fix an $a\in A$ and let
+    $H$ be a subgroup of $G$ containing $G_a$. Define the subset $B$
+    of $A$ by
+    \begin{equation*}
+      B = \{\tau(a)\mid \tau\in H\}.
+    \end{equation*}
+    Now let $\sigma\in G$ be arbitrary and suppose that $\sigma(B)$
+    and $B$ are not disjoint. Let $b\in\sigma(B)\cap B$. Since
+    $b\in B$, there is $\tau\in H$ with $\tau(a) = b$. On the other
+    hand, since $b\in\sigma(B)$ there is $b_0\in B$ with
+    $\sigma(b_0) = b$. We can find $\rho\in H$ with $\rho(a) =
+    b_0$. Then
+    \begin{equation*}
+      \tau(a) = b = \sigma(b_0) = \sigma(\rho(a)).
+    \end{equation*}
+    In particular, this means that $a = \tau^{-1}\sigma\rho(a)$ and we
+    see that $\tau^{-1}\sigma\rho$ is in $G_a$ and hence in $H$. But
+    $\tau$ and $\rho^{-1}$ are in $H$, so
+    \begin{equation*}
+      \tau(\tau^{-1}\sigma\rho)\rho^{-1} = \sigma \in H.
+    \end{equation*}
+
+    We will show that, in this case, $B = \sigma(B)$. Choose any
+    $b_2\in B$. Then there is $\alpha\in H$ with $\alpha(a) =
+    b_2$. Then $\sigma^{-1}\alpha(a) = \sigma^{-1}(b_2)$. Since
+    $\sigma^{-1}\alpha\in H$, this implies that
+    $\sigma^{-1}(b_2)\in B$. Thus $b_2\in\sigma(B)$. Conversely, if we
+    let $b_2\in\sigma(B)$, then there is $b_3\in B$ with
+    $\sigma(b_3) = b_2$. We can find $\beta\in H$ with
+    $\beta(a) = b_3$, so
+    \begin{equation*}
+      b_2 = \sigma(b_3) = \sigma\beta(a)
+    \end{equation*}
+    and we see that $b_2\in B$. Thus $B = \sigma(B)$. We have shown
+    that for any $\sigma\in G$, either $B\cap\sigma(B) = \emptyset$ or
+    $B = \sigma(B)$. Hence $B$ is a block.
+
+    Now, $G$ is primitive, so the block $B$ must be trivial. Since
+    $G_a\leq H$, we know $a\in B$. So if $\ord{B} = 1$ then
+    $B = \{a\}$ and we must have $H = G_a$. On the other hand, if
+    $B = A$, then given any $\sigma\in G$, we have
+    $\sigma(a) = \tau(a)$ for some $\tau\in H$. But then
+    $\sigma^{-1}\tau$ belongs to the stabilizer of $a$, and hence
+    belongs to $H$. This implies that $\sigma^{-1}$ and thus $\sigma$
+    itself belongs to $H$. We conclude that in this case, $H = G$.
+
+    In either case, $H = G_a$ or $H = G$, so $G_a$ is a maximal
+    subgroup of $G$.
+
+    Finally, to prove the other direction of implication, take any
+    block $B$ of $G$ on $A$ and define
+    $G_B = \{\sigma\in G\mid\sigma(B) = B\}$. Pick any $a\in B$. We
+    have already shown that $G_B$ is a subgroup of $G$ containing
+    $G_a$. Since $G_a$ is maximal, either $G_B = G_a$ or $G_B = G$.
+
+    First, suppose $G_B = G_a$. Choose any $b\in B$. By transitivity,
+    there is $\sigma\in G$ with $\sigma(b) = a$. Then $a$ belongs to
+    $B\cap\sigma(B)$, so $\sigma(B) = B$ and $\sigma\in G_B$. $\sigma$
+    must therefore stabilize $a$, so $b = a$. Thus we see that $B$ is
+    the trivial block $\{a\}$.
+
+    Next, suppose $G_B = G$. Let $b\in B$ and, if possible, choose
+    $c\in A - B$. Again, by transitivity, we may find $\sigma\in G$
+    with $\sigma(b) = c$. But $\sigma\in G_B$, so $\sigma(B) =
+    B$. Therefore $c\in B$, and this gives a contradiction. Thus we
+    see that $B = A$ and the block $B$ is trivial.
+
+    Since every block in $A$ is trivial, $G$ is primitive on $A$.
+  \end{proof}
+\end{enumerate}
