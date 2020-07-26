@@ -234,8 +234,10 @@ for all $\sigma\in S_4$.
   \end{solution}
 \end{enumerate}
 
-\Exercise7 Let $G$ be a transitive permutation group on the finite set
-$A$. A {\em block} is a nonempty subset $B$ of $A$ such that for all
+\Exercise7
+\label{exercise:group-action:blocks-and-prim}
+Let $G$ be a transitive permutation group on the finite set $A$. A
+{\em block} is a nonempty subset $B$ of $A$ such that for all
 $\sigma\in G$ either $\sigma(B) = B$ or $\sigma(B)\cap B = \emptyset$
 (here $\sigma(B)$ is the set $\{\sigma(b)\mid b\in B\}$).
 \begin{enumerate}
@@ -405,5 +407,43 @@ $\sigma\in G$ either $\sigma(B) = B$ or $\sigma(B)\cap B = \emptyset$
     see that $B = A$ and the block $B$ is trivial.
 
     Since every block in $A$ is trivial, $G$ is primitive on $A$.
+  \end{proof}
+\end{enumerate}
+
+\Exercise8 A transitive permutation group $G$ on a set $A$ is called
+{\em doubly transitive} if for any (hence all) $a\in A$ the subgroup
+$G_a$ is transitive on the set $A - \{a\}$.
+\begin{enumerate}
+\item Prove that $S_n$ is doubly transitive on $\{1, 2, \dots, n\}$
+  for all $n\geq2$.
+  \begin{proof}
+    We already know that $S_n$ acts transitively on
+    $A = \{1,2,\dots,n\}$. Fix any $a\in A$. Then $G_a$ simply
+    consists of the permutations of the set $A - \{a\}$. That is,
+    $G_a$ is isomorphic to $S_{n-1}$. $G_a$ therefore acts
+    transitively on $A - \{a\}$, so $S_n$ is doubly transitive.
+  \end{proof}
+
+\item Prove that a doubly transitive group is primitive. Deduce that
+  $D_8$ is not doubly transitive in its action on the $4$ vertices of
+  a square.
+  \begin{proof}
+    Let $G$ be doubly transitive on $A$ and let $B$ be a block in
+    $A$. If $B$ has one element, then it is trivial and we are
+    done. So suppose $B$ has at least two distinct elements $a$ and
+    $b$. Further, let $c\in A - \{a\}$ be arbitrary. Since $G$ is
+    doubly transitive, there is $\sigma\in G_a$ such that
+    $\sigma(b) = c$.
+
+    Now, $\sigma(a) = a$, so $\sigma(B)\cap B\neq\emptyset$. And since
+    $B$ is a block, this means that $\sigma(B) = B$. Hence
+    $c = \sigma(b)\in B$. Therefore $A = B$ and $B$ is again
+    trivial. $G$ can have only trivial blocks, so it is primitive by
+    definition.
+
+    Lastly, we have already proved in
+    Exercise~\ref{exercise:group-action:blocks-and-prim} that $D_8$ is
+    not primitive on the vertices of a square. Therefore $D_8$ cannot
+    be doubly transitive.
   \end{proof}
 \end{enumerate}
