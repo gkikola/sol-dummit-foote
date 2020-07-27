@@ -447,3 +447,110 @@ $G_a$ is transitive on the set $A - \{a\}$.
     be doubly transitive.
   \end{proof}
 \end{enumerate}
+
+\Exercise9 Assume $G$ acts transitively on the finite set $A$ and let
+$H$ be a normal subgroup of $G$. Let
+$\mathcal{O}_1, \mathcal{O}_2, \dots, \mathcal{O}_r$ be the distinct
+orbits of $H$ on $A$.
+\begin{enumerate}
+\item Prove that $G$ permutes the sets
+  $\mathcal{O}_1,\mathcal{O}_2,\dots,\mathcal{O}_r$ in the sense that
+  for each $g\in G$ and each $i\in\{1,\dots,r\}$ there is a $j$ such
+  that $g\mathcal{O}_i = \mathcal{O}_j$, where
+  \begin{equation*}
+    g\mathcal{O} = \{g\cdot a \mid a \in \mathcal{O}\}
+  \end{equation*}
+  (i.e., in the notation of
+  Exercise~\ref{exercise:group-action:blocks-and-prim} the sets
+  $\mathcal{O}_1,\dots,\mathcal{O}_r$ are blocks). Prove that $G$ is
+  transitive on $\{\mathcal{O}_1,\dots,\mathcal{O}_r\}$. Deduce that
+  all orbits of $H$ on $A$ have the same cardinality.
+  \begin{proof}
+    Fix some $g\in G$ and $i\in\{1,\dots,r\}$, and take any
+    $a\in\mathcal{O}_i$. Then there is $j$ with
+    $g\cdot a\in\mathcal{O}_j$. We want to show that
+    $g\mathcal{O}_i = \mathcal{O}_j$.
+
+    Now, $b\in g\mathcal{O}_i$ means that $b = g\cdot c$ for some
+    $c\in\mathcal{O}_i$. Since $a$ and $c$ belong to the same orbit of
+    $H$, there is $h\in H$ with $c = h\cdot a$. Since $H$ is normal in
+    $G$, there is $h_0\in H$ such that $gh = h_0g$ and we get
+    \begin{equation*}
+      b = g\cdot c = g\cdot(h\cdot a)
+      = gh\cdot a = h_0g\cdot a
+      = h_0\cdot(g\cdot a) \in \mathcal{O}_j.
+    \end{equation*}
+    Therefore $g\mathcal{O}_i\subseteq\mathcal{O}_j$. Conversely,
+    since $b\in\mathcal{O}_j$ implies that $b$ belongs to the same
+    orbit as $g\cdot a$, there is $h_0\in H$ such that
+    \begin{equation*}
+      b = h_0\cdot(g\cdot a),
+    \end{equation*}
+    and we see by the same reasoning as above that
+    $\mathcal{O}_j\subseteq g\mathcal{O}_i$. Therefore
+    $g\mathcal{O}_i = \mathcal{O}_j$.
+
+    So we see that $G$ acts on the orbits of $H$ via the map
+    $(g,\mathcal{O}_i)\mapsto g\mathcal{O}_i$. Let $i$ and $j$ in
+    $\{1,\dots,r\}$ be arbitrary and choose $a\in\mathcal{O}_i$ and
+    $b\in\mathcal{O}_j$. Since $G$ is transitive on $A$, there is
+    $g\in G$ with $g\cdot a = b$. From the above we know that
+    $g\mathcal{O}_i = \mathcal{O}_j$, so $G$ also acts transitively on
+    the orbits of $H$.
+
+    Finally, since $G$ is transitive on the orbits of $H$, there is
+    $g\in G$ such that $g\mathcal{O}_i = \mathcal{O}_j$. Then the map
+    $\varphi\colon\mathcal{O}_i\to\mathcal{O}_j$ given by
+    \begin{equation*}
+      \varphi(a) = g\cdot a
+    \end{equation*}
+    is a bijection, since it admits the inverse
+    \begin{equation*}
+      \varphi^{-1}(b) = g^{-1}\cdot b.
+    \end{equation*}
+    Therefore all orbits of $H$ have the same cardinality.
+  \end{proof}
+
+\item Prove that if $a\in\mathcal{O}_1$ then
+  \begin{equation*}
+    \ord{\mathcal{O}_1} = \ord{H : H\cap G_a}
+  \end{equation*}
+  and prove that
+  \begin{equation*}
+    r = \ord{G : HG_a}.
+  \end{equation*}
+  \begin{proof}
+    Note that $H\cap G_a$ is just $H_a$, the stabilizer of $a$ in
+    $H$. Therefore the first statement follows directly from
+    Proposition~2.
+
+    Next, since $H\trianglelefteq G$ we have $G_a\leq N_G(H)$ so by
+    the Second Isomorphism Theorem,
+    \begin{equation*}
+      HG_a/H = G_aH/H \cong G_a/G_a\cap H = G_a/H_a.
+    \end{equation*}
+    Thus $\ord{HG_a : H} = \ord{G_a : H_a}$. Now, since $G$ is
+    transitive on $A$, we again have by Proposition~2 that
+    \begin{equation*}
+      \ord{A} = \ord{G : G_a}.
+    \end{equation*}
+    But $r\ord{\mathcal{O}_1} = \ord{A}$, since all orbits of $H$ have
+    the same number of elements, so
+    \begin{equation*}
+      \ord{G : G_a} = r\ord{\mathcal{O}_1} = r\ord{H : H_a}.
+    \end{equation*}
+    Therefore, making use of
+    Exercise~\ref{exercise:quotient-group:subgroup-of-subgroup-index},
+    we see that
+    \begin{multline*}
+      \ord{G : HG_a}
+      = \frac{\ord{G : HG_a}\ord{HG_a : H}}{\ord{HG_a : H}}
+      = \frac{\ord{G : H}}{\ord{HG_a : H}}
+      = \frac{\ord{G : H}}{\ord{G_a : H_a}} \\[3pt]
+      = \frac{r\ord{G : H}\ord{H : H_a}}{r\ord{H : H_a}\ord{G_a : H_a}}
+      = r\frac{\ord{G : H_a}}{\ord{G : G_a}\ord{G_a : H_a}}
+      = r.
+    \end{multline*}
+    This completes the proof.
+  \end{proof}
+\end{enumerate}
