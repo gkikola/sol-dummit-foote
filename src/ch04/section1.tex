@@ -554,3 +554,144 @@ orbits of $H$ on $A$.
     This completes the proof.
   \end{proof}
 \end{enumerate}
+
+\Exercise{10} Let $H$ and $K$ be subgroups of the group $G$. For each
+$x\in G$ define the $HK$ {\em double coset} of $x$ in $G$ to be the
+set
+\begin{equation*}
+  HxK = \{hxk \mid h\in H, k\in K\}.
+\end{equation*}
+\begin{enumerate}
+\item Prove that $HxK$ is the union of the left cosets
+  $x_1K,\dots,x_nK$ where $\{x_1K,\dots,x_nK\}$ is the orbit
+  containing $xK$ of $H$ acting by left multiplication on the set of
+  left cosets of $K$.
+  \begin{proof}
+    Let $H$ act by left multiplication on the set of left cosets of
+    $K$, so that for $h\in H$, $h\cdot xK = hxK$. Let
+    $\{x_1K,\dots,x_nK\}$ be the orbit of $H$ containing $xK$. Define
+    \begin{equation*}
+      A = \bigcup_{i=1}^nx_iK.
+    \end{equation*}
+    We want to show that $HxK = A$.
+
+    First let $g\in HxK$ so that $g = hxk$ for some $h\in H$ and
+    $k\in K$. Then $g\in hxK = h\cdot xK$. But $h\cdot xK$ is in the
+    orbit of $H$ containing $xK$, so $g\in x_jK$ for some $j$. Hence
+    $g\in A$.
+
+    Conversely, suppose $g\in A$. Then $g\in x_jK$ for some $j$. Since
+    $x_jK$ is in the orbit of $H$ containing $xK$, there is $h\in H$
+    such that $h\cdot xK = x_jK$. Then $g\in hxK$ so that $g\in HxK$
+    also. Therefore $HxK = A$.
+  \end{proof}
+
+\item Prove that $HxK$ is a union of right cosets of $H$.
+  \begin{proof}
+    The proof is essentially the same as the above, except that we let
+    $K$ act on the set of right cosets of $H$ by right
+    multiplication. Then if $\{Hx_1,\dots,Hx_n\}$ is the orbit of $K$
+    containing $Hx$, we can show that $HxK$ is the union of the right
+    cosets in this orbit.
+  \end{proof}
+
+\item Show that $HxK$ and $HyK$ are either the same set or are
+  disjoint for all $x,y\in G$. Show that the set of $HK$ double cosets
+  partitions $G$.
+  \begin{proof}
+    If $HxK$ and $HyK$ are disjoint, then we are done. Otherwise we
+    can take $g\in HxK\cap HyK$. Then there is $h_1,h_2\in H$ and
+    $k_1,k_2\in K$ such that
+    \begin{equation*}
+      h_1xk_1 = g = h_2yk_2,
+      \quad\text{or}\quad
+      x = h_1^{-1}h_2yk_2k_1^{-1}\in HyK.
+    \end{equation*}
+    Since $x\in HyK$ we have $HxK\subseteq HyK$. A similar argument
+    shows that $y\in HxK$ and $HyK\subseteq HxK$. Therefore
+    $HxK = HyK$. This shows that two $HK$ double cosets are either
+    disjoint or equal.
+
+    Next, each $HK$ double coset $HxK$ is nonempty since
+    $x = 1x1\in HxK$. This also shows that every element $x$ in $G$
+    belongs to some $HK$ double coset. Therefore the set of $HK$
+    double cosets partitions $G$.
+  \end{proof}
+
+\item Prove that $\ord{HxK} = \ord{K}\cdot\ord{H : H\cap xKx^{-1}}$.
+  \begin{proof}
+    We will assume that $H$ and $K$ are {\em finite} subsets of
+    $G$. From the above, we know that $HxK$ is a union of left cosets
+    of $K$,
+    \begin{equation*}
+      HxK = \bigcup_{i=1}^nx_iK.
+    \end{equation*}
+    Let $A = \{x_1K, \dots, x_nK\}$ and let $B$ be the set of cosets
+    of $H\cap xKx^{-1}$ in $H$.
+
+    We will define a map $\varphi\colon A\to B$ as follows. Given
+    $x_jK\in A$, we can find $h\in H$ such that $hxK = x_jK$. Then
+    define $\varphi(x_jK) = h(H\cap xKx^{-1})$.
+
+    First we show that $\varphi$ is well defined. Suppose
+    \begin{equation*}
+      h_1xK = h_2xK \quad\text{for}\quad h_1,h_2\in H.
+    \end{equation*}
+    Then $h_1x$ and $h_2x$ belong to the same coset of $K$, so there is
+    $k\in K$ with
+    \begin{equation*}
+      h_1x = h_2xk
+      \quad\text{or}\quad
+      h_2^{-1}h_1 = xkx^{-1}.
+    \end{equation*}
+    Hence $h_2^{-1}h_1\in H\cap xKx^{-1}$ so that $h_1$ and $h_2$
+    belong to the same coset of $H\cap xKx^{-1}$, i.e.,
+    \begin{equation*}
+      h_1(H\cap xKx^{-1}) = h_2(H\cap xKx^{-1}),
+    \end{equation*}
+    and this shows that $\varphi$ is well defined.
+
+    Next, we show that $\varphi$ is injective. Suppose
+    $\varphi(h_1xK) = \varphi(h_2xK)$. Then
+    $h_1(H\cap xKx^{-1}) = h_2(H\cap xKx^{-1})$ and there is a
+    $k\in K$ such that
+    \begin{equation*}
+      h_2^{-1}h_1 = xkx^{-1},
+    \end{equation*}
+    or $h_1x = h_2xk$ and so $h_1x$ and $h_2x$ belong to the same
+    coset of $K$. That is, $h_1xK = h_2xK$ and $\varphi$ is indeed an
+    injection.
+
+    And $\varphi$ is clearly surjective since given any coset
+    $h(H\cap xKx^{-1})\in B$ we can take $hxK\in A$ so that
+    $\varphi(hxK) = h(H\cap xKx^{-1})$ as required.
+
+    We have shown that $\varphi$ is a bijection and it now follows
+    that
+    \begin{equation*}
+      \ord{A} = \ord{B}.
+    \end{equation*}
+    However, we know that $\ord{A}$ is the number of cosets of $K$ in
+    $HxK$, so that, by Lagrange's Theorem,
+    \begin{equation*}
+      \frac{\ord{HxK}}{\ord{K}}
+      = \ord{HxK : K} = \ord{A}
+      = \ord{B} = \ord{H : H\cap xKx^{-1}}.
+    \end{equation*}
+    This can be rearranged to get
+    \begin{equation*}
+      \ord{HxK} = \ord{K}\cdot\ord{H : H\cap xKx^{-1}}
+    \end{equation*}
+    as desired.
+  \end{proof}
+
+\item Prove that $\ord{HxK} = \ord{H}\cdot\ord{K : K\cap x^{-1}Hx}$.
+  \begin{proof}
+    We can use the same argument as above, only defining $\varphi$ as
+    \begin{equation*}
+      Hxk\mapsto (K\cap x^{-1}Hx)k.
+    \end{equation*}
+    This gives the necessary bijection between the right cosets of $H$
+    in $HxK$ and the right cosets of $K\cap x^{-1}Hx$ in $K$.
+  \end{proof}
+\end{enumerate}
