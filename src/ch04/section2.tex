@@ -55,3 +55,33 @@ table is written out in Section~2.5.
     \end{equation*}
   \end{solution}
 \end{enumerate}
+
+\Exercise2 List the elements of $S_3$ as $1$, $(1\,2)$, $(2\,3)$,
+$(1\,3)$, $(1\,2\,3)$, $(1\,3\,2)$ and label these with the integers
+$1,2,3,4,5,6$ respectively. Exhibit the image of each element of $S_3$
+under the left regular representation of $S_3$ into $S_6$.
+\begin{solution}
+  Let $\sigma = \sigma_{(1\,2)}$ be the image of $(1\,2)$ under the
+  left regular representation. Then
+  \begin{align*}
+    \sigma(1) &= (1\,2)\cdot1 = (1\,2) = 2, \\
+    \sigma(2) &= (1\,2)\cdot(1\,2) = 1, \\
+    \sigma(3) &= (1\,2)\cdot(2\,3) = (1\,2\,3) = 5, \\
+    \sigma(4) &= (1\,2)\cdot(1\,3) = (1\,3\,2) = 6, \\
+    \sigma(5) &= (1\,2)\cdot(1\,2\,3) = (2\,3) = 3, \\
+    \intertext{and}
+    \sigma(6) &= (1\,2)\cdot(1\,3\,2) = (1\,3) = 4.
+  \end{align*}
+  So $(1\,2)$ is mapped to $(1\,2)(3\,5)(4\,6)$ in $S_6$.
+
+  In exactly the same manner, we can determine the images of the
+  remaining elements of $S_3$. We get
+  \begin{align*}
+    1 &\mapsto 1,
+    & (1\,3) &\mapsto (1\,4)(2\,5)(3\,6), \\
+    (1\,2) &\mapsto (1\,2)(3\,5)(4\,6),
+    & (1\,2\,3) &\mapsto (1\,5\,6)(2\,4\,3), \\
+    (2\,3) &\mapsto (1\,3)(2\,6)(4\,5),
+    & (1\,3\,2) &\mapsto (1\,6\,5)(2\,3\,4). \qedhere
+  \end{align*}
+\end{solution}
