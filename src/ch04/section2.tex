@@ -1,0 +1,57 @@
+\section{Groups Acting on Themselves by Left Multiplication}
+
+Let $G$ be a group and let $H$ be a subgroup of $G$.
+
+\Exercise1 Let $G = \{1,a,b,c\}$ be the Klein $4$-group whose group
+table is written out in Section~2.5.
+\begin{enumerate}
+\item \label{itm:group-actions:V4-1243}
+  Label $1,a,b,c$ with the integers $1,2,4,3$, respectively, and prove
+  that under the left regular representation of $G$ into $S_4$ the
+  nonidentity elements are mapped as follows:
+  \begin{equation*}
+    a\mapsto(1\,2)(3\,4) \quad
+    b\mapsto(1\,4)(2\,3) \quad
+    c\mapsto(1\,3)(2\,4).
+  \end{equation*}
+  \begin{proof}
+    We have
+    \begin{align*}
+      a\cdot1 &= a, & b\cdot1 &= b, & c\cdot1 &= c, \\
+      a\cdot a &= 1, & b\cdot a &= c, & c\cdot a &= b, \\
+      a\cdot b &= c, & b\cdot b &= 1, & c\cdot b &= a, \\
+      a\cdot c &= b, & b\cdot c &= a, & c\cdot c &= 1.
+    \end{align*}
+    So, for example, we see that under the given labelling,
+    \begin{equation*}
+      \sigma_a(1) = 2, \quad
+      \sigma_a(2) = 1, \quad
+      \sigma_a(3) = 4, \quad\text{and}\quad
+      \sigma_a(4) = 3,
+    \end{equation*}
+    so that $\sigma_a = (1\,2)(3\,4)$. Likewise we can see that
+    $\sigma_b = (1\,4)(2\,3)$ and $\sigma_c = (1\,3)(2\,4)$.
+  \end{proof}
+
+\item Relabel $1,a,b,c$ as $1,4,2,3$, respectively, and compute the
+  image of each element of $G$ under the left regular representation
+  of $G$ into $S_4$. Show that the image of $G$ in $S_4$ under this
+  labelling is the same {\em subgroup} as the image of $G$ in
+  part~\ref{itm:group-actions:V4-1243} (even though the nonidentity
+  elements individually map to different permutations under the two
+  different labellings).
+  \begin{solution}
+    Under this labelling, we get the following mapping:
+    \begin{equation*}
+      a \mapsto (1\,4)(2\,3), \quad
+      b \mapsto (1\,2)(3\,4), \quad\text{and}\quad
+      c \mapsto (1\,3)(2\,4).
+    \end{equation*}
+    We see that the image of $G$ in $S_4$ under this labelling and
+    also under the labelling in part~\ref{itm:group-actions:V4-1243}
+    is
+    \begin{equation*}
+      \{1, (1\,2)(3\,4), (1\,3)(2\,4), (1\,4)(2\,3)\}. \qedhere
+    \end{equation*}
+  \end{solution}
+\end{enumerate}
