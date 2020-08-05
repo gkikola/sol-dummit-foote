@@ -134,3 +134,41 @@ group of order $8$.
     $S_8$ than the image found here.
   \end{solution}
 \end{enumerate}
+
+\Exercise4 Use the left regular representation of $Q_8$ to produce two
+elements of $S_8$ which generate a subgroup of $S_8$ isomorphic to the
+quaternion group $Q_8$.
+\begin{solution}
+  Label the elements $1$, $-1$, $i$, $-i$, $j$, $-j$, $k$, $-k$ of
+  $Q_8$ with the integers $1,2,\dots,8$, respectively. For each
+  $g\in Q_8$, let $\sigma_g$ denote the image of $g$ under the left
+  regular representation of $Q_8$ into $S_8$, using this labelling.
+
+  We have
+  \begin{align*}
+    i\cdot1 = i, &\quad\text{so $\sigma_i(1) = 3$}, \\
+    i\cdot i = -1, &\quad\text{so $\sigma_i(3) = 2$}, \\
+    i\cdot-1 = -i, &\quad\text{so $\sigma_i(2) = 4$}, \\
+    i\cdot-i = 1, &\quad\text{so $\sigma_i(4) = 1$}, \\
+    i\cdot j = k, &\quad\text{so $\sigma_i(5) = 7$}, \\
+    i\cdot k = -j, &\quad\text{so $\sigma_i(7) = 6$}, \\
+    i\cdot-j = -k, &\quad\text{so $\sigma_i(6) = 8$}, \\
+    \intertext{and}
+    i\cdot-k = j, &\quad\text{so $\sigma_i(8) = 5$}.
+  \end{align*}
+  So we see that $\sigma_i = (1\,3\,2\,4)(5\,7\,6\,8)$. In the same
+  fashion, we can determine that
+  $\sigma_j = (1\,5\,2\,6)(3\,8\,4\,7)$.
+
+  Since the action of a group on itself by left multiplication is
+  always faithful, we know by the First Isomorphism Theorem that $Q_8$
+  is isomorphic to its image under the left regular
+  representation. And since $i$ and $j$ generate $Q_8$, it follows
+  that $\sigma_i$ and $\sigma_j$ generate an isomorphic subgroup of
+  $S_8$. That is, the two elements
+  \begin{equation*}
+    (1\,3\,2\,4)(5\,7\,6\,8) \quad\text{and}\quad
+    (1\,5\,2\,6)(3\,8\,4\,7)
+  \end{equation*}
+  generate a subgroup of $S_8$ that is isomorphic to $Q_8$.
+\end{solution}
