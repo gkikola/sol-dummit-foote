@@ -256,3 +256,33 @@ in $D_8$ as $1H$, $rH$, $r^2H$, and $r^3H$.
     $\pi_H(D_8) = \pi_K(D_8)$.
   \end{proof}
 \end{enumerate}
+
+\Exercise6 Let $r$ and $s$ be the usual generators for the dihedral
+group of order $8$ and let $N = \gen{r^2}$. List the left cosets of
+$N$ in $D_8$ as $1N$, $rN$, $sN$ and $srN$. Label these cosets with
+the integers $1,2,3,4$ respectively. Exhibit the image of each element
+of $D_8$ under the representation $\pi_N$ of $D_8$ into $S_4$ obtained
+from the action of $D_8$ by left multiplication on the set of $4$ left
+cosets of $N$ in $D_8$. Deduce that this representation is not
+faithful and prove that $\pi_N(D_8)$ is isomorphic to the Klein
+4-group.
+\begin{solution}
+  We can see that $\pi_N(r) = (1\,2)(3\,4)$ and
+  $\pi_N(s) = (1\,3)(2\,4)$, so the remaining images can be computed as
+  follows:
+  \begin{align*}
+    \pi_N(r^2) &= \pi_N(r)^2 = 1, \\
+    \pi_N(r^3) &= \pi_N(r)^3 = (1\,2)(3\,4), \\
+    \pi_N(sr) &= \pi_N(s)\pi_N(r) = (1\,4)(2\,3), \\
+    \pi_N(sr^2) &= \pi_N(s)\pi_N(r)^2 = (1\,3)(2\,4), \\
+    \pi_N(sr^3) &= \pi_N(s)\pi_N(r)^3 = (1\,4)(2\,3).
+  \end{align*}
+  We see that the kernel of $\pi_N$ is $\{1, r^2\}$, so the action is
+  not faithful. Lastly, we have
+  \begin{equation*}
+    \pi_N(D_8) = \{1, (1\,2)(3\,4), (1\,3)(2\,4), (1\,4)(2\,3)\},
+  \end{equation*}
+  and this subgroup is obviously not cyclic. So by
+  Exercise~\ref{exercise:classify:groups-4}, we know that
+  $\pi_N(D_8)\cong V_4$.
+\end{solution}
