@@ -172,3 +172,87 @@ quaternion group $Q_8$.
   \end{equation*}
   generate a subgroup of $S_8$ that is isomorphic to $Q_8$.
 \end{solution}
+
+\Exercise5 Let $r$ and $s$ be the usual generators for the dihedral
+group of order $8$ and let $H = \gen{s}$. List the left cosets of $H$
+in $D_8$ as $1H$, $rH$, $r^2H$, and $r^3H$.
+\begin{enumerate}
+\item \label{itm:group-action:faithful-action-cosets-D8}
+  Label these cosets with the integers $1,2,3,4$,
+  respectively. Exhibit the image of each element of $D_8$ under the
+  representation $\pi_H$ of $D_8$ into $S_4$ obtained from the action
+  of $D_8$ by left multiplication on the set of $4$ left cosets of $H$
+  in $D_8$. Deduce that this representation is faithful (i.e., the
+  elements of $S_4$ obtained form a subgroup isomorphic to $D_8$).
+  \begin{solution}
+    In the text it was shown that
+    \begin{equation*}
+      \pi_H(s) = (2\,4) \quad\text{and}\quad
+      \pi_H(r) = (1\,2\,3\,4).
+    \end{equation*}
+    Since $\pi_H$ is a homomorphism, we can find the images of the
+    remaining elements by working with the images of these
+    generators. For example,
+    \begin{equation*}
+      \pi_H(r^2) = \pi_H(r)^2 = (1\,2\,3\,4)^2 = (1\,3)(2\,4).
+    \end{equation*}
+    Similarly, we can find that
+    \begin{align*}
+      \pi_H(r^3) &= (1\,4\,3\,2), \\
+      \pi_H(sr) &= (1\,4)(2\,3), \\
+      \pi_H(sr^2) &= (1\,3), \\
+      \pi_H(sr^3) &= (1\,2)(3\,4).
+    \end{align*}
+
+    Clearly the kernel of this action is trivial since only the
+    identity is mapped to the identity permutation. We conclude that
+    the representation is faithful.
+  \end{solution}
+
+\item Repeat part~\ref{itm:group-action:faithful-action-cosets-D8}
+  with the list of cosets relabelled by the integers $1,3,2,4$,
+  respectively. Show that the permutations obtained from this
+  labelling form a subgroup of $S_4$ that is different from the
+  subgroup obtained in
+  part~\ref{itm:group-action:faithful-action-cosets-D8}.
+  \begin{solution}
+    With this labelling, we get
+    \begin{align*}
+      \pi_H(r) &= (1\,3\,2\,4), \\
+      \pi_H(r^2) &= (1\,2)(3\,4), \\
+      \pi_H(r^3) &= (1\,4\,2\,3), \\
+      \pi_H(s) &= (3\,4), \\
+      \pi_H(sr) &= (1\,4)(2\,3), \\
+      \pi_H(sr^2) &= (1\,2), \\
+      \pi_H(sr^3) &= (1\,3)(2\,4).
+    \end{align*}
+  \end{solution}
+  The subgroup obtained in
+  part~\ref{itm:group-action:faithful-action-cosets-D8} is clearly
+  different from the subgroup obtained here.
+
+\item Let $K = \gen{sr}$, list the cosets of $K$ in $D_8$ as $1K$,
+  $rK$, $r^2K$, and $r^3K$, and label these with the integers
+  $1,2,3,4$. Prove that, with respect to this labelling, the image of
+  $D_8$ under the representation $\pi_K$ obtained from left
+  multiplication on the cosets of $K$ is the same {\em subgroup} of
+  $S_4$ as in part~\ref{itm:group-action:faithful-action-cosets-D8}
+  (even though the subgroups $H$ and $K$ are different and some of the
+  elements of $D_8$ map to different permutations under the two
+  homomorphisms).
+  \begin{proof}
+    We get
+    \begin{align*}
+      \pi_K(r) &= (1\,2\,3\,4), \\
+      \pi_K(r^2) &= (1\,3)(2\,4) \\
+      \pi_K(r^3) &= (1\,4\,3\,2) \\
+      \pi_K(s) &= (1\,2)(3\,4), \\
+      \pi_K(sr) &= (2\,4), \\
+      \pi_K(sr^2) &= (1\,4)(2\,3), \\
+      \pi_K(sr^3) &= (1\,3).
+    \end{align*}
+    Comparing this to
+    part~\ref{itm:group-action:faithful-action-cosets-D8}, we see that
+    $\pi_H(D_8) = \pi_K(D_8)$.
+  \end{proof}
+\end{enumerate}
