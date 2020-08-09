@@ -342,3 +342,17 @@ normal subgroup $K$ of $G$ with $K\leq H$ and $\ord{G:K}\leq n!$.
   \end{equation*}
   as we wanted to show.
 \end{proof}
+
+\Exercise9 Prove that if $p$ is a prime and $G$ is a group of order
+$p^\alpha$ for some $\alpha\in\Z^+$, then every subgroup of index $p$
+is normal in $G$. Deduce that every group of order $p^2$ has a normal
+subgroup of order $p$.
+\begin{proof}
+  The first statement was already proved in Corollary~5. Now suppose
+  $G$ is any subgroup of order $p^2$. By Cauchy's Theorem, $G$ has an
+  element $x$ of order $p$. Then
+  \begin{equation*}
+    \ord{G:\gen{x}} = \frac{\ord{G}}{\ord{\gen{x}}} = p,
+  \end{equation*}
+  so $\gen{x}$ is a normal subgroup of $G$ having order $p$.
+\end{proof}
