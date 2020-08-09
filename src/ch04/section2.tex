@@ -286,3 +286,43 @@ faithful and prove that $\pi_N(D_8)$ is isomorphic to the Klein
   Exercise~\ref{exercise:classify:groups-4}, we know that
   $\pi_N(D_8)\cong V_4$.
 \end{solution}
+
+\Exercise7 Let $Q_8$ be the quaternion group of order $8$.
+\begin{enumerate}
+\item Prove that $Q_8$ is isomorphic to a subgroup of $S_8$.
+  \begin{proof}
+    $Q_8$ has $8$ elements, so by Corollary~4 it is isomorphic to a
+    subgroup of $S_8$.
+  \end{proof}
+
+\item Prove that $Q_8$ is not isomorphic to a subgroup of $S_n$ for
+  any $n\leq7$.
+  \begin{proof}
+    First we will show that $Q_8$ cannot act faithfully on a set $A$
+    having fewer than $8$ elements. Let $G = Q_8$, and let $G$ act on
+    $A$. Choose any $a\in A$. Then the orbit of $G$ containing $a$ has
+    fewer than $8$ elements. So, by Proposition~2, we have
+    \begin{equation*}
+      \ord{G : G_a} \leq 7.
+    \end{equation*}
+    By Lagrange's Theorem,
+    \begin{equation*}
+      \frac{\ord{G}}{\ord{G_a}} = \frac8{\ord{G_a}} \leq 7
+    \end{equation*}
+    and we see that $G_a$ must be a nontrivial subgroup of
+    $G$. However, every nontrivial subgroup of $Q_8$ contains the
+    subgroup $\gen{-1}$ (this can be seen from the lattice of
+    subgroups of $Q_8$). So $-1\in G_a$, and since $a$ was arbitrary,
+    we see that $-1$ stabilizes every element of $G$. Therefore $-1$
+    belongs to the kernel of the group action, and $G$ does not act
+    faithfully on $A$.
+
+    Next, if $Q_8$ is isomorphic to some subgroup of $S_7$, then we
+    can produce an injective homomorphism $\varphi$ from $Q_8$ into
+    $S_7$. Consider the action of $Q_8$ on $\{1,2,\dots,7\}$ induced
+    by $\varphi$. Since $\varphi$ is injective, its kernel must be
+    trivial and this action must be faithful. But as we have shown
+    above, this is impossible. Therefore $Q_8$ is not isomorphic to
+    any subgroup of $S_7$ (or of $S_n$ for $1\leq n\leq7$).
+  \end{proof}
+\end{enumerate}
