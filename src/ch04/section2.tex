@@ -326,3 +326,19 @@ faithful and prove that $\pi_N(D_8)$ is isomorphic to the Klein
     any subgroup of $S_7$ (or of $S_n$ for $1\leq n\leq7$).
   \end{proof}
 \end{enumerate}
+
+\Exercise8 Prove that if $H$ has finite index $n$ then there is a
+normal subgroup $K$ of $G$ with $K\leq H$ and $\ord{G:K}\leq n!$.
+\begin{proof}
+  Let $G$ act by left multiplication on the set of left cosets of $H$
+  in $G$, and let $\pi_H$ be the permutation representation that is
+  induced by this action. Let $K = \ker\pi_H$. By Theorem~3, we know
+  that $K\leq H$. And by the First Isomorphism Theorem, we know that
+  $K\trianglelefteq G$ and $G/K\cong\pi_H(G)$.
+
+  Now, $\pi_H(G)$ is a subgroup of $S_n$, so
+  \begin{equation*}
+    \ord{G:K} = \ord{G/K} = \ord{\pi_H(G)} \leq \ord{S_n} = n!,
+  \end{equation*}
+  as we wanted to show.
+\end{proof}
