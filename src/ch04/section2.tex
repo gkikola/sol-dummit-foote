@@ -356,3 +356,62 @@ subgroup of order $p$.
   \end{equation*}
   so $\gen{x}$ is a normal subgroup of $G$ having order $p$.
 \end{proof}
+
+\Exercise{10} Prove that every non-abelian group of order $6$ has a
+nonnormal subgroup of order $2$. Use this to classify groups of order
+$6$.
+\begin{proof}
+  Let $G$ be a non-abelian group of order $6$. By Cauchy's Theorem,
+  $G$ has at least one element of order $2$ and at least one element
+  of order $3$.
+
+  Suppose for contradiction that every subgroup of
+  order $2$ is normal. Then if $a\in G$ is any element of order $2$
+  and $b\in G$ is arbitrary, we see that
+  \begin{equation*}
+    b\gen{a} = \gen{a}b.
+  \end{equation*}
+  Since $a$ is the only nonidentity element in $\gen{a}$, we have
+  $ba = ab$. Therefore all elements of order $2$ in $G$ belong to its
+  center, $Z(G)$.
+
+  Now take $x$ not in $Z(G)$, that is, $x\in G - Z(G)$, which is
+  possible because $G$ is non-abelian. We know $Z(G)\subseteq C_G(x)$,
+  but actually this containment is strict, i.e. $Z(G)\subset C_G(x)$,
+  since $x\in C_G(x)$. By Lagrange's Theorem, the order of $Z(G)$ must
+  divide the order of $C_G(x)$. Since $2\nmid3$, we must have
+  $\ord{C_G(x)} = 6$, contradicting our choice of $x$. So $G$ must
+  have a nonnormal subgroup of order $2$, as we wanted to show.
+
+  Next we attempt to classify all groups of order $6$. Let $G$ be such
+  a group. Then $G$ is either abelian or non-abelian, and we consider
+  each case in turn.
+
+  First, if $G$ is abelian, pick $x,y\in G$ with $\ord{x} = 2$ and
+  $\ord{y} = 3$ (these elements exist by Cauchy's Theorem). Consider
+  the element $xy$. This element must have order $2$, $3$, or $6$. But
+  it cannot have order $2$, since
+  \begin{equation*}
+    (xy)^2 = x^2y^2 = y^2 \neq 1,
+  \end{equation*}
+  and it cannot have order $3$ since
+  \begin{equation*}
+    (xy)^3 = x^3y^3 = x \neq 1.
+  \end{equation*}
+  Therefore $xy$ has order $6$, and is thus a generator for $G$. Hence
+  $G$ is cyclic and $G\cong Z_6$.
+
+  Lastly, suppose $G$ is non-abelian. Let $H$ be a nonnormal subgroup
+  of order $2$. Let $A$ be the set of left cosets of $H$, and let $G$
+  act on $A$ by left multiplication. The permutation representation
+  $\varphi$ induced by this action is a homomorphism from $G$ into
+  $S_3$ (since there are exactly three cosets in $A$). By Theorem~3,
+  we know that $\ker\varphi$ is the largest normal subgroup of $G$
+  contained in $H$. Since $H$ is not normal, this implies that
+  $\ker\varphi = 1$ and we see that $\varphi$ is injective. We now
+  have an injective homomorphism from $G$ into $S_3$, and since
+  $\ord{G} = \ord{S_3} = 6$, this implies that $G\cong S_3$.
+
+  We conclude that every group of order $6$ is isomorphic to either
+  $Z_6$ or $S_3$.
+\end{proof}
