@@ -415,3 +415,34 @@ $6$.
   We conclude that every group of order $6$ is isomorphic to either
   $Z_6$ or $S_3$.
 \end{proof}
+
+\Exercise{11} Let $G$ be a finite group and let $\pi\colon G\to S_G$
+be the left regular representation. Prove that if $x$ is an element of
+$G$ of order $n$ and $\ord{G} = mn$, then $\pi(x)$ is a product of $m$
+$n$-cycles. Deduce that $\pi(x)$ is an odd permutation if and only if
+$\ord{x}$ is even and $\frac{\ord{G}}{\ord{x}}$ is odd.
+\begin{proof}
+  Let $x$ have order $n$ and let $H = \gen{x}$. We have
+  $\ord{G : H} = m$, i.e. there are exactly $m$ right cosets of
+  $H$. Let $Hy$ be any such right coset. Then $Hy$ is the set
+  \begin{equation*}
+    Hy = \{ y, xy, x^2y, \dots, x^{n-1}y \}.
+  \end{equation*}
+  Now we see that
+  \begin{equation*}
+    \pi(x)(y) = xy, \quad \pi(x)(xy) = x^2y, \quad \dots, \quad
+    \pi(x)(x^{n-1}y) = y.
+  \end{equation*}
+  Therefore $x$ permutes the elements of $Hy$ in a cyclic fashion, so
+  that
+  \begin{equation*}
+    (y\;xy\;x^2y\;\dots\;x^{n-1}y)
+  \end{equation*}
+  is an $n$-cycle in the cyclic decomposition of $\pi(x)$. Since there
+  are $m$ cosets of $H$, and the elements of each are permuted in this
+  way, we see that $\pi(x)$ consists of the product of $m$ disjoint
+  $n$-cycles.
+
+  By Proposition~25 of Chapter~3, we see that $\pi(x)$ is odd if and
+  only if $n = \ord{x}$ is even and $m = \ord{G}/\ord{x}$ is odd.
+\end{proof}
