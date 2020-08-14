@@ -446,3 +446,21 @@ $\ord{x}$ is even and $\frac{\ord{G}}{\ord{x}}$ is odd.
   By Proposition~25 of Chapter~3, we see that $\pi(x)$ is odd if and
   only if $n = \ord{x}$ is even and $m = \ord{G}/\ord{x}$ is odd.
 \end{proof}
+
+\Exercise{12} Let $G$ and $\pi$ be as in the preceding exercise. Prove
+that if $\pi(G)$ contains an odd permutation then $G$ has a subgroup
+of index $2$.
+\begin{proof}
+  We know that the alternating group $A_G$ is a normal subgroup of
+  $S_G$ having prime index $2$. Now $\pi(G)$ is a subgroup of $S_G$,
+  but it is not a subgroup of $A_G$ (since it contains an odd
+  permutation). So by
+  Exercise~\ref{exercise:quotient-group:subgrp-prime-index-consequences},
+  we must have $\ord{\pi(G) : \pi(G)\cap A_G} = 2$.
+
+  Now, since the action of a group on itself by left multiplication is
+  always faithful, we know by the First Isomorphism Theorem that
+  $G\cong\pi(G)$ via an isomorphism $\varphi$. Then
+  $\varphi^{-1}(\pi(G)\cap A_G)$ is a subgroup of $G$ having index
+  $2$.
+\end{proof}
