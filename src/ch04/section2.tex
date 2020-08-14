@@ -479,3 +479,15 @@ has a subgroup of index $2$.
   Exercise~\ref{exercise:group-action:left-reg-odd-perm}, $G$ has a
   subgroup of index $2$.
 \end{proof}
+
+\Exercise{14} Let $G$ be a finite group of composite order $n$ with
+the property that $G$ has a subgroup of order $k$ for each positive
+integer $k$ dividing $n$. Prove that $G$ is not simple.
+\begin{proof}
+  Let $p$ be the smallest prime dividing $n$. We know by assumption
+  that $G$ has a subgroup $H$ of order $n/p$. By Lagrange,
+  $\ord{G:H} = p$ and $H$ has prime index. It now follows from
+  Corollary~5 that $H$ is normal in $G$. Since $n$ is composite,
+  $1 < \ord{H} < n$, and we see that $G$ has a nontrivial proper
+  normal subgroup. Hence $G$ is not simple.
+\end{proof}
