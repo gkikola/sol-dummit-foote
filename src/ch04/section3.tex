@@ -1,0 +1,28 @@
+\section{Groups Acting on Themselves by Conjugation}
+
+Let $G$ be a group.
+
+\Exercise1 Suppose $G$ has a left action on a set $A$, denoted by
+$g\cdot a$ for all $g\in G$ and $a\in A$. Denote the corresponding
+right action on $A$ by $a\cdot g$. Prove that the (equivalence)
+relations $\sim$ and $\sim'$ defined by
+\begin{equation*}
+  a\sim b \quad\text{if and only if}\quad a = g\cdot b
+  \quad\text{for some $g\in G$}
+\end{equation*}
+and
+\begin{equation*}
+  a\sim'b \quad\text{if and only if}\quad a = b\cdot g
+  \quad\text{for some $g\in G$}
+\end{equation*}
+are the same relation (i.e., $a\sim b$ if and only if $a\sim'b$).
+\begin{proof}
+  Suppose $a\sim b$ and let $g$ be such that $a = g\cdot b$. Take
+  $h = g^{-1}$. Then, since the left and right actions correspond, we
+  have
+  \begin{equation*}
+    a = g\cdot b = b\cdot g^{-1} = b\cdot h.
+  \end{equation*}
+  Hence $a\sim' b$. We can also see that the implication works in the
+  other direction. Therefore $\sim$ and $\sim'$ are the same relation.
+\end{proof}
