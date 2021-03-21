@@ -26,3 +26,95 @@ are the same relation (i.e., $a\sim b$ if and only if $a\sim'b$).
   Hence $a\sim' b$. We can also see that the implication works in the
   other direction. Therefore $\sim$ and $\sim'$ are the same relation.
 \end{proof}
+
+\Exercise2 Find all conjugacy classes and their sizes in the following
+groups:
+\begin{enumerate}
+\item $D_8$
+  \begin{solution}
+    We already know $Z(D_8) = \{1, r^2\}$. As stated in the text, for
+    any $x\in D_8$ that is not in the center, $\ord{C_{D_8}(x)} =
+    4$. That is, the centralizer has index $2$ and there are two
+    elements in each such conjugacy class.
+
+    First, since $srs^{-1} = r^3$, we see that $\{r, r^3\}$ is one
+    conjugacy class. Next, $r(sr^2)r^{-1} = s$, so $\{s, sr^2\}$ is
+    another. Lastly, $s(sr)s^{-1} = sr^3$, so $\{sr, sr^3\}$ is the
+    remaining class.
+
+    The conjugacy classes of $D_8$ are thus
+    \begin{equation*}
+      \{1\}, \quad
+      \{r^2\}, \quad
+      \{r, r^3\}, \quad
+      \{s, sr^2\}, \quad\text{and}\quad
+      \{sr, sr^3\}.
+    \end{equation*}
+    We see that the class equation is $\ord{D_8} = 2 + 2 + 2 + 2$.
+  \end{solution}
+
+\item $Q_8$
+  \begin{solution}
+    The center of $Q_8$ is $Z(Q_8) = \{1, -1\}$. In the text it was
+    shown that $\{i, -i\}$ is one conjugacy class. In a similar way we
+    can determine that
+    $\ord{Q_8: C_{Q_8}(j)} = \ord{Q_8: C_{Q_8}(k)} = 2$ so the
+    remaining classes have two elements. Since $iji^{-1} = -j$, we see
+    that $\{j, -j\}$ is another class. And $jkj^{-1} = -k$, so the
+    remaining class is $\{k, -k\}$.
+
+    The conjugacy classes of $Q_8$ are therefore
+    \begin{equation*}
+      \{1\}, \quad
+      \{-1\}, \quad
+      \{i, -i\}, \quad
+      \{j, -j\}, \quad\text{and}\quad
+      \{k, -k\}.
+    \end{equation*}
+    The class equation is $\ord{Q_8} = 2 + 2 + 2 + 2$.
+  \end{solution}
+
+\item $A_4$
+  \begin{solution}
+    $A_4$ has a trivial center. Consider the even permutations
+    \begin{equation*}
+      1, \quad
+      (1\,2\,3), \quad\text{and}\quad
+      (1\,2)(3\,4).
+    \end{equation*}
+    These account for all the cycle types in $A_4$.
+
+    The $3$-cycle $(1\,2\,3)$ commutes only with powers of itself and
+    the identity. So $\ord{C_{A_4}((1\,2\,3))} = 3$ and
+    $\ord{A_4 : C_{A_4}((1\,2\,3))} = 4$. Therefore there are four
+    distinct conjugates of $(1\,2\,3)$. Since there are a total of
+    eight $3$-cycles in $A_4$, they must be divided into two conjugacy
+    classes. We compute,
+    \begin{gather*}
+      ((1\,2)(3\,4))(1\,2\,3)((1\,2)(3\,4))^{-1}
+      = (1\,4\,2), \\
+      ((1\,3)(2\,4))(1\,2\,3)((1\,3)(2\,4))^{-1}
+      = (1\,3\,4), \\ \intertext{and}
+      ((1\,4)(2\,3))(1\,2\,3)((1\,4)(2\,3))^{-1}
+      = (2\,4\,3).
+    \end{gather*}
+    The remaining $3$-cycles would form the other class.
+
+    Lastly, $(1\,2)(3\,4)$ commutes with $(1\,3)(2\,4)$ and
+    $(1\,4)(2\,3)$, so its centralizer has four members and
+    \begin{equation*}
+      \ord{A_4 : C_{A_4}((1\,2)(3\,4))} = 3.
+    \end{equation*}
+    Therefore the three elements of order $2$ belong to a single
+    conjugacy class.
+
+    In summary, the conjugacy classes of $A_4$ are
+    \begin{multline*}
+      \{1\}, \quad
+      \{(1\,2\,3), (1\,4\,2), (1\,3\,4), (2\,4\,3)\}, \quad
+      \{(1\,3\,2), (1\,2\,4), (1\,4\,3), (2\,3\,4)\}, \\\text{and}\quad
+      \{(1\,2)(3\,4), (1\,3)(2\,4), (1\,4)(2\,3)\}.
+    \end{multline*}
+    The class equation is $\ord{A_4} = 1 + 3 + 4 + 4$.
+  \end{solution}
+\end{enumerate}
