@@ -27,7 +27,9 @@ are the same relation (i.e., $a\sim b$ if and only if $a\sim'b$).
   other direction. Therefore $\sim$ and $\sim'$ are the same relation.
 \end{proof}
 
-\Exercise2 Find all conjugacy classes and their sizes in the following
+\Exercise2
+\label{exercise:group-actions:conj-classes-D8-Q8-A4}
+Find all conjugacy classes and their sizes in the following
 groups:
 \begin{enumerate}
 \item $D_8$
@@ -116,5 +118,127 @@ groups:
       \{(1\,2)(3\,4), (1\,3)(2\,4), (1\,4)(2\,3)\}.
     \end{multline*}
     The class equation is $\ord{A_4} = 1 + 3 + 4 + 4$.
+  \end{solution}
+\end{enumerate}
+
+\Exercise3 Find all the conjugacy classes and their sizes in the
+following groups:
+\begin{enumerate}
+\item \label{itm:group-actions:Z2-cross-S3-conjugacy}
+  $Z_2\times S_3$
+  \begin{solution}
+    Let $Z_2 = \gen{x}$. Since $Z_2$ is abelian, the group
+    $Z_2\times S_3$ has essentially the same conjugacy classes as
+    $S_3$, except that the classes come in pairs based on the first
+    coordinate for each element. Again, because $Z_2$ is abelian, no
+    two elements in $Z_2\times S_3$ that differ in their first
+    coordinate can be conjugate to one another.
+
+    For example, we know that the conjugacy class of $(1\,2\,3)$ in
+    $S_3$ consists of the two $3$-cycles in $S_3$:
+    \begin{equation*}
+      \{(1\,2\,3), (1\,3\,2)\}.
+    \end{equation*}
+    So, the conjugacy class of $(1, (1\,2\,3))$ in $Z_2\times S_3$
+    should be
+    \begin{equation*}
+      \{(1, (1\,2\,3)),\; (1, (1\,3\,2))\}.
+    \end{equation*}
+    Then we also have another class given by
+    \begin{equation*}
+      \{(x, (1\,2\,3)),\; (x, (1\,3\,2))\}.
+    \end{equation*}
+
+    The same reasoning applies to the $2$-cycles in $S_3$. We see
+    therefore that $Z_2\times S_3$ has the following conjugacy
+    classes:
+    \begin{gather*}
+      \{(1, 1)\}, \\
+      \{(x, 1)\}, \\
+      \{(1, (1\,2\,3)),\; (1, (1\,3\,2))\}, \\
+      \{(x, (1\,2\,3)),\; (x, (1\,3\,2))\}, \\
+      \{(1, (1\,2)),\; (1, (1\,3)),\; (1, (2\,3))\}, \\\intertext{and}
+      \{(x, (1\,2)),\; (x, (1\,3)),\; (x, (2\,3))\}.
+    \end{gather*}
+    The class equation is $\ord{Z_2\times S_3} = 2 + 2 + 2 + 3 + 3$.
+  \end{solution}
+
+\item $S_3\times S_3$
+  \begin{solution}
+    Two elements $(\sigma_1, \sigma_2)$ and $(\tau_1, \tau_2)$ are
+    conjugate in $S_3\times S_3$ if and only if there is
+    $(\rho_1, \rho_2)$ in $S_3\times S_3$ such that
+    \begin{align*}
+      (\sigma_1, \sigma_2)
+      &= (\rho_1, \rho_2)(\tau_1, \tau_2)(\rho_1, \rho_2)^{-1} \\
+      &= (\rho_1\tau_1\rho_1^{-1}, \rho_2\tau_2\rho_2^{-1}).
+    \end{align*}
+    This is true if and only if
+    \begin{equation*}
+      \sigma_1 = \rho_1\tau_1\rho_1^{-1} \quad\text{and}\quad
+      \sigma_2 = \rho_2\tau_2\rho_2^{-1}.
+    \end{equation*}
+    That is, if and only if $\sigma_1$ and $\tau_1$ are conjugate in
+    $S_3$ and $\sigma_2$ and $\tau_2$ are also conjugate in $S_3$.
+
+    Given this, we can determine all the conjugacy classes. To keep
+    the writing compact, we will use the following labels for elements in $S_3$:
+    \begin{equation*}
+      a_1 = (1\,2), \quad a_2 = (1\,3), \quad a_3 = (2\,3),
+    \end{equation*}
+    and
+    \begin{equation*}
+      b_1 = (1\,2\,3), \quad b_2 = (1\,3\,2).
+    \end{equation*}
+    Then the conjugacy classes in $S_3\times S_3$ are
+    \begin{gather*}
+      \{(1, 1)\}, \\
+      \{(1, b_1), (1, b_2)\}, \\
+      \{(b_1, 1), (b_2, 1)\}, \\
+      \{(1, a_1), (1, a_2), (1, a_3)\}, \\
+      \{(a_1, 1), (a_2, 1), (a_3, 1)\}, \\
+      \{(b_1, b_1), (b_1, b_2),
+      (b_2, b_1), (b_2, b_2)\}, \\
+      \{(a_1, b_1), (a_1, b_2),
+      (a_2, b_1), (a_2, b_2),
+      (a_3, b_1), (a_3, b_2)\},\\
+      \{(b_1, a_1), (b_1, a_2), (b_1, a_3),
+      (b_2, a_1), (b_2, a_2), (b_2, a_3)\},\\
+    \end{gather*}
+    and
+    \begin{multline*}
+      \{(a_1,a_1), (a_1, a_2), (a_1, a_3),
+      (a_2,a_1), (a_2, a_2), \\ (a_2, a_3),
+      (a_3,a_1), (a_3, a_2), (a_3, a_3)\}.
+    \end{multline*}
+    The class equation is
+    $\ord{S_3\times S_3} = 1 + 2 + 2 + 3 + 3 + 4 + 6 + 6 + 9$.
+  \end{solution}
+
+\item $Z_3\times A_4$
+  \begin{solution}
+    Let $Z_3 = \gen{x}$. As in part
+    \ref{itm:group-actions:Z2-cross-S3-conjugacy} above, elements that
+    differ in their first coordinate belong to separate conjugacy
+    classes. Using our result from Exercise
+    \ref{exercise:group-actions:conj-classes-D8-Q8-A4}, we see that
+    the conjugacy classes of $Z_3\times A_4$ are
+    \begin{gather*}
+      \{(1,1)\}, \quad \{(x,1)\}, \quad \{(x^2,1)\}, \\[3pt]
+      \{(1, (1\,2)(3\,4)),\; (1, (1\,3)(2\,4)),\; (1, (1\,4)(2\,3))\}, \\[3pt]
+      \{(x, (1\,2)(3\,4)),\; (x, (1\,3)(2\,4)),\; (x, (1\,4)(2\,3))\}, \\[3pt]
+      \{(x^2, (1\,2)(3\,4)),\; (x^2, (1\,3)(2\,4)),\; (x^2, (1\,4)(2\,3))\}, \\[3pt]
+      \{(1, (1\,2\,3)),\; (1, (1\,4\,2)),\; (1, (1\,3\,4)),\; (1, (2\,4\,3))\}, \\[3pt]
+      \{(x, (1\,2\,3)),\; (x, (1\,4\,2)),\; (x, (1\,3\,4)),\; (x, (2\,4\,3))\}, \\[3pt]
+      \{(x^2, (1\,2\,3)),\; (x^2, (1\,4\,2)),\; (x^2, (1\,3\,4)),\; (x^2, (2\,4\,3))\}, \\[3pt]
+      \{(1, (1\,3\,2)),\; (1, (1\,2\,4)),\; (1, (1\,4\,3)),\; (1, (2\,3\,4))\}, \\[3pt]
+      \{(x, (1\,3\,2)),\; (x, (1\,2\,4)),\; (x, (1\,4\,3)),\; (x, (2\,3\,4))\}, \\
+      \intertext{and}
+      \{(x^2, (1\,3\,2)),\; (x^2, (1\,2\,4)),\; (x^2, (1\,4\,3)),\; (x^2, (2\,3\,4))\}.
+    \end{gather*}
+    The class equation is
+    \begin{equation*}
+      \ord{Z_3\times A_4} = 3 + 3 + 3 + 3 + 4 + 4 + 4 + 4 + 4 + 4. \qedhere
+    \end{equation*}
   \end{solution}
 \end{enumerate}
