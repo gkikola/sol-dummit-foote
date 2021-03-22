@@ -242,3 +242,51 @@ following groups:
     \end{equation*}
   \end{solution}
 \end{enumerate}
+
+\Exercise4 Prove that if $S\subseteq G$ and $g\in G$ then
+\begin{equation*}
+  gN_G(S)g^{-1} = N_G(gSg^{-1}) \quad\text{and}\quad
+  gC_G(S)g^{-1} = C_G(gSg^{-1}).
+\end{equation*}
+\begin{proof}
+  Let $h\in gN_G(S)g^{-1}$. Then we can write $h = gkg^{-1}$ for some
+  $k\in G$ with $kSk^{-1} = S$. So
+  \begin{align*}
+    h(gSg^{-1})h^{-1}
+    &= (gkg^{-1})gSg^{-1}(gkg^{-1})^{-1} \\
+    &= g(kSk^{-1})g^{-1} \\
+    &= gSg^{-1}.
+  \end{align*}
+  This shows that $h \in N_G(gSg^{-1})$. Conversely, if
+  $h\in N_G(gSg^{-1})$ then
+  \begin{equation*}
+    hgSg^{-1}h^{-1} = gSg^{-1}
+  \end{equation*}
+  and, by multiplying on the left by $g^{-1}$ and on the right by $g$,
+  we see that
+  \begin{equation*}
+    g^{-1}hgSg^{-1}h^{-1}g = S,
+  \end{equation*}
+  i.e., that $g^{-1}hg\in N_G(S)$. This implies that
+  $h \in gN_G(S)g^{-1}$ as required.
+
+  Similarly, let $h\in gC_G(S)g^{-1}$. Then we can write
+  $h = gkg^{-1}$ for some $k\in G$ such that $ksk^{-1} = s$ for all
+  $s\in S$. Then for any $s\in S$,
+  \begin{align*}
+    hgsg^{-1}h^{-1}
+    &= (gkg^{-1})gsg^{-1}(gkg^{-1})^{-1} \\
+    &= gksk^{-1}g^{-1} \\
+    &= gsg^{-1},
+  \end{align*}
+  so $h\in C_G(gSg^{-1})$. Conversely, if $h\in C_G(gSg^{-1})$, then
+  \begin{equation*}
+    hgsg^{-1}h^{-1} = gsg^{-1} \quad \text{for all $s\in S$},
+  \end{equation*}
+  so
+  \begin{equation*}
+    g^{-1}hgsg^{-1}h^{-1}g = s \quad \text{for all $s\in S$},
+  \end{equation*}
+  and we see that $g^{-1}hg\in C_G(S)$ or $h \in gC_G(S)g^{-1}$,
+  completing the proof.
+\end{proof}
