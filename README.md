@@ -31,7 +31,7 @@ can build manually with `pdflatex src/dfsol.tex`.
 Copyright
 ---------
 
-Copyright &copy; 2019-2020 Greg Kikola. License CC BY-SA 4.0:
+Copyright &copy; 2019-2021 Greg Kikola. License CC BY-SA 4.0:
 [Creative Commons Attribution-ShareAlike 4.0
 International](http://creativecommons.org/licenses/by-sa/4.0/).
 
