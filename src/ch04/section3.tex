@@ -290,3 +290,18 @@ following groups:
   and we see that $g^{-1}hg\in C_G(S)$ or $h \in gC_G(S)g^{-1}$,
   completing the proof.
 \end{proof}
+
+\Exercise5 If the center of $G$ is of index $n$, prove that every
+conjugacy class has at most $n$ elements.
+\begin{proof}
+  Take any $g\in G$. We know that
+  $Z(G) \leq C_G(g) \leq G$. By
+  Exercise~\ref{exercise:quotient-group:subgroup-of-subgroup-index},
+  we also know that
+  \begin{equation*}
+    n = \ord{G : Z(G)} = \ord{G : C_G(g)}\ord{C_G(g) : Z(G)}.
+  \end{equation*}
+  In particular, $\ord{G : C_G(g)}$ divides $n$, so
+  $\ord{G : C_G(g)}\leq n$. By Proposition~6, we know that the
+  conjugacy class containing $g$ has at most $n$ elements.
+\end{proof}
