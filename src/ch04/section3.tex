@@ -305,3 +305,24 @@ conjugacy class has at most $n$ elements.
   $\ord{G : C_G(g)}\leq n$. By Proposition~6, we know that the
   conjugacy class containing $g$ has at most $n$ elements.
 \end{proof}
+
+\Exercise6 Assume $G$ is a non-abelian group of order $15$. Prove that
+$Z(G) = 1$. Use the fact that $\gen{g} \leq C_G(g)$ for all $g\in G$
+to show that there is at most one possible class equation for $G$.
+\begin{proof}
+  Suppose $Z(G)$ has a nontrivial element. Since $G$ is non-abelian
+  and $Z(G)\leq G$, we must either have $\ord{Z(G)} = 3$ or
+  $\ord{Z(G)} = 5$. In either case, $Z(G)$ has prime index, and
+  therefore the quotient $G/Z(G)$ must be cyclic. By
+  Exercise~\ref{exercise:quotient-group:center-quotient-cyclic}, $G$
+  is abelian. This is a contradiction, so $Z(G)$ must be trivial.
+
+  Next, since $G$ cannot be cyclic and has a trivial center, any
+  non-identity element must have order $3$ or $5$, so its centralizer
+  must have an index of $3$ or $5$. By Proposition~6, we see that the
+  only possible class equation for $G$ is
+  \begin{equation*}
+    \ord{G} = 1 + 3 + 3 + 3 + 5,
+  \end{equation*}
+  since this is the only partition of $15$ with acceptable values.
+\end{proof}
