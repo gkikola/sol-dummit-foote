@@ -403,3 +403,20 @@ classes of $S_n$.
     \end{tabular}
   \end{center}
 \end{solution}
+
+\Exercise8 Prove that $Z(S_n) = 1$ for all $n\geq3$.
+\begin{proof}
+  Fix $n\geq3$ and let $\sigma$ be any nonidentity element of
+  $S_n$. Since $\sigma$ is not the identity, we must have
+  $\sigma(i) = j$ for some $i, j\in\Z^+$ with $i\neq j$.
+
+  Now choose a positive integer $k$ with $1\leq k\leq n$ and such that
+  $k$ is distinct from $i$ and $j$. Consider the $2$-cycle
+  $\tau = (k\;j)$. Observe that
+  \begin{equation*}
+    (\sigma\tau)(i) = j, \quad\text{but}\quad (\tau\sigma)(i) = k.
+  \end{equation*}
+  This shows that $\tau$ does not commute with $\sigma$, so $\sigma$
+  cannot be in $Z(S_n)$. In particular, since $\sigma$ was chosen
+  arbitrarily, this implies that $Z(S_n)$ is trivial.
+\end{proof}
